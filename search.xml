@@ -46,7 +46,7 @@
     
     
     <entry>
-      <title>数列递推</title>
+      <title>第零篇 数列递推</title>
       <link href="/2024/03/17/shu-lie-di-tui/"/>
       <url>/2024/03/17/shu-lie-di-tui/</url>
       
@@ -115,6 +115,99 @@
         <tags>
             
             <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第二节 微积分基本公式</title>
+      <link href="/2024/03/17/5-2-wei-ji-fen-ji-ben-gong-shi/"/>
+      <url>/2024/03/17/5-2-wei-ji-fen-ji-ben-gong-shi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第二节-微积分基本公式"><a href="#第二节-微积分基本公式" class="headerlink" title="第二节 微积分基本公式"></a>第二节 微积分基本公式</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高等数学 </category>
+          
+          <category> 一元微积分 </category>
+          
+          <category> 第五章 定积分 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 一元函数 </tag>
+            
+            <tag> 定积分 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第一节 定积分的概念与性质</title>
+      <link href="/2024/03/17/5-1-ding-ji-fen-de-gai-nian-yu-xing-zhi/"/>
+      <url>/2024/03/17/5-1-ding-ji-fen-de-gai-nian-yu-xing-zhi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第一节-定积分的概念与性质"><a href="#第一节-定积分的概念与性质" class="headerlink" title="第一节 定积分的概念与性质"></a>第一节 定积分的概念与性质</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高等数学 </category>
+          
+          <category> 一元微积分 </category>
+          
+          <category> 第五章 定积分 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 一元函数 </tag>
+            
+            <tag> 定积分 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第二节 偏导数</title>
+      <link href="/2024/03/17/9-2-pian-dao-shu/"/>
+      <url>/2024/03/17/9-2-pian-dao-shu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第二节-偏导数"><a href="#第二节-偏导数" class="headerlink" title="第二节 偏导数"></a>第二节 偏导数</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高等数学 </category>
+          
+          <category> 多元微积分 </category>
+          
+          <category> 第九章 多元函数微分法及其应用 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多元函数 </tag>
+            
+            <tag> 偏导数 </tag>
             
         </tags>
       
