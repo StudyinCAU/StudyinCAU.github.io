@@ -166,31 +166,6 @@
     
     
     <entry>
-      <title>概率论笔记</title>
-      <link href="/2024/03/17/gai-lu-lun/"/>
-      <url>/2024/03/17/gai-lu-lun/</url>
-      
-        <content type="html"><![CDATA[<p>文件加载很慢，请耐心等待(u‿ฺu)</p><div class="row">    <embed src="概率论.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 概率论 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 概率论 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>合作测试</title>
       <link href="/2024/03/17/ce-shi-wen-jian/"/>
       <url>/2024/03/17/ce-shi-wen-jian/</url>
@@ -208,6 +183,31 @@
         <tags>
             
             <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>概率论笔记</title>
+      <link href="/2024/03/17/gai-lu-lun/"/>
+      <url>/2024/03/17/gai-lu-lun/</url>
+      
+        <content type="html"><![CDATA[<p>文件加载很慢，请耐心等待(u‿ฺu)</p><div class="row">    <embed src="概率论.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 概率论 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 概率论 </tag>
             
         </tags>
       
@@ -245,7 +245,7 @@
       
         <tags>
             
-            <tag> bfs </tag>
+            <tag> 搜索 </tag>
             
         </tags>
       
