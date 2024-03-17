@@ -79,35 +79,6 @@
     
     
     <entry>
-      <title>第一节 多元函数的基本概念</title>
-      <link href="/2024/03/17/9-1-duo-yuan-han-shu-de-ji-ben-gai-nian/"/>
-      <url>/2024/03/17/9-1-duo-yuan-han-shu-de-ji-ben-gai-nian/</url>
-      
-        <content type="html"><![CDATA[<h1 id="第一节-多元函数的基本概念"><a href="#第一节-多元函数的基本概念" class="headerlink" title="第一节 多元函数的基本概念"></a>第一节 多元函数的基本概念</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 高等数学 </category>
-          
-          <category> 多元微积分 </category>
-          
-          <category> 第九章 多元函数微分法及其应用 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 多元函数 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>第二节 偏导数</title>
       <link href="/2024/03/17/9-2-pian-dao-shu/"/>
       <url>/2024/03/17/9-2-pian-dao-shu/</url>
@@ -131,6 +102,35 @@
             <tag> 多元函数 </tag>
             
             <tag> 偏导数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第一节 多元函数的基本概念</title>
+      <link href="/2024/03/17/9-1-duo-yuan-han-shu-de-ji-ben-gai-nian/"/>
+      <url>/2024/03/17/9-1-duo-yuan-han-shu-de-ji-ben-gai-nian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第一节-多元函数的基本概念"><a href="#第一节-多元函数的基本概念" class="headerlink" title="第一节 多元函数的基本概念"></a>第一节 多元函数的基本概念</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高等数学 </category>
+          
+          <category> 多元微积分 </category>
+          
+          <category> 第九章 多元函数微分法及其应用 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多元函数 </tag>
             
         </tags>
       
@@ -166,31 +166,6 @@
     
     
     <entry>
-      <title>合作测试</title>
-      <link href="/2024/03/17/ce-shi-wen-jian/"/>
-      <url>/2024/03/17/ce-shi-wen-jian/</url>
-      
-        <content type="html"><![CDATA[<h1 id="测试文件"><a href="#测试文件" class="headerlink" title="测试文件"></a>测试文件</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 测试 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 测试 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>概率论笔记</title>
       <link href="/2024/03/17/gai-lu-lun/"/>
       <url>/2024/03/17/gai-lu-lun/</url>
@@ -208,6 +183,31 @@
         <tags>
             
             <tag> 概率论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>合作测试</title>
+      <link href="/2024/03/17/ce-shi-wen-jian/"/>
+      <url>/2024/03/17/ce-shi-wen-jian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="测试文件"><a href="#测试文件" class="headerlink" title="测试文件"></a>测试文件</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
             
         </tags>
       
@@ -245,7 +245,7 @@
       
         <tags>
             
-            <tag> 搜索 </tag>
+            <tag> bfs </tag>
             
         </tags>
       
