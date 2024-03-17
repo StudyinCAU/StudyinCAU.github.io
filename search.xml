@@ -17,6 +17,68 @@
     
     
     <entry>
+      <title>第一节 定积分的概念与性质</title>
+      <link href="/2024/03/17/5-1-ding-ji-fen-de-gai-nian-yu-xing-zhi/"/>
+      <url>/2024/03/17/5-1-ding-ji-fen-de-gai-nian-yu-xing-zhi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第一节-定积分的概念与性质"><a href="#第一节-定积分的概念与性质" class="headerlink" title="第一节 定积分的概念与性质"></a>第一节 定积分的概念与性质</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高等数学 </category>
+          
+          <category> 一元微积分 </category>
+          
+          <category> 第五章 定积分 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 一元函数 </tag>
+            
+            <tag> 定积分 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第二节 微积分基本公式</title>
+      <link href="/2024/03/17/5-2-wei-ji-fen-ji-ben-gong-shi/"/>
+      <url>/2024/03/17/5-2-wei-ji-fen-ji-ben-gong-shi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第二节-微积分基本公式"><a href="#第二节-微积分基本公式" class="headerlink" title="第二节 微积分基本公式"></a>第二节 微积分基本公式</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高等数学 </category>
+          
+          <category> 一元微积分 </category>
+          
+          <category> 第五章 定积分 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 一元函数 </tag>
+            
+            <tag> 定积分 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第一节 多元函数的基本概念</title>
       <link href="/2024/03/17/9-1-duo-yuan-han-shu-de-ji-ben-gai-nian/"/>
       <url>/2024/03/17/9-1-duo-yuan-han-shu-de-ji-ben-gai-nian/</url>
@@ -46,11 +108,42 @@
     
     
     <entry>
+      <title>第二节 偏导数</title>
+      <link href="/2024/03/17/9-2-pian-dao-shu/"/>
+      <url>/2024/03/17/9-2-pian-dao-shu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第二节-偏导数"><a href="#第二节-偏导数" class="headerlink" title="第二节 偏导数"></a>第二节 偏导数</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高等数学 </category>
+          
+          <category> 多元微积分 </category>
+          
+          <category> 第九章 多元函数微分法及其应用 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多元函数 </tag>
+            
+            <tag> 偏导数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第零篇 数列递推</title>
       <link href="/2024/03/17/shu-lie-di-tui/"/>
       <url>/2024/03/17/shu-lie-di-tui/</url>
       
-        <content type="html"><![CDATA[<h1 id="第零篇-数列递推"><a href="#第零篇-数列递推" class="headerlink" title="第零篇 数列递推"></a>第零篇 数列递推</h1><h2 id="PartⅠ-一阶常系数线性齐次递推"><a href="#PartⅠ-一阶常系数线性齐次递推" class="headerlink" title="PartⅠ 一阶常系数线性齐次递推"></a>PartⅠ 一阶常系数线性齐次递推</h2><p>​    若数列$\{a_n\}$满足以下形式：</p><script type="math/tex; mode=display">a_{n+1}=pa_n+q\quad(p\neq0)</script><p>​    其中$p、q$为给定的实数，数列首项为$a_1$。</p><p>​    称这个数列满足一阶常系数线性齐次递推的形式。</p><p>​    这种数列的通项公式很容易求，可以分成两种情况：</p><p>​    <code>1.</code> 若$p=1$，则$a_{n+1}=a_{n}+q$，此时数列为一个公差为$q$的等差数列，容易推得：</p><script type="math/tex; mode=display">a_n=a_1+(n-1)q</script><p>​    <code>2.</code> 若$p\neq1$，则可以通过 <strong>待定系数法</strong> 来构造等比数列：假设存在一个系数$A$，使得$a_{n+1}=pa_n+q$可以写成$a_{n+1}-A=p(a_n-A)$的形式，这样做的目的是为了转换成一个等比数列的形式，之后就可以进行递推来求解数列通项。</p><p>​    将$a_{n+1}-A=p(a_n-A)$展开：$a_{n+1}=pa_n+(1-p)A$与$a_{n+1}=pa_n+q$对比，解出系数$A=\dfrac{q}{1-p}$。</p><p>​    所以$\left\{a_{n+1}-\dfrac{q}{1-p}\right\}$是首项为$a_1-\dfrac{q}{1-p}$，公比为$q$的等比数列，由等比数列递推公式(累乘)：</p><script type="math/tex; mode=display">a_n=\dfrac{a_n}{a_{n-1}}\times\dfrac{a_{n-1}}{a_{n-2}}\times\cdots\times\dfrac{a_2}{a_{1}}\times{a_1}</script><p>​    可以推出：$a_n-\dfrac{q}{1-p}=\left(a_1-\dfrac{q}{1-p}\right)q^{n-1}$，进而求得：</p><script type="math/tex; mode=display">a_n=\left(a_1-\dfrac{q}{1-p}\right)p^{n-1}+\dfrac{q}{1-p}</script><h2 id="PartⅡ-二阶常系数线性齐次递推"><a href="#PartⅡ-二阶常系数线性齐次递推" class="headerlink" title="PartⅡ 二阶常系数线性齐次递推"></a>PartⅡ 二阶常系数线性齐次递推</h2><p>​    若数列$\{x_n\}$满足以下形式：</p><script type="math/tex; mode=display">x_{n+1}=px_{n}+qx_{n-1}\quad(p、q\neq0)</script><p>​    其中$p、q$为给定的实数，数列第一项和第二项分别为$x_1$和$x_2$。</p><p>​    称这个数列满足二阶常系数线性齐次递推的形式。</p><p>​    类比于一阶递推形式中构造等比数列的方法，我们还是尝试<strong>待定系数法</strong>构造这样的等比数列：</p><p>​    假设存在实数$a、b$，使得$x_{n+1}=px_{n}+qx_{n-1}$可以写成$x_{n+1}-ax_{n}=b(x_{n}-ax_{n-1})$，整理一下：$x_{n+1}=(a+b)x_{n}-abx_{n-1}$，对比系数有：</p><script type="math/tex; mode=display">\left\{\begin{array}{2}a+b=p \\ ab=-q\end{array}\right.</script><p>​    这个形式就非常像初中学过的一元二次方程，实数$a、b$是方程$x^2-px-q=0$的解。</p><p>​    <code>1.</code>方程解不相等$(a\neq b)$时：</p><p>​    所以$\{x_{n+1}-ax_n\}$是公比为$b$的等比数列，由累乘得到：$x_{n+1}-ax_n=(x_2-ax_1)b^{n-1}$</p><p>​    $x_{n+1}-ax_{n}=b(x_{n}-ax_{n-1})$还可以写成$x_{n+1}-bx_{n}=a(x_{n}-bx_{n-1})$的形式，因此$\{x_{n+1}-bx_n\}$是公比为$a$的等比数列，累乘得到：$x_{n+1}-bx_n=(x_2-bx_1)a^{n-1}$</p><p>​    将累乘得到的两个式子相减有：</p><script type="math/tex; mode=display">x_n=\dfrac{x_2-bx_1}{a-b}\cdot a^{n-1}+\dfrac{x_2-ax_1}{b-a}\cdot b^{n-1}</script><p>​    为了便于记忆，我们令$\left\{\begin{array}{2} \alpha=\dfrac{x_2-bx_1}{a-b}\cdot\dfrac{1}{a}\\ \beta=\dfrac{x_2-ax_1}{b-a}\cdot\dfrac{1}{b}\end{array}\right.$，所以$x_n = \alpha \cdot a^{n}+\beta\cdot b^{n}$。</p><p>​    解题时只需要根据数列$\{x_n\}$的递推公式写出相应的特征方程，得到解$a、b$，再根据$x_1、x_2$待定系数求解出$\alpha、\beta$即可得到该数列通项公式。下面是一个例子：</p><p>​    $Fibonacci$数列是大家非常熟悉的一个数列，它满足这样的条件：$a_1=a_2=1$，$a_{n+1}=a_n+a_{n-1}$，求$Fibonacci$数列的通项公式。</p><p>​    由递推关系式：$a_{n+1}=a_n+a_{n-1}$得到特征方程：$x^2-x-1=0$。</p><p>​    这个方程的解为：$a=\dfrac{\sqrt5+1}{2}$，$b=\dfrac{-\sqrt5+1}{2}$</p><p>​    所以他的通项公式可以写成：$x_n = \alpha \cdot \left( \dfrac{\sqrt{5}+1}{2} \right)^{n-1} + \beta \cdot \left( \dfrac{-\sqrt{5}+1}{2} \right)^{n-1}$</p><p>​    代入$a_1=a_2=1$，解出$\alpha=\dfrac{1}{\sqrt5}$，$\beta=-\dfrac{1}{\sqrt5}$。</p><p>​    所以$Fibonacci$数列的通项为：$ x_n = \dfrac{1}{\sqrt{5}}\left[ \left( \dfrac{\sqrt{5}+1}{2} \right)^{n-1} - \left( \dfrac{-\sqrt{5}+1}{2} \right)^{n-1} \right]$</p><p>​    </p><p>​    <code>2.</code>方程解相等$(a=b)$时：</p><p>​    $x_{n+1}=px_{n}+qx_{n-1}$可以写成$x_{n+1}-bx_{n}=b(x_{n}-bx_{n-1})$，对$\{x_{n+1}-bx_n\}$​这个数列进行累乘得：</p><script type="math/tex; mode=display">x_{n+1}-bx_n=b^{n-1}(x_2-bx_1)</script><p>​    两边同时除以$b^{n+1}$有：</p><p>​    </p><script type="math/tex; mode=display">\dfrac{x_{n+1}}{b^{n+1}}-\dfrac{x_{n}}{b^{n}}=\dfrac{x_{2}}{b^2}-\dfrac{x_1}{b}</script><p>​    这说明数列$\left\{\dfrac{x_{n}}{b^{n}}\right\}$是一个等差数列，公差为$\dfrac{x_{2}}{b^2}-\dfrac{x_1}{b}$。</p><p>​    由此可以求得：$\dfrac{x_{n}}{b^{n}}=(n-1)\left(\dfrac{x_{2}}{b^{2}}-\dfrac{x_{1}}{b}\right)+\dfrac{x_{1}}{b}$，</p><p>​    所以：$x_n=x_1 \cdot b^{n-1}+(x_2-bx_1)(n-1)\cdot b^{n-2}$，</p><p>​    整理一下，$x_n=\left[\left(\dfrac{x_{1}}{b}-\dfrac{x_{2}}{b^2}+\dfrac{1}{b}\right)+\left(\dfrac{-x_{1}}{b}+\dfrac{-x_{2}}{b^2}\right)n\right]b^n$。</p><p>​    同理我们可以令$\left\{\begin{array}{2} \alpha=\dfrac{x_{1}}{b}-\dfrac{x_{2}}{b^2}+\dfrac{1}{b}\\ \beta=\dfrac{-x_{1}}{b}+\dfrac{-x_{2}}{b^2}\end{array}\right.$，所以$x_n=(\alpha+\beta n)\cdot b^n$。</p><p>​    解题时只需要待定系数求出$\alpha、\beta$即可得到通项公式。</p><h2 id="PartⅢ-从递推到矩阵"><a href="#PartⅢ-从递推到矩阵" class="headerlink" title="PartⅢ 从递推到矩阵"></a>PartⅢ 从递推到矩阵</h2><p>​    上面都是低阶的问题，如果碰到更高阶的常系数线性齐次递推式子呢？由于是预备知识，在这里不详述，可以先看下面这一篇知乎上的文章↓：</p><p>​    <a href="https://zhuanlan.zhihu.com/p/33854447">二阶常系数齐次线性递推数列 - 知乎 (zhihu.com)</a></p><p>​    </p>]]></content>
+        <content type="html"><![CDATA[<h1 id="第零篇-数列递推"><a href="#第零篇-数列递推" class="headerlink" title="第零篇 数列递推"></a>第零篇 数列递推</h1><h2 id="PartⅠ-一阶常系数线性齐次递推"><a href="#PartⅠ-一阶常系数线性齐次递推" class="headerlink" title="PartⅠ 一阶常系数线性齐次递推"></a>PartⅠ 一阶常系数线性齐次递推</h2><p>​    若数列$\{a_n\}$满足以下形式：<br>$$<br>a_{n+1}=pa_n+q\quad(p\neq0)<br>$$<br>​    其中$p、q$为给定的实数，数列首项为$a_1$。</p><p>​    称这个数列满足一阶常系数线性齐次递推的形式。</p><p>​    这种数列的通项公式很容易求，可以分成两种情况：</p><p>​    <code>1.</code> 若$p=1$，则$a_{n+1}=a_{n}+q$，此时数列为一个公差为$q$的等差数列，容易推得：<br>$$<br>a_n=a_1+(n-1)q<br>$$</p><p>​    <code>2.</code> 若$p\neq1$，则可以通过 <strong>待定系数法</strong> 来构造等比数列：假设存在一个系数$A$，使得$a_{n+1}=pa_n+q$可以写成$a_{n+1}-A=p(a_n-A)$的形式，这样做的目的是为了转换成一个等比数列的形式，之后就可以进行递推来求解数列通项。</p><p>​    将$a_{n+1}-A=p(a_n-A)$展开：$a_{n+1}=pa_n+(1-p)A$与$a_{n+1}=pa_n+q$对比，解出系数$A=\dfrac{q}{1-p}$。</p><p>​    所以$\left\{a_{n+1}-\dfrac{q}{1-p}\right\}$是首项为$a_1-\dfrac{q}{1-p}$，公比为$q$的等比数列，由等比数列递推公式(累乘)：<br>$$<br>a_n=\dfrac{a_n}{a_{n-1}}\times\dfrac{a_{n-1}}{a_{n-2}}\times\cdots\times\dfrac{a_2}{a_{1}}\times{a_1}<br>$$<br>​    可以推出：$a_n-\dfrac{q}{1-p}=\left(a_1-\dfrac{q}{1-p}\right)q^{n-1}$，进而求得：<br>$$<br>a_n=\left(a_1-\dfrac{q}{1-p}\right)p^{n-1}+\dfrac{q}{1-p}<br>$$</p><h2 id="PartⅡ-二阶常系数线性齐次递推"><a href="#PartⅡ-二阶常系数线性齐次递推" class="headerlink" title="PartⅡ 二阶常系数线性齐次递推"></a>PartⅡ 二阶常系数线性齐次递推</h2><p>​    若数列$\{x_n\}$满足以下形式：<br>$$<br>x_{n+1}=px_{n}+qx_{n-1}\quad(p、q\neq0)<br>$$<br>​    其中$p、q$为给定的实数，数列第一项和第二项分别为$x_1$和$x_2$。</p><p>​    称这个数列满足二阶常系数线性齐次递推的形式。</p><p>​    类比于一阶递推形式中构造等比数列的方法，我们还是尝试<strong>待定系数法</strong>构造这样的等比数列：</p><p>​    假设存在实数$a、b$，使得$x_{n+1}=px_{n}+qx_{n-1}$可以写成$x_{n+1}-ax_{n}=b(x_{n}-ax_{n-1})$，整理一下：$x_{n+1}=(a+b)x_{n}-abx_{n-1}$，对比系数有：<br>$$<br>\left\{<br>\begin{array}{2}<br>a+b=p \\ ab=-q<br>\end{array}<br>\right.<br>$$<br>​    这个形式就非常像初中学过的一元二次方程，实数$a、b$是方程$x^2-px-q=0$的解。</p><p>​    <code>1.</code>方程解不相等$(a\neq b)$时：</p><p>​    所以$\{x_{n+1}-ax_n\}$是公比为$b$的等比数列，由累乘得到：$x_{n+1}-ax_n=(x_2-ax_1)b^{n-1}$</p><p>​    $x_{n+1}-ax_{n}=b(x_{n}-ax_{n-1})$还可以写成$x_{n+1}-bx_{n}=a(x_{n}-bx_{n-1})$的形式，因此$\{x_{n+1}-bx_n\}$是公比为$a$的等比数列，累乘得到：$x_{n+1}-bx_n=(x_2-bx_1)a^{n-1}$</p><p>​    将累乘得到的两个式子相减有：<br>$$<br>x_n=\dfrac{x_2-bx_1}{a-b}\cdot a^{n-1}+\dfrac{x_2-ax_1}{b-a}\cdot b^{n-1}<br>$$<br>​    为了便于记忆，我们令$\left\{\begin{array}{2} \alpha=\dfrac{x_2-bx_1}{a-b}\cdot\dfrac{1}{a}\\ \beta=\dfrac{x_2-ax_1}{b-a}\cdot\dfrac{1}{b}\end{array}\right.$，所以$x_n = \alpha \cdot a^{n}+\beta\cdot b^{n}$。</p><p>​    解题时只需要根据数列$\{x_n\}$的递推公式写出相应的特征方程，得到解$a、b$，再根据$x_1、x_2$待定系数求解出$\alpha、\beta$即可得到该数列通项公式。下面是一个例子：</p><p>​    $Fibonacci$数列是大家非常熟悉的一个数列，它满足这样的条件：$a_1=a_2=1$，$a_{n+1}=a_n+a_{n-1}$，求$Fibonacci$数列的通项公式。</p><p>​    由递推关系式：$a_{n+1}=a_n+a_{n-1}$得到特征方程：$x^2-x-1=0$。</p><p>​    这个方程的解为：$a=\dfrac{\sqrt5+1}{2}$，$b=\dfrac{-\sqrt5+1}{2}$</p><p>​    所以他的通项公式可以写成：$x_n = \alpha \cdot \left( \dfrac{\sqrt{5}+1}{2} \right)^{n-1} + \beta \cdot \left( \dfrac{-\sqrt{5}+1}{2} \right)^{n-1}$</p><p>​    代入$a_1=a_2=1$，解出$\alpha=\dfrac{1}{\sqrt5}$，$\beta=-\dfrac{1}{\sqrt5}$。</p><p>​    所以$Fibonacci$数列的通项为：$ x_n = \dfrac{1}{\sqrt{5}}\left[ \left( \dfrac{\sqrt{5}+1}{2} \right)^{n-1} - \left( \dfrac{-\sqrt{5}+1}{2} \right)^{n-1} \right]$</p><p>​    </p><p>​    <code>2.</code>方程解相等$(a=b)$时：</p><p>​    $x_{n+1}=px_{n}+qx_{n-1}$可以写成$x_{n+1}-bx_{n}=b(x_{n}-bx_{n-1})$，对$\{x_{n+1}-bx_n\}$​这个数列进行累乘得：<br>$$<br>x_{n+1}-bx_n=b^{n-1}(x_2-bx_1)<br>$$<br>​    两边同时除以$b^{n+1}$有：</p><p>​<br>$$<br>\dfrac{x_{n+1}}{b^{n+1}}-\dfrac{x_{n}}{b^{n}}=\dfrac{x_{2}}{b^2}-\dfrac{x_1}{b}<br>$$<br>​    这说明数列$\left\{\dfrac{x_{n}}{b^{n}}\right\}$是一个等差数列，公差为$\dfrac{x_{2}}{b^2}-\dfrac{x_1}{b}$。</p><p>​    由此可以求得：$\dfrac{x_{n}}{b^{n}}=(n-1)\left(\dfrac{x_{2}}{b^{2}}-\dfrac{x_{1}}{b}\right)+\dfrac{x_{1}}{b}$，</p><p>​    所以：$x_n=x_1 \cdot b^{n-1}+(x_2-bx_1)(n-1)\cdot b^{n-2}$，</p><p>​    整理一下，$x_n=\left[\left(\dfrac{x_{1}}{b}-\dfrac{x_{2}}{b^2}+\dfrac{1}{b}\right)+\left(\dfrac{-x_{1}}{b}+\dfrac{-x_{2}}{b^2}\right)n\right]b^n$。</p><p>​    同理我们可以令$\left\{\begin{array}{2} \alpha=\dfrac{x_{1}}{b}-\dfrac{x_{2}}{b^2}+\dfrac{1}{b}\\ \beta=\dfrac{-x_{1}}{b}+\dfrac{-x_{2}}{b^2}\end{array}\right.$，所以$x_n=(\alpha+\beta n)\cdot b^n$。</p><p>​    解题时只需要待定系数求出$\alpha、\beta$即可得到通项公式。</p><h2 id="PartⅢ-从递推到矩阵"><a href="#PartⅢ-从递推到矩阵" class="headerlink" title="PartⅢ 从递推到矩阵"></a>PartⅢ 从递推到矩阵</h2><p>​    上面都是低阶的问题，如果碰到更高阶的常系数线性齐次递推式子呢？由于是预备知识，在这里不详述，可以先看下面这一篇知乎上的文章↓：</p><p>​    <a href="https://zhuanlan.zhihu.com/p/33854447">二阶常系数齐次线性递推数列 - 知乎 (zhihu.com)</a></p><p>​    </p>]]></content>
       
       
       <categories>
@@ -115,99 +208,6 @@
         <tags>
             
             <tag> 测试 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第二节 微积分基本公式</title>
-      <link href="/2024/03/17/5-2-wei-ji-fen-ji-ben-gong-shi/"/>
-      <url>/2024/03/17/5-2-wei-ji-fen-ji-ben-gong-shi/</url>
-      
-        <content type="html"><![CDATA[<h1 id="第二节-微积分基本公式"><a href="#第二节-微积分基本公式" class="headerlink" title="第二节 微积分基本公式"></a>第二节 微积分基本公式</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 高等数学 </category>
-          
-          <category> 一元微积分 </category>
-          
-          <category> 第五章 定积分 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 一元函数 </tag>
-            
-            <tag> 定积分 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第一节 定积分的概念与性质</title>
-      <link href="/2024/03/17/5-1-ding-ji-fen-de-gai-nian-yu-xing-zhi/"/>
-      <url>/2024/03/17/5-1-ding-ji-fen-de-gai-nian-yu-xing-zhi/</url>
-      
-        <content type="html"><![CDATA[<h1 id="第一节-定积分的概念与性质"><a href="#第一节-定积分的概念与性质" class="headerlink" title="第一节 定积分的概念与性质"></a>第一节 定积分的概念与性质</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 高等数学 </category>
-          
-          <category> 一元微积分 </category>
-          
-          <category> 第五章 定积分 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 一元函数 </tag>
-            
-            <tag> 定积分 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第二节 偏导数</title>
-      <link href="/2024/03/17/9-2-pian-dao-shu/"/>
-      <url>/2024/03/17/9-2-pian-dao-shu/</url>
-      
-        <content type="html"><![CDATA[<h1 id="第二节-偏导数"><a href="#第二节-偏导数" class="headerlink" title="第二节 偏导数"></a>第二节 偏导数</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 高等数学 </category>
-          
-          <category> 多元微积分 </category>
-          
-          <category> 第九章 多元函数微分法及其应用 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 多元函数 </tag>
-            
-            <tag> 偏导数 </tag>
             
         </tags>
       
