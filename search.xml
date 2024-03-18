@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>一个重要的反常积分</title>
+      <link href="/2024/03/18/yi-ge-chong-yao-de-fan-chang-ji-fen/"/>
+      <url>/2024/03/18/yi-ge-chong-yao-de-fan-chang-ji-fen/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一个重要的反常积分"><a href="#一个重要的反常积分" class="headerlink" title="一个重要的反常积分"></a>一个重要的反常积分</h1><p>本文主要写一下反常积分$\begin{aligned} A &amp; =\int_0^{+\infty} e^{-x^2} d x\end{aligned}$的结果及他(或变形)的计算方法，$\begin{aligned} \int_0^{+\infty} e^{-x^2} d x\end{aligned}$是一个非常重要的反常积分，在高数、概率论中有重要的应用。</p><h2 id="方法一：二重积分"><a href="#方法一：二重积分" class="headerlink" title="方法一：二重积分"></a>方法一：二重积分</h2><script type="math/tex; mode=display">\begin{align*} A&=\int_0^{+\infty} e^{-x^2} d x \\ & =\sqrt{\left(\int_0^{+\infty} e^{-x^2} d x \cdot \int_0^{+\infty} e^{-x^2} d x\right)} \\ & =\sqrt{\left(\int_0^{+\infty} e^{-x^2} d x \cdot \int_0^{+\infty} e^{-y^2} d y\right)} \\ & =\sqrt{\int_0^{+\infty} \int_0^{+\infty} e^{-\left(x^2+y^2\right)} d x d y}\end{align*}</script><blockquote><p>import 夹逼定理</p></blockquote><p>​    这个样子就非常非常像一个二重积分的样子了，可以利用二重积分的计算方法进行计算：</p><p>​    <img src="../images/p1.jpg" style="zoom: 67%;"></p><p>​    如上图所示，设：</p><script type="math/tex; mode=display">\begin{aligned} & D_1=\left\{(x, y) \mid x^2+y^2 \leqslant R^2, x \geqslant 0, y \geqslant 0\right\} \\ & \left.D_2=\{x, y) \mid x^2+y^2 \leqslant 2 R^2, x \geqslant 0, y \geqslant 0\right\} \\ & S=\{(x, y) \mid 0 \leqslant x \leqslant R, 0 \leqslant y \leqslant R\}\end{aligned}</script><p>​    显然有：$D_1 \subset S \subset D_2$。</p><p>​    因为：$e^{-x^2-y^2}&gt;0$，所以：</p><script type="math/tex; mode=display">\iint_{D_1} e^{-x^2-y^2} d x d y \leq \iint_S e^{-x^2-y^2} d x d y \leq \iint_{D_2} e^{-x^2-y^2} d x d y</script><p>​    分别对$S、D_1、D_2$积分：</p><script type="math/tex; mode=display">\left\{\begin{array}{l}\displaystyle I=\iint_S e^{-x^2-y^2} d x d y=\int_0^R e^{-x^2} d x \int_0^R e^{-y^2} d y=\left(\int_0^R e^{-x^2} d x\right)^2 \\\displaystyle I_1=\iint_{D_1} e^{-x^2-y^2} d x d y=\frac{\pi}{4}\left(1-e^{-R^2}\right) \\\displaystyle I_2=\iint_{D_2} e^{-x^2-y^2} d x d y=\frac{\pi}{4}\left(1-e^{-2 R^2}\right)\end{array}\right.</script><p>​    有不等关系：$I_1&lt;I&lt;I_2$。</p><p>​    当$R \rightarrow\infty$ 时, $I_1 \rightarrow \dfrac{\pi}{4}, I_2 \rightarrow \dfrac{\pi}{4}$，由<strong>夹逼定理</strong> ：</p><p>​    当$R \rightarrow\infty$ 时, $I\rightarrow \dfrac{\pi}{4}$。即：$\begin{aligned} \left(\int_0^{+\infty} e^{-x^2} d x\right)^2\end{aligned}=\dfrac{\pi}{4}$。</p><p>​    所以$\begin{aligned} A &amp; =\int_0^{+\infty} e^{-x^2} d x\end{aligned}=\dfrac{\sqrt{\pi}}{2}$</p><blockquote><p>import 极坐标</p></blockquote><p>​    也可以理解成这是在极坐标下对一个半径为$+\infty$，在第一象限的扇形进行积分，设$r^2=(x^2+y^2)$，也就是：</p><script type="math/tex; mode=display">\begin{align}A^2 &= \int_0^{\frac{\pi}{2}} d\theta \int_0^{+\infty} e^{-r^2} r \, dr \\&= \dfrac{\pi}{2} \int_0^{+\infty} e^{-r^2} r \, dr \\ &= \dfrac{\pi}{4} \int_0^{+\infty} e^{-u} \, du \quad(u=r^2) \\&= \dfrac{\pi}{4}\end{align}</script><p>​    所以$\begin{aligned} A &amp; =\int_0^{+\infty} e^{-x^2} d x\end{aligned}=\dfrac{\sqrt{\pi}}{2}$</p><h2 id="方法二：标准正态分布"><a href="#方法二：标准正态分布" class="headerlink" title="方法二：标准正态分布"></a>方法二：标准正态分布</h2><p>设$r.v.X \sim N\left(0,1\right)$，则$X$的密度函数为：</p><script type="math/tex; mode=display">p(x)=\frac{1}{\sqrt{2 \pi }} e^{-\frac{x^2}{2}},-\infty<x<+\infty</script><p>由密度函数的正则性：</p><script type="math/tex; mode=display">\int_0^{+\infty} \varphi(x) d x=\int_0^{+\infty} \frac{1}{\sqrt{2 \pi}} e^{-\frac{x^2}{2}} d x=\frac{1}{2}</script><p>移项得：$\begin{aligned} A &amp; =\int_0^{+\infty} e^{-x^2} d x\end{aligned}=\dfrac{\sqrt{\pi}}{2}$</p><h2 id="方法三：-Gamma-函数"><a href="#方法三：-Gamma-函数" class="headerlink" title="方法三：$Gamma$函数"></a>方法三：$Gamma$函数</h2><p>​    $Gamma$函数是一个特殊的函数，它的定义如下：</p><script type="math/tex; mode=display">\Gamma(z)=\int_0^{\infty} t^{z-1} e^{-t} \mathrm{~d} t</script><p>​    在这里只介绍$Gamma$函数的几个性质：</p><p>​    <code>性质1.</code>$\Gamma(z)$与阶乘的关系</p><p>​    </p><script type="math/tex; mode=display">\begin{align} \Gamma(z) & =\int_0^{\infty} t^{z-1} e^{-t} \mathrm{~d} t \\ & =\left.t^{z-1}\left(-e^{-t}\right)\right|_0 ^{\infty}+(z-1) \int_0^{\infty} t^{z-2} e^{-t} \mathrm{~d} t \\ & =(z-1) \int_0^{\infty} t^{(z-1)-1} e^{-t} \mathrm{~d} t \\ & =(z-1) \Gamma(z-1)\end{align}</script><p>​    令$z=1$：</p><script type="math/tex; mode=display">\Gamma(1)=\int_0^{\infty} e^{-t} \mathrm{~d} t=-\left.e^{-t}\right|_0 ^{\infty}=1</script><p>​    <strong>当$z$为整数时</strong>，有：$\Gamma(z+1)=z\Gamma(z)=z(z-1)\Gamma(z-2)=\cdots=z(z-1)(z-2)\cdots1=z!$</p><p>​    <code>性质2.</code>$\Gamma(\dfrac{1}{2})=\sqrt\pi$</p><script type="math/tex; mode=display">\begin{aligned}    \Gamma(1/2) &= \int_0^{+\infty} x^{-1/2} e^{-x} \, dx \\&= \int_0^{+\infty} t^{-1} e^{-t^2} \, dt^2 \\ &= \int_0^{+\infty} 2 e^{-t^2} \, dt \\ &= 2\cdot \dfrac{\sqrt\pi}{2} \\ &= \sqrt\pi\end{aligned}</script><p>​    利用$Gamma$函数计算一些变形式子的积分值：</p><script type="math/tex; mode=display">\begin{aligned} & \int_0^{+\infty} {x}^3 \mathrm{e}^{-2 {x}} {dx}=\frac{1}{16} \int_0^{+\infty}(2 {x})^3 \mathrm{e}^{-2{x}} \mathrm{d}(2 {x})=\frac{1}{16} \Gamma(3+1)=\frac{3 !}{16}=\frac{3}{8} \\ & \int_0^{+\infty} {x}^4 \mathrm{e}^{-{x}^2} {dx}=\frac{1}{2} \int_0^{+\infty}\left({x}^2\right)^{\frac{3}{2}} \mathrm{e}^{-{x}^2}{dx}=\frac{1}{2} \Gamma\left(\frac{3}{2}+1\right)=\frac{1}{2} \frac{3}{2} \Gamma\left(\frac{1}{2}+1\right)=\frac{1}{2} \frac{3}{2} \frac{1}{2} \Gamma\left(\frac{1}{2}\right)=\frac{1}{2} \frac{3}{2} \frac{1}{2} \sqrt{\pi}=\frac{3}{8} \sqrt{\pi}\end{aligned}</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高等数学 </category>
+          
+          <category> 杂但重要的文章 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 反常积分 </tag>
+            
+            <tag> 二重积分 </tag>
+            
+            <tag> 夹逼定理 </tag>
+            
+            <tag> 正态分布 </tag>
+            
+            <tag> gamma函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>666</title>
       <link href="/2024/03/17/666666/"/>
       <url>/2024/03/17/666666/</url>
@@ -79,6 +114,35 @@
     
     
     <entry>
+      <title>第一节 多元函数的基本概念</title>
+      <link href="/2024/03/17/9-1-duo-yuan-han-shu-de-ji-ben-gai-nian/"/>
+      <url>/2024/03/17/9-1-duo-yuan-han-shu-de-ji-ben-gai-nian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第一节-多元函数的基本概念"><a href="#第一节-多元函数的基本概念" class="headerlink" title="第一节 多元函数的基本概念"></a>第一节 多元函数的基本概念</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高等数学 </category>
+          
+          <category> 多元微积分 </category>
+          
+          <category> 第九章 多元函数微分法及其应用 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多元函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第二节 偏导数</title>
       <link href="/2024/03/17/9-2-pian-dao-shu/"/>
       <url>/2024/03/17/9-2-pian-dao-shu/</url>
@@ -102,35 +166,6 @@
             <tag> 多元函数 </tag>
             
             <tag> 偏导数 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第一节 多元函数的基本概念</title>
-      <link href="/2024/03/17/9-1-duo-yuan-han-shu-de-ji-ben-gai-nian/"/>
-      <url>/2024/03/17/9-1-duo-yuan-han-shu-de-ji-ben-gai-nian/</url>
-      
-        <content type="html"><![CDATA[<h1 id="第一节-多元函数的基本概念"><a href="#第一节-多元函数的基本概念" class="headerlink" title="第一节 多元函数的基本概念"></a>第一节 多元函数的基本概念</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 高等数学 </category>
-          
-          <category> 多元微积分 </category>
-          
-          <category> 第九章 多元函数微分法及其应用 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 多元函数 </tag>
             
         </tags>
       
@@ -235,41 +270,6 @@
         <tags>
             
             <tag> 什么是深度学习 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>一个重要的反常积分</title>
-      <link href="/2024/03/17/yi-ge-chong-yao-de-fan-chang-ji-fen/"/>
-      <url>/2024/03/17/yi-ge-chong-yao-de-fan-chang-ji-fen/</url>
-      
-        <content type="html"><![CDATA[<h1 id="一个重要的反常积分"><a href="#一个重要的反常积分" class="headerlink" title="一个重要的反常积分"></a>一个重要的反常积分</h1><p>本文主要写一下反常积分$\begin{aligned} A &amp; =\int_0^{+\infty} e^{-x^2} d x\end{aligned}$的结果及他(或变形)的计算方法，$\begin{aligned} \int_0^{+\infty} e^{-x^2} d x\end{aligned}$是一个非常重要的反常积分，在高数、概率论中有重要的应用。</p><h2 id="方法一：二重积分"><a href="#方法一：二重积分" class="headerlink" title="方法一：二重积分"></a>方法一：二重积分</h2><p>$$<br>\begin{align<em>} A&amp;=\int_0^{+\infty} e^{-x^2} d x \\ &amp; =\sqrt{\left(\int_0^{+\infty} e^{-x^2} d x \cdot \int_0^{+\infty} e^{-x^2} d x\right)} \\ &amp; =\sqrt{\left(\int_0^{+\infty} e^{-x^2} d x \cdot \int_0^{+\infty} e^{-y^2} d y\right)} \\ &amp; =\sqrt{\int_0^{+\infty} \int_0^{+\infty} e^{-\left(x^2+y^2\right)} d x d y}\end{align</em>}<br>$$</p><blockquote><p>import 夹逼定理</p></blockquote><p>​    这个样子就非常非常像一个二重积分的样子了，可以利用二重积分的计算方法进行计算：</p><p>​    </p><blockquote><p>import 极坐标</p></blockquote><p>​    也可以理解成这是在极坐标下对一个半径为$+\infty$，在第一象限的扇形进行积分，设$r^2=(x^2+y^2)$，也就是：<br>$$<br>\begin{align<em>}<br>A^2 &amp;= \int_0^{\frac{\pi}{2}} d\theta \int_0^{+\infty} e^{-r^2} r , dr \&amp;= \dfrac{\pi}{2} \int_0^{+\infty} e^{-r^2} r , dr \\ &amp;= \dfrac{\pi}{4} \int_0^{+\infty} e^{-u} , du \quad(u=r^2) \&amp;= \dfrac{\pi}{4}<br>\end{align</em>}<br>$$<br>​    所以$\begin{aligned} A &amp; =\int_0^{+\infty} e^{-x^2} d x\end{aligned}=\dfrac{\sqrt{\pi}}{2}$</p><h2 id="方法二：标准正态分布"><a href="#方法二：标准正态分布" class="headerlink" title="方法二：标准正态分布"></a>方法二：标准正态分布</h2><p>设$r.v.X \sim N\left(0,1\right)$，则$X$的密度函数为：<br>$$<br>p(x)=\frac{1}{\sqrt{2 \pi }} e^{-\frac{x^2}{2}},-\infty&lt;x&lt;+\infty<br>$$<br>由密度函数的正则性：<br>$$<br>\int_0^{+\infty} \varphi(x) d x=\int_0^{+\infty} \frac{1}{\sqrt{2 \pi}} e^{-\frac{x^2}{2}} d x=\frac{1}{2}<br>$$<br>移项得：$\begin{aligned} A &amp; =\int_0^{+\infty} e^{-x^2} d x\end{aligned}=\dfrac{\sqrt{\pi}}{2}$</p><h2 id="方法三：-Gamma-函数"><a href="#方法三：-Gamma-函数" class="headerlink" title="方法三：$Gamma$函数"></a>方法三：$Gamma$函数</h2><p>​    $Gamma$函数是一个特殊的函数，它的定义如下：<br>$$<br>\Gamma(z)=\int_0^{\infty} t^{z-1} e^{-t} \mathrm{~d} t<br>$$<br>​    在这里只介绍$Gamma$函数的几个性质：</p><p>​    <code>性质1.</code>$\Gamma(z)$与阶乘的关系</p><p>​<br>$$<br>\begin{aligned} \Gamma(z) &amp; =\int_0^{\infty} t^{z-1} e^{-t} \mathrm{<del>d} t \\ &amp; =\left.t^{z-1}\left(-e^{-t}\right)\right|_0 ^{\infty}+(z-1) \int_0^{\infty} t^{z-2} e^{-t} \mathrm{</del>d} t \\ &amp; =(z-1) \int_0^{\infty} t^{(z-1)-1} e^{-t} \mathrm{<del>d} t \\ &amp; =(z-1) \Gamma(z-1)\end{aligned}<br>$$<br>​    令$z=1$：<br>$$<br>\Gamma(1)=\int_0^{\infty} e^{-t} \mathrm{</del>d} t=-\left.e^{-t}\right|_0 ^{\infty}=1<br>$$<br>​    <strong>当$z$为整数时</strong>，有：$\Gamma(z+1)=z\Gamma(z)=z(z-1)\Gamma(z-2)=\cdots=z(z-1)(z-2)\cdots1=z!$</p><p>​    <code>性质2.</code>$\Gamma(\dfrac{1}{2})=\sqrt\pi$<br>$$<br>\begin{aligned}<br>    \Gamma(1/2) &amp;= \int_0^{+\infty} x^{-1/2} e^{-x} , dx \&amp;= \int_0^{+\infty} t^{-1} e^{-t^2} , dt^2 \\ &amp;= \int_0^{+\infty} 2 e^{-t^2} , dt \\ &amp;= 2\cdot \dfrac{\sqrt\pi}{2} \\ &amp;= \sqrt\pi<br>\end{aligned}<br>$$<br>​    利用$Gamma$函数计算一些变形式子的积分值：<br>$$<br>\begin{aligned} &amp; \int_0^{+\infty} {x}^3 \mathrm{e}^{-2 {x}} {dx}=\frac{1}{16} \int_0^{+\infty}(2 {x})^3 \mathrm{e}^{-2{x}} \mathrm{d}(2 {x})=\frac{1}{16} \Gamma(3+1)=\frac{3 !}{16}=\frac{3}{8} \\ &amp; \int_0^{+\infty} {x}^4 \mathrm{e}^{-{x}^2} {dx}=\frac{1}{2} \int_0^{+\infty}\left({x}^2\right)^{\frac{3}{2}} \mathrm{e}^{-{x}^2}{dx}=\frac{1}{2} \Gamma\left(\frac{3}{2}+1\right)=\frac{1}{2} \frac{3}{2} \Gamma\left(\frac{1}{2}+1\right)=\frac{1}{2} \frac{3}{2} \frac{1}{2} \Gamma\left(\frac{1}{2}\right)=\frac{1}{2} \frac{3}{2} \frac{1}{2} \sqrt{\pi}=\frac{3}{8} \sqrt{\pi}\end{aligned}<br>$$</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 高等数学 </category>
-          
-          <category> 杂但重要的文章 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 反常积分 </tag>
-            
-            <tag> 二重积分 </tag>
-            
-            <tag> 夹逼定理 </tag>
-            
-            <tag> 正态分布 </tag>
-            
-            <tag> gamma函数 </tag>
             
         </tags>
       
