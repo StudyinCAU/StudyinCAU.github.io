@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>凸集和凸函数基础知识 | StudyinCAU</title><meta name="author" content="小楼一夜听春雨 &amp; Rico"><meta name="copyright" content="小楼一夜听春雨 &amp; Rico"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="凸集和凸函数今天是春分，春分快乐~ ​        $——$ 谁把春光，平分一半，最惜今朝。 1. 凸集1.1 凸集的定义设集合 $\boldsymbol{D} \subset \mathbb{R}^n$ ，如果对于任意的 $\boldsymbol{x}, \boldsymbol{y} \in \boldsymbol{D}$ 与任意的 $\alpha \in[0,1]$,有 $\alpha \b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="凸集和凸函数基础知识">
+<meta property="og:url" content="https://studyincau.github.io/2024/03/20/zui-you-hua-fang-fa-tu-ji-he-tu-han-shu/index.html">
+<meta property="og:site_name" content="StudyinCAU">
+<meta property="og:description" content="凸集和凸函数今天是春分，春分快乐~ ​        $——$ 谁把春光，平分一半，最惜今朝。 1. 凸集1.1 凸集的定义设集合 $\boldsymbol{D} \subset \mathbb{R}^n$ ，如果对于任意的 $\boldsymbol{x}, \boldsymbol{y} \in \boldsymbol{D}$ 与任意的 $\alpha \in[0,1]$,有 $\alpha \b">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://studyincau.github.io/images/background3.jpg">
+<meta property="article:published_time" content="2024-03-20T01:01:28.000Z">
+<meta property="article:modified_time" content="2024-03-20T15:37:57.775Z">
+<meta property="article:author" content="小楼一夜听春雨 &amp; Rico">
+<meta property="article:tag" content="最优化方法">
+<meta property="article:tag" content="凸集">
+<meta property="article:tag" content="凸函数">
+<meta property="article:tag" content="投影定理">
+<meta property="article:tag" content="支撑超平面">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://studyincau.github.io/images/background3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://studyincau.github.io/2024/03/20/zui-you-hua-fang-fa-tu-ji-he-tu-han-shu/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '凸集和凸函数基础知识',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-20 23:37:57'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/../images/background3.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="StudyinCAU"><span class="site-name">StudyinCAU</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">凸集和凸函数基础知识</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-20T01:01:28.000Z" title="发表于 2024-03-20 09:01:28">2024-03-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-20T15:37:57.775Z" title="更新于 2024-03-20 23:37:57">2024-03-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%80%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/">最优化方法</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%80%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/%E5%87%B8%E9%9B%86%E5%92%8C%E5%87%B8%E5%87%BD%E6%95%B0/">凸集和凸函数</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="凸集和凸函数"><a href="#凸集和凸函数" class="headerlink" title="凸集和凸函数"></a>凸集和凸函数</h1><p><strong>今天是春分，春分快乐~</strong></p>
+<p>​        $——$ 谁把春光，平分一半，最惜今朝。</p>
+<h2 id="1-凸集"><a href="#1-凸集" class="headerlink" title="1. 凸集"></a>1. 凸集</h2><h3 id="1-1-凸集的定义"><a href="#1-1-凸集的定义" class="headerlink" title="1.1 凸集的定义"></a>1.1 凸集的定义</h3><p>设集合 $\boldsymbol{D} \subset \mathbb{R}^n$ ，如果对于任意的 $\boldsymbol{x}, \boldsymbol{y} \in \boldsymbol{D}$ 与任意的 $\alpha \in[0,1]$,有 $\alpha \boldsymbol{x}+(1-\alpha) \boldsymbol{y} \in \boldsymbol{D}$ ，则称 $\boldsymbol{D}$ 是凸集（$convex \quad set$）。</p>
+<p>凸集的几何意义是：如果两个点属于此集合，则这两点连线上的 任意一点均属于此集合。</p>
+<hr>
+<p>定义推广：$\boldsymbol{D}$ 是凸集的充分必要条件是：</p>
+<p>对任意$\forall m \geqslant 2, \forall \boldsymbol{x}_1, \boldsymbol{x}_2, \cdots, \boldsymbol{x}_m \in \boldsymbol{D}, \forall \alpha_1, \alpha_2, \cdots, \alpha_m$ ，其中 $\alpha_i \geqslant 0$ $(i=1,2,\cdots,m)$ 且 $\sum_{i=1}^m \alpha_i = 1$ ，均有：</p>
+<script type="math/tex; mode=display">
+\alpha_1 \boldsymbol{x}_1+\alpha_2 \boldsymbol{x}_2+\cdots+\alpha_m \boldsymbol{x}_m \in \boldsymbol{D}</script><h3 id="1-2-凸集的性质"><a href="#1-2-凸集的性质" class="headerlink" title="1.2 凸集的性质"></a>1.2 凸集的性质</h3><p>设 $\boldsymbol{D}_1, \boldsymbol{D}_2 \subset \mathbb{R}^n$ 是凸集， $\alpha \in \mathbb{R}$ ，则有：</p>
+<ul>
+<li>$\boldsymbol{D}_1 \cap \boldsymbol{D}_2=\left\{\boldsymbol{x} \mid \boldsymbol{x} \in \boldsymbol{D}_1, \boldsymbol{x} \in \boldsymbol{D}_2\right\}$ 是凸集。</li>
+<li>$\alpha \boldsymbol{D}_1=\left\{\alpha \boldsymbol{x} \mid \boldsymbol{x} \in \boldsymbol{D}_1\right\}$ 是凸集。</li>
+<li>$\boldsymbol{D}_1+\boldsymbol{D}_2=\left\{\boldsymbol{x}+\boldsymbol{y} \mid \boldsymbol{x} \in \boldsymbol{D}_1, \boldsymbol{y} \in \boldsymbol{D}_2\right\}$ 是凸集。</li>
+<li>$\boldsymbol{D}_1-\boldsymbol{D}_2=\left\{\boldsymbol{x}-\boldsymbol{y} \mid \boldsymbol{x} \in \boldsymbol{D}_1, \boldsymbol{y} \in \boldsymbol{D}_2\right\}$ 是凸集。</li>
+</ul>
+<p>注意：这里要明确一点凸集的加减法和集合中的加减法完全是两件事情，比如说即使 $\boldsymbol{D}_1=\boldsymbol{D}_2$ ，那么 $\boldsymbol{D}_1-\boldsymbol{D}_2 \neq \varnothing$ ，甚至结果的测度要比原来的 $\boldsymbol{D}_1$ 更大。给出其中一个性质的证明有利于更好地理解凸集加减法的运算：</p>
+<blockquote>
+<p>证明：设 $\boldsymbol{D}_1, \boldsymbol{D}_2 \subset \mathbb{R}^n$  是凸集，则 $\boldsymbol{D}_1 + \boldsymbol{D}_2=\left\{\boldsymbol{x}+\boldsymbol{y} \mid \boldsymbol{x} \in \boldsymbol{D}_1, \boldsymbol{y} \in \boldsymbol{D}_2\right\}$ 也是凸集。</p>
+<p>不妨设：$\boldsymbol{D}_1 + \boldsymbol{D}_2 = \boldsymbol{Z} $ ，任取 $\boldsymbol{z}\in \boldsymbol{Z}, \boldsymbol{z}’\in \boldsymbol{Z}$ ，则有：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{x} + \boldsymbol{y} = \boldsymbol{z},\boldsymbol{x}' + \boldsymbol{y}' = \boldsymbol{z}'</script><p>其中 $\boldsymbol{x}, \boldsymbol{x}’\in \boldsymbol{D_1}; \boldsymbol{y},\boldsymbol{y}’ \in \boldsymbol{D_2}$</p>
+<p>所以对于任意 $\alpha \in [0,1]$ 有：$\alpha\boldsymbol{z} + (1-\alpha)\boldsymbol{z’} = \alpha(\boldsymbol{x}+\boldsymbol{y})+(1-\alpha)(\boldsymbol{x’}+\boldsymbol{y’})=\alpha\boldsymbol{x}+(1-\alpha)\boldsymbol{x’}+\alpha\boldsymbol{y}+(1-\alpha)\boldsymbol{y’}$</p>
+<p>而 $\alpha\boldsymbol{x}+(1-\alpha)\boldsymbol{x’}\in \boldsymbol{D_1}$ ， $\alpha\boldsymbol{y}+(1-\alpha)\boldsymbol{y’}\in \boldsymbol{D_2}$。</p>
+<p>所以：$\alpha\boldsymbol{z}+(1-\alpha)\boldsymbol{z’}\in \boldsymbol{D_1} + \boldsymbol{D_2} = \boldsymbol{Z}$ 。</p>
+</blockquote>
+<h3 id="1-3-内点、边界、闭包"><a href="#1-3-内点、边界、闭包" class="headerlink" title="1.3 内点、边界、闭包"></a>1.3 内点、边界、闭包</h3><p>内点：给定 $\boldsymbol{D} \subset \mathbb{R}^n, \boldsymbol{x} \in \mathbb{R}^n$ 。若存在 $\boldsymbol{x}$ 的 $\delta$ 邻域 $N_\delta(\boldsymbol{x})=\{\boldsymbol{y} \mid|\boldsymbol{y}-\boldsymbol{x}|&lt;\delta\} \subset$ $D$ ，则称 $x$ 为 $D$ 的内点; 所有内点组合成的集合记为 $i n t D$ 。</p>
+<p>边界：若 $\boldsymbol{x}$ 的任意 $\delta$ 邻域 $N_\delta(\boldsymbol{x}$ )既包含 $\boldsymbol{D}$ 中的点, 又包含不属于 $\boldsymbol{D}$ 的点, 则称 $x$ 为 $D$ 的边界点; 所有边界点组成的集合记为 $\partial \boldsymbol{D}$ 。</p>
+<p>闭包：若对任意 $\delta&gt;0$ 均有 $N_\delta(\boldsymbol{x}) \cap \boldsymbol{D} \neq \varnothing$, 则称 $\boldsymbol{x}$ 属于集合的闭包, 记为 $x \in c l D$​ 。</p>
+<hr>
+<p>根据以上定义可知，集合 $\boldsymbol{D}$ 的闭包 $c \boldsymbol{D}=\boldsymbol{D} \cup \partial \boldsymbol{D}$, 它是包含集合 $\boldsymbol{D}$ 的最小的闭集。</p>
+<h2 id="2-投影定理"><a href="#2-投影定理" class="headerlink" title="2. 投影定理"></a>2. 投影定理</h2><blockquote>
+<p>设 $\boldsymbol{D} \subset \mathbb{R}^n$ 是非空闭凸集, $\boldsymbol{y} \in \mathbb{R}^n$ 且 $\boldsymbol{y} \notin \boldsymbol{D}$, 则<br>        (1) 存在唯一的一点 $\overline{\boldsymbol{x}} \in D$, 使得 $\overline{\boldsymbol{x}} \in D$ 是 $\boldsymbol{y}$ 到 $D$ 的距离最小的点（距离大于 0 ），即有 ：</p>
+<script type="math/tex; mode=display">
+\|\overline{\boldsymbol{x}}-\boldsymbol{y}\|=\min \{\|\boldsymbol{x}-\boldsymbol{y}\| \mid \boldsymbol{x} \in \boldsymbol{D}\}>0</script><p>(2) $\overline{\boldsymbol{x}} \in \boldsymbol{D}$ 是 $\boldsymbol{y}$ 到 $\boldsymbol{D}$ 的距离最小的点的充要条件是 $(\boldsymbol{x}-\overline{\boldsymbol{x}})^T(\overline{\boldsymbol{x}}-\boldsymbol{y}) \geqslant$ $0, \forall \boldsymbol{x} \in \boldsymbol{D}$</p>
+</blockquote>
+<h2 id="3-凸集的分离定理"><a href="#3-凸集的分离定理" class="headerlink" title="3. 凸集的分离定理"></a>3. 凸集的分离定理</h2><p>先回顾一下什么是超平面(Hyperplane)，超平面指的是比所处空间少一个维度的子空间。超平面$H$的方程如下：</p>
+<script type="math/tex; mode=display">
+H=\left\{\boldsymbol{x} \in \mathbb{R}^n: \boldsymbol{u}^T \boldsymbol{x}=v\right\}</script><p>也可以写成：在超平面$H$内一点 $\boldsymbol{a}$ 和任一点 $\boldsymbol{x}$。 $\boldsymbol{u}$ 为点 $\boldsymbol{x}$ 处的法向量，将满足 $\boldsymbol{u^T}(\boldsymbol{x}-\boldsymbol{a})=0$​ 于是有：</p>
+<script type="math/tex; mode=display">
+H=\left\{\boldsymbol{x} \in \mathbb{R}^n\right. : \left.\boldsymbol{u^T}(\boldsymbol{x}-\boldsymbol{a})=0\right\}</script><p>若 $\boldsymbol{u}^T \boldsymbol{x}\geq v$ 则表明点 $\boldsymbol{x}$ 在超平面$H$的正面，若$\boldsymbol{u}^T \boldsymbol{x}\leq v$ 则表明点 $\boldsymbol{x}$ 在超平面 $H$ 的背面。</p>
+<p>现在再给定两个集合 $S_1$ ，$S_2$，</p>
+<p>如果 $\boldsymbol{u}^T \boldsymbol{x_1}\geq v$ ，$\forall \boldsymbol{x_1} \in S_1$ ； $\boldsymbol{u}^T \boldsymbol{x_1}\leq v$， $\forall \boldsymbol{x_2} \in S_2$ ,则称 $H$ 分离 $S_1$ 和 $S_2$。如下图所示：</p>
+<p><img src="../../../../images/最优化方法凸集和凸函数/p2.jpg" alt="p2.jpg"></p>
+<p>图中超平面$H$的式子为$\boldsymbol{u}^T \boldsymbol{x_1}= v$，集合$S_1$中的任意点代入方程后都在正面(或面上)，集合$S_2$中的任意点代入方程后都在背面(或面上)，所以超平面$H$分离开了集合$S1$和$S_2$。</p>
+<h3 id="3-1-点和凸集的分离定理-基本分离定理"><a href="#3-1-点和凸集的分离定理-基本分离定理" class="headerlink" title="3.1 点和凸集的分离定理(基本分离定理)"></a>3.1 点和凸集的分离定理(基本分离定理)</h3><blockquote>
+<p><code>定理</code>设 $\boldsymbol{D} \subset \mathbb{R}^n$ 是非空闭凸集, $\boldsymbol{y} \in \mathbb{R}^n, \boldsymbol{y} \notin \boldsymbol{D}$, 则存在非零向量 $\boldsymbol{\alpha} \in \mathbb{R}^n, \beta \in \mathbb{R}$ 满足 $\boldsymbol{\alpha}^{\boldsymbol{T}} \boldsymbol{x} \leqslant \beta&lt;\boldsymbol{\alpha}^{\boldsymbol{T}} \boldsymbol{y}, \forall \boldsymbol{x} \in \boldsymbol{D}$</p>
+</blockquote>
+<p>这个定理表明如果在空间$\mathbb{R}^n$内存在一个凸集$\boldsymbol{D}$，凸集外有一点$\boldsymbol{y}$，那么可以找到一个超平面 $\boldsymbol{\alpha}^{\boldsymbol{T}} \boldsymbol{x}=\beta$ 将凸集$\boldsymbol{D}$和点$\boldsymbol{y}$分离开。</p>
+<blockquote>
+<p>证明思路:</p>
+<p>利用投影定理，在凸集中找到距离点$ \boldsymbol{y}$ 最近的点 $\overline{\boldsymbol{x}}$，然后做切平面(极限情况)，即可分离。</p>
+<p><code>推论1</code>设 $\boldsymbol{D} \subset \mathbb{R}^n$ 是非空凸集, $\boldsymbol{y} \in \partial \boldsymbol{D}$, 则存在非零向量 $\boldsymbol{\alpha} \in \mathbb{R}^n$ 满足 $\boldsymbol{\alpha}^T \boldsymbol{x} \leqslant \boldsymbol{\alpha}^T \boldsymbol{y}, \forall \boldsymbol{x} \in c l \boldsymbol{D}$</p>
+<p><code>推论2</code>设 $\boldsymbol{D} \subset \mathbb{R}^n$ 是非空凸集, $\boldsymbol{y} \notin \boldsymbol{D}$, 则存在非零向量 $\boldsymbol{\alpha} \in \mathbb{R}^n$ 满足 $\boldsymbol{\alpha}^T x \leqslant \boldsymbol{\alpha}^T \boldsymbol{y}, \forall \boldsymbol{x}\in c l \boldsymbol{D}$</p>
+<p>$c l$ 是闭包, $\partial$ 是边界。</p>
+</blockquote>
+<h3 id="3-2-支撑超平面定理"><a href="#3-2-支撑超平面定理" class="headerlink" title="3.2 支撑超平面定理"></a>3.2 支撑超平面定理</h3><blockquote>
+<p><code>定理</code>设 $\boldsymbol{D} \subset \mathbb{R}^n$ 是非空凸集, $\overline{\boldsymbol{x}} \in \partial \boldsymbol{D}$, 则存在非零向量 $\boldsymbol{\alpha} \in \mathbb{R}^n$, 使得 $\boldsymbol{\alpha}^T \boldsymbol{x} \leqslant \boldsymbol{\alpha}^T \overline{\boldsymbol{x}}, \forall \boldsymbol{x} \in c l \boldsymbol{D}$; 此时也称超平面 $\boldsymbol{H}=\left\{\boldsymbol{x} \in \mathbb{R}^n \mid \boldsymbol{\alpha}^T (\boldsymbol{x}-\overline{\boldsymbol{x}})=0\right\}$ 为集合 $\boldsymbol{D}$ 在 $\overline{\boldsymbol{x}}$ 处的支撑超平面。</p>
+<p>$c l$ 是闭包, $\partial$ 是边界。</p>
+</blockquote>
+<p>从其他角度理解支撑超平面：</p>
+<p><img src="../../../../images/最优化方法凸集和凸函数/p1.jpg" alt="p1.jpg"></p>
+<p>下图为一个示意图：</p>
+<p><img src="../../../../images/最优化方法凸集和凸函数/p3.jpg" alt="p3.jpg"></p>
+<h3 id="3-3-支撑分离定理-边界点与凸集的分离"><a href="#3-3-支撑分离定理-边界点与凸集的分离" class="headerlink" title="3.3 支撑分离定理(边界点与凸集的分离)"></a>3.3 支撑分离定理(边界点与凸集的分离)</h3><blockquote>
+<p><code>定理</code> 若 $S$ 为 $\mathbb{R}^n$ 中的非空凸集 (不需要为闭集)，令 $\overline{\boldsymbol{x}} \in \partial S$ ，则存在过点 $\overline{\boldsymbol{x}}$ 的 $S$ 的支撑超平面。</p>
+</blockquote>
+<h3 id="3-4-凸集和凸集的分离定理-超平面分离定理"><a href="#3-4-凸集和凸集的分离定理-超平面分离定理" class="headerlink" title="3.4 凸集和凸集的分离定理(超平面分离定理)"></a>3.4 凸集和凸集的分离定理(超平面分离定理)</h3><blockquote>
+<p><code>定理</code>设 $\boldsymbol{D}_1, \boldsymbol{D}_2 \subset \mathbb{R}^n$ 是非空凸集，且 $\boldsymbol{D}_1 \cap \boldsymbol{D}_2=\varnothing$ 则存在非零向量 $\boldsymbol{\alpha}$ 使得： </p>
+<script type="math/tex; mode=display">
+\inf \left\{\boldsymbol{\alpha}^T \boldsymbol{x} \mid \boldsymbol{x} \in \boldsymbol{D}_1\right\} \geqslant \sup \left\{\boldsymbol{\alpha}^T \boldsymbol{x} \mid \boldsymbol{x} \in \boldsymbol{D}_2\right\}</script><p>$inf$表示下确界(infimum)，$sup$表示上确界(supremum)</p>
+</blockquote>
+<p>这个定理表明如果在空间$\mathbb{R}^n$内存在两个没有交集的凸集$\boldsymbol{D_1}$和$\boldsymbol{D_2}$，那么可以找到一个平面将这两个凸集分隔开。</p>
+<blockquote>
+<p>证明思路：</p>
+<p>由于凸集没有交集，所以$\boldsymbol{D_1}-\boldsymbol{D_2}$一定不包含$\boldsymbol{0}$这个点，根据这个特殊的点利用点和凸集的分离定理即可证明。</p>
+<p>证明: 令 $\boldsymbol{D}^{\prime}=\boldsymbol{D_2}-\boldsymbol{D_1}=\left\{\boldsymbol{z} \mid \boldsymbol{z}=\boldsymbol{x_2}-\boldsymbol{x_1}, \boldsymbol{x_1} \in \boldsymbol{D_1}, \boldsymbol{x_2} \in \boldsymbol{D_2}\right\}$,由于 $\boldsymbol{D}_1, \boldsymbol{D}_2$ 非空, 所以 $\boldsymbol{D}^{\prime}$ 非空, 由于 $\boldsymbol{D}_1 \cap \boldsymbol{D}_2=\varnothing$, 所以 $\boldsymbol{0} \notin \boldsymbol{D}^{\prime}$, $\boldsymbol{0} \in \partial \boldsymbol{D’}$，根据点与凸集的分离定理的推论可知存在非零向量 $\boldsymbol{\alpha}$, 使得对每一个 $\boldsymbol{z} \in \boldsymbol{D}^{\prime}$ 都有 $\boldsymbol{\alpha}^T (\boldsymbol{z}-\boldsymbol{0})= \boldsymbol{\alpha}^T \boldsymbol{z}\leqslant 0$, 即 </p>
+<script type="math/tex; mode=display">
+\boldsymbol{\alpha}^T \boldsymbol{x}_1 \geqslant \boldsymbol{\alpha}^T \boldsymbol{x}_2, \forall \boldsymbol{x}_1 \in \boldsymbol{D}_1, \boldsymbol{x}_2 \in \boldsymbol{D}_2</script></blockquote>
+<h2 id="4-凸函数"><a href="#4-凸函数" class="headerlink" title="4.凸函数"></a>4.凸函数</h2><h3 id="4-1-凸函数的定义"><a href="#4-1-凸函数的定义" class="headerlink" title="4.1 凸函数的定义"></a>4.1 凸函数的定义</h3><p>设 $\boldsymbol{D} \subset \mathbb{R}^n$ 是非空凸集, $f(\boldsymbol{x})$ 是定义在 $\boldsymbol{D}$ 上的函数, 如果对任 意的 $\boldsymbol{x}_1, \boldsymbol{x}_2 \in \boldsymbol{D}, \alpha \in(0,1)$ 都有 $f\left(\alpha \boldsymbol{x}_1+(1-\alpha) \boldsymbol{x}_2\right) \leqslant$ $\alpha f\left(\boldsymbol{x}_1\right)+(1-\alpha) f\left(\boldsymbol{x}_2\right)$, 则称 $f$ 是 $\boldsymbol{D}$ 上的凸函数($convex\quad function$)。</p>
+<p>凸函数的定义和詹森 $(Jensen)$ 不等式是相同的。</p>
+<blockquote>
+<p>注意这个定义包含了两个条件。</p>
+</blockquote>
+<p>更进一步地，如果对任意的 $\boldsymbol{x}_1, \boldsymbol{x}_2 \in \boldsymbol{D}, \alpha \in(0,1)$ 都有 $f\left(\alpha \boldsymbol{x}_1+(1-\alpha) \boldsymbol{x}_2\right)&lt;$ $\alpha f\left(\boldsymbol{x}_1\right)+(1-\alpha) f\left(\boldsymbol{x}_2\right)$, 则称 $f$ 是 $\boldsymbol{D}$ 上的严格凸函数($strictly\quad convex\quad function$)。</p>
+<h3 id="4-2-凸函数的几何意义"><a href="#4-2-凸函数的几何意义" class="headerlink" title="4.2 凸函数的几何意义"></a>4.2 凸函数的几何意义</h3><p>下图是一个凸函数：</p>
+<p><img src="../../../../images/最优化方法凸集和凸函数/p4.jpg" alt="p4.jpg"></p>
+<blockquote>
+<p>凸函数的几何意义在于，定义域中任意两点连线组成的线段都在这两点的函数曲线（面）上方。</p>
+</blockquote>
+<p>下列函数均为 $\mathbb{R}^n$ 上的凸函数: </p>
+<ul>
+<li><p>$f(\boldsymbol{x})=\boldsymbol{c}^T \boldsymbol{x}$</p>
+</li>
+<li><p>$f(\boldsymbol{x})=|\boldsymbol{x}|$</p>
+</li>
+<li><p>$f(\boldsymbol{x})=\boldsymbol{x}^T \boldsymbol{A} \boldsymbol{x}$, 其中 $\boldsymbol{A}$ 为对称正定矩阵</p>
+</li>
+</ul>
+<h3 id="4-3-凸函数的-alpha-水平集"><a href="#4-3-凸函数的-alpha-水平集" class="headerlink" title="4.3 凸函数的$\alpha$水平集"></a>4.3 凸函数的$\alpha$水平集</h3><p>$f(\boldsymbol{x})$ 是定义在 $\boldsymbol{D} \subset \mathbb{R}^n$ 上的函数, $\alpha \in \mathbb{R}$, 集合 $\boldsymbol{D}_\alpha=\{\boldsymbol{x} \mid f(\boldsymbol{x}) \leqslant$ $\alpha, \boldsymbol{x} \in \boldsymbol{D}\}$ 称作 $f$ 函数的 $\alpha$ 水平集($level\quad set$)。</p>
+<p>实质上就是一个函数满足一定条件时的定义域上的一系列点的集合。</p>
+<p>一个例子，如下图所示：</p>
+<p><img src="../../../../images/最优化方法凸集和凸函数/p5.jpg.png" alt="p5.jpg"></p>
+<blockquote>
+<p><code>性质</code>凸函数的任意 $\alpha$ 下水平集都是凸集。</p>
+<p>注意：某个函数的下水平集都是凸集，但这个函数却不一定是凸函数 (如: $f(x)=-e^x$ )。</p>
+</blockquote>
+<h2 id="5-凸函数的判别定理"><a href="#5-凸函数的判别定理" class="headerlink" title="5. 凸函数的判别定理"></a>5. 凸函数的判别定理</h2><blockquote>
+<p><code>判别定理1</code> 定义在 $\mathbb{R}^n$ 上的 $f(\boldsymbol{x})$ 为凸函数的充要条件是对于任意 $\boldsymbol{x}, \boldsymbol{y} \in \mathbb{R}^n$, 一元函数 $\phi(\alpha)=f(\boldsymbol{x}+\alpha \boldsymbol{y})$ 是关于 $\alpha$​ 的凸函数。</p>
+<p><code>判别定理2</code>(一阶条件) 设 $\boldsymbol{D} \subset \mathbb{R}^n$ 是非空开凸集, $f: \boldsymbol{D} \subset \mathbb{R}^n \rightarrow \mathbb{R}$, 且 $f(\boldsymbol{x})$ 在 $\boldsymbol{D}$ 上一阶连续可微,则 $f(x)$ 是 $\boldsymbol{D}$ 上的凸函数的充要条件是:</p>
+<script type="math/tex; mode=display">
+f(\boldsymbol{y}) \geqslant f(\boldsymbol{x})+\nabla f(\boldsymbol{x})^T(\boldsymbol{y}-\boldsymbol{x}), \forall \boldsymbol{x}, \boldsymbol{y} \in \boldsymbol{D}</script></blockquote>
+<p>一阶条件的几何意义：<mark class="hl-label blue">凸函数永远位于其切线的上方</mark>  ,如下图所示：</p>
+<p><img src="../../../../images/最优化方法凸集和凸函数/p6.jpg" alt="p6.jpg"></p>
+<p>事实上，$f(\boldsymbol{y}) = f(\boldsymbol{x})+\nabla f(\boldsymbol{x})^T(\boldsymbol{y}-\boldsymbol{x})$ 就是函数 $f$ 在点 $\boldsymbol{x}$ 处的一阶泰勒近似，那么上述条件就说明了对于凸函数而言，其任意位置处的一阶泰勒展开总是其本身的全局下界。而泰勒展开描述的是函数 $f$ 的局部性质，由此我们得到有关凸函数的一个重要性质：<strong>凸函数是一类可以由局部信息推导出全局信息的函数。</strong></p>
+<p>一阶条件的引申：设 $\boldsymbol{D} \subset \mathbb{R}^n$ 是非空开凸集, $f: \boldsymbol{D} \subset \mathbb{R}^n \rightarrow \mathbb{R}$, 且 $f(\boldsymbol{x})$ 在 $\boldsymbol{D}$ 上一阶连续可微, 则 $f(x)$ 是 $\boldsymbol{D}$ 上的严格凸函数的充要条件是:</p>
+<script type="math/tex; mode=display">
+f(\boldsymbol{y})>f(\boldsymbol{x})+\nabla f(\boldsymbol{x})^T(\boldsymbol{y}-\boldsymbol{x}), \forall \boldsymbol{x}, \boldsymbol{y} \in \boldsymbol{D} \text { 且 } \boldsymbol{x} \neq \boldsymbol{y}</script><blockquote>
+<p><code>判别定理3</code> 设 $\boldsymbol{D} \subset \mathbb{R}^n$ 是非空开凸集, $f: \boldsymbol{D} \subset \mathbb{R}^n \rightarrow \mathbb{R}$, 且 $f(\boldsymbol{x})$ 在 $\boldsymbol{D}$ 上二阶连续可微,则 $f(x)$ 是 $\boldsymbol{D}$ 上的凸函数的充要条件是:$f(\boldsymbol{x})$ 的$Hesse$矩阵 $\nabla^2 f(\boldsymbol{x})$ 在 $\boldsymbol{D}$ 上是半正定的。</p>
+<p><code>判别定理4</code></p>
+<p>设 $\boldsymbol{D} \subset \mathbb{R}^n$ 是非空开凸集, $f: \boldsymbol{D} \subset \mathbb{R}^n \rightarrow \mathbb{R}$, 且 $f(\boldsymbol{x})$ 在 $\boldsymbol{D}$ 上二阶连续可微, 则：</p>
+<ul>
+<li>$f(\boldsymbol{x})$ 的$Hesse$矩阵 $\nabla^2 f(\boldsymbol{x})$ 在 $\boldsymbol{D}$ 上正定 $\Rightarrow f(\boldsymbol{x})$ 是 $\boldsymbol{D}$ 上的严格凸函数;</li>
+<li>$f(\boldsymbol{x})$ 是 $\boldsymbol{D}$ 上的严格 凸函数 $\Rightarrow f(\boldsymbol{x})$ 的$Hesse$矩阵 $\nabla^2 f(\boldsymbol{x})$ 在 $\boldsymbol{D}$​ 上半正定。</li>
+</ul>
+<hr>
+<p>几个反例：$y=x^4, x \in \mathbb{R}, y=x^6, x \in \mathbb{R}$ 。</p>
+<p>导致充分严格凸函数与严格正定不构成互为充要条件的原因:<br>        对于 $\alpha&gt;0$, 如果当 $\alpha \rightarrow 0$ 时 $o(\alpha)&gt;0$ 且 $o(\alpha) \rightarrow 0$, 则有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+& f(\boldsymbol{x})+\frac{o(\alpha)}{\alpha}<0, \forall \boldsymbol{x} \in \mathbb{R}^n \Rightarrow f(\boldsymbol{x})<0, \forall \boldsymbol{x} \in \mathbb{R}^n \\& f(\boldsymbol{x})+\frac{o(\alpha)}{\alpha}>0, \forall \boldsymbol{x} \in \mathbb{R}^n \Rightarrow f(\boldsymbol{x}) \geqslant 0, \forall \boldsymbol{x} \in \mathbb{R}^n \\& f(\boldsymbol{x})+\frac{o(\alpha)}{\alpha} \leqslant 0, \forall \boldsymbol{x} \in \mathbb{R}^n \Rightarrow f(\boldsymbol{x})<0, \forall \boldsymbol{x} \in \mathbb{R}^n \\& f(\boldsymbol{x})+\frac{o(\alpha)}{\alpha} \geqslant 0, \forall \boldsymbol{x} \in \mathbb{R}^n \Rightarrow f(\boldsymbol{x}) \geqslant 0, \forall \boldsymbol{x} \in \mathbb{R}^n
+\end{aligned}</script></blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://studyincau.github.io">小楼一夜听春雨 &amp; Rico</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://studyincau.github.io/2024/03/20/zui-you-hua-fang-fa-tu-ji-he-tu-han-shu/">https://studyincau.github.io/2024/03/20/zui-you-hua-fang-fa-tu-ji-he-tu-han-shu/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://studyincau.github.io" target="_blank">StudyinCAU</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/">最优化方法</a><a class="post-meta__tags" href="/tags/%E5%87%B8%E9%9B%86/">凸集</a><a class="post-meta__tags" href="/tags/%E5%87%B8%E5%87%BD%E6%95%B0/">凸函数</a><a class="post-meta__tags" href="/tags/%E6%8A%95%E5%BD%B1%E5%AE%9A%E7%90%86/">投影定理</a><a class="post-meta__tags" href="/tags/%E6%94%AF%E6%92%91%E8%B6%85%E5%B9%B3%E9%9D%A2/">支撑超平面</a></div><div class="post_share"><div class="social-share" data-image="/../images/background3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/03/19/ce-shi-wen-zhang/" title="测试文章"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">测试文章</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/03/19/zui-you-hua-fang-fa-zhi-shi-hui-gu-yu-tuo-zhan/" title="基础知识回顾与拓展（一）"><img class="cover" src="/../images/background2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-19</div><div class="title">基础知识回顾与拓展（一）</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小楼一夜听春雨 &amp; Rico</div><div class="author-info__description">Study</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/StudyinCAU" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:3187248635@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%B8%E9%9B%86%E5%92%8C%E5%87%B8%E5%87%BD%E6%95%B0"><span class="toc-text">凸集和凸函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%87%B8%E9%9B%86"><span class="toc-text">1. 凸集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%87%B8%E9%9B%86%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">1.1 凸集的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%87%B8%E9%9B%86%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">1.2 凸集的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%86%85%E7%82%B9%E3%80%81%E8%BE%B9%E7%95%8C%E3%80%81%E9%97%AD%E5%8C%85"><span class="toc-text">1.3 内点、边界、闭包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%8A%95%E5%BD%B1%E5%AE%9A%E7%90%86"><span class="toc-text">2. 投影定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%87%B8%E9%9B%86%E7%9A%84%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86"><span class="toc-text">3. 凸集的分离定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E7%82%B9%E5%92%8C%E5%87%B8%E9%9B%86%E7%9A%84%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86-%E5%9F%BA%E6%9C%AC%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86"><span class="toc-text">3.1 点和凸集的分离定理(基本分离定理)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%94%AF%E6%92%91%E8%B6%85%E5%B9%B3%E9%9D%A2%E5%AE%9A%E7%90%86"><span class="toc-text">3.2 支撑超平面定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%94%AF%E6%92%91%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86-%E8%BE%B9%E7%95%8C%E7%82%B9%E4%B8%8E%E5%87%B8%E9%9B%86%E7%9A%84%E5%88%86%E7%A6%BB"><span class="toc-text">3.3 支撑分离定理(边界点与凸集的分离)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%87%B8%E9%9B%86%E5%92%8C%E5%87%B8%E9%9B%86%E7%9A%84%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86-%E8%B6%85%E5%B9%B3%E9%9D%A2%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86"><span class="toc-text">3.4 凸集和凸集的分离定理(超平面分离定理)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%87%B8%E5%87%BD%E6%95%B0"><span class="toc-text">4.凸函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%87%B8%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">4.1 凸函数的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%87%B8%E5%87%BD%E6%95%B0%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="toc-text">4.2 凸函数的几何意义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%87%B8%E5%87%BD%E6%95%B0%E7%9A%84-alpha-%E6%B0%B4%E5%B9%B3%E9%9B%86"><span class="toc-text">4.3 凸函数的$\alpha$水平集</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%87%B8%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%A4%E5%88%AB%E5%AE%9A%E7%90%86"><span class="toc-text">5. 凸函数的判别定理</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/03/20/zui-you-hua-fang-fa-tu-ji-he-tu-han-shu/" title="凸集和凸函数基础知识"><img src="/../images/background3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="凸集和凸函数基础知识"/></a><div class="content"><a class="title" href="/2024/03/20/zui-you-hua-fang-fa-tu-ji-he-tu-han-shu/" title="凸集和凸函数基础知识">凸集和凸函数基础知识</a><time datetime="2024-03-20T01:01:28.000Z" title="发表于 2024-03-20 09:01:28">2024-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/19/ce-shi-wen-zhang/" title="测试文章">测试文章</a><time datetime="2024-03-19T10:38:02.000Z" title="发表于 2024-03-19 18:38:02">2024-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/19/dai-hei-se-mao-zi-de-ren-shu/" title="带黑色帽子的人数">带黑色帽子的人数</a><time datetime="2024-03-19T02:21:31.000Z" title="发表于 2024-03-19 10:21:31">2024-03-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/03/19/zui-you-hua-fang-fa-zhi-shi-hui-gu-yu-tuo-zhan/" title="基础知识回顾与拓展（一）"><img src="/../images/background2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基础知识回顾与拓展（一）"/></a><div class="content"><a class="title" href="/2024/03/19/zui-you-hua-fang-fa-zhi-shi-hui-gu-yu-tuo-zhan/" title="基础知识回顾与拓展（一）">基础知识回顾与拓展（一）</a><time datetime="2024-03-19T02:21:31.000Z" title="发表于 2024-03-19 10:21:31">2024-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/18/shen-du-xue-xi-ji-chu-zhi-shi/" title="深度学习基础知识">深度学习基础知识</a><time datetime="2024-03-18T15:52:06.000Z" title="发表于 2024-03-18 23:52:06">2024-03-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 小楼一夜听春雨 & Rico</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'xFi1vMHzzqw1qFKQbyK4WtAo-gzGzoHsz',
+      appKey: 'hGyKCk4AFAr9aPSCHioyb0hH',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><link rel="stylesheet" href="/css/title.css"><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
