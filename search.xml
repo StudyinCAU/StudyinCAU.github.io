@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>c语言实现π的高精度计算</title>
+      <link href="/2024/03/27/gao-jing-du-pi/"/>
+      <url>/2024/03/27/gao-jing-du-pi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>限制使用双向链表作存储结构，请根据用户输入的一个整数（该整数表示精确到小数点后的位数，可能要求精确到小数点后 500 位），高精度计算PI值。可以利用反三角函数幂级展开式来进行计算。</p><h2 id="测试说明"><a href="#测试说明" class="headerlink" title="测试说明"></a>测试说明</h2><p><strong>输入说明：</strong>输入的一个正整数n。 输出说明：输出PI的值，精确到小数点后n位，最后输出一个回车。<br>平台会对你编写的代码进行测试：</p><p><strong>测试输入：</strong>5 </p><p><strong>预期输出：</strong>3.14159</p><h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>以下是数组实现的方法：<br>显然使用数组，时间复杂度更低。</p><figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> r[<span class="number">2800</span> + <span class="number">1</span>];</span><br><span class="line"><span class="type">int</span> i, k;</span><br><span class="line"><span class="type">int</span> b, d;</span><br><span class="line"><span class="type">int</span> c = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> ans[<span class="number">3000</span>];</span><br><span class="line"><span class="type">int</span> j = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> {</span><br><span class="line"><span class="type">int</span> n;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);n++;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">2800</span>; i++)</span><br><span class="line">r[i] = <span class="number">2000</span>;</span><br><span class="line">    r[i] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (k = <span class="number">2800</span>; k &gt; <span class="number">0</span>; k -= <span class="number">14</span>) {</span><br><span class="line">d = <span class="number">0</span>;</span><br><span class="line">i = k;</span><br><span class="line"><span class="keyword">for</span> (;;) {</span><br><span class="line">    d += r[i] * <span class="number">10000</span>;</span><br><span class="line">    b = <span class="number">2</span> * i - <span class="number">1</span>;</span><br><span class="line">    r[i] = d % b;</span><br><span class="line">    d /= b;</span><br><span class="line">    i--;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">    d *= i;</span><br><span class="line">}</span><br><span class="line"><span class="type">int</span> tmp = c + d / <span class="number">10000</span>;</span><br><span class="line">ans[j+<span class="number">3</span>] = tmp % <span class="number">10</span>;</span><br><span class="line">ans[j+<span class="number">2</span>] = (tmp / <span class="number">10</span>) % <span class="number">10</span>;</span><br><span class="line">ans[j+<span class="number">1</span>] = (tmp / <span class="number">100</span>) % <span class="number">10</span>;</span><br><span class="line">ans[j+<span class="number">0</span>] = tmp / <span class="number">1000</span>;</span><br><span class="line">j+=<span class="number">4</span>;</span><br><span class="line">c = d % <span class="number">10000</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">    <span class="keyword">if</span>(i==<span class="number">1</span>&amp;&amp;n&gt;<span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">"."</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans[i]);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>k次循环实际上实在迭代：</p><script type="math/tex; mode=display">2\left(1+\frac{1}{3}\left(1+\frac{2}{5}\left(1+\ldots\left(1+\frac{2799}{2 \cdot 2799+1}(1+0)\right) \ldots\right)\right)\right)</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+          <category> c++/c </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 双向链表 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第五节 独立性</title>
       <link href="/2024/03/25/gai-lu-lun-1-5-du-li-xing/"/>
       <url>/2024/03/25/gai-lu-lun-1-5-du-li-xing/</url>
