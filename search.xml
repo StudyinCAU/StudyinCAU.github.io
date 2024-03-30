@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>分析程序运行过程，说明拷贝造函数的调用过程</title>
+      <link href="/2024/03/30/fen-xi-kao-bei-gou-zao-han-shu-zuo-ye/"/>
+      <url>/2024/03/30/fen-xi-kao-bei-gou-zao-han-shu-zuo-ye/</url>
+      
+        <content type="html"><![CDATA[<p><strong>代码：</strong></p><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Complex</span></span><br><span class="line">{</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="built_in">Complex</span>(<span class="type">double</span> r, <span class="type">double</span> i);</span><br><span class="line"><span class="built_in">Complex</span>(Complex&amp; c);</span><br><span class="line"><span class="function">Complex <span class="title">add</span><span class="params">(Complex c)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line"><span class="type">double</span> real, image;</span><br><span class="line">};</span><br><span class="line">Complex::<span class="built_in">Complex</span>(<span class="type">double</span> r, <span class="type">double</span> i) :<span class="built_in">real</span>(r), <span class="built_in">image</span>(i)</span><br><span class="line">{</span><br><span class="line">cout &lt;&lt; <span class="string">"调用两个参数的构造函数"</span> &lt;&lt; endl;</span><br><span class="line">}</span><br><span class="line">Complex::<span class="built_in">Complex</span>(Complex&amp; c)</span><br><span class="line">{</span><br><span class="line">real = c.real;</span><br><span class="line">image = c.image;</span><br><span class="line">cout &lt;&lt; <span class="string">"调用拷贝构造函数"</span> &lt;&lt; endl;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Complex::print</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">cout &lt;&lt; <span class="string">"("</span> &lt;&lt; real &lt;&lt; <span class="string">","</span> &lt;&lt; image &lt;&lt; <span class="string">")"</span> &lt;&lt; endl;</span><br><span class="line">}</span><br><span class="line"><span class="function">Complex <span class="title">Complex::add</span><span class="params">(Complex c)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line"><span class="function">Complex <span class="title">y</span><span class="params">(real + c.real, image + c.image)</span></span>;</span><br><span class="line"><span class="keyword">return</span> y;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(Complex n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">cout &lt;&lt; <span class="string">"n="</span>;</span><br><span class="line">n.<span class="built_in">print</span>();</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line"><span class="function">Complex <span class="title">a</span><span class="params">(<span class="number">3.0</span>, <span class="number">4.0</span>)</span>, <span class="title">b</span><span class="params">(<span class="number">5.6</span>, <span class="number">7.9</span>)</span></span>;</span><br><span class="line"><span class="function">Complex <span class="title">c</span><span class="params">(a)</span></span>;</span><br><span class="line">cout &lt;&lt; <span class="string">"a="</span>;</span><br><span class="line">a.<span class="built_in">print</span>();</span><br><span class="line">cout &lt;&lt; <span class="string">"c="</span>;</span><br><span class="line">c.<span class="built_in">print</span>();</span><br><span class="line"><span class="built_in">f</span>(b);</span><br><span class="line">c = a.<span class="built_in">add</span>(b);</span><br><span class="line">c.<span class="built_in">print</span>();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p><strong>运行代码后显示：</strong></p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">调用两个参数的构造函数</span><br><span class="line">调用两个参数的构造函数</span><br><span class="line">调用拷贝构造函数</span><br><span class="line">a=(3,4)</span><br><span class="line">c=(3,4)</span><br><span class="line">调用拷贝构造函数</span><br><span class="line">n=(5.6,7.9)</span><br><span class="line">调用拷贝构造函数</span><br><span class="line">调用两个参数的构造函数</span><br><span class="line">(8.6,11.9)</span><br></pre></td></tr></tbody></table></figure><p><strong>分析程序的主要运行过程：</strong></p><ol><li><p><strong>初始化对象 $a$ </strong>: 使用<code>Complex(double r, double i)</code>构造函数，传入<code>3.0</code>和<code>4.0</code>作为参数，初始化对象 $a$ 的成员变量<code>real</code>和<code>image</code>。输出：</p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">调用两个参数的构造函数</span><br></pre></td></tr></tbody></table></figure></li><li><p><strong>初始化对象 $b$ </strong>: 使用<code>Complex(double r, double i)</code>构造函数，传入<code>5.6</code>和<code>7.9</code>作为参数，初始化对象 $b$。输出：</p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">调用两个参数的构造函数</span><br></pre></td></tr></tbody></table></figure></li><li><p><strong>初始化对象 $c$ 通过拷贝构造函数</strong>: 使用拷贝构造函数<code>Complex(Complex&amp; c)</code>，以 $a$ 作为参数，初始化 $c$，调用拷贝构造函数，使 $c$ 的成员变量的值与 $a$ 相同。输出：</p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">调用拷贝构造函数</span><br></pre></td></tr></tbody></table></figure></li><li><p><strong>打印对象 $a$ 和 $c$ 的值</strong>：调用<code>print</code>方法输出 $a$ 和 $c$ 的值。输出：</p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">a=(3,4)</span><br><span class="line">c=(3,4)</span><br></pre></td></tr></tbody></table></figure></li><li><p><strong>调用函数<code>f</code></strong>：函数<code>f</code>接受一个<code>Complex</code>类型的参数。这里将对象 $b$ 传递给函数<code>f</code>。因为<code>f</code>的参数是按值传递的，所以这里会调用<code>Complex(Complex&amp; c)</code>拷贝构造函数，创建 $b$ 的一个副本 $n$ ，然后在<code>f</code>中打印 $n$ 的值。输出：</p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">调用拷贝构造函数</span><br><span class="line">n=(5.6,7.9)</span><br></pre></td></tr></tbody></table></figure></li><li><p><strong>使用<code>add</code>方法</strong>：调用<code>a.add(b)</code>，这里将对象 $b$ 传递给函数<code>add</code>。因为<code>add</code>的参数是按值传递的，所以这里会调用<code>Complex(Complex&amp; c)</code>拷贝构造函数，输出：</p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">调用拷贝构造函数</span><br></pre></td></tr></tbody></table></figure><p>在<code>add</code>方法内部，创建了一个名为 $y$​ 的临时对象，用于存储相加后的结果。这一步调用了两个参数的构造函数<code>Complex(double r, double i)</code>，输出：</p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">调用两个参数的构造函数</span><br></pre></td></tr></tbody></table></figure></li><li><p><strong>将<code>add</code>方法的返回值赋给对象 $c$ </strong></p></li><li><p><strong>打印c的值</strong>。输出：</p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">(8.6,11.9)</span><br></pre></td></tr></tbody></table></figure><p><strong>若将代码：</strong></p><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function">Complex <span class="title">Complex::add</span><span class="params">(Complex c)</span></span></span><br></pre></td></tr></tbody></table></figure><p><strong>改为：</strong></p><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function">Complex <span class="title">Complex::add</span><span class="params">(Complex &amp; c)</span></span>; </span><br></pre></td></tr></tbody></table></figure><p>即使用引用传递。</p></li></ol><p>此时输出：</p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">调用两个参数的构造函数</span><br><span class="line">调用拷贝构造函数</span><br><span class="line">a=(3,4)</span><br><span class="line">c=(3,4)</span><br><span class="line">调用拷贝构造函数</span><br><span class="line">n=(5.6,7.9)</span><br><span class="line">调用两个参数的构造函数</span><br><span class="line">(8.6,11.9)</span><br></pre></td></tr></tbody></table></figure><p>可以看到通过引用传递可以避免创建参数的副本，不会触发<code>Complex::Complex(Complex&amp; c)</code>拷贝构造函数，可以提高程序的效率。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+          <category> c++/c </category>
+          
+          <category> 杂项 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计数问题-数位统计DP</title>
       <link href="/2024/03/30/ji-shu-wen-ti/"/>
       <url>/2024/03/30/ji-shu-wen-ti/</url>
@@ -312,7 +335,7 @@
       <link href="/2024/03/25/gai-lu-lun-1-5-du-li-xing/"/>
       <url>/2024/03/25/gai-lu-lun-1-5-du-li-xing/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/imne81smk7xc">下载PDF点这里</a></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA1-5%E7%8B%AC%E7%AB%8B%E6%80%A7/11.jpg" alt="11.jpg"></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA1-5%E7%8B%AC%E7%AB%8B%E6%80%A7/12.jpg" alt="12.jpg"></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA1-5%E7%8B%AC%E7%AB%8B%E6%80%A7/13.jpg" alt="13.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/imne81smk7xc">下载PDF点这里</a></p><p>$ps$ ：笔记配套书本为高等教育出版社《概率论与数理统计教程(第三版)》，是数学系同学的课本，对绝大部分非数学系同学来说笔记中题目难度要高于课程要求。</p><p><img src="../../../../images/概率论1-5独立性/11.jpg" alt="11.jpg"></p><p><img src="../../../../images/概率论1-5独立性/12.jpg" alt="12.jpg"></p><p><img src="../../../../images/概率论1-5独立性/13.jpg" alt="13.jpg"></p>]]></content>
       
       
       <categories>
@@ -339,7 +362,7 @@
       <link href="/2024/03/25/gai-lu-lun-1-4-tiao-jian-gai-lu/"/>
       <url>/2024/03/25/gai-lu-lun-1-4-tiao-jian-gai-lu/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/iJjON1smjmjc">下载PDF点这里</a></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA1-4%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87/7.jpg" alt="7.jpg"></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA1-4%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87/8.jpg" alt="8.jpg"></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA1-4%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87/9.jpg" alt="9.jpg"></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA1-4%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87/10.jpg" alt="10.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/iJjON1smjmjc">下载PDF点这里</a></p><p>$ps$ ：笔记配套书本为高等教育出版社《概率论与数理统计教程(第三版)》，是数学系同学的课本，对绝大部分非数学系同学来说笔记中题目难度要高于课程要求。</p><p><img src="../../../../images/概率论1-4条件概率/7.jpg" alt="7.jpg"></p><p><img src="../../../../images/概率论1-4条件概率/8.jpg" alt="8.jpg"></p><p><img src="../../../../images/概率论1-4条件概率/9.jpg" alt="9.jpg"></p><p><img src="../../../../images/概率论1-4条件概率/10.jpg" alt="10.jpg"></p>]]></content>
       
       
       <categories>
@@ -378,7 +401,7 @@
       <link href="/2024/03/25/gai-lu-lun-1-3-gai-lu-de-xing-zhi/"/>
       <url>/2024/03/25/gai-lu-lun-1-3-gai-lu-de-xing-zhi/</url>
       
-        <content type="html"><![CDATA[<p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA1-3%E6%A6%82%E7%8E%87%E7%9A%84%E6%80%A7%E8%B4%A8/6.jpg" alt="6.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<p>$ps$ ：笔记配套书本为高等教育出版社《概率论与数理统计教程(第三版)》，是数学系同学的课本，对绝大部分非数学系同学来说笔记中题目难度要高于课程要求。</p><p><img src="../../../../images/概率论1-3概率的性质/6.jpg" alt="6.jpg"></p>]]></content>
       
       
       <categories>
@@ -407,7 +430,7 @@
       <link href="/2024/03/25/gai-lu-lun-1-2-gai-lu-de-ding-yi-ji-qi-que-ding-fang-fa/"/>
       <url>/2024/03/25/gai-lu-lun-1-2-gai-lu-de-ding-yi-ji-qi-que-ding-fang-fa/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/iUSrd1smi0di">下载PDF点这里</a></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA1-2%E6%A6%82%E7%8E%87%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%85%B6%E7%A1%AE%E5%AE%9A%E6%96%B9%E6%B3%95/4.jpg" alt="4.jpg"></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA1-2%E6%A6%82%E7%8E%87%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%85%B6%E7%A1%AE%E5%AE%9A%E6%96%B9%E6%B3%95/5.jpg" alt="5.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/iUSrd1smi0di">下载PDF点这里</a></p><p>$ps$ ：笔记配套书本为高等教育出版社《概率论与数理统计教程(第三版)》，是数学系同学的课本，对绝大部分非数学系同学来说笔记中题目难度要高于课程要求。</p><p><img src="../../../../images/概率论1-2概率的定义及其确定方法/4.jpg" alt="4.jpg"></p><p><img src="../../../../images/概率论1-2概率的定义及其确定方法/5.jpg" alt="5.jpg"></p>]]></content>
       
       
       <categories>
@@ -438,7 +461,7 @@
       <link href="/2024/03/25/gai-lu-lun-1-1-sui-ji-shi-jian-ji-qi-gai-lu/"/>
       <url>/2024/03/25/gai-lu-lun-1-1-sui-ji-shi-jian-ji-qi-gai-lu/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/iUNnj1smhbch">下载PDF点这里</a></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA1-1%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%85%B6%E6%A6%82%E7%8E%87/2.jpg" alt="2.jpg"></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA1-1%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%85%B6%E6%A6%82%E7%8E%87/3.jpg" alt="3.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/iUNnj1smhbch">下载PDF点这里</a></p><p>$ps$ ：笔记配套书本为高等教育出版社《概率论与数理统计教程(第三版)》，是数学系同学的课本，对绝大部分非数学系同学来说笔记中题目难度要高于课程要求。</p><p><img src="../../../../images/概率论1-1随机事件及其概率/2.jpg" alt="2.jpg"></p><p><img src="../../../../images/概率论1-1随机事件及其概率/3.jpg" alt="3.jpg"></p>]]></content>
       
       
       <categories>
