@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>KMP字符串</title>
+      <link href="/2024/04/05/kmp/"/>
+      <url>/2024/04/05/kmp/</url>
+      
+        <content type="html"><![CDATA[<p>一个人能走的多远不在于他在顺境时能走的多快，而在于他在逆境时多久能找到曾经的自己。— KMP</p><h2 id="题目描述">题目描述</h2><p>给定一个字符串<code>text</code>，以及一个子串<code>sub</code>，所有字符串中只包含大小写英文字母以及阿拉伯数字。</p><p>子串<code>sub</code>在字符串<code>text</code>中多次作为子串出现。</p><p>求出子串<code>sub</code>在字符串<code>text</code>中所有出现的位置的起始下标。</p><h2 id="输入格式">输入格式</h2><p>第一行输入整数<code>n</code>，表示字符串<code>sub</code>的长度。</p><p>第二行输入字符串<code>sub</code>。</p><p>第三行输入整数<code>m</code>，表示字符串<code>text</code>的长度。</p><p>第四行输入字符串<code>text</code>。</p><h2 id="输出格式">输出格式</h2><p>共一行，输出所有出现位置的起始下标（下标从<code>0</code>开始计数），整数之间用空格隔开。</p><h2 id="数据范围">数据范围</h2><p><span class="math inline">\(1≤n≤10^5\)</span>，<span class="math inline">\(1≤m≤10^6\)</span></p><p>可以先看<a href="https://www.bilibili.com/video/BV1Px411z7Yo?vd_source=02b4405e73478850578c2783699b3ee1">灯神的讲解</a>后，再来看代码。</p><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>, M = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> nex[N], n, m; <span class="comment">// nex数组，n为子串长度，m为文本长度</span></span><br><span class="line"><span class="type">char</span> text[M], sub[N]; <span class="comment">// text为文本，sub为子串</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">kmp</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="comment">// 计算子串的next数组</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i++) {</span><br><span class="line">        <span class="keyword">while</span> (j &amp;&amp; sub[i] != sub[j + <span class="number">1</span>]) j = nex[j]; <span class="comment">// 当前字符不匹配，回溯</span></span><br><span class="line">        <span class="keyword">if</span> (sub[i] == sub[j + <span class="number">1</span>]) j++; <span class="comment">// 当前字符匹配，前进</span></span><br><span class="line">        nex[i] = j; <span class="comment">// 更新next数组</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在文本中查找子串</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= m; i++) {</span><br><span class="line">        <span class="keyword">while</span> (j &amp;&amp; text[i] != sub[j + <span class="number">1</span>]) j = nex[j]; <span class="comment">// 文本与子串当前字符不匹配，根据next数组回溯</span></span><br><span class="line">        <span class="keyword">if</span> (text[i] == sub[j + <span class="number">1</span>]) j++; <span class="comment">// 当前字符匹配，前进</span></span><br><span class="line">        <span class="keyword">if</span> (j == n) { <span class="comment">// 找到一个子串的匹配</span></span><br><span class="line">            cout &lt;&lt; i - n &lt;&lt; <span class="string">' '</span>; <span class="comment">// 输出匹配的起始位置</span></span><br><span class="line">            j = nex[j]; <span class="comment">// 根据next数组继续搜索可能的下一个匹配</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>{</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; sub + <span class="number">1</span> &gt;&gt; m &gt;&gt; text + <span class="number">1</span>; <span class="comment">// 输入子串和文本，从数组的第1位开始存储字符串</span></span><br><span class="line">    <span class="built_in">kmp</span>(); <span class="comment">// 执行KMP算法</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+          <category> c++/c </category>
+          
+          <category> KMP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> KMP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第二节 常数项级数的审敛法</title>
       <link href="/2024/04/03/duo-yuan-wei-ji-fen-12-2-chang-shu-xiang-ji-shu-de-shen-lian-fa/"/>
       <url>/2024/04/03/duo-yuan-wei-ji-fen-12-2-chang-shu-xiang-ji-shu-de-shen-lian-fa/</url>
@@ -68,35 +97,6 @@
             <tag> 常数项级数 </tag>
             
             <tag> 柯西审敛原理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>KMP字符串</title>
-      <link href="/2024/04/03/kmp/"/>
-      <url>/2024/04/03/kmp/</url>
-      
-        <content type="html"><![CDATA[<p>一个人能走的多远不在于他在顺境时能走的多快，而在于他在逆境时多久能找到曾经的自己。— KMP</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 数据结构与算法 </category>
-          
-          <category> c++/c </category>
-          
-          <category> KMP </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> KMP </tag>
             
         </tags>
       
