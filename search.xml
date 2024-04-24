@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>目标检测中数据集格式之间的相互转换</title>
+      <link href="/2024/04/24/shen-du-xue-xi-mu-biao-jian-ce-zhong-shu-ju-ji-ge-shi-zhi-jian-de-xiang-hu-zhuan-huan/"/>
+      <url>/2024/04/24/shen-du-xue-xi-mu-biao-jian-ce-zhong-shu-ju-ji-ge-shi-zhi-jian-de-xiang-hu-zhuan-huan/</url>
+      
+        <content type="html"><![CDATA[<h1 id="目标检测中数据集格式之间的相互转换">目标检测中数据集格式之间的相互转换</h1><blockquote><p>主要涉及--voc、coco、yolo之间的格式转换</p><p>即.xml、.json、.txt格式之间的转换</p></blockquote><p><a href="https://zhuanlan.zhihu.com/p/461488682">看这篇文章</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+          <category> 目标检测 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 目标检测 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第一节 总体与样本</title>
       <link href="/2024/04/23/shu-li-tong-ji-5-1-zong-ti-yu-yang-ben/"/>
       <url>/2024/04/23/shu-li-tong-ji-5-1-zong-ti-yu-yang-ben/</url>
