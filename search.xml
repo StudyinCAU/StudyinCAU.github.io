@@ -4,6 +4,107 @@
   
     
     <entry>
+      <title>第五节 条件分布与条件期望</title>
+      <link href="/2024/04/27/gai-lu-lun-3-5-tiao-jian-fen-bu-yu-tiao-jian-qi-wang/"/>
+      <url>/2024/04/27/gai-lu-lun-3-5-tiao-jian-fen-bu-yu-tiao-jian-qi-wang/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/iV0Nd1wmvnni">下载PDF点这里</a></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-5%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%E4%B8%8E%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B/82.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-5%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%E4%B8%8E%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B/83.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-5%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%E4%B8%8E%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B/84.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-5%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%E4%B8%8E%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B/85.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-5%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%E4%B8%8E%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B/86.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-5%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%E4%B8%8E%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B/87.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-5%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%E4%B8%8E%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B/88.jpg" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 概率论 </category>
+          
+          <category> 第三章 多维随机变量及其分布 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多维随机变量 </tag>
+            
+            <tag> 条件分布 </tag>
+            
+            <tag> 条件期望 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第四节 多维随机变量的特征数</title>
+      <link href="/2024/04/27/gai-lu-lun-3-4-duo-wei-sui-ji-bian-liang-de-te-zheng-shu/"/>
+      <url>/2024/04/27/gai-lu-lun-3-4-duo-wei-sui-ji-bian-liang-de-te-zheng-shu/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/itaGp1wqr47i">下载PDF点这里</a></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-4%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%89%B9%E5%BE%81%E6%95%B0/73.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-4%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%89%B9%E5%BE%81%E6%95%B0/74.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-4%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%89%B9%E5%BE%81%E6%95%B0/75.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-4%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%89%B9%E5%BE%81%E6%95%B0/76.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-4%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%89%B9%E5%BE%81%E6%95%B0/77.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-4%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%89%B9%E5%BE%81%E6%95%B0/78.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-4%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%89%B9%E5%BE%81%E6%95%B0/79.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-4%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%89%B9%E5%BE%81%E6%95%B0/80.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-4%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%89%B9%E5%BE%81%E6%95%B0/81.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-4%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%89%B9%E5%BE%81%E6%95%B0/82.jpg" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 概率论 </category>
+          
+          <category> 第三章 多维随机变量及其分布 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多维随机变量 </tag>
+            
+            <tag> 多为随机变量函数的数学期望 </tag>
+            
+            <tag> 协方差 </tag>
+            
+            <tag> 相关系数 </tag>
+            
+            <tag> 协方差矩阵 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第三节 多维随机变量函数的分布</title>
+      <link href="/2024/04/27/gai-lu-lun-3-3-duo-wei-sui-ji-bian-liang-han-shu-de-fen-bu/"/>
+      <url>/2024/04/27/gai-lu-lun-3-3-duo-wei-sui-ji-bian-liang-han-shu-de-fen-bu/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/iFumU1wqoneb">下载PDF点这里</a></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/59.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/60.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/61.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/62.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/63.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/64.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/65.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/66.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/67.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/68.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/69.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/70.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/71.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-3%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/72.jpg" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 概率论 </category>
+          
+          <category> 第三章 多维随机变量及其分布 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多维随机变量 </tag>
+            
+            <tag> 最大值与最小值分布 </tag>
+            
+            <tag> 卷积公式 </tag>
+            
+            <tag> 变量变换法 </tag>
+            
+            <tag> 雅可比矩阵 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第四节 中心极限定理</title>
       <link href="/2024/04/27/gai-lu-lun-4-4-zhong-xin-ji-xian-ding-li/"/>
       <url>/2024/04/27/gai-lu-lun-4-4-zhong-xin-ji-xian-ding-li/</url>
@@ -511,7 +612,7 @@
       <link href="/2024/04/13/gai-lu-lun-3-2-bian-ji-fen-bu-yu-sui-ji-bian-liang-de-du-li-xing/"/>
       <url>/2024/04/13/gai-lu-lun-3-2-bian-ji-fen-bu-yu-sui-ji-bian-liang-de-du-li-xing/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/iMuDz1uzldne">下载PDF点这里</a></p><p><span class="math inline">\(ps\)</span>：笔记配套书本为高等教育出版社《概率论与数理统计教程(第三版)》，是数学系同学的课本，对绝大部分非数学系同学来说笔记中题目难度要高于课程要求。</p><p><img src="../../../../images/概率论3-2边际分布与随机变量的独立性/50.jpg"></p><p><img src="../../../../images/概率论3-2边际分布与随机变量的独立性/51.jpg"></p><p><img src="../../../../images/概率论3-2边际分布与随机变量的独立性/52.jpg"></p><p><img src="../../../../images/概率论3-2边际分布与随机变量的独立性/53.jpg"></p><p><img src="../../../../images/概率论3-2边际分布与随机变量的独立性/54.jpg"></p><p><img src="../../../../images/概率论3-2边际分布与随机变量的独立性/55.jpg"></p><p><img src="../../../../images/概率论3-2边际分布与随机变量的独立性/56.jpg"></p><p><img src="../../../../images/概率论3-2边际分布与随机变量的独立性/57.jpg"></p><p><img src="../../../../images/概率论3-2边际分布与随机变量的独立性/58.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/iMuDz1uzldne">下载PDF点这里</a></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-2%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%E4%B8%8E%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7/50.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-2%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%E4%B8%8E%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7/51.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-2%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%E4%B8%8E%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7/52.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-2%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%E4%B8%8E%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7/53.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-2%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%E4%B8%8E%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7/54.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-2%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%E4%B8%8E%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7/55.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-2%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%E4%B8%8E%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7/56.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-2%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%E4%B8%8E%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7/57.jpg" alt=""></p><p><img src="../../../../images/%E6%A6%82%E7%8E%87%E8%AE%BA3-2%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%E4%B8%8E%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7/58.jpg" alt=""></p>]]></content>
       
       
       <categories>
