@@ -1,0 +1,2039 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>概率论期末复习知识点 | StudyinCAU</title><meta name="author" content="小楼一夜听春雨 &amp; Rico"><meta name="copyright" content="小楼一夜听春雨 &amp; Rico"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="大致梳理重要的，需要掌握背诵的知识。 下载PDF点这里 \(ps\) ：根据《概率论与数理统计教程（第三版）》汇总的期末复习知识总结，根据教材的不同可以自行删减复习知识内容。每一部分的知识点虽然较为完整，但不敢肯定包含所有知识点，详细可参照之前文章进行对比复习。 如果文章内容有错误的地方，欢迎发送信息至邮箱 3187248635@qq.com 目录 [TOC] 第一章 随机事件与概率 $$1.1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率论期末复习知识点">
+<meta property="og:url" content="https://studyincau.github.io/2024/05/04/gai-lu-lun-5-1-gai-lu-lun-qi-mo-fu-xi-zhi-shi-dian/index.html">
+<meta property="og:site_name" content="StudyinCAU">
+<meta property="og:description" content="大致梳理重要的，需要掌握背诵的知识。 下载PDF点这里 \(ps\) ：根据《概率论与数理统计教程（第三版）》汇总的期末复习知识总结，根据教材的不同可以自行删减复习知识内容。每一部分的知识点虽然较为完整，但不敢肯定包含所有知识点，详细可参照之前文章进行对比复习。 如果文章内容有错误的地方，欢迎发送信息至邮箱 3187248635@qq.com 目录 [TOC] 第一章 随机事件与概率 $$1.1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://studyincau.github.io/images/background38.jpg">
+<meta property="article:published_time" content="2024-05-03T16:12:42.000Z">
+<meta property="article:modified_time" content="2024-05-03T16:13:03.731Z">
+<meta property="article:author" content="小楼一夜听春雨 &amp; Rico">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://studyincau.github.io/images/background38.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://studyincau.github.io/2024/05/04/gai-lu-lun-5-1-gai-lu-lun-qi-mo-fu-xi-zhi-shi-dian/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '概率论期末复习知识点',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-04 00:13:03'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">89</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">168</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">46</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/../images/background38.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="StudyinCAU"><span class="site-name">StudyinCAU</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">概率论期末复习知识点</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-03T16:12:42.000Z" title="发表于 2024-05-04 00:12:42">2024-05-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-03T16:13:03.731Z" title="更新于 2024-05-04 00:13:03">2024-05-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">第五章 期末复习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">16.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>74分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="概率论期末复习知识点"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>大致梳理重要的，需要掌握背诵的知识。</p>
+<p><a target="_blank" rel="noopener" href="https://wwb.lanzouj.com/irYP01xl6fxa">下载PDF点这里</a></p>
+<p><span class="math inline">\(ps\)</span>
+：根据《概率论与数理统计教程（第三版）》汇总的期末复习知识总结，根据教材的不同可以自行删减复习知识内容。每一部分的知识点虽然较为完整，但不敢肯定包含所有知识点，详细可参照之前文章进行对比复习。</p>
+<p>如果文章内容有错误的地方，欢迎发送信息至邮箱 3187248635@qq.com</p>
+<h2 id="目录">目录</h2>
+<p>[TOC]</p>
+<h2 id="第一章-随机事件与概率">第一章 随机事件与概率</h2>
+<h3 id="随机事件及其运算">$$1.1 随机事件及其运算</h3>
+<p>1.事件间关系及运算：</p>
+<p>1）包含: $A $ <span class="math inline">\(\quad A=B \Leftrightarrow A
+\subset B\)</span> 且 <span class="math inline">\(B \subset
+A\)</span></p>
+<p>2）差: <span class="math inline">\(A-B=A-A B\)</span></p>
+<p>​ <span class="math inline">\(A-B=A \cap \bar{B}\)</span> <span class="math inline">\(A\)</span> 发生并且 <span class="math inline">\(B\)</span> 不发生</p>
+<p>​ <span class="math inline">\(A B=A-A \bar{B}\)</span> <span class="math inline">\(AB\)</span> 都发生 = <span class="math inline">\(A\)</span> 发生减去 <span class="math inline">\(A\)</span> 发生 <span class="math inline">\(B\)</span> 不发生</p>
+<p>3）对立: <span class="math inline">\(\bar{A}=\Omega-A \quad
+\bar{\bar{A}}=A\)</span></p>
+<p>​ 特别地：<span class="math inline">\(\bar{\Omega}=\varnothing \quad
+\bar{\varnothing}=\Omega\)</span></p>
+<p>4）互斥：<span class="math inline">\(A \cap
+B=\varnothing\)</span></p>
+<p>​ 对立事件 <span class="math inline">\(\rightarrow\)</span>
+互不相容事件（反之不成立）</p>
+<p>5）对偶律（德摩根公式）</p>
+<p>​ <span class="math inline">\(\overline{A \cup B}=\bar{A} \bar{B},
+\overline{A B}=\bar{A} \cup \bar{B}\)</span></p>
+<p>​ <span class="math inline">\(A\)</span> 或 <span class="math inline">\(B\)</span> 发生的对立 = <span class="math inline">\(A\)</span> 和 <span class="math inline">\(B\)</span> 都不发生，<span class="math inline">\(A\)</span> 和 <span class="math inline">\(B\)</span> 都发生的对立 = <span class="math inline">\(A\)</span> 不发生或 <span class="math inline">\(B\)</span> 不发生
+（“都”变“或”，“发生”变“不发生”）</p>
+<p>​ 推广： <span class="math display">\[
+\overline{\bigcup_{i=1}^n A_i}=\bigcap_{i=1}^n \bar{A}_i, \quad
+\overline{\bigcup_{i=1}^{\infty} A_i}=\bigcap_{i=1}^{\infty} \bar{A}_i,
+\]</span></p>
+<p><span class="math display">\[
+\overline{\bigcap_{i=1}^n A_i}=\bigcup_{i=1}^n \overline{A_i}, \quad
+\overline{\bigcap_{i=1}^{\infty} A_i}=\bigcup_{i=1}^{\infty} \bar{A}_i .
+\]</span></p>
+<p>​ 也可以记忆成 <span class="math inline">\(\cup\)</span> 和 <span class="math inline">\(\cap\)</span> 互相转换，而对立从所有变成个体。</p>
+<h3 id="概率的定义及其确定方法">$$1.2 概率的定义及其确定方法</h3>
+<p>1.概率的公理化定义：</p>
+<p>​ 1）非负性公理 若 <span class="math inline">\(A \in
+\mathscr{F}\)</span>, 则 <span class="math inline">\(P(A) \geqslant
+0\)</span>;</p>
+<p>​ 2）正则性公理 <span class="math inline">\(P(\Omega)=1\)</span>;</p>
+<p>​ 3）可列可加性公理 若 <span class="math inline">\(A_1, A_2, \cdots,
+A_n, \cdots\)</span> 互不相容, 则： <span class="math display">\[
+P\left(\bigcup_{i=1}^{\infty} A_i\right)=\sum_{i=1}^{\infty}
+P\left(A_i\right),
+\]</span> ​ 则称 <span class="math inline">\(P(A)\)</span> 为事件 <span class="math inline">\(A\)</span> 的概率,称三元素 <span class="math inline">\((\Omega, \mathscr{F}, P)\)</span>​ 为概率空间。</p>
+<hr>
+<p>2.排列与组合公式：</p>
+<p>​ 1）排列： <span class="math display">\[
+P_n^r=\underbrace{n \times(n-1) \times \cdots
+\times(n-r+1)}_{r个}=\frac{n!}{(n-r)!} \quad r \leqslant n
+\]</span> ​ 若 <span class="math inline">\(r=n\)</span>, 则称为全排列,
+记为 <span class="math inline">\(\mathrm{P}_n\)</span> 。 显然, 全排列
+<span class="math inline">\(\mathrm{P}_n=n!\)</span> 。</p>
+<p>​ 2）组合： <span class="math display">\[
+C_n^r=\binom{n}{r}=\frac{p_n^r}{r!}=\frac{n(n-1)
+\cdots(n-r+1)}{r!}=\frac{n!}{r!(n-r)!} \quad r \leqslant n
+\]</span></p>
+<p><span class="math display">\[
+\binom{n}{r}=\binom{n}{n-r} \quad P_n^r=r!C_n^r
+\]</span></p>
+<hr>
+<p>3.古典概型：参考复习习题中的抽样模型。</p>
+<hr>
+<p>4.几何概率：<span class="math inline">\(P(G)=\dfrac{G \text { 的测度
+}}{\Omega \text { 的测度 }} = \dfrac{S_G}{S_{\Omega}} \text {.
+}\)</span></p>
+<h3 id="概率的性质">$$1.3 概率的性质</h3>
+<p>1.<span class="math inline">\(P(\varnothing)=0\quad
+P(\Omega)=1\)</span></p>
+<p>2.有限可加性：若有限个事件 <span class="math inline">\(A_1, A_2,
+\cdots, A_n\)</span> 互不相容, 则有 <span class="math display">\[
+P\left(\bigcup_{i=1}^n A_i\right)=\sum_{i=1}^n P\left(A_i\right) .
+\]</span> 3.对任一事件 <span class="math inline">\(A\)</span>, 有：<span class="math inline">\(P(\bar{A})=1-P(A)\)</span></p>
+<p>4.可减性：对任意两个事件 <span class="math inline">\(A, B\)</span>,
+有 <span class="math display">\[
+P(A-B)=P(A)-P(A B) .
+\]</span> 5.加法公式：对任意两个事件 <span class="math inline">\(A,
+B\)</span>, 有 <span class="math display">\[
+P(A \cup B)=P(A)+P(B)-P(A B)
+\]</span> ​ 对任意 <span class="math inline">\(n\)</span> 个事件 <span class="math inline">\(A_1, A_2, \cdots, A_n\)</span>, 有 <span class="math display">\[
+\begin{aligned}
+P\left(\bigcup_{i=1}^n A_i\right)=  \sum_{i=1}^n
+P\left(A_i\right)-\sum_{1 \leqslant i&lt;j \leqslant n} P\left(A_i
+A_j\right)+ \sum_{1 \leqslant i&lt;j&lt;k \leqslant n} P\left(A_i A_j
+A_k\right)+\cdots+(-1)^{n-1} P\left(A_1 A_2 \cdots A_n\right) .
+\end{aligned}
+\]</span></p>
+<h3 id="条件概率">$$1.4 条件概率</h3>
+<p>1.条件概率： <span class="math display">\[
+P(A \mid B)=\frac{P(A B)}{P(B)}=\frac{P(B \mid A) P(A)}{P(B)} \quad
+P(B)&gt;0
+\]</span> ​ 性质：<span class="math inline">\(P(\bar{A} \mid B)=1-P(A
+\mid B)\)</span></p>
+<p>​ <span class="math inline">\(P\left(\left(A_1 \cup A_2) \mid
+B\right)=P\left(A_1 \mid B\right)+P\left(A_2 \mid B\right)-P\left(A_1
+A_2 \mid B\right)\right.\)</span></p>
+<p>​ 注意：<span class="math inline">\(P(A \mid B)+P(A \mid \bar{B}) \neq
+1\)</span></p>
+<hr>
+<p>2.乘法公式（<span class="math inline">\(n\)</span>
+个事件发生有明显的先后顺序） <span class="math display">\[
+\left\{\begin{array}{l}
+\text { 若 } P(B)&gt;0, \text { 则: } P(A B)=P(B) P(A \mid B) \\ \text {
+若 } P(A)&gt;0, \text { 则: } P(A B)=P(A) P(A \mid B)
+\end{array}\right.
+\]</span></p>
+<p><span class="math display">\[
+\text { 若 } P\left(A_1 A_2 \cdots A_{n-1}\right)&gt;0 \text {, 则 }
+P\left(A_1 A_2 \cdots A_n\right)=P\left(A_1\right) P\left(A_2 \mid
+A_1\right) P\left(A_3 \mid A_1 A_2\right) \cdots P\left(A_n \mid A_1 A_2
+\cdots A_{n-1}\right)
+\]</span></p>
+<hr>
+<p>3.全概率公式：</p>
+<p>​ 设 <span class="math inline">\(B_1, B_2, \cdots, B_n\)</span>
+为样本空间 <span class="math inline">\(\Omega\)</span> 的一个分割，即
+<span class="math inline">\(B_1, B_2, \cdots, B_n\)</span> 互不相容, 且
+<span class="math inline">\(\bigcup\limits_{i=1}^n B_i =
+\Omega\)</span>, 如果<span class="math inline">\(P\left(B_i\right)&gt;0,
+i=1,2, \cdots, n\)</span>, 则对任一事件 <span class="math inline">\(A\)</span> 有 <span class="math display">\[
+P(A)=\sum_{i=1}^n P\left(B_i\right) P\left(A \mid B_i\right) .
+\]</span> ​ 全概率公式的最简形式: 若 <span class="math inline">\(0&lt;P(B)&lt;1\)</span> ，则 <span class="math inline">\(P(A)=P(B) P(A \mid B)+P(\bar{B}) P(A \mid
+\bar{B})\)</span>.</p>
+<hr>
+<p>4.贝叶斯公式：</p>
+<p>​ 设 <span class="math inline">\(B_1, B_2, \cdots, B_n\)</span>
+是样本空间 <span class="math inline">\(\Omega\)</span> 的一个分割, 即
+<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_2, \cdots, B_n\)</span> 互不相容, 且 <span class="math inline">\(\bigcup\limits_{i=1}^n B_i = \Omega\)</span>, 如果
+<span class="math inline">\(P(A)&gt;0, P\left(B_i\right)&gt;0,\)</span>
+<span class="math inline">\(i=1,2, \cdots, n\)</span>, 则 <span class="math display">\[
+P\left(B_i \mid A\right)=\frac{P\left(B_i\right) P\left(A \mid
+B_i\right)}{\sum\limits_{j=1}^n P\left(B_j\right) P\left(A \mid
+B_j\right)}, \quad i=1,2, \cdots, n
+\]</span> ​ 特别地 <span class="math display">\[
+P(B \mid A)=\frac{P(A B)}{P(A)}=\frac{P(B) P(A \mid B)}{P(B) P(A \mid
+B)+P(\bar{B}) P(A \mid \bar{B})}
+\]</span> ​ 顺便提一下： <span class="math display">\[
+P\left(A_i \mid B\right)=\frac{P\left(A_i\right) P\left(B \mid
+A_i\right)}{P(B)} \stackrel{\text { converting }}{\Rightarrow} \quad
+\text { 后验概率 }=\frac{\text { 先验概率 } \times \text { 似然 }}{\text
+{ 证据因子 }}
+\]</span></p>
+<h3 id="独立性">$$1.5 独立性</h3>
+<p>1.定义: 设 <span class="math inline">\(A, B\)</span>
+为任意两个随机事件, 如果满足 <span class="math inline">\(P(A B)=P(A)
+P(B)\)</span> 则称事件 <span class="math inline">\(A, B\)</span>
+相互独立。</p>
+<p>​ 推论1：若 <span class="math inline">\(P(A)&gt;0, A, B\)</span> 独立
+<span class="math inline">\(\Longleftrightarrow P(B)=P(B \mid
+A)\)</span></p>
+<p>​ 推论2：若事件 <span class="math inline">\(A\)</span> 与 <span class="math inline">\(B\)</span> 独立，则 <span class="math inline">\(A\)</span> 与 <span class="math inline">\(\bar{B}\)</span> 独立， <span class="math inline">\(\bar{A}\)</span> 与 <span class="math inline">\(B\)</span> 独立， <span class="math inline">\(\bar{A}\)</span> 与 <span class="math inline">\(\bar{B}\)</span> 独立。</p>
+<p>​ 注意：事件 <span class="math inline">\(A\)</span> 与事件 <span class="math inline">\(B\)</span> 独立不能用韦恩图表示；互斥 <span class="math inline">\(\Rightarrow\)</span>
+不独立（反之不一定成立）。</p>
+<hr>
+<p>2.多个事件的相互独立性：</p>
+<p>​ 1）定义：设有 <span class="math inline">\(n\)</span> 个事件 <span class="math inline">\(A_1, A_2, \cdots, A_n\)</span>, 对任意的 <span class="math inline">\(1 \leqslant i&lt;j&lt;k&lt;\cdots \leqslant
+n\)</span>, 如果以下等式均成立 <span class="math display">\[
+\left\{\begin{array}{l}
+P\left(A_i A_j\right)=P\left(A_i\right) P\left(A_j\right), \\ P\left(A_i
+A_j A_k\right)=P\left(A_i\right) P\left(A_j\right) P\left(A_k\right), \\
+\quad \cdots \cdots \cdots \cdots \\ P\left(A_1 A_2 \cdots
+A_n\right)=P\left(A_1\right) P\left(A_2\right) \cdots P\left(A_n\right),
+\end{array}\right.
+\]</span> ​ 则称此 <span class="math inline">\(n\)</span> 个事件 <span class="math inline">\(A_1, A_2, \cdots, A_n\)</span> 相互独立。</p>
+<p>​ 相互独立 <span class="math inline">\(\Rightarrow\)</span>
+两两独立（反之不一定成立）</p>
+<p>​ 2）几个结论：</p>
+<ul>
+<li><p><span class="math inline">\(n\)</span>
+个事件独立的充要条件是任意取出其中的 <span class="math inline">\(k\)</span> 个事件都是相互独立的;</p></li>
+<li><p>若 <span class="math inline">\(A_1 A_2 \cdots A_n\)</span>
+独立，则将他们任意分成 <span class="math inline">\(l\)</span>
+组，每一组中的事件经过任何运算产生一个新的事件，这样的 <span class="math inline">\(l\)</span> 个新的事件依然相互独立；</p></li>
+<li><p>小概率原理：</p>
+<p>若 <span class="math inline">\(n\)</span> 个事件 <span class="math inline">\(A_1, A_2, \ldots, A_n\)</span>
+相互独立，其发生的概率分别为 <span class="math inline">\(p_1, p_2,
+\ldots, p_n\)</span> ，则</p></li>
+</ul>
+<p>​ ①事件 <span class="math inline">\(A_1, A_2, \ldots, A_n\)</span>
+中至少有一个事件发生的概率为 <span class="math display">\[
+P\left(\bigcup_{i=1}^n A_i\right)=1-P\left(\bigcap_{i=1}^n
+\bar{A}_i\right)=1-\prod_{i=1}^n\left(1-p_i\right)
+\]</span> ​ ②事件 <span class="math inline">\(A_1, A_2, \ldots,
+A_n\)</span> 中至少有一个事件不发生的概率为 <span class="math display">\[
+P\left(\bigcup_{i=1}^n \bar{A}_i\right)=1-P\left(\bigcap_{i=1}^n
+A_i\right)=1-\prod_{i=1}^n p_i
+\]</span></p>
+<hr>
+<p>3.试验的独立性</p>
+<p>​ 设有两个试验 <span class="math inline">\(E_1\)</span> 和 <span class="math inline">\(E_2\)</span>, 假如试验 <span class="math inline">\(E_1\)</span> 的任一结果 (事件) 与试验 <span class="math inline">\(E_2\)</span> 的任一结果 (事件) 都是相互独立的事件,
+则称这两个试验相互独立。</p>
+<p>​ 类似地可以定义 <span class="math inline">\(n\)</span> 个试验 <span class="math inline">\(E_1, E_2, \cdots, E_n\)</span> 的相互独立性: 如果
+<span class="math inline">\(E_1\)</span> 的任一结果、 <span class="math inline">\(E_2\)</span> 的任一结果、 <span class="math inline">\(\cdots \cdots 、 E_n\)</span>
+的任一结果都是相互独立的事件, 则称试验 <span class="math inline">\(E_1\)</span>, <span class="math inline">\(E_2,
+\cdots, E_n\)</span> 相互独立. 如果这 <span class="math inline">\(n\)</span> 个独立试验还是相同的, 则称其为 <span class="math inline">\(n\)</span> 重独立重夏试验.</p>
+<p>​ 如果在 <span class="math inline">\(n\)</span> 重独立重复试验中,
+每次试验的可能结果为两个: <span class="math inline">\(A\)</span> 或
+<span class="math inline">\(\bar{A}\)</span>, 则称这种试验为 <span class="math inline">\(n\)</span> 重伯努利 (Bernoulli) 试验.</p>
+<h2 id="第二章-随机变量及其分布">第二章 随机变量及其分布</h2>
+<h3 id="随机变量及其分布">$$2.1 随机变量及其分布</h3>
+<p>1.随机变量</p>
+<p>​ 定义在样本空间 <span class="math inline">\(\Omega\)</span>
+上的实值函数 <span class="math inline">\(X=X(\omega)\)</span>
+称为随机变量, 常用大写字母 <span class="math inline">\(X, Y, Z\)</span>
+等表示随机变量, 其取值用小写字母 <span class="math inline">\(x, y,
+z\)</span> 等表示。</p>
+<p>​ 这个定义表明: 随机变量 <span class="math inline">\(X\)</span>
+是样本点 <span class="math inline">\(\omega\)</span> 的一个函数,
+这个函数可以是不同样本点对应不同的实数, 也允许多个样本点对应同一个实数.
+这个函数的自变量 (样本点) 可以是数,也可以不是数,但因变量一定是实数。</p>
+<p>​ 随机变量分为离散型随机变量和连续型随机变量。</p>
+<hr>
+<p>2.随机变量的分布函数</p>
+<p>1）定义：设 <span class="math inline">\(X\)</span> 是一个随机变量,
+对任意实数 <span class="math inline">\(x\)</span>, 称<span class="math inline">\(F(x)=P(X \leqslant x)\)</span>为随机变量 <span class="math inline">\(X\)</span> 的分布函数. 且称 <span class="math inline">\(X\)</span> 服从 <span class="math inline">\(F(x)\)</span>, 记为 <span class="math inline">\(X
+\sim F(x)\)</span>。</p>
+<p>2）性质：单调性（单调非减）、有界性、右连续性。</p>
+<hr>
+<p>3.离散随机变量的概率分布列</p>
+<p>1）定义：设 <span class="math inline">\(X\)</span>
+是一个离散随机变量, 如果 <span class="math inline">\(X\)</span>
+的所有可能取值是 <span class="math inline">\(x_1, x_2, \cdots\)</span>,
+<span class="math inline">\(x_n, \cdots\)</span>, 则称 <span class="math inline">\(X\)</span> 取 <span class="math inline">\(x_i\)</span> 的概率 <span class="math display">\[
+p_i=p\left(x_i\right)=P\left(X=x_i\right), i=1,2, \cdots, n, \cdots
+\]</span> ​ 为 <span class="math inline">\(X\)</span>
+的概率分布列或简称为分布列，记为 <span class="math inline">\(X \sim
+\{p_i\}\)</span> 。</p>
+<p>2）性质：非负性、正则性。</p>
+<p>3）离散随机变量 <span class="math inline">\(X\)</span> 的分布函数
+<span class="math inline">\(F(x)=\sum_\limits{x_i \leqslant x}
+p\left(x_i\right)\)</span> ，<span class="math inline">\(F(x)\)</span>
+是分段阶梯函数。</p>
+<hr>
+<p>4.连续随机变量的概率密度函数</p>
+<p>1）定义：设随机变量 <span class="math inline">\(X\)</span>
+的分布函数为 <span class="math inline">\(F(x)\)</span>,
+如果存在实数轴上的一个非负可积函数 <span class="math inline">\(p(x)\)</span>,使得对任意实数 <span class="math inline">\(x\)</span> 有 <span class="math display">\[
+F(x)=\int_{-\infty}^x p(t) \mathrm{d} t,
+\]</span> ​ 则称 <span class="math inline">\(p(x)\)</span> 为 <span class="math inline">\(X\)</span>
+的概率密度函数，简称为密度函数或密度。同时称 <span class="math inline">\(X\)</span> 为连续随机变量，称 <span class="math inline">\(F(x)\)</span> 为连续分布函数。</p>
+<p>2）性质：非负性、正则性。</p>
+<p>3）对于连续随机变量 <span class="math inline">\(X\)</span> 有 <span class="math display">\[
+P(a \leqslant X \leqslant b)=P(a&lt;X \leqslant b)=P(a \leqslant
+X&lt;b)=P(a&lt;X&lt;b) .
+\]</span>
+4）一个连续分布的密度函数并不唯一，因为只在若干点上改变密度函数 <span class="math inline">\(p(x)\)</span> 的值并不影响其积分值。</p>
+<h3 id="随机变量的数学期望">$$2.2 随机变量的数学期望</h3>
+<p>1.数学期望的定义</p>
+<p>1）设离散随机变量 <span class="math inline">\(X\)</span> 的分布列为
+<span class="math display">\[
+p\left(x_i\right)=P\left(X=x_i\right), i=1,2, \cdots, n, \cdots .
+\]</span> ​ 如果 <span class="math display">\[
+\sum_{i=1}^{\infty}\left|x_i\right| p\left(x_i\right)&lt;\infty,
+\]</span> ​ 则称 <span class="math display">\[
+E(X)=\sum_{i=1}^{\infty} x_i p\left(x_i\right)
+\]</span> ​ 为随机变量 <span class="math inline">\(X\)</span>
+的数学期望，简称期望或均值。</p>
+<p>​ 值得注意的是级数绝对收敛的条件。</p>
+<p>2）设连续随机变量 <span class="math inline">\(X\)</span> 的密度函数为
+<span class="math inline">\(p(x)\)</span> ，如果 <span class="math display">\[
+\int_{-\infty}^{\infty}|x| p(x) \mathrm{d} x&lt;\infty,
+\]</span> ​ 则称 <span class="math display">\[
+E(X)=\int_{-\infty}^{\infty} x p(x) \mathrm{d} x
+\]</span> ​ 为随机变量 <span class="math inline">\(X\)</span>
+的数学期望，简称期望或均值。</p>
+<p>​ 同样要注意收敛的条件。</p>
+<hr>
+<p>2.数学期望的性质</p>
+<p>1）若 <span class="math inline">\(c\)</span> 是常数，则 <span class="math inline">\(E(c)=c\)</span>.</p>
+<p>2）对任意常数 <span class="math inline">\(a\)</span> 有 <span class="math inline">\(E(aX)=aE(X)\)</span>.</p>
+<p>3）线性性质：对任意的两个函数 <span class="math inline">\(g_1(x)\)</span> 和 <span class="math inline">\(g_2(x)\)</span> 有 <span class="math inline">\(E\left[g_1(X) \pm
+g_2(X)\right]=E\left[g_1(X)\right] \pm
+E\left[g_2(X)\right]\)</span>.</p>
+<p>​ 特别地，<span class="math inline">\(E(aX+b)=aE(X)+b\)</span>.</p>
+<p>4）若 <span class="math inline">\(a\leq X \leq b\)</span>，则 <span class="math inline">\(a\leq E(x) \leq b\)</span>.</p>
+<hr>
+<p>3.随机变量函数的数学期望</p>
+<p>若随机变量 <span class="math inline">\(X\)</span> 的分布用分布列
+<span class="math inline">\(p(x_i)\)</span> 或用密度函数 <span class="math inline">\(p(x)\)</span> 表示，则 <span class="math inline">\(X\)</span> 的某一函数 <span class="math inline">\(g(X)\)</span> 的数学期望为 <span class="math display">\[
+E[g(X)] = \begin{cases} \sum\limits_{i} g(x_i) p(x_i), &amp;
+\text{在离散场合}, \\ \displaystyle\int_{-\infty}^{\infty} g(x) p(x) \,
+dx, &amp; \text{在连续场合}.\end{cases}
+\]</span> 这里涉及的数学期望都假定存在。</p>
+<h3 id="随机变量的方差与标准差">$$2.3 随机变量的方差与标准差</h3>
+<p>1.方差与标准差的定义</p>
+<p>1）方差：若随机变量 <span class="math inline">\(X^2\)</span>
+的数学期望 <span class="math inline">\(E(X^2)\)</span>
+存在，则称偏差平方 <span class="math inline">\((X-E(X))^2\)</span>
+的数学期望 <span class="math inline">\(E(X-E(X))^2\)</span> 为随机变量
+<span class="math inline">\(X\)</span> 的方差，记为<br>
+<span class="math display">\[
+Var(X)=E(X-E(X))^2 = \begin{cases}\sum_\limits i\left(x_i-E(X)\right)^2
+p\left(x_i\right),  \text { 在离散场合, } \\
+\displaystyle\int_{-\infty}^{\infty}(x-E(X))^2 p(x) \mathrm{d} x, \text
+{ 在连续场合. }\end{cases}
+\]</span> 2）标准差：称方差的正平方根 <span class="math inline">\(\sqrt{Var(X)}\)</span> 为随机变量 <span class="math inline">\(X\)</span> 的标准差，记为 <span class="math inline">\(\sigma(X)\)</span> 或 <span class="math inline">\(\sigma_X\)</span>.</p>
+<p>3）随机变量 <span class="math inline">\(X\)</span>
+的方差存在则期望一定存在，而期望存在方差不一定存在。</p>
+<hr>
+<p>2.方差的性质</p>
+<p>​ 假设随机变量的方差存在：</p>
+<p>1）方差的计算公式： <span class="math inline">\(Var(X)=E(X^2)-[E(X)]^2\)</span>.</p>
+<p>2）常数的方差为 <span class="math inline">\(0\)</span> ，即 <span class="math inline">\(Var(c)=0\)</span> ，其中 <span class="math inline">\(c\)</span> 是常数.</p>
+<p>3）若 <span class="math inline">\(a,b\)</span> 是常数，则 <span class="math inline">\(Var(aX+b) = a^2Var(X)\)</span>.</p>
+<p>注意：方差不具备线性性质，即 <span class="math inline">\(Var(X+Y)\neq
+Var(X) + Var(Y)\)</span></p>
+<hr>
+<p>3.切比雪夫不等式</p>
+<p>​ 设随机变量 <span class="math inline">\(X\)</span>
+的数学期望和方差都存在，则对任意常数 <span class="math inline">\(\varepsilon&gt;0\)</span> ，有 <span class="math display">\[
+P(|X-E(X)| \geqslant \varepsilon) \leqslant
+\frac{\operatorname{Var}(X)}{\varepsilon^2},
+\]</span> ​ 或 <span class="math display">\[
+P(|X-E(X)|&lt;\varepsilon) \geqslant
+1-\frac{\operatorname{Var}(X)}{\varepsilon^2} \text {. }
+\]</span> ​ 切比雪夫不等式给出了大偏差发生概率的上界。</p>
+<h3 id="常用离散分布">$$2.4 常用离散分布</h3>
+<p>1.二项分布</p>
+<p>1）<span class="math inline">\(0-1\)</span> 分布（二点分布）</p>
+<p>​ 随机变量 <span class="math inline">\(X\)</span> 的取值为 <span class="math inline">\(\{0,1\}\)</span> ,其分布列为 <span class="math inline">\(P(X=x)=p^x(1-p)^{1-x},\quad x=0,1\)</span> .</p>
+<p>​ 或记为 <span class="math display">\[
+\begin{array}{c|cc}
+X &amp; 0 &amp; 1 \\ \hline P &amp; 1-p &amp; p
+\end{array}
+\]</span> ​ 若随机变量 <span class="math inline">\(X\sim b(1,p)\)</span>
+，则 <span class="math display">\[
+E(X)=p \quad Var(X)=p(1-p)
+\]</span> 2）二项分布的定义</p>
+<p>​ 记 <span class="math inline">\(X\)</span> 为 <span class="math inline">\(n\)</span> 重伯努利试验中成功（记为事件 <span class="math inline">\(A\)</span> ）的次数，则 <span class="math inline">\(X\)</span> 的可能取值为 <span class="math inline">\(0,1,\cdots,n\)</span> .记 <span class="math inline">\(p\)</span> 为每次试验中 <span class="math inline">\(A\)</span> 发生的概率，即 <span class="math inline">\(P(A)=p\)</span> ，则 <span class="math inline">\(X\)</span> 的分布列为 <span class="math display">\[
+P(X=k)=\binom{n}{k} p^k(1-p)^{n-k}, k=0,1, \cdots, n \text {. }
+\]</span> ​ 记为 $X b(n,p) $ ，二项概率 <span class="math inline">\(P(X=k)=\displaystyle\binom{n}{k}
+p^k(1-p)^{n-k}\)</span> 恰好是 <span class="math inline">\(n\)</span>
+次二项式 <span class="math inline">\((p+(1-p))^n\)</span> 的展开式的第
+<span class="math inline">\(k+1\)</span> 项。</p>
+<p>3）二项分布的数学期望和方差</p>
+<p>​ 设随机变量 <span class="math inline">\(X\sim b(n,p)\)</span> ，则
+<span class="math display">\[
+E(X)=np \quad Var(X)=np(1-p)
+\]</span> 4）二项分布的随机变量可以分解成 <span class="math inline">\(n\)</span>
+个的独立同分布的二点分布的随机变量之和，所以数学期望和方差系数差了一个
+<span class="math inline">\(n\)</span>。</p>
+<hr>
+<p>2.泊松分布</p>
+<p>1）泊松分布的定义：泊松分布的概率分布列是 <span class="math display">\[
+P(X=k)=\frac{\lambda^k}{k!} \mathrm{e}^{-\lambda}, k=0,1,2, \cdots,
+\]</span> ​ 其中参数 <span class="math inline">\(\lambda&gt;0\)</span>
+，记为 <span class="math inline">\(X\sim P(\lambda)\)</span>.</p>
+<p>2）泊松分布的数学期望和方差</p>
+<p>​ 设随机变量 <span class="math inline">\(X\sim P(\lambda)\)</span>，则
+<span class="math display">\[
+E(X)=Var(X)=\lambda
+\]</span> 3）泊松定理（二项分布的泊松近似）</p>
+<p>​ 在 <span class="math inline">\(n\)</span> 重伯努利试验中，记事件
+<span class="math inline">\(A\)</span> 在一次试验中发生的概率为 <span class="math inline">\(p_n\)</span> （与试验次数 <span class="math inline">\(n\)</span> 有关），如果当 <span class="math inline">\(n \rightarrow \infty\)</span> 时, 有 <span class="math inline">\(n p_n \rightarrow \lambda\)</span>, 则 <span class="math display">\[
+\lim _{n \rightarrow \infty}\binom{n}{k}
+p_n^k\left(1-p_n\right)^{n-k}=\frac{\lambda^k}{k!} \mathrm{e}^{-\lambda}
+.
+\]</span> ​ 在计算二项分布 <span class="math inline">\(b(n,p)\)</span>
+时，当 <span class="math inline">\(n\)</span> 很大，<span class="math inline">\(p\)</span> 很小，而乘积 <span class="math inline">\(\lambda=np\)</span>
+大小适中时，就可以用泊松分布作近似分布，即 <span class="math display">\[
+\binom{n}{k} p^k\left(1-p\right)^{n-k} \approx \frac{(n p)^k}{k!}
+\mathrm{e}^{-n p}, k=0,1,2, \cdots .
+\]</span></p>
+<hr>
+<p>3.超几何分布</p>
+<p>1）超几何分布的定义</p>
+<p>​ 设有 <span class="math inline">\(N\)</span> 件产品，其中有 <span class="math inline">\(M\)</span> 件不合格品。若从中不放回地随机抽取
+<span class="math inline">\(n\)</span> 件，则其中含有地不合格品的件数
+<span class="math inline">\(X\)</span> 服从超几何分布，记为 <span class="math inline">\(X\sim h(n,N,M)\)</span> 。超几何分布的概率分布列为
+<span class="math display">\[
+P(X=k)=\frac{\displaystyle\binom{M}{k}\binom{N-M}{n-k}}{\displaystyle\binom{N}{n}},
+k=0,1, \cdots, r .
+\]</span> 其中 <span class="math inline">\(r=\min\{M,n\}\)</span> ，且
+<span class="math inline">\(M\leq N,n\leq N\)</span> ，<span class="math inline">\(n,N,M\)</span> 均为正整数。</p>
+<p>2）超几何分布的数学期望和方差 (方差不用背)</p>
+<p>设随机变量 <span class="math inline">\(X\sim h(n,N,M)\)</span> ，则
+<span class="math display">\[
+E(X)=n\frac{M}{N}\quad Var(X)=\frac{n M(N-M)(N-n)}{N^2(N-1)} .
+\]</span> 3）超几何分布的二项近似：当 <span class="math inline">\(n \ll
+N\)</span> 时, 即抽取个数 <span class="math inline">\(n\)</span>
+远小于产品总数 <span class="math inline">\(N\)</span> 时, 每次抽取后,
+总体中的不合格品率 <span class="math inline">\(p=M / N\)</span>
+改变甚微, 所以不放回抽样可近似地看成放回抽样,
+这时超几何分布可用二项分布近似。</p>
+<hr>
+<p>4.几何分布</p>
+<p>1）几何分布的定义</p>
+<p>​ 在伯努利实验中，记每次试验中事件 <span class="math inline">\(A\)</span> 发生的概率为 <span class="math inline">\(p\)</span> ，如果 <span class="math inline">\(X\)</span> 为事件 <span class="math inline">\(A\)</span> 首次出现时试验次数，则 <span class="math inline">\(X\)</span> 的可能取值为 <span class="math inline">\(1,2,\cdots\)</span> ，称 <span class="math inline">\(X\)</span> 服从几何分布，记为 <span class="math inline">\(X \sim Ge(p)\)</span>，其分布列为 <span class="math display">\[
+P(X=k)=(1-p)^{k-1}p,k=1,2,\cdots.
+\]</span> 2）几何分布的数学期望和方差：</p>
+<p>​ 设随机变量 <span class="math inline">\(X\)</span> 服从几何分布 <span class="math inline">\(Ge(p)\)</span> ，则 <span class="math display">\[
+E(X)=\frac{1}{p}\quad Var(X)=\frac{1-p}{p^2}
+\]</span> 3）几何分布的无记忆性：</p>
+<p>​ 设随机变量 <span class="math inline">\(X \sim Ge(p)\)</span>,
+对任意正整数 <span class="math inline">\(m, n\)</span> 有 <span class="math display">\[
+P(X&gt;m+n \mid X&gt;m)=P(X&gt;n)
+\]</span></p>
+<hr>
+<p>5.负二项分布（几何分布的延伸）</p>
+<p>1）负二项分布的定义</p>
+<p>​ 在伯努利试验序列中，记每次试验中事件 <span class="math inline">\(A\)</span> 发生的概率为 <span class="math inline">\(p\)</span> ，如果 <span class="math inline">\(X\)</span> 为事件 <span class="math inline">\(A\)</span> 第 <span class="math inline">\(r\)</span> 次出现时的试验次数，则 <span class="math inline">\(X\)</span> 的可能取值为 <span class="math inline">\(r, r+1,\cdots,r+m,\cdots\)</span> 。称 <span class="math inline">\(X\)</span> 服从负二项分布或帕斯卡分布，其分布列为
+<span class="math display">\[
+P(X=k)=\binom{k-1}{r-1} p^r(1-p)^{k-r}, k=r, r+1, \cdots .
+\]</span> ​ 记为 <span class="math inline">\(X\sim Nb(r,p)\)</span>. 当
+<span class="math inline">\(r=1\)</span> 时，即为几何分布。</p>
+<p>​ <span class="math inline">\(ps:\)</span>
+解释一下前面的系数，最后一次一定是第 <span class="math inline">\(k\)</span> 次试验时事件 <span class="math inline">\(A\)</span> 发生了第 <span class="math inline">\(r\)</span> 次，所以只需要在剩下的 <span class="math inline">\(k-1\)</span> 次试验中选取 <span class="math inline">\(r-1\)</span> 次试验表示事件 <span class="math inline">\(A\)</span> 发生即可。</p>
+<p>2）负二项分布的数学期望和方差：</p>
+<p>​ 设随机变量 <span class="math inline">\(X\)</span> 服从负二项分布
+<span class="math inline">\(Nb(r,p)\)</span> ，则 <span class="math display">\[
+E(X)=\frac{r}{p}\quad Var(X)=\frac{r(1-p)}{p^2}
+\]</span> ​ 和几何分布很像，差一个 <span class="math inline">\(r\)</span>
+，这是因为负二项分布的随机变量可以分解成 <span class="math inline">\(r\)</span>
+个独立同分布的几何分布的随机变量之和。</p>
+<p>3）负二项分布也有无记忆性。</p>
+<h3 id="常用连续分布">$$2.5 常用连续分布</h3>
+<p>1.均匀分布</p>
+<p>1）均匀分布的定义</p>
+<p>​ 若随机变量 <span class="math inline">\(X\)</span> 的密度函数为 <span class="math display">\[
+p(x)=\left\{\begin{array}{cl}
+\dfrac{1}{b-a}, &amp; a&lt;x&lt;b \\ 0, &amp; \text { 其他 }
+\end{array}\right.
+\]</span> 则称 <span class="math inline">\(X\)</span> 服从区间 <span class="math inline">\((a,b)\)</span> 上的均匀分布，记作 <span class="math inline">\(X \sim U(a,b)\)</span>，其分布函数为 <span class="math display">\[
+F(x)=\left\{\begin{array}{cc}
+0, &amp; x&lt;a, \\ \dfrac{x-a}{b-a}, &amp; a \leqslant x&lt;b, \\ 1,
+&amp; x \geqslant b.
+\end{array}\right.
+\]</span> 2）均匀分布的数学期望与方差：</p>
+<p>​ 设随机变量 <span class="math inline">\(X\sim U(a,b)\)</span> ，则
+<span class="math display">\[
+E(X)=\frac{a+b}{2}\quad Var(X)=\frac{(b-a)^2}{12}
+\]</span></p>
+<hr>
+<p>2.指数分布</p>
+<p>1）指数分布的定义</p>
+<p>​ 若随机变量 <span class="math inline">\(X\)</span> 的密度函数为 <span class="math display">\[
+p(x)= \begin{cases}\lambda \mathrm{e}^{-\lambda x}, &amp; x \geqslant 0,
+\\ 0, &amp; x&lt;0,\end{cases}
+\]</span> 则称 <span class="math inline">\(X\)</span> 服从指数分布，记作
+<span class="math inline">\(X\sim Exp(\lambda)\)</span> ，其中参数 <span class="math inline">\(\lambda&gt;0\)</span> .指数分布的分布函数为 <span class="math display">\[
+F(x)= \begin{cases}1-\mathrm{e}^{-\lambda x}, &amp; x \geqslant 0, \\ 0,
+&amp; x&lt;0 .\end{cases}
+\]</span> 2）指数分布的数学期望与方差：</p>
+<p>​ 设随机变量 <span class="math inline">\(X \sim Exp(\lambda)\)</span>
+，则 <span class="math display">\[
+E(X)=\frac{1}{\lambda} \quad Var(X)=\frac{1}{\lambda^2}
+\]</span> 3）指数分布的无记忆性：如果随机变量 <span class="math inline">\(X\sim Exp(\lambda)\)</span>，则对任意 <span class="math inline">\(s&gt;0,t&gt;0\)</span> 有 <span class="math display">\[
+P(X&gt;s+t \mid X&gt;s)=P(X&gt;t) .
+\]</span> ​ <span class="math inline">\(ps:\)</span>
+指数分布是唯一具有无记忆性的连续型随机变量。</p>
+<hr>
+<p>3.正态分布</p>
+<p>1）正态分布的定义</p>
+<p>​ 若随机变量 <span class="math inline">\(X\)</span> 的密度函数为 <span class="math display">\[
+p(x)=\frac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{-\frac{(x-\mu)^2}{2
+\sigma^2}}, \quad-\infty&lt;x&lt;\infty,
+\]</span> 则称 <span class="math inline">\(X\)</span> 服从正态分布，记作
+<span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span> .其中参数
+<span class="math inline">\(-\infty&lt;\mu&lt;\infty,\sigma&gt;0\)</span>.
+正态分布的分布函数为 <span class="math display">\[
+F(x)=\frac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^x
+\mathrm{e}^{-\frac{(t-\mu)^2}{2 \sigma^2}} \mathrm{~d} t .
+\]</span> ​ 特别地，若 <span class="math inline">\(\mu=0\)</span> 和
+<span class="math inline">\(\sigma=1\)</span>, 称 <span class="math inline">\(N(0,1)\)</span> 为标准正态分布。</p>
+<p>​ 通常记标准正态变量为 <span class="math inline">\(U\)</span>,
+记标准正态分布的密度函数为 <span class="math inline">\(\varphi(u)\)</span>, 分布函数为 <span class="math inline">\(\Phi(u)\)</span>, 即 <span class="math display">\[
+\varphi(u)=\frac{1}{\sqrt{2 \pi}} e^{-\frac{u^2}{2}},
+\quad-\infty&lt;u&lt;\infty,
+\]</span></p>
+<p><span class="math display">\[
+\Phi(u)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^u
+\mathrm{e}^{-\frac{t^2}{2}} \mathrm{~d} t, \quad-\infty&lt;u&lt;\infty .
+\]</span></p>
+<p>2）正态分布密度函数 <span class="math inline">\(p(x)\)</span>
+图像的性质：</p>
+<ul>
+<li>关于 <span class="math inline">\(x=\mu\)</span> 对称，即 <span class="math inline">\(p(\mu-x)=p(\mu+x)\)</span> .</li>
+<li><span class="math inline">\(x=\mu\)</span> 时， <span class="math inline">\(p(x)\)</span> 取最大值 <span class="math inline">\(\dfrac{1}{\sqrt{2\pi}\sigma}\)</span> .</li>
+<li><span class="math inline">\(x = \mu \pm \sigma\)</span> 是 <span class="math inline">\(y=p(x)\)</span> 的拐点横坐标.</li>
+</ul>
+<p>3）标准正态分布函数 <span class="math inline">\(\Phi(x)\)</span>
+的性质：</p>
+<ul>
+<li><span class="math inline">\(\Phi(-u)=1-\Phi(u)\)</span>.</li>
+<li><span class="math inline">\(P(a&lt;U&lt;b)=\Phi(b)-\Phi(a)\)</span>.</li>
+<li><span class="math inline">\(P(|U|&lt;c)=2 \Phi(c)-1 \quad(c
+\geqslant 0)\)</span>.</li>
+<li><span class="math inline">\(\Phi(0)=\dfrac{1}{2}\)</span> .</li>
+</ul>
+<p>4）正态变量的标准化</p>
+<p>​
+一般正态变量都可以通过一个线性变换（标准化）化成标准正态变量．因此与正态变量有关的一切事件的概率都可通过查标准正态分布函数表获得。</p>
+<p>​ 定理1：若随机变量 <span class="math inline">\(X\sim
+N(\mu,\sigma^2)\)</span> ，则 <span class="math inline">\(U=\dfrac{X-\mu}{\sigma}\sim N(0,1)\)</span> .</p>
+<p>​ 定理2（正态分布事件概率计算）：若随机变量 <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span> ，则 <span class="math display">\[
+P(X \leqslant c)=\Phi\left(\frac{c-\mu}{\sigma}\right) .
+\]</span></p>
+<p><span class="math display">\[
+P(a&lt;X \leqslant
+b)=\Phi\left(\frac{b-\mu}{\sigma}\right)-\Phi\left(\frac{a-\mu}{\sigma}\right)
+.
+\]</span></p>
+<p><span class="math display">\[
+P(X&gt;c)=1-\Phi(\frac{c-\mu}{\sigma}).
+\]</span></p>
+<p>5）正态分布的数学期望与方差：</p>
+<p>​ 设随机变量 <span class="math inline">\(X \sim N\left(\mu,
+\sigma^2\right)\)</span>，则 <span class="math display">\[
+E(X)=\mu \quad Var(X)=\sigma^2
+\]</span> 6）正态分布的 <span class="math inline">\(3\sigma\)</span>
+原则：</p>
+<p>​ 设随机变量 <span class="math inline">\(X \sim N\left(\mu,
+\sigma^2\right)\)</span>, 则 <span class="math display">\[
+P(\mu-k \sigma&lt;X&lt;\mu+k
+\sigma)=P\left(\left|\frac{X-\mu}{\sigma}\right|&lt;k\right)=\Phi(k)-\Phi(-k)=2
+\Phi(k)-1
+\]</span> ​ 当 <span class="math inline">\(k=1,2,3\)</span> 时，有 <span class="math display">\[
+P(\mu-\sigma&lt;X&lt;\mu+\sigma)=2 \Phi(1)-1=0.6826,
+\]</span></p>
+<p><span class="math display">\[
+P(\mu-2 \sigma&lt;X&lt;\mu+2 \sigma)=2 \Phi(2)-1=0.9545,
+\]</span></p>
+<p><span class="math display">\[
+P(\mu-3 \sigma&lt;X&lt;\mu+3 \sigma)=2 \Phi(3)-1=0.9973 .
+\]</span></p>
+<p>​ 随机变量 <span class="math inline">\(X \sim N\left(\mu,
+\sigma^2\right)\)</span> 的取值落在 <span class="math inline">\([\mu-3\sigma,\mu+3\sigma]\)</span>
+之外的概率不超过千分之三，即 <span class="math inline">\(X\)</span>
+的取值几乎都落在<span class="math inline">\([\mu-3\sigma,\mu+3\sigma]\)</span>
+之内，这就是人们常说的 <span class="math inline">\(3\sigma\)</span>
+原则。</p>
+<hr>
+<p>4.伽马分布（了解）</p>
+<p>1）伽马分布的定义</p>
+<p>​ 若随机变量 <span class="math inline">\(X\)</span> 的密度函数为 <span class="math display">\[
+p(x)=\left\{\begin{array}{cc}
+\dfrac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\lambda x},
+&amp; x \geqslant 0 \\
+0 &amp; , x&lt;0
+\end{array} \quad \alpha&gt;0, \lambda&gt;0\right.
+\]</span> 称 <span class="math inline">\(X\)</span> 服从伽马分布，记为
+<span class="math inline">\(X\sim Ga(\alpha,\lambda)\)</span> .</p>
+<p>2）伽马分布的数学期望与方差</p>
+<p>​ 设随机变量 <span class="math inline">\(X\sim
+Ga(\alpha,\lambda)\)</span>，则 <span class="math display">\[
+E(X)=\frac{\alpha}{\lambda} \quad Var(X)=\frac{\alpha}{\lambda^2}
+\]</span> 3）两个特例</p>
+<p>​ <span class="math inline">\(\alpha=1\)</span>
+时的伽马分布就是指数分布, 即 <span class="math display">\[
+Ga(1, \lambda) = Exp(\lambda) .
+\]</span> ​ 称 <span class="math inline">\(\alpha=n / 2, \lambda=1 /
+2\)</span> 时的伽马分布是自由度为 <span class="math inline">\(n\)</span>
+的 <span class="math inline">\(\chi^2\)</span> (卡方) 分布，即 <span class="math display">\[
+G a\left(\frac{n}{2}, \frac{1}{2}\right)=\chi^2(n).
+\]</span> 4）伽马分布与指数分布的关系：若第一参数为 <span class="math inline">\(k\)</span> ，则伽马变量可以表示成 <span class="math inline">\(k\)</span> 个独立同分布的指数变量之和，即</p>
+<p>若 <span class="math inline">\(X \sim Ga(k, \lambda)\)</span>. 则
+<span class="math inline">\(X=X_1+X_2+\cdots+X_k \quad X_i \sim
+Exp(\lambda)\)</span> .</p>
+<hr>
+<p>5.贝塔分布（了解）</p>
+<p>1）贝塔函数</p>
+<p>​ 称以下函数 <span class="math display">\[
+\mathrm{B}(a, b)=\int_0^1 x^{a-1}(1-x)^{b-1} \mathrm{~d} x
+\]</span> 为贝塔函数，其中参数 <span class="math inline">\(a&gt;0,b&gt;0\)</span> .</p>
+<p>​ 贝塔函数具有的性质：<span class="math inline">\(B(a,b) =
+B(b,a)\)</span>.</p>
+<p>2）贝塔分布的定义</p>
+<p>​ 若随机变量 <span class="math inline">\(X\)</span> 的密度函数为 <span class="math display">\[
+p(x)= \begin{cases}\dfrac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)}
+x^{a-1}(1-x)^{b-1}, &amp; 0&lt;x&lt;1, \\ 0, &amp; \text { 其他,
+}\end{cases}
+\]</span> 则称 <span class="math inline">\(X\)</span> 服从贝塔分布, 记作
+<span class="math inline">\(X \sim B e(a, b)\)</span>, 其中 <span class="math inline">\(a&gt;0, b&gt;0\)</span> 都是形状参数。</p>
+<p>​ 特别地，<span class="math inline">\(Be(1,1) =U(0,1)\)</span></p>
+<p>3）贝塔分布的数学期望与方差</p>
+<p>​ 设随机变量 <span class="math inline">\(X\sim Be(a,b)\)</span> ，则
+<span class="math display">\[
+E(x)=\frac{a}{a+b} \quad Var(X)=\frac{a b}{(a+b)^2(a+b+1)}
+\]</span></p>
+<h3 id="随机变量函数的分布">$$2.6 随机变量函数的分布</h3>
+<p>1.离散随机变量的函数分布</p>
+<p>​ 设离散随机变量 <span class="math inline">\(X\)</span> 的分布列为
+<span class="math inline">\(P\left\{X=x_i\right\}=p_i, i=1,2,
+\cdots\)</span>, 已知 <span class="math inline">\(y=g(x)\)</span>为连续函数, 则 <span class="math inline">\(Y=g(X)\)</span> 的分布列为 <span class="math inline">\(P\left\{Y=g\left(x_i\right)\right\}=p_i, i=1,2,
+\cdots\)</span> .然后再合并 <span class="math inline">\(g(x_i)\)</span>
+值相等的概率即可。</p>
+<hr>
+<p>2.连续随机变量的函数分布</p>
+<p>1）当 <span class="math inline">\(Y=g(X)\)</span>
+仍然为离散随机变量</p>
+<p>​ 这种情况下只用将 <span class="math inline">\(Y\)</span>
+的可能取值一一列出，再将 <span class="math inline">\(Y\)</span>
+取各种可能值的概率求出即可。</p>
+<p>2）当 <span class="math inline">\(Y=g(X)\)</span> 为连续随机变量</p>
+<p>​ 求 <span class="math inline">\(Y\)</span> 的密度函数 <span class="math inline">\(p_Y(y)\)</span> 的两种方法：</p>
+<p>​ ①分布函数法：求 <span class="math inline">\(Y\)</span> 的分布函数
+<span class="math inline">\(F_Y(y)\)</span> ，<span class="math inline">\(F_Y(y)=P_Y(Y\leqslant y)=P(g(X)\leqslant
+y)=P_X(X\in A)\)</span> ，对变量 <span class="math inline">\(y\)</span>
+求导从而得到 <span class="math inline">\(P_Y(y)\)</span> .</p>
+<p>​ ②公式法：设 <span class="math inline">\(X\)</span>
+是连续随机变量，其密度函数为 <span class="math inline">\(p_X(x)\)</span>
+. <span class="math inline">\(Y=g(X)\)</span> 是另一个连续随机变量. 若
+<span class="math inline">\(y=g(x)\)</span> 严格单调，其反函数 <span class="math inline">\(h(y)\)</span> 有连续导函数，则 <span class="math inline">\(Y=g(X)\)</span> 的密度函数为 <span class="math display">\[
+p_Y(y)= \begin{cases}p_X[h(y)]\left|h^{\prime}(y)\right|, &amp;
+a&lt;y&lt;b, \\ 0, &amp; \text { 其他. }\end{cases}
+\]</span> 其中 <span class="math inline">\(a=\min \{g(-\infty),
+g(\infty)\}, b=\max \{g(-\infty), g(\infty)\}\)</span>.</p>
+<p>​ 由公式法得到的一些结论：</p>
+<ul>
+<li>定理1：设随机变量 <span class="math inline">\(X\)</span>
+服从正态分布 <span class="math inline">\(N\left(\mu,
+\sigma^2\right)\)</span>, 则当 <span class="math inline">\(a \neq
+0\)</span> 时, 有 <span class="math inline">\(Y=a X+b \sim
+N(a\mu+b,a^2\sigma^2)\)</span> .
+即：正态变量经过线性变换后仍为正态变量。</li>
+<li>定理2：若随机变量 <span class="math inline">\(X\)</span> 的分布函数
+<span class="math inline">\(F_X(x)\)</span> 为严格单调增的连续函数,
+其反函数<span class="math inline">\(F_X^{-1}(y)\)</span> 存在, 则 <span class="math inline">\(Y=F_X(x)\)</span> 服从 <span class="math inline">\((0,1)\)</span> 上的均匀分布 <span class="math inline">\(U(0,1)\)</span>.</li>
+</ul>
+<h3 id="s附一定要背诵的常用概率分布数学期望和方差"><span class="math inline">\(\S\)</span>附：一定要背诵的常用概率分布数学期望和方差</h3>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|}
+\hline \text { 分布 } &amp; \text { 分布律或概率密度 } &amp; \text {
+数学期望 } &amp; \text { 方差 } \\
+\hline \text { 0-1 分布 } &amp; \begin{array}{l}
+P\{x=k\}=p^k(1-p)^{1-k} \\
+(k=0,1)
+\end{array} &amp; p &amp; p(1-p) \\
+\hline \text { 二项分布 } B(n,p) &amp; P\{x=k\}=\displaystyle
+\displaystyle\binom{n}{k} p^k(1-p)^{1-k} &amp; n p &amp; n p(1-p) \\
+\hline \text { 泊松分布 } P(\lambda) &amp; P\{x=k\}=\dfrac{\lambda^k
+}{k!}e^{-\lambda} &amp; \lambda &amp; \lambda \\
+\hline \text { 均匀分布 } U(a, b) &amp; p(x)=\dfrac{1}{b-a}
+(a&lt;x&lt;b) &amp; \dfrac{a+b}{2} &amp; \dfrac{(b-a)^2}{12} \\
+\hline \text { 正态分布 } N\left(\mu, \sigma^2\right) &amp;
+p(x)=\dfrac{1}{\sqrt{2 \pi} \sigma} e^{\frac{(x-\mu)^2}{2 \sigma^2}}
+&amp; \mu &amp; \sigma^2 \\
+\hline \text { 指数分布 } Exp(\theta) &amp;
+p(x)=\left\{\begin{array}{rr}
+\theta e^{-\theta x}, &amp; x\geqslant0 \\ 0, &amp; \text { 其他 }
+\end{array}\right. &amp; \dfrac{1}{\theta} &amp; \dfrac{1}{\theta^2} \\
+\hline
+\end{array}
+\]</span></p>
+<h2 id="第三章-多维随机变量及其分布">第三章 多维随机变量及其分布</h2>
+<h3 id="多维随机变量及其联合分布">$$3.1 多维随机变量及其联合分布</h3>
+<p>1.多维随机变量的定义：如果 <span class="math inline">\(X_1(\omega),X_2(\omega),\cdots,X_n(\omega)\)</span>
+是定义在同一个样本空间 <span class="math inline">\(\Omega={\omega}\)</span> 上的 <span class="math inline">\(n\)</span> 个随机变量，则称 <span class="math display">\[
+X(\omega)=(X_1(\omega),X_2(\omega),\cdots,X_n(\omega))
+\]</span> 为 <span class="math inline">\(n\)</span> 维（或 <span class="math inline">\(n\)</span> 元）随机变量或随机向量。</p>
+<hr>
+<p>2.联合分布函数</p>
+<p>1）定义：对任意 <span class="math inline">\(n\)</span> 个实数 <span class="math inline">\(x_1,x_2,\cdots,x_n\)</span> ，<span class="math inline">\(n\)</span> 个事件 <span class="math inline">\(\{X_1\leqslant x_1\} , \{X_2\leqslant x_2\}
+,\cdots, \{X_n\leqslant x_n\}\)</span> 同时发生的概率 <span class="math display">\[
+F\left(x_1, x_2, \cdots, x_n\right)=P\left(X_1 \leqslant x_1, X_2
+\leqslant x_2, \cdots, X_n \leqslant x_n\right)
+\]</span> 为 <span class="math inline">\(n\)</span> 维随机变量 <span class="math inline">\((X_1,X_2,\cdots,X_n)\)</span> 的联合分布函数。</p>
+<p>2）任一二维联合分布函数 <span class="math inline">\(F(x,y)\)</span>
+具备的性质：</p>
+<ul>
+<li>单调性</li>
+<li>有界性</li>
+<li>右连续性</li>
+<li>非负性：对任意的 <span class="math inline">\(a&lt;b,c&lt;d\)</span>
+有 <span class="math inline">\(P(a&lt;X \leqslant b, c&lt;Y \leqslant
+d)=F(b, d)-F(a, d)-F(b, c)+F(a, c) \geqslant 0 .\)</span></li>
+</ul>
+<hr>
+<p>3.联合分布列（对于离散随机变量）</p>
+<p>1）定义：如果二维随机变量 <span class="math inline">\((X,Y)\)</span>
+只取有限个或可列个数对 <span class="math inline">\((x_i,y_j)\)</span>
+，则称 <span class="math inline">\((X,Y)\)</span> 为二维离散随机变量，称
+<span class="math display">\[
+p_{i j}=P\left(X=x_i, Y=y_j\right), \quad i, j=1,2, \cdots
+\]</span> 为 <span class="math inline">\((X,Y)\)</span>
+的联合分布列。也可以用如下表格的形式记录：</p>
+<table border="1">
+<tbody><tr>
+<th rowspan="2" bgcolor="#ffffcc" align="middle">
+X
+</th>
+<th colspan="5" bgcolor="#ffffcc" align="middle">
+Y
+</th>
+</tr>
+<tr>
+<td align="middle">
+y<sub>1</sub>
+</td>
+<td align="middle">
+y<sub>2</sub>
+</td>
+<td align="middle">
+...
+</td>
+<td align="middle">
+y<sub>j</sub>
+</td>
+<td align="middle">
+...
+</td>
+</tr>
+<tr>
+<td align="middle">
+x<sub>1</sub>
+</td>
+<td align="middle">
+p<sub>11</sub>
+</td>
+<td align="middle">
+p<sub>12</sub>
+</td>
+<td align="middle">
+...
+</td>
+<td align="middle">
+p<sub>1j</sub>
+</td>
+<td align="middle">
+...
+</td>
+</tr>
+<tr>
+<td align="middle">
+x<sub>2</sub>
+</td>
+<td align="middle">
+p<sub>21</sub>
+</td>
+<td align="middle">
+p<sub>22</sub>
+</td>
+<td align="middle">
+...
+</td>
+<td align="middle">
+p<sub>2j</sub>
+</td>
+<td align="middle">
+...
+</td>
+</tr>
+<tr>
+<td align="middle">
+...
+</td>
+<td align="middle">
+...
+</td>
+<td align="middle">
+...
+</td>
+<td align="middle">
+...
+</td>
+<td align="middle">
+...
+</td>
+<td align="middle">
+...
+</td>
+</tr>
+<tr>
+<td align="middle">
+x<sub>i</sub>
+</td>
+<td align="middle">
+p<sub>i1</sub>
+</td>
+<td align="middle">
+p<sub>i2</sub>
+</td>
+<td align="middle">
+...
+</td>
+<td align="middle">
+p<sub>ij</sub>
+</td>
+<td align="middle">
+...
+</td>
+</tr>
+<tr>
+<td align="middle">
+...
+</td>
+<td align="middle">
+...
+</td>
+<td align="middle">
+...
+</td>
+<td align="middle">
+...
+</td>
+<td align="middle">
+...
+</td>
+<td align="middle">
+...
+</td>
+</tr>
+</tbody></table>
+<p><span class="math display">\[
+p_{i \cdot}=\sum_j p_{i j}\quad p_{\cdot j}=\sum_i p_{i j}
+\]</span></p>
+<p>2）性质：非负性、正则性。</p>
+<hr>
+<p>4.联合密度函数（对于连续随机变量）</p>
+<p>1）定义：如果存在二元非负函数 <span class="math inline">\(p(x,
+y)\)</span>, 便得二维随机变量 <span class="math inline">\((X,
+Y)\)</span> 的分布函数 <span class="math inline">\(F(x,y)\)</span>
+可以表示为 <span class="math display">\[
+F(x, y)=\int_{-\infty}^{x} \int_{-\infty}^y p(u, v) \mathrm{d} v
+\mathrm{~d} u,
+\]</span> 则称 <span class="math inline">\((X, Y)\)</span>
+为二维连续随机变量, 称 <span class="math inline">\(p(u, v)\)</span> 为
+<span class="math inline">\((X, Y)\)</span> 的联合密度函数.</p>
+<p>​ 在 <span class="math inline">\(F(x,y)\)</span> 偏导数存在的点上有
+<span class="math display">\[
+p(x, y)=\frac{\partial^2}{\partial x \partial y} F(x, y).
+\]</span> ​ 若 <span class="math inline">\(G\)</span>
+为平面上的一个区域，则事件 <span class="math inline">\(\{(X,Y)\in
+G\}\)</span> 的概率可以表示为在 <span class="math inline">\(G\)</span>
+上对 <span class="math inline">\(p(x,y)\)</span> 的二重积分 <span class="math display">\[
+P((X, Y) \in G)=\iint_G p(x, y) \mathrm{d} x \mathrm{d} y .
+\]</span> 2）性质：非负性、正则性。</p>
+<p>3）在计算积分时要注意点、线的面积为 <span class="math inline">\(0\)</span>.</p>
+<hr>
+<p>5.常见多维分布</p>
+<p>1）多维均匀分布</p>
+<p>​ 设 <span class="math inline">\(D\)</span> 为 <span class="math inline">\(\mathbb{R}^n\)</span> 中一个有界区域，其度量
+(平面的为面积, 空间的为体积等) 为 <span class="math inline">\(S_D\)</span> ，如果多维随机变量 <span class="math inline">\((X_1,X_2,\cdots,X_n)\)</span> 的联合密度函数为
+<span class="math display">\[
+p\left(x_1, x_2, \cdots, x_n\right)= \begin{cases}\dfrac{1}{S_D}, &amp;
+\left(x_1, x_2, \cdots, x_n\right) \in D, \\ 0, &amp; \text { 其他,
+}\end{cases}
+\]</span> 则称 <span class="math inline">\(\left(X_1, X_2, \cdots,
+X_n\right)\)</span> 服从 <span class="math inline">\(D\)</span>
+上的多维均匀分布, 记为 <span class="math inline">\(\left(X_1, X_2,
+\cdots, X_n\right) \sim U(D)\)</span>.</p>
+<p>2）二元正态分布</p>
+<p>​ 如果二维随机变量 <span class="math inline">\((X,Y)\)</span>
+的联合密度函数为 <span class="math display">\[
+p(x, y)=\frac{1}{2 \pi \sigma_1 \sigma_2 \sqrt{1-\rho^2}} \exp
+\left\{-\frac{1}{2\left(1-\rho^2\right)}\left[\frac{\left(x-\mu_1\right)^2}{\sigma_1^2}-2
+\rho \frac{\left(x-\mu_1\right)\left(y-\mu_2\right)}{\sigma_1
+\sigma_2}+\frac{\left(y-\mu_2\right)^2}{\sigma_2^2}\right]\right\}-\infty&lt;x,
+y&lt;+\infty
+\]</span> 则称 <span class="math inline">\((X, Y)\)</span>
+服从二元正态分布, 记为 <span class="math inline">\((X, Y) \sim
+N\left(\mu_1, \mu_2, \sigma_1^2, \sigma_2^2,
+\rho\right)\)</span>.其中五个参数的取值范围分别是 <span class="math display">\[
+-\infty&lt;\mu_1, \mu_2&lt;\infty, \quad \sigma_1, \sigma_2&gt;0,
+\quad-1 \leqslant \rho \leqslant 1 .
+\]</span> <span class="math inline">\(\mu_1, \mu_2\)</span> 分别是 <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Y\)</span> 的均值, <span class="math inline">\(\sigma_1^2, \sigma_2^2\)</span> 分别是 <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Y\)</span> 的方差, <span class="math inline">\(\rho\)</span> 是 <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Y\)</span> 的相关系数。</p>
+<p>3）多项分布</p>
+<p>​ 进行 <span class="math inline">\(n\)</span>
+次独立重复试验，如果每次试验有 <span class="math inline">\(r\)</span>
+个互不相容的结果： <span class="math inline">\(A_1,A_2,\cdots,A_r\)</span> 之一发生，且每次试验中
+<span class="math inline">\(A_i\)</span> 发生的概率为 <span class="math inline">\(p_i = P(A_i),i=1,2,\cdots,r.\)</span> 且 <span class="math inline">\(p_1+p_2+\cdots+p_r=1.\)</span> 记 <span class="math inline">\(X_i\)</span> 为 <span class="math inline">\(n\)</span> 次独立重复试验中 <span class="math inline">\(A_i\)</span> 出现的次数，<span class="math inline">\(i=1,2,\cdots,r\)</span> ，则 <span class="math inline">\((X_1,X_2,\cdots,X_r)\)</span> 取值 <span class="math inline">\((n_1,n_2,\cdots,n_r)\)</span> 的概率，即 <span class="math inline">\(A_1\)</span> 出现 <span class="math inline">\(n_1\)</span> 次，<span class="math inline">\(A_2\)</span> 出现 <span class="math inline">\(n_2\)</span> …… <span class="math inline">\(A_r\)</span> 出现 <span class="math inline">\(n_r\)</span> 次的概率为 <span class="math display">\[
+P\left(X_1=n_1, X_2=n_2, \cdots,
+X_r=n_r\right)=\frac{n!}{n_{1}!n_{2}!\cdots n_{r}!} p_1^{n_1} p_2^{n_2}
+\cdots p_r^{n_r},
+\]</span> 其中 <span class="math inline">\(n=n_1+n_2+ \cdots
++n_r.\)</span></p>
+<p>​ 这个联合分布列称为 <span class="math inline">\(r\)</span> 项分布,
+又称多项分布, 记为 <span class="math inline">\(M\left(n, p_1, p_2,
+\cdots, p_r\right)\)</span>. 这个概率是 <span class="math inline">\((p_1+p_2+\cdots +p_r)^n\)</span>
+展开式的一项。</p>
+<p>4）多维超几何分布</p>
+<p>​ 袋中有 <span class="math inline">\(N\)</span> 个球, 其中有 <span class="math inline">\(N_i\)</span> 个 <span class="math inline">\(i\)</span> 号球, <span class="math inline">\(i=1,2, \cdots,r\)</span> ，且 <span class="math inline">\(N=N_1+N_2+\cdots+N_r\)</span>. 从中任意取出 <span class="math inline">\(n(\leqslant N)\)</span> 个, 若记 <span class="math inline">\(X_i\)</span> 为取出的 <span class="math inline">\(n\)</span> 个球中 <span class="math inline">\(i\)</span> 号球的个数， <span class="math inline">\(i=1,2,\cdots,r\)</span> ,则 <span class="math display">\[
+P\left(X_1=n_1, X_2=n_2, \cdots,
+X_r=n_r\right)=\dfrac{\displaystyle\binom{N_1}{n_1}\binom{N_2}{n_2}
+\cdots\binom{N_r}{n_r}}{\displaystyle\binom{N}{n}},
+\]</span> 其中 <span class="math inline">\(n_1+n_2+\cdots+n_r=n, n_i
+\leqslant N_i, i=1,2, \cdots, r\)</span>.</p>
+<h3 id="边际分布与随机变量的独立性">$$3.2
+边际分布与随机变量的独立性</h3>
+<p>1.边际分布函数</p>
+<p>​ 设二维随机变量 <span class="math inline">\((X,Y)\)</span>
+的联合分布函数为 <span class="math inline">\(F(x,y)\)</span> ，则 <span class="math inline">\(X\)</span> 的边际分布函数为 <span class="math display">\[
+F_X(x)=F(x,\infty)=P(X\leqslant x,y&lt;\infty)
+\]</span> ​ 相似地， <span class="math inline">\(Y\)</span>
+的边际分布函数为 <span class="math display">\[
+F_Y(y)=F(\infty , y)=P(x&lt;\infty, Y\leqslant y)
+\]</span> ​ 注意：由分布函数可以唯一确定边际分布函数，反之不成立。</p>
+<hr>
+<p>2.边际分布列（对离散随机变量）</p>
+<p>​ 在二维离散随机变量 <span class="math inline">\((X, Y)\)</span>
+的联合分布列 <span class="math inline">\(\left\{P\left(X=x_i,
+Y=y_j\right)\right\}\)</span> 中：</p>
+<p>​ <span class="math inline">\(X\)</span> 的边际分布列：对 <span class="math inline">\(j\)</span> 求和所得的分布列，即 <span class="math display">\[
+\sum_{j=1}^{\infty} P\left(X=x_i,
+Y=y_j\right)=P\left(X=x_i\right)=\sum_{j=1}^{\infty}p_{ij}, \quad i=1,2,
+\cdots
+\]</span> ​ <span class="math inline">\(Y\)</span> 的边际分布列：对 <span class="math inline">\(i\)</span> 求和所得的分布列，即 <span class="math display">\[
+\sum_{i=1}^{\infty} P\left(X=x_i,
+Y=y_j\right)=P\left(Y=y_j\right)=\sum_{i=1}^{\infty}p_{ij}, \quad j=1,2,
+\cdots
+\]</span> ​ 常以列表格的形式来描述： <span class="math display">\[
+\begin{array}{c|cccc|c}
+\hline X /Y &amp; y_1 &amp; \cdots &amp; y_j &amp; \cdots &amp;
+P\left(Y=y_j\right) \\
+\hline x_1 &amp; p_{11} &amp; \cdots &amp; p_{i j} &amp; \cdots &amp;
+\displaystyle\sum_{j=1}^{\infty} p_{1 j} \\
+\vdots &amp; \vdots &amp; &amp; \vdots &amp; &amp; \vdots \\
+x_i &amp; p_{i 1} &amp; \cdots &amp; p_{i j} &amp; \cdots &amp;
+\displaystyle \sum_{j=1}^{\infty} p_{i j} \\
+\vdots &amp; \vdots &amp; &amp; \vdots &amp; &amp; \vdots \\
+\hline P\left(X=x_i\right) &amp; \displaystyle\sum_{i=1}^{\infty} p_{i
+1} &amp; \cdots &amp; \displaystyle\sum_{i=1}^{\infty} p_{i j} &amp;
+\cdots &amp; 1
+\end{array}
+\]</span></p>
+<hr>
+<p>3.边际密度函数（对连续随机变量）</p>
+<p>​ 如果二维连续随机变量 <span class="math inline">\((X, Y)\)</span>
+的联合密度函数为 <span class="math inline">\(p(x, y)\)</span> ,则 <span class="math display">\[
+\left\{\begin{array}{l}
+p_X(x)=\displaystyle \int_{-\infty}^{\infty} p(x, y) d y \\
+p_Y(y)=\displaystyle \int_{-\infty}^{\infty} p(x, y) d x
+\end{array}\right.
+\]</span> ​ <span class="math inline">\(p_X(x)\)</span> 为 <span class="math inline">\(X\)</span> 的边际密度函数，<span class="math inline">\(p_Y(y)\)</span> 为 <span class="math inline">\(Y\)</span> 的边际密度函数。</p>
+<p>​ 对应的边际分布函数为 <span class="math display">\[
+\left\{\begin{array}{l}
+F_X(x)=\displaystyle \int_{-\infty}^x\left(\int_{-\infty}^{\infty} f(t,
+y) d y\right) d t \\
+F_Y(y)=\displaystyle \int_{-\infty}^y\left(\int_{-\infty}^{\infty} f(x,
+s) d x\right) d s
+\end{array}\right.
+\]</span> ​
+注意：由联合密度函数求边际密度函数时，要注意积分区域的确定。</p>
+<hr>
+<p>​ 4.随机变量间的独立性</p>
+<p>1）定义：设 <span class="math inline">\(n\)</span> 维随机变量 <span class="math inline">\(\left(X_1, X_2, \cdots, X_n\right)\)</span>
+的联合分布函数为 <span class="math inline">\(F\left(x_1, x_2, \cdots,
+x_n\right)\)</span> ，<span class="math inline">\(F_i\left(x_i\right)\)</span> 为 <span class="math inline">\(X_i\)</span> 的边际分布函数。如果对任意 <span class="math inline">\(n\)</span> 个实数 <span class="math inline">\(x_1,x_2,\cdots,x_n\)</span> ，有 <span class="math display">\[
+F\left(x_1, x_2, \cdots, x_n\right)=\prod_{i=1}^n F_i\left(x_i\right),
+\]</span> 则称 <span class="math inline">\(X_1,X_2,\cdots,X_n\)</span>
+相互独立。</p>
+<p>2）在离散场合</p>
+<p>​ 如果对任意 <span class="math inline">\(n\)</span> 个取值 <span class="math inline">\(x_1,x_2,\cdots,x_n\)</span> 有 <span class="math display">\[
+P\left(X_1=x_1, X_2=x_2, \cdots, X_n=x_n\right)=\prod_{i=1}^n
+P\left(X_i=x_i\right),
+\]</span> 则称 <span class="math inline">\(X_1,X_2,\cdots,X_n\)</span>
+相互独立。</p>
+<p>3）在连续场合</p>
+<p>​ 如果对任意 <span class="math inline">\(n\)</span> 个实数 <span class="math inline">\(x_1,x_2,\cdots,x_n\)</span> 有 <span class="math display">\[
+p\left(x_1, x_2, \cdots, x_n\right)=\prod_{i=1}^n p_i\left(x_i\right),
+\]</span> 则称 <span class="math inline">\(X_1,X_2,\cdots,X_n\)</span>
+相互独立。</p>
+<p>4）特别地，</p>
+<p>​ 对于二维离散随机变量 <span class="math inline">\((X,Y)\)</span> ，若
+<span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 相互独立，则 <span class="math inline">\(p_{ij}=p_{i\cdot}p_{\cdot
+j},i,j=1,2,\cdots\)</span></p>
+<p>​ 对于二维连续随机变量 <span class="math inline">\((X,Y)\)</span> ，若
+<span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 相互独立，则 <span class="math inline">\(F(X,Y) = F_X(x)F_Y(y)\)</span>.</p>
+<p>注意：若随机变量间相互独立，则由边际密度函数可以推出联合分布函数。</p>
+<h3 id="多维随机变量函数的分布">$$3.3 多维随机变量函数的分布</h3>
+<p>1.多维离散随机变量函数的分布</p>
+<p>1）设 <span class="math inline">\(\left(X_1, X_2, \cdots,
+X_n\right)\)</span> 为 <span class="math inline">\(n\)</span>
+维离散随机变量, 则某一函数 <span class="math inline">\(Y=g\left(X_1,
+X_2, \cdots, X_n\right)\)</span> 是一维离散随机变量，当 <span class="math inline">\(\left(X_1, X_2, \cdots, X_n\right)\)</span>
+所有可能取值较少时, 可将 <span class="math inline">\(Y\)</span>
+的取值一一列出，然后再整理合并。</p>
+<p>2）具有可加性的离散随机变量</p>
+<ul>
+<li>二项分布的可加性：设随机变量 <span class="math inline">\(X \sim b(n,
+p), Y \sim b(m, p)\)</span>, 且 <span class="math inline">\(X\)</span>
+与 <span class="math inline">\(Y\)</span> 独立，则 <span class="math inline">\(Z=X+Y \sim b(n+m, p)\)</span>.</li>
+<li>泊松分布的可加性：设随机变量 <span class="math inline">\(X \sim
+P\left(\lambda_1\right), Y \sim P\left(\lambda_2\right)\)</span>, 且
+<span class="math inline">\(X\)</span> 与 <span class="math inline">\(Y\)</span> 独立，则 <span class="math inline">\(Z=X+Y \sim
+P\left(\lambda_1+\lambda_2\right)\)</span>.</li>
+</ul>
+<hr>
+<p>2.多维连续随机变量函数的分布</p>
+<p>​ 设 <span class="math inline">\((X,Y)\)</span>
+为二维连续随机变量，联合密度函数为 <span class="math inline">\(p(x,y)\)</span>.</p>
+<p>1）<span class="math inline">\(Z=X+Y\)</span> 的分布（卷积公式）
+<span class="math display">\[
+p_Z(z)=\int_{-\infty}^{\infty} p(x, z-x)
+\mathrm{d}x=\int_{-\infty}^{\infty} p(z-y, y) \mathrm{d} y
+\]</span> ​ 特别地，如果 <span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 相互独立，则 <span class="math display">\[
+P_Z(z)=\int_{-\infty}^{\infty} p_X(x) p_Y(z-x) \mathrm{d} x =
+\int_{-\infty}^{\infty} p_X(z-y) p_Y(y) \mathrm{d} y
+\]</span> 2）<span class="math inline">\(Z=XY\)</span> 的分布 <span class="math display">\[
+p_{X Y}(z)=\int_{-\infty}^{\infty} \frac{1}{|x|} p\left(x,
+\frac{z}{x}\right) d x=\int_{-\infty}^{\infty} \frac{1}{|y|}
+p\left(\frac{z}{y},y\right) d y
+\]</span> ​ 特别地，如果 <span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 相互独立，则 <span class="math display">\[
+p_{X Y}(z)=\int_{-\infty}^{\infty} \frac{1}{|x|} p_X(x)
+p_Y\left(\frac{z}{x}\right) d x=\int_{-\infty}^{\infty} \frac{1}{|y|}
+p_X\left(\frac{z}{y}\right)p_Y(y) d y
+\]</span> 3）<span class="math inline">\(Z=\dfrac{Y}{X}\)</span> 的分布
+<span class="math display">\[
+p_{Y/X}(z)=\int_{-\infty}^{\infty}|x| p(x, x z) d x
+\]</span> ​ 若 <span class="math inline">\(Z=\dfrac{X}{Y}\)</span> <span class="math display">\[
+p_{X/Y}(z)=\int_{-\infty}^{\infty}|y| p(z y, y) d y
+\]</span> 4）具有可加性的连续随机变量</p>
+<ul>
+<li><p>正态分布的可加性：设随机变量 <span class="math inline">\(X \sim
+N\left(\mu_1, \sigma_1^2\right), Y \sim N\left(\mu_2,
+\sigma_2^2\right)\)</span>, 且 <span class="math inline">\(X\)</span> 与
+<span class="math inline">\(Y\)</span> 独立，则 <span class="math display">\[
+  Z=X+Y \sim N\left(  \mu_1+\mu_2, \sigma_1^2+\sigma_2^2\right)
+  \]</span></p></li>
+<li><p>伽马分布的可加性：设随机变量 <span class="math inline">\(X \sim G
+a\left(\alpha_1, \lambda\right), Y \sim G a\left(\alpha_2,
+\lambda\right)\)</span>, 且 <span class="math inline">\(X\)</span> 与
+<span class="math inline">\(Y\)</span> 独立，则 <span class="math display">\[
+  Z=X+Y \sim G a\left(\alpha_1+\alpha_2, \lambda\right)
+  \]</span></p></li>
+</ul>
+<p>5）变换变量法求解多维随机变量函数的分布</p>
+<p>​ 设二维随机变量 <span class="math inline">\((X,Y)\)</span>
+的联合密度函数为 <span class="math inline">\(p(x,y)\)</span> ，如果函数
+<span class="math display">\[
+\left\{\begin{array}{l}
+u=g_1(x, y), \\
+v=g_2(x, y)
+\end{array}\right.
+\]</span> ​ 有连续偏导数，并存在唯一的反函数 <span class="math display">\[
+\left\{\begin{array}{l}
+x=x(u, v), \\
+y=y(u, v),
+\end{array}\right.
+\]</span> ​ 其变换的雅可比行列式 <span class="math display">\[
+J=\frac{\partial(x, y)}{\partial(u, v)}=\left|\begin{array}{ll}
+\dfrac{\partial x}{\partial u} &amp; \dfrac{\partial x}{\partial v} \\
+\dfrac{\partial y}{\partial u} &amp; \dfrac{\partial y}{\partial v}
+\end{array}\right|=\left(\frac{\partial(u, v)}{\partial(x,
+y)}\right)^{-1}= \left( \left| \begin{array}{ll}
+\dfrac{\partial u}{\partial x} &amp; \dfrac{\partial u}{\partial y} \\
+\dfrac{\partial v}{\partial x} &amp; \dfrac{\partial v}{\partial y}
+\end{array} \right\rvert\,\right)^{-1} \neq0 .
+\]</span> ​ 若 <span class="math display">\[
+\left\{\begin{array}{l}
+U=g_1(X, Y), \\
+V=g_2(X, Y),
+\end{array}\right.
+\]</span> ​ 则 <span class="math inline">\((U,V)\)</span>
+的联合密度函数为 <span class="math display">\[
+p(u, v)=p(x(u, v), y(u, v))|J| .
+\]</span></p>
+<hr>
+<p>3.最大值最小值分布</p>
+<p>​ 设 <span class="math inline">\(X_1, X_2, \cdots, X_n\)</span> 是
+<span class="math inline">\(n\)</span>
+个相互独立的随机变量，他们的分布函数分别为 <span class="math inline">\(F_{X_i}(x), i=1,2,\cdots,n.\)</span></p>
+<p>1）最大值分布：<span class="math inline">\(Y_1=\max
+\{X_1,X_2,\cdots,X_n\}\)</span> 的分布函数为 <span class="math display">\[
+F_{Y_1}(y)=F_{X_1}(y)  F_{X_2}(y)  \cdots  F_{X_n}(y)=\prod_{i=1}^n
+F_{X_i}(y)
+\]</span> ​ 特别地，当 <span class="math inline">\(X_1,X_2,\cdots,X_n\)</span> 的分布函数都为 <span class="math inline">\(F(x)\)</span> 密度函数均为 <span class="math inline">\(p(x)\)</span> 时，有 <span class="math display">\[
+F_{Y_1}(y)=[F(y)]^n \quad p_{Y_1}(y)=n[F(y)]^{n-1} p(y)
+\]</span> 2）最小值分布：<span class="math inline">\(Y_2=\min
+\{X_1,X_2,\cdots,X_n\}\)</span> 的分布函数为 <span class="math display">\[
+F_{Y_2}(y)=1-\left[1-F_{X_1}(y)\right]\left[1-F_{X_2}(y)\right]
+\cdots\left[1-F_{X_n}(y)\right]=1-\prod_{i=1}^n
+\left[1-F_{X_i}\left(y\right)\right]
+\]</span> ​ 特别地，当 <span class="math inline">\(X_1,X_2,\cdots,X_n\)</span> 的分布函数都为 <span class="math inline">\(F(x)\)</span> 密度函数均为 <span class="math inline">\(p(x)\)</span> 时，有 <span class="math display">\[
+F_{Y_2}(y)=1-[1-F(y)]^n \quad p_{Y_2}(y)=n[1-F(y)]^{n-1} p(y)
+\]</span></p>
+<h3 id="多维随机变量的特征数">$$3.4 多维随机变量的特征数</h3>
+<p>1.多维随机变量函数的数学期望</p>
+<p>1）定义：若二维随机变量 <span class="math inline">\((X, Y)\)</span>
+的分布用联合分布列 <span class="math inline">\(P\left(X=x_i,
+Y=y_j\right)\)</span> 或用联合密度 <span class="math inline">\(p(x,y)\)</span> 表示，则</p>
+<ul>
+<li><span class="math inline">\(Z=g(X,Y)\)</span> 的数学期望为</li>
+</ul>
+<p><span class="math display">\[
+E(Z)= \begin{cases}\displaystyle\sum_i \sum_j g\left(x_i, y_j\right)
+P\left(X=x_i, Y=y_j\right), &amp; \text { 在离散场合, } \\
+\displaystyle\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y)
+p(x, y) \mathrm{d}x \mathrm{d}y, &amp; \text { 在连续场合. }\end{cases}
+\]</span></p>
+<p>​ 假设数学期望都存在。</p>
+<ul>
+<li>当 <span class="math inline">\(g(X,Y) = X\)</span> 时，可以得到
+<span class="math inline">\(X\)</span> 的数学期望：</li>
+</ul>
+<p><span class="math display">\[
+E(X)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x p(x, y)
+\mathrm{d} x \mathrm{d} y=\int_{-\infty}^{\infty} x p_X(x) \mathrm{d} x
+.
+\]</span></p>
+<p>​ 同理可得 <span class="math inline">\(Y\)</span> 的期望： <span class="math display">\[
+E(Y)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} y p(x, y)
+\mathrm{d} x \mathrm{d} y=\int_{-\infty}^{\infty} y p_Y(y) \mathrm{d}y .
+\]</span></p>
+<ul>
+<li>当 <span class="math inline">\(g(X,Y) = (X-E(X))^2\)</span>
+时，可以得到 <span class="math inline">\(X\)</span> 的方差： <span class="math display">\[
+  \begin{aligned}
+  \operatorname{Var}(X) &amp; =E(X-E(X))^2=\int_{-\infty}^{\infty}
+\int_{-\infty}^{\infty}(x-E(X))^2 p(x, y) \mathrm{d} x \mathrm{d} y \\
+  &amp; =\int_{-\infty}^{\infty}(x-E(X))^2 p_X(x) \mathrm{d} x .
+  \end{aligned}
+  \]</span></li>
+</ul>
+<p>​ 同理可得 <span class="math inline">\(Y\)</span> 的方差： <span class="math display">\[
+\begin{aligned}
+\operatorname{Var}(Y) &amp; =E(Y-E(Y))^2=\int_{-\infty}^{\infty}
+\int_{-\infty}^{\infty}(Y-E(Y))^2 p(x, y) \mathrm{d} x \mathrm{d} y \\
+&amp; =\int_{-\infty}^{\infty}(Y-E(Y))^2 p_Y(y) \mathrm{d} y .
+\end{aligned}
+\]</span></p>
+<ul>
+<li>随机变量的数学期望 <span class="math display">\[
+  \begin{array}{|c|c|c|}
+  \hline &amp; \text { 离散型随机变量 } &amp; \text { 连续型随机变量 }
+\\
+  \hline \text { 一维随机变量 } &amp; E(X)=\displaystyle\sum_i x_i p_i
+&amp; E(X)=\displaystyle \int_{-\infty}^{\infty} x f(x) \mathrm{d} x \\
+  \hline \text { 二维随机变量 } &amp; E(X)=\displaystyle \sum_i \sum_j x
+p_{i j} &amp; E(X)=\displaystyle\int_{-\infty}^{\infty}
+\int_{-\infty}^{\infty} x f(x, y) \mathrm{d} x \mathrm{d} y =
+\int_{-\infty}^{\infty} x p_X(x) \mathrm{d} x\\
+  &amp; E(Y)=\displaystyle \sum_i \sum_j y p_{i j} &amp;
+E(Y)=\displaystyle \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} y
+f(x, y) \mathrm{d} x \mathrm{d} y =\int_{-\infty}^{\infty} y p_Y(y)
+\mathrm{d} y\\
+  \hline
+  \end{array}
+  \]</span></li>
+</ul>
+<p>​ 随机变量函数的数学期望 <span class="math display">\[
+\begin{array}{|c|c|c|}
+\hline &amp; \text { 离散型随机变量 } &amp; \text { 连续型随机变量 } \\
+\hline \begin{array}{c}
+\text { 一维随机 } \\
+\text { 变量 }
+\end{array} &amp; E[g(X)]=\displaystyle \sum_i g\left(x_i\right) p_i
+&amp; E[g(X)]=\displaystyle \int_{-\infty}^{\infty} g(x) p(x) \mathrm{d}
+x \\
+\hline \begin{array}{c}
+\text { 二维随机 } \\
+\text { 变量 }
+\end{array} &amp; E[g(X, Y)]=\displaystyle \sum_i \sum_j g\left(x_i,
+y_j\right) p_{i j} &amp; E[g(x, y)]=\displaystyle
+\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) p(x, y)
+\mathrm{d} x \mathrm{d} y \\
+\hline
+\end{array}
+\]</span></p>
+<hr>
+<p>2.数学期望与方差的运算性质</p>
+<ul>
+<li><p>设 <span class="math inline">\((X,Y)\)</span>
+是二维随机变量，则有 <span class="math inline">\(E(X+Y) =
+E(X)+E(Y).\)</span></p>
+<p>推广：对于 <span class="math inline">\(n\)</span> 维随机变量 <span class="math inline">\((X_1,X_2,\cdots, X_n)\)</span>，则有 <span class="math inline">\(\displaystyle E\left(\sum_{i=1}^n a_i
+X_i+b\right)=\sum_{i=1}^n a_i E\left(X_i\right)+b.\)</span></p></li>
+<li><p>若随机变量 <span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 相互独立（或不相关），则有 <span class="math inline">\(E(XY) =E(X)E(Y).\)</span></p>
+<p>推广：若随机变量 <span class="math inline">\(X_1,X_2,\cdots,X_n\)</span> 相互独立，则 <span class="math inline">\(\displaystyle E\left(\prod_{i=1}^n
+X_i\right)=\prod_{i=1}^n E\left(X_i\right).\)</span></p></li>
+<li><p>若随机变量 <span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 相互独立，则有 $ (X Y)=(X)+(Y)$.</p>
+<p>推广：若随机变量 <span class="math inline">\(X_1,X_2,\cdots,X_n\)</span> 相互独立，则 <span class="math inline">\(\displaystyle \operatorname{Var}\left(\sum_{i=1}^n
+a_i X_i+b\right)=\sum_{i=1}^n a_i^2
+\operatorname{Var}\left(X_i\right).\)</span></p></li>
+</ul>
+<p>​ 对任意的随机变量 <span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 是： <span class="math display">\[
+\begin{align}
+\operatorname{Var}(X \pm Y) &amp;= \operatorname{Var}(X) +
+\operatorname{Var}(Y) \pm 2 E\left((X-E(X))(Y-E(Y))\right) \\
+&amp;= \operatorname{Var}(X) + \operatorname{Var}(Y) \pm 2
+\operatorname{Cov}(X,Y).
+\end{align}
+\]</span> ​ 注意：由 <span class="math inline">\(E(XY)=E(X)E(Y)\)</span>
+和 $ (X Y)=(X)+(Y)$ 都无法推出 <span class="math inline">\(X\)</span> 和
+<span class="math inline">\(Y\)</span> 相互独立。</p>
+<hr>
+<p>3.协方差</p>
+<p>1）定义：设 <span class="math inline">\((X, Y)\)</span>
+是一个二维随机变量, 若 <span class="math inline">\(E[(X-E(X))(Y-E(Y))]\)</span>
+存在，则称此数学期望为 <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Y\)</span> 的协方差, 或称为 <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Y\)</span> 的相关 (中心) 矩, 并记为 <span class="math display">\[
+\operatorname{Cov}(X, Y)=E[(X-E(X))(Y-E(Y))] .
+\]</span> 特别有 <span class="math inline">\(\operatorname{Cov}(X,
+X)=\operatorname{Var}(X)\)</span>.</p>
+<p>2）性质</p>
+<ul>
+<li><p><span class="math inline">\(\operatorname{Cov}(X, Y)=E(X Y)-E(X)
+E(Y)\)</span>.</p></li>
+<li><p>若随机变量 <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Y\)</span> 相互独立, 则 <span class="math inline">\(\operatorname{Cov}(X, Y)=0\)</span>,
+反之不然。</p>
+<p>即：独立 $$ 不相关，反之不成立。</p></li>
+<li><p>对任意 <span class="math inline">\(n\)</span> 个随机变量 <span class="math inline">\(X_1,X_2,\cdots,X_n\)</span> 有：<span class="math inline">\(\displaystyle \operatorname{Var}\left(\sum_{i=1}^n
+X_i\right)=\sum_{i=1}^n \operatorname{Var}\left(X_i\right)+2
+\sum_{i=1}^n \sum_{j=1}^{i-1} \operatorname{Cov}\left(X_i,
+X_j\right)\)</span>.</p></li>
+<li><p>协方差 <span class="math inline">\(\operatorname{Cov}(X,
+Y)\)</span> 的计算与 <span class="math inline">\(X, Y\)</span>
+的次序无关，即： <span class="math inline">\(\operatorname{Cov}(X,
+Y)=\operatorname{Cov}(Y, X).\)</span></p></li>
+<li><p>任意随机变量 <span class="math inline">\(X\)</span> 与常数 <span class="math inline">\(a\)</span> 的协方差为零，即：<span class="math inline">\(\operatorname{Cov}(X, a)=0\)</span>.</p></li>
+<li><p>对任意常数 <span class="math inline">\(a, b\)</span> 有： <span class="math inline">\(\operatorname{Cov}(a X, b Y)=a b
+\operatorname{Cov}(X, Y).\)</span></p></li>
+<li><p>设 <span class="math inline">\(X, Y, Z\)</span>
+是任意三个随机变量，则：<span class="math inline">\(\operatorname{Cov}(X+Y, Z)=\operatorname{Cov}(X,
+Z)+\operatorname{Cov}(Y, Z)\)</span>.</p></li>
+<li><p>对任意常数 <span class="math inline">\(a,b,c,d\)</span> 有：
+<span class="math display">\[
+  \operatorname{Cov}\left(a X_1+b Y_1, c X_2+d Y_2\right)=a c
+\operatorname{Cov}\left(X_1, X_2\right)+a d \operatorname{Cov}\left(X_1,
+Y_2\right)+b c \operatorname{Cov}\left(Y_1, X_2\right)+b d
+\operatorname{Cov}\left(Y_1, Y_2\right)
+  \]</span> <span class="math inline">\(ps:\)</span>
+后5个性质是协方差的线性性质，<span class="math inline">\(\operatorname{Cov}\)</span>
+运算法则类似于有理式乘法。</p></li>
+</ul>
+<hr>
+<p>4.相关系数</p>
+<p>1）定义：设 <span class="math inline">\((X, Y)\)</span>
+是一个二维随机变量, 且 <span class="math inline">\(\operatorname{Var}(X)=\sigma_X^2&gt;0,
+\operatorname{Var}(Y)=\sigma_Y^2&gt;0\)</span>. 则称 <span class="math display">\[
+\operatorname{Corr}(X, Y)=\frac{\operatorname{Cov}(X,
+Y)}{\sqrt{\operatorname{Var}(X)}
+\sqrt{\operatorname{Var}(Y)}}=\frac{\operatorname{Cov}(X, Y)}{\sigma_X
+\sigma_Y}
+\]</span> 为 <span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 的相关系数，记作 <span class="math inline">\(\rho_{XY}.\)</span></p>
+<p>2）性质</p>
+<ul>
+<li>随机变量 <span class="math inline">\(X\)</span> 的标准化为：<span class="math inline">\(X^*=\dfrac{X-E(X)}{\sqrt{\operatorname{Var}(X)}}\)</span>
+，则有</li>
+</ul>
+<p><span class="math display">\[
+\operatorname{Cov}\left(X^*, Y^*\right)=\frac{\operatorname{Cov}(X,
+Y)}{\sigma_X \sigma_Y}=\operatorname{Corr}(X, Y)
+\]</span></p>
+<ul>
+<li>二维正态分布 <span class="math inline">\(N\left(\mu_1, \mu_2,
+\sigma_1^2, \sigma_2^2, \rho\right)\)</span> 的相关系数就是 <span class="math inline">\(\rho\)</span> ；若 <span class="math inline">\((X,Y)\)</span>
+服从二维正态分布，则相互独立和不相关是等价的。</li>
+<li>施瓦茨不等式：对任意二维随机变量 <span class="math inline">\((X,
+Y)\)</span>, 若 <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Y\)</span> 的方差部存在, 且记 <span class="math inline">\(\sigma_X^2=\operatorname{Var}(X),
+\sigma_Y^2=\operatorname{Var}(Y)\)</span>, 则有</li>
+</ul>
+<p><span class="math display">\[
+[\operatorname{Cov}(X, Y)]^2 \leqslant \sigma_X^2 \sigma_Y^2 .
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(-1 \leqslant \operatorname{Corr}(X,
+Y) \leqslant 1\)</span>, 或 <span class="math inline">\(|\operatorname{Corr}(X, Y)| \leqslant
+1\)</span>.</p></li>
+<li><p><span class="math inline">\(\operatorname{Corr}(X, Y)= \pm 1
+\Leftrightarrow Y\)</span> 和 <span class="math inline">\(X\)</span>
+几乎处处有线性关系，即存在 <span class="math inline">\(a(a \neq 0),
+b\)</span> 有： $ P(a X+b=Y)=1.$</p></li>
+<li><p>下面 <span class="math inline">\(5\)</span> 个条件等价： <span class="math display">\[
+  \begin{aligned}
+  \operatorname{Corr}(X, Y)=0 &amp; \Leftrightarrow X, Y \text { 不相关
+}
+  \Leftrightarrow \operatorname{Cov}(X, Y)=0
+  \Leftrightarrow E(X Y)=E(X) E(Y)
+  \Leftrightarrow \operatorname{Var}(X \pm
+Y)=\operatorname{Var}(X)+\operatorname{Var}(Y)
+  \end{aligned}
+  \]</span></p></li>
+</ul>
+<p>​ 注意：<span class="math inline">\(X,Y\)</span> 相互独立 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(X,Y\)</span> 不相关，反之则不成立。</p>
+<hr>
+<p>5.协方差矩阵</p>
+<p>定义：<span class="math inline">\(n\)</span> 维随机变量 <span class="math inline">\(\boldsymbol X =\left(X_1, X_2, \cdots,
+X_n\right)^{\top}\)</span> 的协方差矩阵： <span class="math display">\[
+\begin{aligned}
+&amp; E\left[(\boldsymbol X-E(\boldsymbol X))(\boldsymbol
+X-E(\boldsymbol X))^{\top}\right] \\
+= &amp; \displaystyle  \left(\begin{array}{cccc}
+\operatorname{Var}\left(X_1\right) &amp; \operatorname{Cov}\left(X_1,
+X_2\right) &amp; \cdots &amp; \operatorname{Cov}\left(X_1, X_n\right) \\
+\operatorname{Cov}\left(X_2, X_1\right) &amp;
+\operatorname{Var}\left(X_2\right) &amp; \cdots &amp;
+\operatorname{Cov}\left(X_2, X_n\right) \\
+\vdots &amp; \vdots &amp; &amp; \vdots \\
+\operatorname{Cov}\left(X_n, X_1\right) &amp;
+\operatorname{Cov}\left(X_n, X_2\right) &amp; \cdots &amp;
+\operatorname{Var}\left(X_n\right)
+\end{array}\right)
+\end{aligned}
+\]</span> 性质： <span class="math inline">\(n\)</span>
+维随机变量协方差矩阵是对称的非负定矩阵。</p>
+<h3 id="条件分布与条件期望">$$3.5 条件分布与条件期望</h3>
+<p>1.离散随机变量的条件分布</p>
+<p>1）离散随机变量的条件分布列：</p>
+<p>​ 设 <span class="math inline">\((X,Y)\)</span>
+是二维离散随机变量，对固定的 <span class="math inline">\(Y=y_j\)</span>
+，若 <span class="math inline">\(P(Y=y_j)=p_{\cdot j}&gt;0\)</span>
+，则称 <span class="math display">\[
+p_{i \mid j}=P\left(X=x_i \mid Y=y_j\right)=\frac{P\left(X=x_i,
+Y=y_j\right)}{P\left(Y=y_j\right)}=\frac{p_{i j}}{p_{\cdot j}}, \quad
+i=1,2, \cdots
+\]</span> 为给定 <span class="math inline">\(Y=y_j\)</span> 条件下 <span class="math inline">\(X\)</span> 的条件分布列。</p>
+<p>​ 同理，对一切使 <span class="math inline">\(P\left(X=x_i\right)=p_{i\cdot}&gt;0\)</span> 的
+<span class="math inline">\(x_i\)</span> ，称 <span class="math display">\[
+p_{j\mid i}=P\left(Y=y_j \mid X=x_i\right)=\frac{P\left(X=x_i,
+Y=y_j\right)}{P\left(X=x_i\right)}=\frac{p_{i j}}{p_{i\cdot}}, \quad
+j=1,2, \cdots
+\]</span> 为给定 <span class="math inline">\(X=x_i\)</span> 条件下 <span class="math inline">\(Y\)</span> 的条件分布列。</p>
+<p>2）离散随机变量的条件分布函数：</p>
+<p>​ 给定 <span class="math inline">\(Y=y_j\)</span> 条件下 <span class="math inline">\(X\)</span> 的条件分布函数为 <span class="math display">\[
+F\left(x \mid y_j\right)=\sum_{x_i \leqslant x} P\left(X=x_i \mid
+Y=y_j\right)=\sum_{x_i \leqslant x} p_{i \mid j},
+\]</span> ​ 给定 <span class="math inline">\(X=x_i\)</span> 条件下 <span class="math inline">\(Y\)</span> 的条件分布函数为 <span class="math display">\[
+F\left(y \mid x_i\right)=\sum_{y_j \leqslant y} P\left(Y=y_j \mid
+X=x_i\right)=\sum_{y_j \leqslant y} p_{j\mid i} .
+\]</span></p>
+<hr>
+<p>2.连续随机变量的条件分布</p>
+<p>​ 设 <span class="math inline">\((X,Y)\)</span>
+是二维连续随机变量，联合密度函数为 <span class="math inline">\(p(x,y)\)</span> ，边际密度函数为 <span class="math inline">\(p_X(x),p_Y(y).\)</span></p>
+<p>​ 对一切使 <span class="math inline">\(p_Y(y)&gt;0\)</span> 的 <span class="math inline">\(y\)</span> ，给定 <span class="math inline">\(Y=y\)</span> 条件下 <span class="math inline">\(X\)</span> 的条件分布函数和条件密度函数分别为
+<span class="math display">\[
+\begin{aligned}
+&amp; F(x \mid y)=\int_{-\infty}^x \frac{p(u, y)}{p_Y(y)} \mathrm{d} u,
+\\
+&amp; p(x \mid y)=\frac{p(x, y)}{p_Y(y)} .
+\end{aligned}
+\]</span> ​ 同理，对一切使 <span class="math inline">\(p_X(x)&gt;0\)</span> 的 <span class="math inline">\(x\)</span>, 给定 <span class="math inline">\(X=x\)</span> 条件下 <span class="math inline">\(Y\)</span> 的条件分布函数和条件密度函数分别为
+<span class="math display">\[
+\begin{aligned}
+&amp; F(y \mid x)=\int_{-\infty}^y \frac{p(x, v)}{p_X(x)} \mathrm{d} v,
+\\
+&amp; p(y \mid x)=\frac{p(x, y)}{p_X(x)} .
+\end{aligned}
+\]</span></p>
+<hr>
+<p>3.连续场合的全概率公式和贝叶斯公式</p>
+<p>1）<span class="math inline">\(p(x, y)=p_x(x) p(y \mid x)=p_Y(y) p(x
+\mid y)\)</span> 由边际分布和条件分布 <span class="math inline">\(\Rightarrow\)</span> 联合分布</p>
+<p>2）全概率公式的密度函数形式 <span class="math display">\[
+\quad\left\{\begin{array}{l}
+p_Y(y)=\displaystyle \int_{-\infty}^{\infty} p_X(x) p(y \mid x) d x \\
+p_X(x)=\displaystyle \int_{-\infty}^{\infty} p_Y(y) p(x \mid y) d y
+\end{array}\right.\quad
+\]</span> 3）贝叶斯公式的密度函数形式 <span class="math display">\[
+\left\{\begin{array}{l}
+p(x \mid y)=\dfrac{\displaystyle p_X(x) p(y \mid x)}{\displaystyle
+\int_{-\infty}^{\infty} p_X(x) p (y\mid x) d x} \\
+p(y \mid x)=\dfrac{\displaystyle p_Y(y) p(x \mid y)}{\displaystyle
+\int_{-\infty}^{\infty} p_Y(y) p(x \mid y) d y}
+\end{array}\right.
+\]</span></p>
+<hr>
+<p>4.条件数学期望</p>
+<p>1）定义：条件分布的数学期望（若期望存在）称为条件期望，定义如下：
+<span class="math display">\[
+E(X \mid Y=y)= \begin{cases}\displaystyle \sum_i x_i P\left(X=x_i \mid
+Y=y\right), &amp; (X, Y) \text { 为二维离散随机变量, } \\ \displaystyle
+\int_{-\infty}^{\infty} x p(x \mid y) \mathrm{d} x, &amp; (X, Y) \text {
+为二维连续随机变量. }\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+E(Y \mid X=x)= \begin{cases}\displaystyle \sum_j y_j P\left(Y=y_j \mid
+X=x\right), &amp; (X, Y) \text { 为二维离散随机变量, } \\ \displaystyle
+\int_{-\infty}^{\infty} y p(y \mid x) \mathrm{d} y, &amp; (X, Y) \text {
+为二维连续随机变量. }\end{cases}
+\]</span></p>
+<p>​ 性质：</p>
+<ul>
+<li><span class="math inline">\(E\left(a_1 X_1+a_2 X_2 \mid
+Y=y\right)=a_1 E\left(X_1 \mid Y=y\right)+a_2 E\left(X_2 \mid
+Y=y\right)\)</span></li>
+<li><span class="math inline">\(E[h(Y) g(X) \mid Y]=h(Y) E[g(X) \mid
+Y]\)</span></li>
+<li><span class="math inline">\(X,Y\)</span> 独立时, <span class="math inline">\(E[g(X) \mid Y]=E[g(X)]\)</span></li>
+</ul>
+<p>注意：条件期望 <span class="math inline">\(E(X \mid Y=y)\)</span> 是
+<span class="math inline">\(y\)</span> 的函数。</p>
+<p>2）重期望公式：设 <span class="math inline">\((X,Y)\)</span>
+是二维随机变量，且 <span class="math inline">\(E(X)\)</span>
+存在，则：<span class="math inline">\(E(X)=E(E(X\mid Y)).\)</span></p>
+<p>​ 假如求一个取值范围很大的随机变量 <span class="math inline">\(X\)</span> 的期望 <span class="math inline">\(E(X)\)</span> ，可以先找一个与 <span class="math inline">\(X\)</span> 有关的变量 <span class="math inline">\(Y\)</span>，用 <span class="math inline">\(Y\)</span>
+的不同取值把大范围划分成小范圈，先在每个小范围上求 <span class="math inline">\(X\)</span>
+的期望。再对所有小范围的期望求期望，即为大范围上 <span class="math inline">\(X\)</span> 的期望 <span class="math inline">\(E(X).\)</span></p>
+<p>​ 具体使用： <span class="math display">\[
+\begin{cases}\text { 若Y为离散随机变量， } E(X)=\displaystyle \sum_j
+E\left(X \mid Y=y_j\right) P\left(Y=y_j\right) \\ \text {
+若Y为连续随机变量， } E(X)=\displaystyle \int_{-\infty}^{\infty} E(X
+\mid Y=y) p_Y(y) d y\end{cases}
+\]</span> 3）随机个随机变量和的数学期望</p>
+<p>​ 设 <span class="math inline">\(X_1, X_2, \cdots\)</span>
+为一列独立同分布的随机变量,，随机变量 <span class="math inline">\(N\)</span> 只取正整数值， 且 <span class="math inline">\(N\)</span> 与 <span class="math inline">\(\left\{X_n\right\}\)</span> 独立，则 <span class="math display">\[
+E\left(\sum_{i=1}^N X_i\right)=E\left(X_1\right) E(N) .
+\]</span></p>
+<h3 id="s附具有可加性分布的汇总表"><span class="math inline">\(\S\)</span>附：具有可加性分布的汇总表</h3>
+假设下表中随机变量 <span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 相互独立： $$
+<span class="math display">\[\begin{array}{|c|c|c|c|}
+\hline \text { 具有可加性的分布 } &amp; X \text { 服从的分布 } &amp;
+Y\text { 服从的分布 } &amp; X+Y\text { 服从的分布} \\
+
+\hline \text { 二项分布 } B(n,p) &amp; X \sim B(n,p) &amp; Y\sim B(m,p)
+&amp; X+Y \sim B(n+m,p) \\
+\hline \text { 泊松分布 } P(\lambda) &amp; X\sim P(\lambda_1) &amp;
+Y\sim P(\lambda_2) &amp; X+Y\sim P(\lambda_1+\lambda_2) \\
+
+\hline \text { 正态分布 } N\left(\mu, \sigma^2\right) &amp; X\sim
+N(\mu_1,\sigma_1^2) &amp; Y\sim N(\mu_2,\sigma_2^2) &amp; X+Y\sim
+N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2) \\
+\hline \text { 伽马分布 } Ga(\alpha,\lambda) &amp; X\sim
+Ga(\alpha_1,\lambda) &amp; Y\sim Ga(\alpha_2,\lambda) &amp; X+Y\sim
+Ga(\alpha_1+\alpha_2,\lambda) \\
+\hline
+\end{array}\]</span>
+<p>$$ 其他还具有可加性的分布还有：卡方分布、负二项分布、柯西分布等。</p>
+<h2 id="第四章-大数定律与中心极限定理">第四章
+大数定律与中心极限定理</h2>
+<h3 id="概率母函数">$$4.0 概率母函数</h3>
+<p>1.母函数的定义：</p>
+<p>​ 若随机变量 <span class="math inline">\(X\)</span>
+取非负整数值，其分布列为 <span class="math display">\[
+\begin{array}{c|cccc}
+X &amp; 0 &amp; 1 &amp; 2 &amp; \cdots \\
+\hline P &amp; p_0 &amp; p_1 &amp; p_2 &amp; \cdots
+\end{array}
+\]</span> ​ 则 <span class="math inline">\(\displaystyle
+g(s)=E\left(s^X\right)=\sum_{k=0}^{\infty} p_k s^k, s \in[-1,1]\)</span>
+称为 <span class="math inline">\(X\)</span> 的概率母函数。</p>
+<p>​ 可得：<span class="math inline">\(\displaystyle
+g(1)=\sum_{k=0}^{\infty} p_k=1.\)</span></p>
+<hr>
+<p>2.母函数的性质</p>
+<ul>
+<li>概率分布与母函数是一一对应的，即</li>
+</ul>
+<p><span class="math display">\[
+p\{x=k\}=\dfrac{1}{k!} g^{(k)}(0), k=0,1,2, \cdots
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\left\{\begin{array}{l}\text { 当 X
+期望存在时， } \displaystyle E(X)=\sum_{k=1}^{\infty} k
+p_k=g^{\prime}(1) \\ \text { 当 X 方差存在时， }
+\operatorname{Var}(X)=g^{\prime
+\prime}(1)+g^{\prime}(1)-\left[g^{\prime}(1)\right]^2\end{array}\right.\)</span></p></li>
+<li><p>若随机变量 <span class="math inline">\(X_1,X_2,\cdots,X_n\)</span>
+相互独立，其母函数分别为 <span class="math inline">\(g_1(s),g_2(s),\cdots ,g_n(s)\)</span> 则 <span class="math inline">\(X_1+X_2+\cdots+X_n\)</span> 的母函数为：</p></li>
+</ul>
+<p><span class="math display">\[
+g(s)=g_1(s) g_2(s) \cdots g_n(s)
+\]</span></p>
+<ul>
+<li><p>随机个独立同分布随机变量和的母函数：</p>
+<p>​ 若 <span class="math inline">\(X_1, X_2, \cdots, X_n,
+\cdots\)</span> 为一列相互独立具有相同概率分布的整值随机变量，<span class="math inline">\(P\left\{X_i=j\right\}=f_j\)</span>, 其母函数为:
+<span class="math display">\[
+  \displaystyle F(s)=\sum_{k=0}^{\infty} f_k s^k,
+  \]</span> ​ 随机变量 <span class="math inline">\(v\)</span>
+是取正整数值的，且 <span class="math inline">\(P\{v=n\}=g_n\)</span>，其母函数为： <span class="math display">\[
+  G(s)=\sum_{k=0}^{\infty} g_k s^k .
+  \]</span></p></li>
+</ul>
+<p>​ ①若 <span class="math inline">\(X_n\)</span> 与 <span class="math inline">\(v\)</span> 独立，则 <span class="math inline">\(\eta=X_1+X_2+\cdots+X_v\)</span> 的母函数为 <span class="math display">\[
+H(s)=G[F(s)].
+\]</span> ​ ②若 <span class="math inline">\(E\left(X_n\right)\)</span> 与
+<span class="math inline">\(E(v)\)</span> 都存在，则 <span class="math display">\[
+E(\eta)=E\left(X_n\right) E(\nu).
+\]</span> ​ <span class="math inline">\(ps:\)</span> ② 与 <span class="math inline">\(\S3.5\)</span>
+中随机个随机变量和的数学期望相对应。</p>
+<h3 id="随机变量序列的两种收敛性">$$4.1 随机变量序列的两种收敛性</h3>
+<p>1.依概率收敛</p>
+<p>​ 1）定义：设 <span class="math inline">\(\{X_n\}\)</span>
+为一随机变量序列， <span class="math inline">\(X\)</span>
+为一随机变量，如果对任意的 <span class="math inline">\(\varepsilon&gt;0\)</span>, 有 <span class="math display">\[
+P\left(\left|X_n-X\right| \geqslant \varepsilon\right) \rightarrow 0(n
+\rightarrow \infty),
+\]</span> 则称序列 <span class="math inline">\(\{X_n\}\)</span>
+依概率收敛于 <span class="math inline">\(X\)</span> ，记作 <span class="math inline">\(X_n \xrightarrow{P} X\)</span>.</p>
+<p>​ 特别地，当 <span class="math inline">\(X\)</span> 为退化分布时，即
+<span class="math inline">\(P(X=c)=1\)</span> ，则称序列 <span class="math inline">\(\left\{X_n\right\}\)</span> 依概率收敛于 <span class="math inline">\(c\)</span>, 即 <span class="math inline">\(X_n
+\xrightarrow{P} c\)</span>.</p>
+<p>​ 2）定义：如果 <span class="math inline">\(P\{\omega:\displaystyle
+\lim _{n \rightarrow \infty} X_n(\omega)=X(\omega)\}=1\)</span>
+,则称序列 <span class="math inline">\(\{X_n\}\)</span>
+以概率1（几乎处处收敛）于 <span class="math inline">\(X\)</span> ，记作
+<span class="math inline">\(X_n\xrightarrow{a.s.}X.\)</span></p>
+<p>​ 3）设 <span class="math inline">\(\left\{X_n\right\},\left\{Y_n\right\}\)</span>
+是两个随机变量序列， <span class="math inline">\(a, b\)</span>
+是两个常数。如果：<span class="math inline">\(X_n \xrightarrow{P} a,
+\quad Y_n \xrightarrow{P} b\)</span> ，则： <span class="math display">\[
+\begin{aligned}
+&amp; X_n \pm Y_n \xrightarrow{P} a \pm b \\
+&amp; X_n \times Y_n \xrightarrow{P} a \times b  \\
+&amp; X_n ÷ Y_n \xrightarrow{P} a ÷ b(b \neq 0) .
+\end{aligned}
+\]</span></p>
+<hr>
+<p>2.依分布收敛</p>
+<p>1）定义：设随机变量 <span class="math inline">\(X, X_1, X_2,
+\cdots\)</span> 的分布函数分别为 <span class="math inline">\(F(x),
+F_1(x), F_2(x), \cdots\)</span>. 若对 <span class="math inline">\(F(x)\)</span> 的任一连续点 <span class="math inline">\(x\)</span>, 都有 <span class="math display">\[
+\lim _{n \rightarrow \infty} F_n(x)=F(x),
+\]</span> 则称 <span class="math inline">\(\left\{F_n(x)
+\}\right.\)</span> 弱收敛于 <span class="math inline">\(F(x)\)</span>
+，记作 <span class="math inline">\(F_n(x) \xrightarrow{W} F(x)\)</span>.
+也称相应的随机变量序列 <span class="math inline">\(\left\{X_n\right\}\)</span> 按分布收敛于 <span class="math inline">\(X\)</span>, 记作 <span class="math inline">\(X_n
+\xrightarrow{L} X\)</span>.</p>
+<p>2）<span class="math inline">\(X_n \xrightarrow{a.s.} X \Rightarrow
+X_n \xrightarrow{P} X \Rightarrow X_n \xrightarrow{L} X\)</span></p>
+<h3 id="特征函数">$$4.2 特征函数</h3>
+<p>1.特征函数的定义：设 <span class="math inline">\(X\)</span>
+是一个随机变量，称 <span class="math display">\[
+\varphi(t)=E\left(\mathrm{e}^{itX}\right)=E(\cos tX)+iE(\sin tX),
+\quad-\infty&lt;t&lt;\infty,
+\]</span> ​ 当离散随机变量 <span class="math inline">\(X\)</span>
+的分布列为 <span class="math inline">\(p_k=P\left(X=x_k\right), k=1,2,
+\cdots\)</span>, 则 <span class="math inline">\(X\)</span> 的特征函数为
+<span class="math display">\[
+\varphi(t)=\sum_{k=1}^{\infty} \mathrm{e}^{i t x_k} p_k,
+\quad-\infty&lt;t&lt;\infty .
+\]</span> ​ 当连续随机变量 <span class="math inline">\(X\)</span>
+的密度函数为 <span class="math inline">\(p(x)\)</span>, 则 <span class="math inline">\(X\)</span> 的特征函数为 <span class="math display">\[
+\varphi(t)=\int_{-\infty}^{\infty} \mathrm{e}^{itx} p(x) \mathrm{d} x,
+\quad-\infty&lt;t&lt;\infty .
+\]</span></p>
+<hr>
+<p>2.特征函数唯一确定分布函数</p>
+<p>1）逆转公式：设 <span class="math inline">\(F(x)\)</span> 和 <span class="math inline">\(\varphi(t)\)</span> 分别为随机变量 <span class="math inline">\(X\)</span> 的分布函数和特征函数，则对 <span class="math inline">\(F(x)\)</span> 的任意两个连续点 <span class="math inline">\(a&lt;b\)</span>, 有 <span class="math display">\[
+F(b)-F(a)=\lim _{T \rightarrow \infty} \frac{1}{2 \pi} \int_{-T}^T
+\frac{e^{-i t a}-e^{-i t b}}{i t} \varphi(t) d t
+\]</span> 2）唯一性定理：随机变量的分布函数由其特征函数唯一确定。</p>
+<p>3）若 <span class="math inline">\(X\)</span>
+为连续随机变量，其密度函数为 <span class="math inline">\(p(x)\)</span>,
+特征函数为 <span class="math inline">\(\varphi(t)\)</span>. 如果 <span class="math inline">\(\displaystyle \int_{-\infty}^{\infty}|\varphi(t)|
+\mathrm{d} t&lt;\infty\)</span>, 则 <span class="math display">\[
+p(x)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \mathrm{e}^{-i t x}
+\varphi(t) \mathrm{d} t .
+\]</span></p>
+<p><span class="math display">\[
+\begin{cases}\varphi(t)=\displaystyle\int_{-\infty}^{\infty} e^{i t x}
+p(x) d x &amp; \text { 特征函数是密度函数的 Fourier 变换 } \\
+p(x)=\displaystyle \frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{-i t x}
+\varphi(t) d t &amp; \text { 密度函数是特正函数的 Fourier
+逆变换}\end{cases}
+\]</span></p>
+<hr>
+<p>3.特征函数的性质</p>
+<p>1）从函数的角度：</p>
+<ul>
+<li><span class="math inline">\(|\varphi(t)| \leqslant
+\varphi(0)=1\)</span>.</li>
+<li><span class="math inline">\(\varphi(-t)=\overline{\varphi(t)}\)</span>, 其中
+<span class="math inline">\(\overline{\varphi(t)}\)</span> 表示 <span class="math inline">\(\varphi(t)\)</span> 的共轭.</li>
+<li>若 <span class="math inline">\(Y=a X+b\)</span>, 其中 <span class="math inline">\(a, b\)</span> 是常数, 则 <span class="math inline">\(\varphi_Y(t)=\mathrm{e}^{\mathrm{i} b t}
+\varphi_X(a t)\)</span>.</li>
+<li><span class="math inline">\(\varphi\)</span> (t) 在 <span class="math inline">\((-\infty, \infty)\)</span> 上一致连续.</li>
+<li>非负定性：随机变量 <span class="math inline">\(X\)</span> 的特征函数
+<span class="math inline">\(\varphi(t)\)</span>
+是非负定的，即对任意正整数 <span class="math inline">\(n\)</span> 及
+<span class="math inline">\(n\)</span> 个实数 <span class="math inline">\(t_1, t_2, \cdots, t_n\)</span> 和 <span class="math inline">\(n\)</span> 个复数 <span class="math inline">\(z_1,
+z_2, \cdots, z_n\)</span>, 有 <span class="math inline">\(\displaystyle
+\sum_{k=1}^n \sum_{j=1}^n \varphi\left(t_k-t_j\right) z_k \overline{z_j}
+\geqslant 0\)</span>.</li>
+</ul>
+<p>2）利用特征函数求随机变量的矩</p>
+<ul>
+<li>若 <span class="math inline">\(E\left(X^n\right)\)</span> 存在, 则
+<span class="math inline">\(X\)</span> 的特征函数 <span class="math inline">\(\varphi(t)\)</span> 可 <span class="math inline">\(n\)</span> 次求导, 且对 <span class="math inline">\(1 \leqslant k \leqslant n\)</span>, 有</li>
+</ul>
+<p><span class="math display">\[
+\varphi^{(k)}(0)=i^k E\left(X^k\right) .
+\]</span></p>
+<ul>
+<li>若 <span class="math inline">\(E(X^n)\)</span> 存在，则 <span class="math inline">\(X\)</span> 的特征函数可以展开成</li>
+</ul>
+<p><span class="math display">\[
+\varphi(t)=1+(i t) E(X)+\frac{(i t)^2}{2!}
+E\left(X^2\right)+\cdots+\frac{(i t)^n}{n!} E\left(X^n\right)+o(t) .
+\]</span></p>
+<ul>
+<li><span class="math inline">\(E(X)=\dfrac{\varphi^{\prime}(0)}{i}
+\quad \operatorname{Var}(X)=-\varphi^{\prime
+\prime}(0)+\left(\varphi^{\prime}(0)\right)^2 .\)</span></li>
+</ul>
+<p>3）<span class="math inline">\(n\)</span>
+个独立随机变量和的特征函数</p>
+<ul>
+<li>若随机变量 <span class="math inline">\(X_1, X_2, \cdots,
+X_n\)</span> 相互独立，其特征函数分别为 <span class="math inline">\(\varphi_i(t)\)</span> ，则 <span class="math inline">\(X_1+X_2+\cdots+X_n\)</span> 的特征函数为:</li>
+</ul>
+<p><span class="math display">\[
+\varphi(t)=\varphi_1(t) \varphi_2(t) \cdots \varphi_n(t)
+\]</span></p>
+<p>​ <span class="math inline">\(ps:\)</span>
+可以利用这个性质证明一些分布函数的可加性。</p>
+<hr>
+<p>4.特征函数的连续性定理：分布函数序列 <span class="math inline">\(\left\{F_n(x)\right\}\)</span> 弱收敛于分布函数
+<span class="math inline">\(F(x)\)</span> 的充要条件是 <span class="math inline">\(\left\{F_n(x)\right\}\)</span> 的特征函数序列
+<span class="math inline">\(\left\{\varphi_n(t)\right\}\)</span> 收敛于
+<span class="math inline">\(F(x)\)</span> 的特征函数 <span class="math inline">\(\varphi(t)\)</span>.</p>
+<h3 id="大数定律">$$4.3 大数定律</h3>
+<ul>
+<li>大数定律的一般形式：设有一随机变量序列 <span class="math inline">\(\{X_n\}\)</span> ，若满足</li>
+</ul>
+<p><span class="math display">\[
+\frac{1}{n} \sum_{i=1}^n X_i \xrightarrow{P} \frac{1}{n} \sum_{i=1}^n
+E\left[X_i\right],
+\]</span></p>
+<p>​ 或者说，对任意 <span class="math inline">\(\varepsilon&gt;0\)</span>
+有 <span class="math display">\[
+\lim _{n \rightarrow \infty} P\left(\left|\frac{1}{n} \sum_{i=1}^n
+X_i-\frac{1}{n} \sum_{i=1}^n
+E\left(X_i\right)\right|&lt;\varepsilon\right)=1 .
+\]</span> 则称随机变量序列 <span class="math inline">\(\{X_n\}\)</span>
+服从大数定律。</p>
+<ul>
+<li>伯努利大数定律：设 <span class="math inline">\(S_n\)</span> 为 <span class="math inline">\(n\)</span> 重伯努利试验中事件 <span class="math inline">\(A\)</span> 发生的次数， <span class="math inline">\(p\)</span> 为每次试验中 <span class="math inline">\(A\)</span> 出现的概率，则对任意的 <span class="math inline">\(\varepsilon&gt;0\)</span>, 有</li>
+</ul>
+<p><span class="math display">\[
+\lim _{n \rightarrow \infty}
+P\left(\left|\frac{S_n}{n}-p\right|&lt;\varepsilon\right)=1
+\]</span></p>
+<p>​ 或者：设随机变量序列 <span class="math inline">\(\{X_n\}\sim
+B(n,p)\)</span> ，则对任意的 <span class="math inline">\(\varepsilon&gt;0\)</span> 有 <span class="math display">\[
+\lim _{n \rightarrow \infty}
+P\left(\left|\frac{X_n}{n}-p\right|&lt;\varepsilon\right)=1
+\]</span> ​ 即：<span class="math inline">\(\dfrac{X_n}{n}\left(\dfrac{S_n}{n}\right)\xrightarrow{P}p.\)</span></p>
+<ul>
+<li>切比雪夫大数定律：设随机变量序列 <span class="math inline">\(\left\{X_n\right\}\)</span> 相互独立， 若每个
+<span class="math inline">\(X_i\)</span> 的方差存在且有共同的上界，即
+<span class="math inline">\(\operatorname{Var}\left(X_i\right) \leqslant
+c, i=1,2, \cdots\)</span>,</li>
+</ul>
+<p>则对任意的 <span class="math inline">\(\varepsilon&gt;0\)</span> 有
+<span class="math display">\[
+\lim _{n \rightarrow \infty} P\left(\left|\frac{1}{n} \sum_{i=1}^n
+X_i-\frac{1}{n} \sum_{i=1}^n
+E\left(X_i\right)\right|&lt;\varepsilon\right)=1 .
+\]</span></p>
+<ul>
+<li>马尔可夫大数定律：若随机变量序列 <span class="math inline">\(\{X_n\}\)</span> 满足</li>
+</ul>
+<p><span class="math display">\[
+\frac{1}{n^2} \operatorname{Var}\left(\sum_{i=1}^n X_i\right)
+\rightarrow 0, \quad n \rightarrow \infty
+\]</span></p>
+<p>则称 <span class="math inline">\(\{X_n\}\)</span>
+服从大数定律，即<span class="math inline">\(\displaystyle \lim _{n
+\rightarrow \infty} P\left(\left|\frac{1}{n} \sum_{i=1}^n
+X_i-\frac{1}{n} \sum_{i=1}^n
+E\left(X_i\right)\right|&lt;\varepsilon\right)=1.\)</span></p>
+<ul>
+<li>辛钦大数定律：设随机变量序列 <span class="math inline">\(\left\{X_n\right\}\)</span>
+独立同分布，若每个随机变量 <span class="math inline">\(X_i\)</span>
+的数学期望都存在，则称 <span class="math inline">\(\{X_n\}\)</span>
+服从大数定律，即</li>
+</ul>
+<p><span class="math inline">\(\displaystyle \lim _{n \rightarrow
+\infty} P\left(\left|\frac{1}{n} \sum_{i=1}^n X_i-\frac{1}{n}
+\sum_{i=1}^n E\left(X_i\right)\right|&lt;\varepsilon\right)=1.\)</span>
+若 <span class="math inline">\(E(X_i)=\mu\)</span>，则 <span class="math inline">\(\overline{X}\xrightarrow{P}\mu\)</span> 其中 <span class="math inline">\(\displaystyle\overline{X}=\frac{1}{n}\sum_{i=1}^n
+X_i.\)</span></p>
+<h3 id="中心极限定理">$$4.4 中心极限定理</h3>
+<ul>
+<li>林德伯格-莱维中心极限定理（独立同分布的中心极限定理）</li>
+</ul>
+<p>​ 设 <span class="math inline">\(\left\{X_n\right\}\)</span>
+是独立同分布的随机变量序列，且 <span class="math inline">\(E\left(X_i\right)=\mu,
+\operatorname{Var}\left(X_i\right)=\sigma^2&gt;0\)</span> 存在，若记
+<span class="math display">\[
+Y_n^{*}=\dfrac{X_1+X_2+\cdots+X_n-n \mu}{\sigma \sqrt{n}}
+\]</span> ​ 则对任意实数 <span class="math inline">\(y\)</span> 有 <span class="math display">\[
+\lim _{n \rightarrow \infty} P\left(Y_n^* \leqslant
+y\right)=\Phi(y)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^y
+\mathrm{e}^{-\frac{t^2}{2}} \mathrm{~d} t .
+\]</span> ​ 当 <span class="math inline">\(n\)</span> 充分大时，有：
+<span class="math display">\[
+\left\{\begin{array}{c}
+\dfrac{\displaystyle\sum_{i=1}^n X_i-n \mu}{\sigma \sqrt{n}}
+\stackrel{\text { 近似 }}{\sim} N(0,1) \\
+\displaystyle\sum_{i=1}^n X_i \stackrel{\text { 近似 }}{\sim} N\left(n
+\mu, n \sigma^2\right) \\
+\displaystyle\frac{1}{n} \sum_{i=1}^n X_i \stackrel{\text { 近似
+}}{\sim} N\left(\mu, \frac{\sigma^2}{n}\right)
+\end{array}\right.
+\]</span></p>
+<ul>
+<li>棣莫佛-拉普拉斯中心极限定理（二项分布的正态近似）</li>
+</ul>
+<p>​ 设 <span class="math inline">\(n\)</span> 重伯努利试验中，事件 <span class="math inline">\(A\)</span> 在每次试验中出现的概率为 <span class="math inline">\(p(0&lt;p&lt;1)\)</span>, 记 <span class="math inline">\(S_n\)</span> 为 <span class="math inline">\(n\)</span> 次试验中事件 <span class="math inline">\(A\)</span> 出现的次数，且记 <span class="math display">\[
+Y_n^*=\dfrac{S_n-n p}{\sqrt{n p (1-p)}} .
+\]</span> ​ 则对任意实数 <span class="math inline">\(y\)</span> 有 <span class="math display">\[
+\lim _{n \rightarrow \infty} P\left(Y_n^* \leqslant
+y\right)=\Phi(y)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^y
+\mathrm{e}^{-\frac{t^2}{2}} \mathrm{~d} t .
+\]</span></p>
+<ul>
+<li>林德伯格中心极限定理（独立不同分布下的中心极限定理）</li>
+</ul>
+<p>​ 设随机变量序列 <span class="math inline">\(X_1, X_2, \cdots
+X_n\)</span> 相互独立，且具有有限的期望和方差: <span class="math inline">\(E\left(X_i\right)=\mu_i ,
+\operatorname{Var}\left(X_i\right)=\sigma_i^2 ， i=1,2,
+\cdots\)</span></p>
+<p>​ 记 <span class="math inline">\(\displaystyle
+B_n^2=\operatorname{Var}\left(X_1+X_2+\cdots+X_n\right)=\sum_{i=1}^n
+\sigma_i^2, B_n=\sqrt{\sum_{i=1}^n \sigma_i^2},\)</span></p>
+<p>​ 则中心极限定理：对任意的 <span class="math inline">\(x\)</span>
+<span class="math display">\[
+\lim _{n \rightarrow \infty} P\left(\frac{1}{B_n}
+\sum_{i=1}^n\left(x_i-\mu_i\right) \leq x\right)=\Phi(x)
+\]</span> ​ 成立的充分必要条件是林德伯格条件成立，即对任意的 <span class="math inline">\(\tau&gt;0\)</span> 有 <span class="math display">\[
+\lim _{n \rightarrow \infty} \frac{1}{\tau^2 B_n^2} \sum_{i=1}^n
+\int_{\left|x-\mu_i\right|&gt;\tau B_n}\left(x-\mu_i\right)^2 p_i(x)
+\mathrm{d} x=0.
+\]</span></p>
+<ul>
+<li>李雅普诺夫中心极限定理（林德伯格中心极限定理的推论）</li>
+</ul>
+<p>​ 设随机变量序列 <span class="math inline">\(X_1, X_2, \cdots
+X_n\)</span> 相互独立，且具有有限的期望和方差: <span class="math inline">\(E\left(X_i\right)=\mu_i ,
+\operatorname{Var}\left(X_i\right)=\sigma_i^2 ， i=1,2, \cdots\)</span>
+，若存在 <span class="math inline">\(\delta&gt;0\)</span> ，满足 <span class="math display">\[
+\lim _{n \rightarrow \infty} \frac{1}{B_n^{2+\delta}} \sum_{i=1}^n
+E\left(\left|X_i-\mu_i\right|^{2+\delta}\right)=0 \text {, }
+\]</span> ​ 则对任意的 <span class="math inline">\(x\)</span> 有 <span class="math display">\[
+\lim _{n \rightarrow \infty} P\left(\frac{1}{B_n}
+\sum_{i=1}^n\left(X_i-\mu_i\right) \leqslant
+x\right)=\Phi(x)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^x
+e^{-\frac{t^2}{2}} d t.
+\]</span></p>
+<h3 id="s附常用分布的概率母函数表"><span class="math inline">\(\S\)</span>附：常用分布的概率母函数表</h3>
+<p><span class="math display">\[
+\begin{array}{c|c|c}
+\hline \text { 分 布 } &amp; \text { 分布列 } p_k  &amp; \text {
+概率母函数 } g(s) \\
+\hline \begin{array}{l}
+\text { 二项分布 } \\
+b(n, p)
+\end{array} &amp; p_k=\displaystyle \binom{n}{k} p^k q^{n-k}, \quad
+k=0,1, \cdots, n &amp; (ps+q)^n\\
+\hline \begin{array}{c}
+\text { 泊松分布 } \\
+P(\lambda)
+\end{array} &amp; p_k=\dfrac{\lambda^k}{k!} \mathrm{e}^{-\lambda}, \quad
+k=0,1, \cdots &amp; \mathrm{e}^{\lambda(s-1)}\\
+\hline \begin{array}{c}
+\text { 几何分布 } \\
+Ge(p)
+\end{array} &amp; p_k=q^{k-1}p, \quad k=0,1, \cdots &amp;
+\dfrac{ps}{1-qs}\quad (q=1-p) \\
+\hline
+\end{array}
+\]</span></p>
+<h3 id="s附常用分布的特征函数表"><span class="math inline">\(\S\)</span>附：常用分布的特征函数表</h3>
+<p><span class="math display">\[
+\begin{array}{c|c|c}
+\hline \text { 分 布 } &amp; \text { 分布列 } p_k \text { 或分布密度 }
+p(x) &amp; \text { 特征函数 } \varphi(t) \\
+\hline \begin{array}{l}
+\text { 二项分布 } \\
+b(n, p)
+\end{array} &amp; p_k=\displaystyle \binom{n}{k} p^k q^{n-k}, \quad
+k=0,1, \cdots, n &amp; \left(p \mathrm{e}^{it}+q\right)^n \quad
+(q=1-p)\\
+\hline \begin{array}{c}
+\text { 泊松分布 } \\
+P(\lambda)
+\end{array} &amp; p_k=\dfrac{\lambda^k}{k!} \mathrm{e}^{-\lambda}, \quad
+k=0,1, \cdots &amp; e^{\lambda\left(e^{i t}-1\right)} \\
+\hline \begin{array}{l}
+\text { 正态分布 } \\
+N\left(\mu, \sigma^2\right)
+\end{array} &amp; p(x)=\dfrac{1}{\sqrt{2 \pi} \sigma} \exp
+\left\{-\dfrac{(x-\mu)^2}{2 \sigma^2}\right\} &amp; \exp \left\{i \mu
+t-\dfrac{\sigma^2 t^2}{2}\right\} \\
+\hline \begin{array}{c}
+\text { 指数分布 } \\
+Exp(\lambda)
+\end{array} &amp; p(x)=\lambda \mathrm{e}^{-\lambda x}, \quad x
+\geqslant 0 &amp; \left(1-\dfrac{\mathrm{i} t}{\lambda}\right)^{-1} \\
+\hline \begin{array}{c}
+\text { 伽马分布 } \\
+Ga(\alpha,\beta)
+\end{array} &amp; p(x)=\dfrac{\lambda^\alpha}{\Gamma(\alpha)}
+x^{\alpha-1} \mathrm{e}^{-\lambda x}, \quad x \geqslant 0 &amp;
+\left(1-\dfrac{\mathrm{i} t}{\beta}\right)^{-\alpha} \\
+\hline
+\end{array}
+\]</span></p>
+<h3 id="s附大数定律和中心极限定理的条件表"><span class="math inline">\(\S\)</span>附：大数定律和中心极限定理的条件表</h3>
+<p><span class="math display">\[
+\begin{array}{|c|c|}
+\hline \text { 定理名称 } &amp; 满足定理随机变量序列需要的条件 \\
+\hline 伯努利大数定律 &amp; n重伯努利试验 \\
+\hline 切比雪夫大数定律 &amp; 随机变量序列相互独立且 \displaystyle
+\operatorname{Var}(X_i)\leqslant c,i=1,2,\cdots \\
+\hline 马尔可夫大数定律 &amp; 任意随机变量序列,只要:\displaystyle
+\frac{1}{n^2} \operatorname{Var}\left(\sum_{i=1}^n X_i\right)
+\rightarrow 0, \quad n \rightarrow \infty \\
+\hline 辛钦大数定律 &amp; 随机变量序列独立同分布且
+E(X_i)=\mu(i=1,2,\cdots)存在 \\
+\hline 林德伯格-莱维中心极限定理 &amp; 随机变量序列独立同分布\\
+\hline 棣莫佛-拉普拉斯中心极限定理 &amp; n重伯努利试验 \\
+\hline 林德伯格中心极限定理 &amp; \begin{array}{c}
+随机变量序列相互独立且具有有限的数学期望和方差,E(X_i)=\mu_i,\operatorname{Var}(X_i)=\sigma_i^2,i=1,2,\cdots  \\
+满足林德伯格条件:对任意的\tau&gt;0有\displaystyle\lim _{n \rightarrow
+\infty} \frac{1}{\tau^2 B_n^2} \sum_{i=1}^n
+\int_{\left|x-\mu_i\right|&gt;\tau B_n}\left(x-\mu_i\right)^2 p_i(x)
+\mathrm{d} x=0.\end{array}\\
+\hline 李雅普诺夫中心极限定理 &amp; \begin{array}{c}
+随机变量序列相互独立且具有有限的数学期望和方差,E(X_i)=\mu_i,\operatorname{Var}(X_i)=\sigma_i^2,i=1,2,\cdots\\
+存在\delta&gt;0,满足:\displaystyle \lim _{n \rightarrow \infty}
+\frac{1}{B_n^{2+\delta}} \sum_{i=1}^n
+E\left(\left|X_i-\mu_i\right|^{2+\delta}\right)=0 \end{array} \\
+\hline
+\end{array}
+\]</span></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://studyincau.github.io">小楼一夜听春雨 &amp; Rico</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://studyincau.github.io/2024/05/04/gai-lu-lun-5-1-gai-lu-lun-qi-mo-fu-xi-zhi-shi-dian/">https://studyincau.github.io/2024/05/04/gai-lu-lun-5-1-gai-lu-lun-qi-mo-fu-xi-zhi-shi-dian/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://studyincau.github.io" target="_blank">StudyinCAU</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/../images/background38.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/05/03/ren-gong-zhi-neng-kuang-jia/" title="人工智能框架思维导图"><img class="cover" src="/../images/ML.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">人工智能框架思维导图</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小楼一夜听春雨 &amp; Rico</div><div class="author-info__description">Study</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">89</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">168</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">46</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/StudyinCAU"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/StudyinCAU" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:2290652476@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是一个分享学习笔记(资料)的网站，欢迎一起学习、交流。如果你有好的文章也想分享，可以发邮箱(邮箱在公告上方~)[若出现渲染问题或加载过慢，推荐用谷歌或Edge浏览器打开]</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%E4%B8%8E%E6%A6%82%E7%8E%87"><span class="toc-text">第一章 随机事件与概率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97"><span class="toc-text">$$1.1 随机事件及其运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%85%B6%E7%A1%AE%E5%AE%9A%E6%96%B9%E6%B3%95"><span class="toc-text">$$1.2 概率的定义及其确定方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">$$1.3 概率的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87"><span class="toc-text">$$1.4 条件概率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-text">$$1.5 独立性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83"><span class="toc-text">第二章 随机变量及其分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83"><span class="toc-text">$$2.1 随机变量及其分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B"><span class="toc-text">$$2.2 随机变量的数学期望</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%96%B9%E5%B7%AE%E4%B8%8E%E6%A0%87%E5%87%86%E5%B7%AE"><span class="toc-text">$$2.3 随机变量的方差与标准差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%A6%BB%E6%95%A3%E5%88%86%E5%B8%83"><span class="toc-text">$$2.4 常用离散分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%BF%9E%E7%BB%AD%E5%88%86%E5%B8%83"><span class="toc-text">$$2.5 常用连续分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83"><span class="toc-text">$$2.6 随机变量函数的分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#s%E9%99%84%E4%B8%80%E5%AE%9A%E8%A6%81%E8%83%8C%E8%AF%B5%E7%9A%84%E5%B8%B8%E7%94%A8%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE"><span class="toc-text">\(\S\)附：一定要背诵的常用概率分布数学期望和方差</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83"><span class="toc-text">第三章 多维随机变量及其分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E8%81%94%E5%90%88%E5%88%86%E5%B8%83"><span class="toc-text">$$3.1 多维随机变量及其联合分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%E4%B8%8E%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-text">$$3.2
+边际分布与随机变量的独立性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83"><span class="toc-text">$$3.3 多维随机变量函数的分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%89%B9%E5%BE%81%E6%95%B0"><span class="toc-text">$$3.4 多维随机变量的特征数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%E4%B8%8E%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B"><span class="toc-text">$$3.5 条件分布与条件期望</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#s%E9%99%84%E5%85%B7%E6%9C%89%E5%8F%AF%E5%8A%A0%E6%80%A7%E5%88%86%E5%B8%83%E7%9A%84%E6%B1%87%E6%80%BB%E8%A1%A8"><span class="toc-text">\(\S\)附：具有可加性分布的汇总表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E4%B8%8E%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="toc-text">第四章
+大数定律与中心极限定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E6%AF%8D%E5%87%BD%E6%95%B0"><span class="toc-text">$$4.0 概率母函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%BA%8F%E5%88%97%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%94%B6%E6%95%9B%E6%80%A7"><span class="toc-text">$$4.1 随机变量序列的两种收敛性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0"><span class="toc-text">$$4.2 特征函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-text">$$4.3 大数定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="toc-text">$$4.4 中心极限定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#s%E9%99%84%E5%B8%B8%E7%94%A8%E5%88%86%E5%B8%83%E7%9A%84%E6%A6%82%E7%8E%87%E6%AF%8D%E5%87%BD%E6%95%B0%E8%A1%A8"><span class="toc-text">\(\S\)附：常用分布的概率母函数表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#s%E9%99%84%E5%B8%B8%E7%94%A8%E5%88%86%E5%B8%83%E7%9A%84%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0%E8%A1%A8"><span class="toc-text">\(\S\)附：常用分布的特征函数表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#s%E9%99%84%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%92%8C%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86%E7%9A%84%E6%9D%A1%E4%BB%B6%E8%A1%A8"><span class="toc-text">\(\S\)附：大数定律和中心极限定理的条件表</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/05/04/gai-lu-lun-5-1-gai-lu-lun-qi-mo-fu-xi-zhi-shi-dian/" title="概率论期末复习知识点"><img src="/../images/background38.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论期末复习知识点"/></a><div class="content"><a class="title" href="/2024/05/04/gai-lu-lun-5-1-gai-lu-lun-qi-mo-fu-xi-zhi-shi-dian/" title="概率论期末复习知识点">概率论期末复习知识点</a><time datetime="2024-05-03T16:12:42.000Z" title="发表于 2024-05-04 00:12:42">2024-05-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/03/ren-gong-zhi-neng-kuang-jia/" title="人工智能框架思维导图"><img src="/../images/ML.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="人工智能框架思维导图"/></a><div class="content"><a class="title" href="/2024/05/03/ren-gong-zhi-neng-kuang-jia/" title="人工智能框架思维导图">人工智能框架思维导图</a><time datetime="2024-05-03T10:52:33.000Z" title="发表于 2024-05-03 18:52:33">2024-05-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/29/di-4-zhang-po-su-bei-xie-si/" title="第4章 朴素贝叶斯"><img src="/../images/ML.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第4章 朴素贝叶斯"/></a><div class="content"><a class="title" href="/2024/04/29/di-4-zhang-po-su-bei-xie-si/" title="第4章 朴素贝叶斯">第4章 朴素贝叶斯</a><time datetime="2024-04-29T14:19:53.000Z" title="发表于 2024-04-29 22:19:53">2024-04-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/29/di-03-zhang-k-jin-lin-fa/" title="第3章 k近邻法"><img src="/../images/ML.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第3章 k近邻法"/></a><div class="content"><a class="title" href="/2024/04/29/di-03-zhang-k-jin-lin-fa/" title="第3章 k近邻法">第3章 k近邻法</a><time datetime="2024-04-28T17:06:20.000Z" title="发表于 2024-04-29 01:06:20">2024-04-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/29/shu-li-tong-ji-5-2-yang-ben-shu-ju-de-zheng-li-yu-xian-shi/" title="第二节 样本数据的整理与显示"><img src="/../images/background37.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第二节 样本数据的整理与显示"/></a><div class="content"><a class="title" href="/2024/04/29/shu-li-tong-ji-5-2-yang-ben-shu-ju-de-zheng-li-yu-xian-shi/" title="第二节 样本数据的整理与显示">第二节 样本数据的整理与显示</a><time datetime="2024-04-28T16:30:18.000Z" title="发表于 2024-04-29 00:30:18">2024-04-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 小楼一夜听春雨 & Rico</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'xFi1vMHzzqw1qFKQbyK4WtAo-gzGzoHsz',
+      appKey: 'hGyKCk4AFAr9aPSCHioyb0hH',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><link rel="stylesheet" href="/css/title.css"><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
