@@ -4,6 +4,72 @@
   
     
     <entry>
+      <title>可行解、基本解、基本可行解</title>
+      <link href="/2024/05/13/tu-you-hua-xian-xing-gui-hua-ke-xing-jie-ji-ben-jie-ji-ben-ke-xing-jie/"/>
+      <url>/2024/05/13/tu-you-hua-xian-xing-gui-hua-ke-xing-jie-ji-ben-jie-ji-ben-ke-xing-jie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="可行解">可行解</h2><p><strong>可行解</strong>按字面意义就可以理解：可行的解。</p><p>什么是可行？符合所有约束条件就可行，否则不可行。</p><h2 id="基本解与基本可行解">基本解与基本可行解</h2><p><strong>基本解</strong>和<strong>基本可行解</strong>，都可以认为是为了求解线性规划问题而发明的概念。</p><p>对于简单的线性规划问题，可以通过做图的方式来进行求解（就像高中的线性规划问题一样）。那线性规划不画图应该怎么求解呢？答案是按多元一次方程组来求。</p><h3 id="基本解">基本解</h3><p>线性规划的标准形式为： <span class="math display">\[\begin{aligned}\min \quad&amp; \boldsymbol{c}^{\top} \boldsymbol{x} \\\text { s.t. }\quad &amp; \boldsymbol{A x}=\boldsymbol{b} \\&amp; \boldsymbol{x} \geqslant \mathbf{0}\end{aligned}\]</span></p><p>其中, <span class="math inline">\(\boldsymbol{c} \in \mathbb{R}^n,\boldsymbol{b} \in \mathbb{R}^m, \boldsymbol{b} \geqslant \mathbf{0},\boldsymbol{A} \in \mathbb{R}^{m \times n}, m \leqslant n\)</span>。</p><p>线性规划都可以转化为标准型来进行求解（）</p><p>约束条件中 <span class="math inline">\(\boldsymbol{Ax}=\boldsymbol{b}\)</span> 是资源约束条件，假如有 <span class="math inline">\(m\)</span> 个约束条件，那 <span class="math inline">\(\boldsymbol{A x}=\boldsymbol{b}\)</span> 就有<span class="math inline">\(m\)</span> 个方程。为了求 <span class="math inline">\(\boldsymbol{x}\)</span>中各未知量的值，我们只要能求解这个方程组就可以了。多元一次方程组用消元法就可以求解，有唯一解的条件是未知量的个数刚好等于方程组的个数( <span class="math inline">\(n=m\)</span> )。</p><p>可实际情况往往是 <span class="math inline">\(n&gt;m\)</span>的。这种情况怎么做呢? 很简单，想办法让 <span class="math inline">\(n=m\)</span> ，这就用到了基 <span class="math inline">\(\boldsymbol{B}\)</span> 的概念。把 <span class="math inline">\(\boldsymbol{A}\)</span> 分成 <span class="math inline">\(n\)</span> 个列向量，从中任意取出了 <span class="math inline">\(m\)</span> 个，当然这 <span class="math inline">\(m\)</span>个列向量必须是线性无关的，就是说不能有哪一个可以用剩下的 <span class="math inline">\(m-1\)</span> 个表示出来，要不相当于少取了一个。这<span class="math inline">\(m\)</span> 个列向量就是一个基 <span class="math inline">\(\boldsymbol{B}\)</span> ，也叫作基矩阵 。从 <span class="math inline">\(\boldsymbol{A}\)</span> 中去除 <span class="math inline">\(\boldsymbol{B}\)</span> ，剩下的 <span class="math inline">\(n-m\)</span> 个列向量组成的矩阵就是非基 <span class="math inline">\(\boldsymbol{N}\)</span> ，或者叫非基矩阵。基 <span class="math inline">\(\boldsymbol{B}\)</span> 对应的变量 <span class="math inline">\(\boldsymbol{x_B}\)</span> 叫作基变量 ，非基 <span class="math inline">\(\boldsymbol{N}\)</span> 对应的变量 <span class="math inline">\(\boldsymbol{x_N}\)</span> 叫作非基变量。第一个约束条件也就写成了: <span class="math display">\[[\boldsymbol{B}, \boldsymbol{N}]\left[\begin{array}{l}\boldsymbol{x_B} \\\boldsymbol{x_N}\end{array}\right]=\boldsymbol{b}\]</span> 只要把 <span class="math inline">\(\boldsymbol{x_N}\)</span>中的变量都设为 <span class="math inline">\(0\)</span> 上式就变成了 <span class="math inline">\(\boldsymbol{B}\boldsymbol{x_B}=\boldsymbol{b}\)</span>, 这是 <span class="math inline">\(m\)</span> 个线性无关的 <span class="math inline">\(m\)</span> 元一次方程组，消元法就可以解出来 <span class="math inline">\(\boldsymbol{x_B}\)</span> , 再带上 <span class="math inline">\(\boldsymbol{x_N}=\boldsymbol{0}\)</span> 得出的<span class="math inline">\([\boldsymbol{B}^{-1}\boldsymbol{b},\boldsymbol{0}]^{\top}\)</span>就是原约束条件 <span class="math inline">\(\boldsymbol{A}\boldsymbol{x}=\boldsymbol{b}\)</span>的解，这个解就是一个<strong>基本解</strong>。</p><h3 id="基本可行解">基本可行解</h3><p>基本解不一定是可行解，因为它只满足了第一个约束，不一定满足第二个约束。基本解中所有变量均非负（满足第二个约束条件）的才能满足所有约束，这种基本解叫作<strong>基本可行解</strong>。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 最优化方法 </category>
+          
+          <category> 线性规划 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 线性规划 </tag>
+            
+            <tag> 可行解 </tag>
+            
+            <tag> 基本解 </tag>
+            
+            <tag> 基本可行解 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>线性规划的标准形式及基本概念</title>
+      <link href="/2024/05/13/tu-you-hua-xian-xing-gui-hua-xian-xing-gui-hua-de-biao-zhun-xing-shi-ji-ji-ben-gai-nian/"/>
+      <url>/2024/05/13/tu-you-hua-xian-xing-gui-hua-xian-xing-gui-hua-de-biao-zhun-xing-shi-ji-ji-ben-gai-nian/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 最优化方法 </category>
+          
+          <category> 线性规划 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 线性规划 </tag>
+            
+            <tag> 可行解 </tag>
+            
+            <tag> 基本解 </tag>
+            
+            <tag> 基本可行解 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>概率论期末复习习题(4)</title>
       <link href="/2024/05/10/gai-lu-lun-5-2-gai-lu-lun-qi-mo-fu-xi-xi-ti-4/"/>
       <url>/2024/05/10/gai-lu-lun-5-2-gai-lu-lun-qi-mo-fu-xi-xi-ti-4/</url>
