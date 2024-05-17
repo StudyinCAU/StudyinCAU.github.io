@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>概率论习题(4) | StudyinCAU</title><meta name="author" content="小楼一夜听春雨 &amp; Rico"><meta name="copyright" content="小楼一夜听春雨 &amp; Rico"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="下载完整PDF点这里 t70 设随机变量 $X$ 和 $Y$ 相互独立, $X$ 服从参数为 1 的指数分布, $Y$ 的概率分布为 $P\{Y&#x3D;-1\}&#x3D;p, P\{Y&#x3D;1\}&#x3D;1-p$, 令 $Z&#x3D;XY$.    （1） 求 $Z$ 的概率密度;    （2）求 $p$ 为何值时， $X$ 与 $Z$ 不相关.    （3） 问 $X$ 与 $Z$ 是否相互独立?  解析（1） $Z$ 的分布">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>概率论习题(4) | StudyinCAU</title><meta name="author" content="小楼一夜听春雨 &amp; Rico"><meta name="copyright" content="小楼一夜听春雨 &amp; Rico"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="下载完整PDF点这里 t70  设随机变量 \(X\) 和 \(Y\) 相互独立, \(X\) 服从参数为 1 的指数分布, \(Y\) 的概率分布为 \(P\{Y&#x3D;-1\}&#x3D;p, P\{Y&#x3D;1\}&#x3D;1-p\), 令 \(Z&#x3D;XY\). （1） 求 \(Z\) 的概率密度; （2）求 \(p\) 为何值时， \(X\) 与 \(Z\) 不相关. （3） 问 \(X\) 与 \(Z\) 是否相互独立">
 <meta property="og:type" content="article">
 <meta property="og:title" content="概率论习题(4)">
 <meta property="og:url" content="https://studyincau.github.io/2024/05/10/gai-lu-lun-5-2-gai-lu-lun-qi-mo-fu-xi-xi-ti-4/index.html">
 <meta property="og:site_name" content="StudyinCAU">
-<meta property="og:description" content="下载完整PDF点这里 t70 设随机变量 $X$ 和 $Y$ 相互独立, $X$ 服从参数为 1 的指数分布, $Y$ 的概率分布为 $P\{Y&#x3D;-1\}&#x3D;p, P\{Y&#x3D;1\}&#x3D;1-p$, 令 $Z&#x3D;XY$.    （1） 求 $Z$ 的概率密度;    （2）求 $p$ 为何值时， $X$ 与 $Z$ 不相关.    （3） 问 $X$ 与 $Z$ 是否相互独立?  解析（1） $Z$ 的分布">
+<meta property="og:description" content="下载完整PDF点这里 t70  设随机变量 \(X\) 和 \(Y\) 相互独立, \(X\) 服从参数为 1 的指数分布, \(Y\) 的概率分布为 \(P\{Y&#x3D;-1\}&#x3D;p, P\{Y&#x3D;1\}&#x3D;1-p\), 令 \(Z&#x3D;XY\). （1） 求 \(Z\) 的概率密度; （2）求 \(p\) 为何值时， \(X\) 与 \(Z\) 不相关. （3） 问 \(X\) 与 \(Z\) 是否相互独立">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://studyincau.github.io/images/background38.jpg">
 <meta property="article:published_time" content="2024-05-10T07:45:23.000Z">
-<meta property="article:modified_time" content="2024-05-14T18:30:52.433Z">
+<meta property="article:modified_time" content="2024-05-14T18:30:52.000Z">
 <meta property="article:author" content="小楼一夜听春雨 &amp; Rico">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://studyincau.github.io/images/background38.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://studyincau.github.io/2024/05/10/gai-lu-lun-5-2-gai-lu-lun-qi-mo-fu-xi-xi-ti-4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
@@ -158,172 +158,326 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">103</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">198</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">49</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/../images/background38.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="StudyinCAU"><span class="site-name">StudyinCAU</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">概率论习题(4)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-10T07:45:23.000Z" title="发表于 2024-05-10 15:45:23">2024-05-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-14T18:30:52.433Z" title="更新于 2024-05-15 02:30:52">2024-05-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%A4%8D%E4%B9%A0/">第五章 复习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">768</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="概率论习题(4)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><a target="_blank" rel="noopener" href="https://wwb.lanzouj.com/igWDk1yeq05g">下载完整PDF点这里</a></p>
-<h2 id="t70"><a href="#t70" class="headerlink" title="t70"></a>t70</h2><blockquote>
-<p>设随机变量 $X$ 和 $Y$ 相互独立, $X$ 服从参数为 1 的指数分布, $Y$ 的概率分布为 $P\{Y=-1\}=p, P\{Y=1\}=1-p$, 令 $Z=XY$.<br>    （1） 求 $Z$ 的概率密度;<br>    （2）求 $p$ 为何值时， $X$ 与 $Z$ 不相关.<br>    （3） 问 $X$ 与 $Z$ 是否相互独立?</p>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">115</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">205</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">52</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/../images/background38.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="StudyinCAU"><span class="site-name">StudyinCAU</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">概率论习题(4)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-10T07:45:23.000Z" title="发表于 2024-05-10 15:45:23">2024-05-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-14T18:30:52.000Z" title="更新于 2024-05-15 02:30:52">2024-05-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%A4%8D%E4%B9%A0/">第五章 复习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="概率论习题(4)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><a target="_blank" rel="noopener" href="https://wwb.lanzouj.com/igWDk1yeq05g">下载完整PDF点这里</a></p>
+<h2 id="t70">t70</h2>
+<blockquote>
+<p>设随机变量 <span class="math inline">\(X\)</span> 和 <span class="math inline">\(Y\)</span> 相互独立, <span class="math inline">\(X\)</span> 服从参数为 1 的指数分布, <span class="math inline">\(Y\)</span> 的概率分布为 <span class="math inline">\(P\{Y=-1\}=p, P\{Y=1\}=1-p\)</span>, 令 <span class="math inline">\(Z=XY\)</span>. （1） 求 <span class="math inline">\(Z\)</span> 的概率密度; （2）求 <span class="math inline">\(p\)</span> 为何值时， <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Z\)</span> 不相关. （3） 问 <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Z\)</span> 是否相互独立?</p>
 </blockquote>
-<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>（1） $Z$ 的分布函数为</p>
-<script type="math/tex; mode=display">
+<h3 id="解析">解析</h3>
+<p>（1） <span class="math inline">\(Z\)</span> 的分布函数为 <span class="math display">\[
 \begin{aligned}
-F_Z(z) & =P\{Z \leqslant z\} \\
-& =P\{Y=-1\} \dot{P}\{X Y \leqslant z \mid Y=-1\}+P\{Y=1\} P\{X Y \leqslant z \mid Y=1\} \\
-& =p P\{-X \leqslant z\}+(1-p) P\{X \leqslant z\} .
-\end{aligned}</script><p>当 $z&lt;0$ 时, $F_Z(z)=p P\{X \geqslant-z\}+(1-p) \cdot 0=p \mathrm{e}^z$;<br>        当 $z \geqslant 0$ 时, $F_Z(z)=p \cdot 1+(1-p) P\{X \leqslant z\}=1-(1-p) \mathrm{e}^{-z}$.<br>        所以 $Z$ 的概率密度为</p>
-<script type="math/tex; mode=display">
+F_Z(z) &amp; =P\{Z \leqslant z\} \\
+&amp; =P\{Y=-1\} \dot{P}\{X Y \leqslant z \mid Y=-1\}+P\{Y=1\} P\{X Y
+\leqslant z \mid Y=1\} \\
+&amp; =p P\{-X \leqslant z\}+(1-p) P\{X \leqslant z\} .
+\end{aligned}
+\]</span></p>
+<p>当 <span class="math inline">\(z&lt;0\)</span> 时, <span class="math inline">\(F_Z(z)=p P\{X \geqslant-z\}+(1-p) \cdot 0=p
+\mathrm{e}^z\)</span>; 当 <span class="math inline">\(z \geqslant
+0\)</span> 时, <span class="math inline">\(F_Z(z)=p \cdot 1+(1-p) P\{X
+\leqslant z\}=1-(1-p) \mathrm{e}^{-z}\)</span>. 所以 <span class="math inline">\(Z\)</span> 的概率密度为 <span class="math display">\[
 \begin{aligned}
-f_Z(z)=F_Z^{\prime}(z) & = \begin{cases}p \mathrm{e}^z, & z<0, \\
-(1-p) \mathrm{e}^{-z}, & z \geqslant 0 .\end{cases} \\
-\end{aligned}</script><p>（2）</p>
-<script type="math/tex; mode=display">
+f_Z(z)=F_Z^{\prime}(z) &amp; = \begin{cases}p \mathrm{e}^z, &amp;
+z&lt;0, \\
+(1-p) \mathrm{e}^{-z}, &amp; z \geqslant 0 .\end{cases} \\
+\end{aligned}
+\]</span></p>
+<p>（2） <span class="math display">\[
 \begin{aligned}
-\operatorname{Cov}(X, Z) & =\operatorname{Cov}(X,XY)\\
-& =E\left(X^2 Y\right)-E (X) \cdot E(X Y) \\
-& =E\left(X^2\right) \cdot E(Y)-(E X)^2 \cdot E(Y) \\
-& =\operatorname{Var}(X) \cdot (Y) \\
-& =1-2 p,
-\end{aligned}</script><p>令 $\operatorname{Cov}(X, Z)=0$, 解得 $p=\dfrac{1}{2}$. 所以当 $p=\dfrac{1}{2}$ 时, $X$ 与 $Z$ 不相关.<br>(3) 因为</p>
-<script type="math/tex; mode=display">
+\operatorname{Cov}(X, Z) &amp; =\operatorname{Cov}(X,XY)\\
+&amp; =E\left(X^2 Y\right)-E (X) \cdot E(X Y) \\
+&amp; =E\left(X^2\right) \cdot E(Y)-(E X)^2 \cdot E(Y) \\
+&amp; =\operatorname{Var}(X) \cdot (Y) \\
+&amp; =1-2 p,
+\end{aligned}
+\]</span> 令 <span class="math inline">\(\operatorname{Cov}(X,
+Z)=0\)</span>, 解得 <span class="math inline">\(p=\dfrac{1}{2}\)</span>.
+所以当 <span class="math inline">\(p=\dfrac{1}{2}\)</span> 时, <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Z\)</span> 不相关. (3) 因为 <span class="math display">\[
 \begin{gathered}
-P\{X \leqslant 1, Z \leqslant-1\}=P\{X \leqslant 1, X Y \leqslant-1\}=0, \\
-P\{X \leqslant 1\}>0, P\{Z \leqslant-1\}>0,
-\end{gathered}</script><p>所以 $P\{X \leqslant 1, Z \leqslant-1\} \neq P\{X \leqslant 1\} P\{Z \leqslant-1\}$, 故 $X$ 与 $Z$ 不相互独立.</p>
+P\{X \leqslant 1, Z \leqslant-1\}=P\{X \leqslant 1, X Y \leqslant-1\}=0,
+\\
+P\{X \leqslant 1\}&gt;0, P\{Z \leqslant-1\}&gt;0,
+\end{gathered}
+\]</span></p>
+<p>所以 <span class="math inline">\(P\{X \leqslant 1, Z \leqslant-1\}
+\neq P\{X \leqslant 1\} P\{Z \leqslant-1\}\)</span>, 故 <span class="math inline">\(X\)</span> 与 <span class="math inline">\(Z\)</span> 不相互独立.</p>
 <hr>
-<h2 id="t71"><a href="#t71" class="headerlink" title="t71"></a>t71</h2><blockquote>
-<p>设 $X, Y$ 为两个随机变量, 且 $E X=2, E Y=1, \operatorname{Var}(X)=4, \operatorname{Var}(Y)=25, \rho_{XY}=-\dfrac{3}{5}$, 求 $E[X(X+Y-2)]$.</p>
+<h2 id="t71">t71</h2>
+<blockquote>
+<p>设 <span class="math inline">\(X, Y\)</span> 为两个随机变量, 且 <span class="math inline">\(E X=2, E Y=1, \operatorname{Var}(X)=4,
+\operatorname{Var}(Y)=25, \rho_{XY}=-\dfrac{3}{5}\)</span>, 求 <span class="math inline">\(E[X(X+Y-2)]\)</span>.</p>
 </blockquote>
-<h3 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h3><script type="math/tex; mode=display">
+<h3 id="解析-1">解析</h3>
+<p><span class="math display">\[
 \begin{aligned}
-E[X(X+Y-2)]&=E(X^2+XY-2X)\\
-&=E(X^2)+E(XY)-2E(X)\\
-&=\operatorname{Var}(X)+(E(X))^2+E(XY)-2E(X)\\
-&=4+E(XY)
-\end{aligned}</script><script type="math/tex; mode=display">
+E[X(X+Y-2)]&amp;=E(X^2+XY-2X)\\
+&amp;=E(X^2)+E(XY)-2E(X)\\
+&amp;=\operatorname{Var}(X)+(E(X))^2+E(XY)-2E(X)\\
+&amp;=4+E(XY)
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
 \begin{aligned}
-\operatorname{Corr}(X,Y)&=\dfrac{\operatorname{Cov}(X,Y)}{\sigma_X\sigma_Y}=\dfrac{E(XY)-E(X)E(Y)}{10}\\
-&=\dfrac{E(XY)-2}{10}\\
-&=-\dfrac{3}{5}
-\end{aligned}</script><p>解得 $E(XY)=-4$ 再代入上式，得 $E[X(X+Y-2)]=0.$ </p>
+\operatorname{Corr}(X,Y)&amp;=\dfrac{\operatorname{Cov}(X,Y)}{\sigma_X\sigma_Y}=\dfrac{E(XY)-E(X)E(Y)}{10}\\
+&amp;=\dfrac{E(XY)-2}{10}\\
+&amp;=-\dfrac{3}{5}
+\end{aligned}
+\]</span></p>
+<p>解得 <span class="math inline">\(E(XY)=-4\)</span> 再代入上式，得
+<span class="math inline">\(E[X(X+Y-2)]=0.\)</span></p>
 <hr>
-<h2 id="t72"><a href="#t72" class="headerlink" title="t72"></a>t72</h2><blockquote>
-<p>设随机变量 $\mathrm{X}$ 和 $\mathrm{Y}$ 相互独立, 分别服从参数为 $\lambda_1, \lambda_2$ 的指数分布, 证明随机变量 $\mathrm{U}$ $=\mathrm{X}-\mathrm{Y}$ 和 $\mathrm{V}=\min \{\mathrm{X}, \mathrm{Y}\}$ 相互独立.</p>
+<h2 id="t72">t72</h2>
+<blockquote>
+<p>设随机变量 <span class="math inline">\(\mathrm{X}\)</span> 和 <span class="math inline">\(\mathrm{Y}\)</span> 相互独立, 分别服从参数为 <span class="math inline">\(\lambda_1, \lambda_2\)</span> 的指数分布,
+证明随机变量 <span class="math inline">\(\mathrm{U}\)</span> <span class="math inline">\(=\mathrm{X}-\mathrm{Y}\)</span> 和 <span class="math inline">\(\mathrm{V}=\min \{\mathrm{X},
+\mathrm{Y}\}\)</span> 相互独立.</p>
 </blockquote>
-<h3 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h3><p><img src="../../../../images/概率论5-2期末考试习题/23.jpg" alt=""></p>
+<h3 id="解析-2">解析</h3>
+<p><img src="../../../../images/概率论5-2期末考试习题/23.jpg"></p>
 <hr>
-<h2 id="t73"><a href="#t73" class="headerlink" title="t73"></a>t73</h2><blockquote>
+<h2 id="t73">t73</h2>
+<blockquote>
 <p>默写大数定律和中心极限定理</p>
 </blockquote>
-<h3 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h3><p>见《知识点总结》$\S4.3、\S4.4.$ </p>
+<h3 id="答案">答案</h3>
+<p>见《知识点总结》<span class="math inline">\(\S4.3、\S4.4.\)</span></p>
 <hr>
-<h2 id="t74"><a href="#t74" class="headerlink" title="t74"></a>t74</h2><blockquote>
-<p>设 $\left\{X_i\right\}$ 是独立同分布的随机变量序列, 且 $X_i \sim U(0,1)$, 令 $\displaystyle Y_n=\left(\prod_{i=1}^n X_i\right)^{\frac{1}{n}}$ 证明: $\ln Y_n \xrightarrow{P} C$, 并求出该常数.</p>
+<h2 id="t74">t74</h2>
+<blockquote>
+<p>设 <span class="math inline">\(\left\{X_i\right\}\)</span>
+是独立同分布的随机变量序列, 且 <span class="math inline">\(X_i \sim
+U(0,1)\)</span>, 令 <span class="math inline">\(\displaystyle
+Y_n=\left(\prod_{i=1}^n X_i\right)^{\frac{1}{n}}\)</span> 证明: <span class="math inline">\(\ln Y_n \xrightarrow{P} C\)</span>,
+并求出该常数.</p>
 </blockquote>
-<h3 id="解析-3"><a href="#解析-3" class="headerlink" title="解析"></a>解析</h3><p>$\displaystyle \ln Y_n=\dfrac{1}{n}\sum_{i=1}^n \ln X_i$</p>
-<p>由于 $\left\{X_i\right\}$ 是独立同分布的随机变量序列, 则 $\left\{\ln X_i\right\}$ 也是独立同分布的随机变量序列。</p>
-<p> $\displaystyle E\left(\ln X_i\right)=\int_0^1\ln xdx=-1$<br>        由辛钦大数定律得: $\displaystyle \ln Y_n=\frac{1}{n} \sum_{i=1}^n \ln X_i \xrightarrow{P} \frac{1}{n}\sum_{i=1}^nE\left(\ln X_i\right)=-1$</p>
-<p>$C=-1.$</p>
+<h3 id="解析-3">解析</h3>
+<p><span class="math inline">\(\displaystyle \ln
+Y_n=\dfrac{1}{n}\sum_{i=1}^n \ln X_i\)</span></p>
+<p>由于 <span class="math inline">\(\left\{X_i\right\}\)</span>
+是独立同分布的随机变量序列, 则 <span class="math inline">\(\left\{\ln
+X_i\right\}\)</span> 也是独立同分布的随机变量序列。</p>
+<p><span class="math inline">\(\displaystyle E\left(\ln
+X_i\right)=\int_0^1\ln xdx=-1\)</span> 由辛钦大数定律得: <span class="math inline">\(\displaystyle \ln Y_n=\frac{1}{n} \sum_{i=1}^n \ln
+X_i \xrightarrow{P} \frac{1}{n}\sum_{i=1}^nE\left(\ln
+X_i\right)=-1\)</span></p>
+<p><span class="math inline">\(C=-1.\)</span></p>
 <hr>
-<h2 id="t75"><a href="#t75" class="headerlink" title="t75"></a>t75</h2><blockquote>
-<p>设 $\left\{X_n\right\}$ 为独立的随机变量序列, 其中 $X_n$ 服从参数为 $\sqrt{n}$ 的泊松分布, 试问 $\left\{X_n\right\}$是否服从大数定律?</p>
+<h2 id="t75">t75</h2>
+<blockquote>
+<p>设 <span class="math inline">\(\left\{X_n\right\}\)</span>
+为独立的随机变量序列, 其中 <span class="math inline">\(X_n\)</span>
+服从参数为 <span class="math inline">\(\sqrt{n}\)</span> 的泊松分布,
+试问 <span class="math inline">\(\left\{X_n\right\}\)</span>是否服从大数定律?</p>
 </blockquote>
-<h3 id="解析-4"><a href="#解析-4" class="headerlink" title="解析"></a>解析</h3><script type="math/tex; mode=display">
-\frac{1}{n^2} \operatorname{Var}\left(\sum_{i=1}^n X_i\right) \leqslant \frac{n \sqrt{n}}{n^2} \rightarrow 0 \quad(n \rightarrow \infty) .</script><p>所以由马尔可夫大数定律知 $\left\{X_n\right\}$ 服从大数定律.</p>
+<h3 id="解析-4">解析</h3>
+<p><span class="math display">\[
+\frac{1}{n^2} \operatorname{Var}\left(\sum_{i=1}^n X_i\right) \leqslant
+\frac{n \sqrt{n}}{n^2} \rightarrow 0 \quad(n \rightarrow \infty) .
+\]</span></p>
+<p>所以由马尔可夫大数定律知 <span class="math inline">\(\left\{X_n\right\}\)</span> 服从大数定律.</p>
 <hr>
-<h2 id="t76"><a href="#t76" class="headerlink" title="t76"></a>t76</h2><blockquote>
-<p>设 $\left\{X_n\right\}$ 为独立同分布的随机变量序列, 其共同分布为</p>
-<script type="math/tex; mode=display">
-P\left(X_n=\frac{2^k}{k^2}\right)=\frac{1}{2^k}, \quad k=1,2, \cdots .</script><p>试问 $\left\{X_n\right\}$ 是否服从大数定律?</p>
+<h2 id="t76">t76</h2>
+<blockquote>
+<p>设 <span class="math inline">\(\left\{X_n\right\}\)</span>
+为独立同分布的随机变量序列, 其共同分布为 <span class="math display">\[
+P\left(X_n=\frac{2^k}{k^2}\right)=\frac{1}{2^k}, \quad k=1,2, \cdots .
+\]</span></p>
+<p>试问 <span class="math inline">\(\left\{X_n\right\}\)</span>
+是否服从大数定律?</p>
 </blockquote>
-<h3 id="解析-5"><a href="#解析-5" class="headerlink" title="解析"></a>解析</h3><p>因为</p>
-<script type="math/tex; mode=display">
-E\left(X_n\right)=\sum_{k=1}^{\infty} \frac{2^k}{k^2} \cdot \frac{1}{2^k}=\sum_{k=1}^{\infty} \frac{1}{k^2}=\frac{\pi^2}{6}<\infty,</script><p>即 $E\left(X_n\right)$ 存在, 所以由辛钦大数定律知 $\left\{X_n\right\}$ 服从大数定律.</p>
+<h3 id="解析-5">解析</h3>
+<p>因为 <span class="math display">\[
+E\left(X_n\right)=\sum_{k=1}^{\infty} \frac{2^k}{k^2} \cdot
+\frac{1}{2^k}=\sum_{k=1}^{\infty}
+\frac{1}{k^2}=\frac{\pi^2}{6}&lt;\infty,
+\]</span></p>
+<p>即 <span class="math inline">\(E\left(X_n\right)\)</span> 存在,
+所以由辛钦大数定律知 <span class="math inline">\(\left\{X_n\right\}\)</span> 服从大数定律.</p>
 <hr>
-<h2 id="t77"><a href="#t77" class="headerlink" title="t77"></a>t77</h2><blockquote>
-<p>在伯努利试验中, 事件 $A$ 出现的概率为 $p$, 令</p>
-<script type="math/tex; mode=display">
-X_n= \begin{cases}1, & \text { 若在第 } n \text { 次及第 } n+1 \text { 次试验中 } A \text { 都出现, } \\ 0, & \text { 其他. }\end{cases}</script><p>证明 $\left\{X_n\right\}$ 服从大数定律.</p>
+<h2 id="t77">t77</h2>
+<blockquote>
+<p>在伯努利试验中, 事件 <span class="math inline">\(A\)</span>
+出现的概率为 <span class="math inline">\(p\)</span>, 令 <span class="math display">\[
+X_n= \begin{cases}1, &amp; \text { 若在第 } n \text { 次及第 } n+1 \text
+{ 次试验中 } A \text { 都出现, } \\ 0, &amp; \text { 其他. }\end{cases}
+\]</span></p>
+<p>证明 <span class="math inline">\(\left\{X_n\right\}\)</span>
+服从大数定律.</p>
 </blockquote>
-<h3 id="解析-6"><a href="#解析-6" class="headerlink" title="解析"></a>解析</h3><p>$\left\{X_n\right\}$ 为同分布随机变量序列, 其共同分布为</p>
-<script type="math/tex; mode=display">
+<h3 id="解析-6">解析</h3>
+<p><span class="math inline">\(\left\{X_n\right\}\)</span>
+为同分布随机变量序列, 其共同分布为 <span class="math display">\[
 \begin{array}{c|cc}
-\hline X_n  & 0 & 1 \\
-\hline P & 1-p^2 & p^2 \\
+\hline X_n  &amp; 0 &amp; 1 \\
+\hline P &amp; 1-p^2 &amp; p^2 \\
 \hline
-\end{array}</script><p>且 $E\left(X_n\right)=E\left(X_n^2\right)=p^2$, 从而 $\operatorname{Var}\left(X_n\right)=p^2\left(1-p^2\right) \leqslant 1$, 又当 $|i-j| \geqslant 2$ 时, $X_i$ 与 $X_j$ 独立，所以</p>
-<script type="math/tex; mode=display">
-\frac{1}{n^2} \operatorname{Var}\left(\sum_{i=1}^n X_i\right)=\frac{1}{n^2}\left[\sum_{i=1}^n \operatorname{Var}\left(X_i\right)+2 \sum_{i=1}^{n-1} \operatorname{Cov}\left(X_i, X_{i+1}\right)\right] .</script><p>由施瓦茨不等式：</p>
-<script type="math/tex; mode=display">
-\left|\operatorname{Cov}\left(X_i, X_{i+1}\right)\right| \leqslant \sqrt{\operatorname{Var}\left(X_i\right)} \sqrt{\operatorname{Var}\left(X_{i+1}\right)}=p^2\left(1-p^2\right),</script><p>于是有</p>
-<script type="math/tex; mode=display">
-\frac{1}{n^2} \operatorname{Var}\left(\sum_{i=1}^n X_i\right) \leqslant \frac{1}{n^2}\left[n p^2\left(1-p^2\right)+2(n-1) p^2\left(1-p^2\right)\right] \rightarrow 0 \quad(n \rightarrow \infty),</script><p>即马尔可夫条件成立, 故 $\left\{X_n\right\}$ 服从大数定律.</p>
+\end{array}
+\]</span> 且 <span class="math inline">\(E\left(X_n\right)=E\left(X_n^2\right)=p^2\)</span>,
+从而 <span class="math inline">\(\operatorname{Var}\left(X_n\right)=p^2\left(1-p^2\right)
+\leqslant 1\)</span>, 又当 <span class="math inline">\(|i-j| \geqslant
+2\)</span> 时, <span class="math inline">\(X_i\)</span> 与 <span class="math inline">\(X_j\)</span> 独立，所以 <span class="math display">\[
+\frac{1}{n^2} \operatorname{Var}\left(\sum_{i=1}^n
+X_i\right)=\frac{1}{n^2}\left[\sum_{i=1}^n
+\operatorname{Var}\left(X_i\right)+2 \sum_{i=1}^{n-1}
+\operatorname{Cov}\left(X_i, X_{i+1}\right)\right] .
+\]</span></p>
+<p>由施瓦茨不等式： <span class="math display">\[
+\left|\operatorname{Cov}\left(X_i, X_{i+1}\right)\right| \leqslant
+\sqrt{\operatorname{Var}\left(X_i\right)}
+\sqrt{\operatorname{Var}\left(X_{i+1}\right)}=p^2\left(1-p^2\right),
+\]</span></p>
+<p>于是有 <span class="math display">\[
+\frac{1}{n^2} \operatorname{Var}\left(\sum_{i=1}^n X_i\right) \leqslant
+\frac{1}{n^2}\left[n p^2\left(1-p^2\right)+2(n-1)
+p^2\left(1-p^2\right)\right] \rightarrow 0 \quad(n \rightarrow \infty),
+\]</span></p>
+<p>即马尔可夫条件成立, 故 <span class="math inline">\(\left\{X_n\right\}\)</span> 服从大数定律.</p>
 <hr>
-<h2 id="t78"><a href="#t78" class="headerlink" title="t78"></a>t78</h2><blockquote>
-<p>某型号螺丝钉的质量是相互独立且同分布的随机变量, 其期望为 $50 \mathrm{~g}$, 标准差 5 克,则 100 个该型号得螺丝钉质量不超过 $5.1 \mathrm{~kg}$ 的概率近似为？</p>
+<h2 id="t78">t78</h2>
+<blockquote>
+<p>某型号螺丝钉的质量是相互独立且同分布的随机变量, 其期望为 <span class="math inline">\(50 \mathrm{~g}\)</span>, 标准差 5 克,则 100
+个该型号得螺丝钉质量不超过 <span class="math inline">\(5.1
+\mathrm{~kg}\)</span> 的概率近似为？</p>
 </blockquote>
-<h3 id="解析-7"><a href="#解析-7" class="headerlink" title="解析"></a>解析</h3><p>设 $\displaystyle Y=\sum_{i=1}^{100} X_i$由题意得, 各螺丝质量独立同分布, 由中心极限定理值, 其质量近似服从正态分布，即： $Y\sim N\left(5,0.05^2\right)$ (单位:千克)</p>
-<p>进而计算有: </p>
-<script type="math/tex; mode=display">
-P\left\{\sum_{i=1}^{100} X_i \leq 5.1\right\}=P\left\{\frac{\displaystyle \sum_{i=1}^{100} X_i-5}{\sqrt{0.05^2}} \leq \frac{5.1-5}{\sqrt{0.05^2}}\right\} \approx \Phi(2)</script><hr>
-<h2 id="t79"><a href="#t79" class="headerlink" title="t79"></a>t79</h2><blockquote>
-<p>设某生产线上组装每件产品的时间服从指数分布, 平均需要 $10 \mathrm{~min}$, 且各件产品的组装时间是相互独立的.<br>(1) 试求组装 100 件产品需要 $15 \mathrm{~h}$ 至 $20 \mathrm{~h}$ 的概率;<br>(2) 保证有 $95 \%$ 的可能性, 问 $16 \mathrm{~h}$ 内最多可以组装多少件产品?</p>
-</blockquote>
-<h3 id="解析-8"><a href="#解析-8" class="headerlink" title="解析"></a>解析</h3><p>   记 $X_i$ 为组装第 $i$ 件产品的时间 (单位: $\min$ ), 则由 $X_i \sim \operatorname{Exp}(\lambda), E\left(X_i\right)=1 / \lambda=$ 10 , 知 $\operatorname{Var}\left(X_i\right)=1 / \lambda^2=100$.<br>        （1）根据题意所求概率如下, 再用林德伯格一莱维中心极限定理可得</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-P\left(15 \times 60 \leqslant \sum_{i=1}^{100} X_i \leqslant 20 \times 60\right) & \approx \Phi\left(\frac{1200-100 \times 10}{\sqrt{100 \times 100}}\right)-\Phi\left(\frac{900-100 \times 10}{\sqrt{100 \times 100}}\right) \\
-& =\Phi(2)-\Phi(-1)=\Phi(2)+\Phi(1)-1=0.8185
-\end{aligned}</script><p>（2）设 $16 \mathrm{~h}$ 内最多可以组装 $k$ 件产品. 则根据题意可列出概率不等式</p>
-<script type="math/tex; mode=display">
-P\left(\sum_{i=1}^k X_i \leqslant 16 \times 60\right) \geqslant 0.95,</script><p>​    再用林德伯格－莱维中心极限定理可得</p>
-<script type="math/tex; mode=display">
-\Phi\left(\frac{960-10 k}{\sqrt{100 k}}\right) \geqslant 0.95,</script><p>​    由此查表得 $\dfrac{960-10 k}{10 \sqrt{k}} \geqslant 1.645$, 从中解得 $k=81$.</p>
+<h3 id="解析-7">解析</h3>
+<p>设 <span class="math inline">\(\displaystyle Y=\sum_{i=1}^{100}
+X_i\)</span>由题意得, 各螺丝质量独立同分布, 由中心极限定理值,
+其质量近似服从正态分布，即： <span class="math inline">\(Y\sim
+N\left(5,0.05^2\right)\)</span> (单位:千克)</p>
+<p>进而计算有: <span class="math display">\[
+P\left\{\sum_{i=1}^{100} X_i \leq
+5.1\right\}=P\left\{\frac{\displaystyle \sum_{i=1}^{100}
+X_i-5}{\sqrt{0.05^2}} \leq \frac{5.1-5}{\sqrt{0.05^2}}\right\} \approx
+\Phi(2)
+\]</span></p>
 <hr>
-<h2 id="t80"><a href="#t80" class="headerlink" title="t80"></a>t80</h2><blockquote>
-<p>一家有 500 间客房的大旅馆的每间客房装有一台 $2 \mathrm{~kW}$ (千瓦) 的空调机. 若开房率为 $80 \%$, 需要多少千瓦的电力才能有 $99 \%$ 的可能性保证有足够的电力使用空调机?</p>
+<h2 id="t79">t79</h2>
+<blockquote>
+<p>设某生产线上组装每件产品的时间服从指数分布, 平均需要 <span class="math inline">\(10 \mathrm{~min}\)</span>,
+且各件产品的组装时间是相互独立的. (1) 试求组装 100 件产品需要 <span class="math inline">\(15 \mathrm{~h}\)</span> 至 <span class="math inline">\(20 \mathrm{~h}\)</span> 的概率; (2) 保证有 <span class="math inline">\(95 \%\)</span> 的可能性, 问 <span class="math inline">\(16 \mathrm{~h}\)</span>
+内最多可以组装多少件产品?</p>
 </blockquote>
-<h3 id="解析-9"><a href="#解析-9" class="headerlink" title="解析"></a>解析</h3><p>记</p>
-<script type="math/tex; mode=display">
-X_i= \begin{cases}1, & \text { 第 } i \text { 间客房开房, } \\ 0, & \text { 第 } i \text { 间客房未开房, }\end{cases}</script><p>则 $X_i \sim b(1,0.8)$, 由此得 $Y=X_1+X_2+\cdots+X_{500} \sim b(500,0.8)$. 设共有 $k \mathrm{~kW}$ 的电力可供使用, 根据题意可列不等式</p>
-<script type="math/tex; mode=display">
-P(2 Y \leqslant k)=P(Y \leqslant k / 2) \geqslant 0.99,</script><p>再用棣莫弗一拉普拉斯中心极限定理和修正项可得</p>
-<script type="math/tex; mode=display">
-\Phi\left(\frac{k / 2+0.5-500 \times 0.8}{\sqrt{500 \times 0.8 \times 0.2}}\right) \geqslant 0.99,</script><p>或</p>
-<script type="math/tex; mode=display">
-\Phi\left(\frac{k-799}{8 \sqrt{5}}\right) \geqslant 0.99</script><p>由此查表得 $\dfrac{k-799}{8 \sqrt{5}} \geqslant 2.33$, 从中解得 $k \geqslant 840.68$, 取 $k=841 \mathrm{~kW}$ 即可.这表明: 该旅馆每天需要 $841 \mathrm{~kW}$ 电力, 才能以 $99 \%$ 的把握保证空调机用电.</p>
+<h3 id="解析-8">解析</h3>
+<p>记 <span class="math inline">\(X_i\)</span> 为组装第 <span class="math inline">\(i\)</span> 件产品的时间 (单位: <span class="math inline">\(\min\)</span> ), 则由 <span class="math inline">\(X_i \sim \operatorname{Exp}(\lambda),
+E\left(X_i\right)=1 / \lambda=\)</span> 10 , 知 <span class="math inline">\(\operatorname{Var}\left(X_i\right)=1 /
+\lambda^2=100\)</span>. （1）根据题意所求概率如下,
+再用林德伯格一莱维中心极限定理可得 <span class="math display">\[
+\begin{aligned}
+P\left(15 \times 60 \leqslant \sum_{i=1}^{100} X_i \leqslant 20 \times
+60\right) &amp; \approx \Phi\left(\frac{1200-100 \times 10}{\sqrt{100
+\times 100}}\right)-\Phi\left(\frac{900-100 \times 10}{\sqrt{100 \times
+100}}\right) \\
+&amp; =\Phi(2)-\Phi(-1)=\Phi(2)+\Phi(1)-1=0.8185
+\end{aligned}
+\]</span> （2）设 <span class="math inline">\(16 \mathrm{~h}\)</span>
+内最多可以组装 <span class="math inline">\(k\)</span> 件产品.
+则根据题意可列出概率不等式 <span class="math display">\[
+P\left(\sum_{i=1}^k X_i \leqslant 16 \times 60\right) \geqslant 0.95,
+\]</span></p>
+<p>​ 再用林德伯格－莱维中心极限定理可得 <span class="math display">\[
+\Phi\left(\frac{960-10 k}{\sqrt{100 k}}\right) \geqslant 0.95,
+\]</span></p>
+<p>​ 由此查表得 <span class="math inline">\(\dfrac{960-10 k}{10 \sqrt{k}}
+\geqslant 1.645\)</span>, 从中解得 <span class="math inline">\(k=81\)</span>.</p>
 <hr>
-<h2 id="t81"><a href="#t81" class="headerlink" title="t81"></a>t81</h2><blockquote>
-<p>某保险公司多年的统计资料表明, 在索赔户中被盗索赔户占 $20 \%$, 以 $X$ 表示在随意抽查的 100 个索赔户中因被盗向保险公司索赔的户数.<br>    (1) 写出 $X$ 的分布列;<br>    (2) 求被盗索赔户不少于 14 户且不多于 30 户的概率的近似值.</p>
+<h2 id="t80">t80</h2>
+<blockquote>
+<p>一家有 500 间客房的大旅馆的每间客房装有一台 <span class="math inline">\(2 \mathrm{~kW}\)</span> (千瓦) 的空调机.
+若开房率为 <span class="math inline">\(80 \%\)</span>,
+需要多少千瓦的电力才能有 <span class="math inline">\(99 \%\)</span>
+的可能性保证有足够的电力使用空调机?</p>
 </blockquote>
-<h3 id="解析-10"><a href="#解析-10" class="headerlink" title="解析"></a>解析</h3><p>(1) $X$ 服从 $n=100, p=0.2$ 的二项分布 $b(100,0.2)$, 即</p>
-<script type="math/tex; mode=display">
-P(X=k)=\binom{100}{k} 0.2^k 0.8^{100-k}, \quad k=0,1,2, \cdots, 100 .</script><p>(2) 利用棣莫弗一拉普拉斯中心极限定理并修正项，有</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-P(14 \leqslant X \leqslant 30) & =P(13.5<X<30.5) \\
-& \approx \Phi\left(\frac{30.5-100 \times 0.2}{\sqrt{100 \times 0.2 \times 0.8}}\right)-\Phi\left(\frac{13.5-100 \times 0.2}{\sqrt{100 \times 0.2 \times 0.8}}\right) \\
-& =\Phi(2.625)-\Phi(-1.625) \\
-& =\Phi(2.625)-1+\Phi(1.625) \\
-& =0.99565-1+0.948=0.9437 .
-\end{aligned}</script><p>这表明: 被盗索赔户在 14 与 30 户之间的概率近似为 0.9437 .</p>
+<h3 id="解析-9">解析</h3>
+<p>记 <span class="math display">\[
+X_i= \begin{cases}1, &amp; \text { 第 } i \text { 间客房开房, } \\ 0,
+&amp; \text { 第 } i \text { 间客房未开房, }\end{cases}
+\]</span></p>
+<p>则 <span class="math inline">\(X_i \sim b(1,0.8)\)</span>, 由此得
+<span class="math inline">\(Y=X_1+X_2+\cdots+X_{500} \sim
+b(500,0.8)\)</span>. 设共有 <span class="math inline">\(k
+\mathrm{~kW}\)</span> 的电力可供使用, 根据题意可列不等式 <span class="math display">\[
+P(2 Y \leqslant k)=P(Y \leqslant k / 2) \geqslant 0.99,
+\]</span></p>
+<p>再用棣莫弗一拉普拉斯中心极限定理和修正项可得 <span class="math display">\[
+\Phi\left(\frac{k / 2+0.5-500 \times 0.8}{\sqrt{500 \times 0.8 \times
+0.2}}\right) \geqslant 0.99,
+\]</span></p>
+<p>或 <span class="math display">\[
+\Phi\left(\frac{k-799}{8 \sqrt{5}}\right) \geqslant 0.99
+\]</span></p>
+<p>由此查表得 <span class="math inline">\(\dfrac{k-799}{8 \sqrt{5}}
+\geqslant 2.33\)</span>, 从中解得 <span class="math inline">\(k
+\geqslant 840.68\)</span>, 取 <span class="math inline">\(k=841
+\mathrm{~kW}\)</span> 即可.这表明: 该旅馆每天需要 <span class="math inline">\(841 \mathrm{~kW}\)</span> 电力, 才能以 <span class="math inline">\(99 \%\)</span> 的把握保证空调机用电.</p>
 <hr>
-<h2 id="t82"><a href="#t82" class="headerlink" title="t82"></a>t82</h2><blockquote>
-<p>某产品的合格品率为 $99\%$, 问包装箱中应该装多少个此种产品, 才能有 $95 \%$ 的可能性使每箱中的合格品多于 $100$ 个。</p>
+<h2 id="t81">t81</h2>
+<blockquote>
+<p>某保险公司多年的统计资料表明, 在索赔户中被盗索赔户占 <span class="math inline">\(20 \%\)</span>, 以 <span class="math inline">\(X\)</span> 表示在随意抽查的 100
+个索赔户中因被盗向保险公司索赔的户数. (1) 写出 <span class="math inline">\(X\)</span> 的分布列; (2) 求被盗索赔户不少于 14
+户且不多于 30 户的概率的近似值.</p>
 </blockquote>
-<h3 id="解析-11"><a href="#解析-11" class="headerlink" title="解析"></a>解析</h3><p>设包装中有几个产品. X为合格品数 $\quad X \sim B(n, 0.99)$<br>        则 $E(x)=0.99 \pi \quad \operatorname{Var}(x)=0.99 \times 0.01 \times n$<br>        由中心极限定理: $X$ 近似服从 $N(0.99 n, 0.99 \times 0.01 \times n)$</p>
-<script type="math/tex; mode=display">
+<h3 id="解析-10">解析</h3>
+<ol type="1">
+<li><span class="math inline">\(X\)</span> 服从 <span class="math inline">\(n=100, p=0.2\)</span> 的二项分布 <span class="math inline">\(b(100,0.2)\)</span>, 即 <span class="math display">\[
+P(X=k)=\binom{100}{k} 0.2^k 0.8^{100-k}, \quad k=0,1,2, \cdots, 100 .
+\]</span></li>
+<li>利用棣莫弗一拉普拉斯中心极限定理并修正项，有 <span class="math display">\[
 \begin{aligned}
-& \text { 目标: } P\{X>100\} \geqslant 0.95 \quad P\{X>100\}=1-P\{X \leqslant 100\}=1-P\left(\frac{X-0.99 n}{\sqrt{0.99 \times 0.01 \times n}} \leqslant \frac{100-0.99 n}{\sqrt{0.99 \times 0.01 \times n}}\right) \\
-& \Rightarrow \Phi\left(\frac{100-0.99 n}{\sqrt{0.99 \times 0.01 \times n}}\right) \leqslant 0.05 \quad \text { 而 } \Phi(1.645)=0.95 \\
-& \Rightarrow \frac{100-0.99 n}{\sqrt{0.99 \times 0.01 \times n}} \leq 1.655 \quad n \geqslant 103.19 \quad \text { 所以104个产品. }
-\end{aligned}</script><hr>
-<h2 id="t83"><a href="#t83" class="headerlink" title="t83"></a>t83</h2><blockquote>
-<p>有一批建筑房屋用的木柱, 其中 $80 \%$ 的长度不小于 $3 \mathrm{~m}$, 现从这批木柱中随机地取出 100 根，问其中至少有 30 根短于 $3 \mathrm{~m}$ 的概率是多少?</p>
+P(14 \leqslant X \leqslant 30) &amp; =P(13.5&lt;X&lt;30.5) \\
+&amp; \approx \Phi\left(\frac{30.5-100 \times 0.2}{\sqrt{100 \times 0.2
+\times 0.8}}\right)-\Phi\left(\frac{13.5-100 \times 0.2}{\sqrt{100
+\times 0.2 \times 0.8}}\right) \\
+&amp; =\Phi(2.625)-\Phi(-1.625) \\
+&amp; =\Phi(2.625)-1+\Phi(1.625) \\
+&amp; =0.99565-1+0.948=0.9437 .
+\end{aligned}
+\]</span></li>
+</ol>
+<p>这表明: 被盗索赔户在 14 与 30 户之间的概率近似为 0.9437 .</p>
+<hr>
+<h2 id="t82">t82</h2>
+<blockquote>
+<p>某产品的合格品率为 <span class="math inline">\(99\%\)</span>,
+问包装箱中应该装多少个此种产品, 才能有 <span class="math inline">\(95
+\%\)</span> 的可能性使每箱中的合格品多于 <span class="math inline">\(100\)</span> 个。</p>
 </blockquote>
-<h3 id="解析-12"><a href="#解析-12" class="headerlink" title="解析"></a>解析</h3><p>设 $X$ 为 100 根木柱中长度不小于 $3 \mathrm{~m}$ 的根数, 则 $X \sim b(100,0.8)$. 利用棣莫弗一拉普拉斯中心极限定理, 所求概率为</p>
-<script type="math/tex; mode=display">
+<h3 id="解析-11">解析</h3>
+<p>设包装中有几个产品. X为合格品数 <span class="math inline">\(\quad X
+\sim B(n, 0.99)\)</span> 则 <span class="math inline">\(E(x)=0.99 \pi
+\quad \operatorname{Var}(x)=0.99 \times 0.01 \times n\)</span>
+由中心极限定理: <span class="math inline">\(X\)</span> 近似服从 <span class="math inline">\(N(0.99 n, 0.99 \times 0.01 \times n)\)</span>
+<span class="math display">\[
 \begin{aligned}
-P(X \leqslant 70) & =P(X<70.5) \approx \Phi\left(\frac{70.5-100 \times 0.8}{\sqrt{100 \times 0.8 \times 0.2}}\right) \\
-& =1-\Phi(2.375)=0.0088 .
-\end{aligned}</script></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://studyincau.github.io">小楼一夜听春雨 &amp; Rico</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://studyincau.github.io/2024/05/10/gai-lu-lun-5-2-gai-lu-lun-qi-mo-fu-xi-xi-ti-4/">https://studyincau.github.io/2024/05/10/gai-lu-lun-5-2-gai-lu-lun-qi-mo-fu-xi-xi-ti-4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://studyincau.github.io" target="_blank">StudyinCAU</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/../images/background38.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/05/13/tu-you-hua-xian-xing-gui-hua-xian-xing-gui-hua-de-biao-zhun-xing-shi-ji-ji-ben-gai-nian/" title="线性规划的标准形式及基本概念"><img class="cover" src="/../images/background39.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">线性规划的标准形式及基本概念</div></div></a></div><div class="next-post pull-right"><a href="/2024/05/06/gai-lu-lun-5-2-gai-lu-lun-qi-mo-fu-xi-xi-ti-3/" title="概率论习题(3)"><img class="cover" src="/../images/background38.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">概率论习题(3)</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小楼一夜听春雨 &amp; Rico</div><div class="author-info__description">Study</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">103</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">198</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">49</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/StudyinCAU"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/StudyinCAU" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:3187248635@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是一个分享学习笔记(资料)的网站，欢迎一起学习、交流。如果你有好的文章也想分享，可以发邮箱(邮箱在公告上方~)[若出现渲染问题或加载过慢，推荐用谷歌或Edge浏览器打开]</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#t70"><span class="toc-text">t70</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t71"><span class="toc-text">t71</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-1"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t72"><span class="toc-text">t72</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-2"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t73"><span class="toc-text">t73</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%94%E6%A1%88"><span class="toc-text">答案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t74"><span class="toc-text">t74</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-3"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t75"><span class="toc-text">t75</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-4"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t76"><span class="toc-text">t76</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-5"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t77"><span class="toc-text">t77</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-6"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t78"><span class="toc-text">t78</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-7"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t79"><span class="toc-text">t79</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-8"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t80"><span class="toc-text">t80</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-9"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t81"><span class="toc-text">t81</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-10"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t82"><span class="toc-text">t82</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-11"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t83"><span class="toc-text">t83</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-12"><span class="toc-text">解析</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/05/17/shu-li-tong-ji-6-3-zui-xiao-fang-chai-wu-pian-gu-ji/" title="第三节 最小方差无偏估计"><img src="/../images/background46.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第三节 最小方差无偏估计"/></a><div class="content"><a class="title" href="/2024/05/17/shu-li-tong-ji-6-3-zui-xiao-fang-chai-wu-pian-gu-ji/" title="第三节 最小方差无偏估计">第三节 最小方差无偏估计</a><time datetime="2024-05-16T16:36:13.000Z" title="发表于 2024-05-17 00:36:13">2024-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/16/shu-li-tong-ji-6-2-dian-gu-ji-de-ping-jie-biao-zhun/" title="第二节 点估计的评价标准"><img src="/../images/background46.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第二节 点估计的评价标准"/></a><div class="content"><a class="title" href="/2024/05/16/shu-li-tong-ji-6-2-dian-gu-ji-de-ping-jie-biao-zhun/" title="第二节 点估计的评价标准">第二节 点估计的评价标准</a><time datetime="2024-05-15T17:15:09.000Z" title="发表于 2024-05-16 01:15:09">2024-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/16/shu-li-tong-ji-6-1-dian-gu-ji/" title="第一节 点估计"><img src="/../images/background46.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第一节 点估计"/></a><div class="content"><a class="title" href="/2024/05/16/shu-li-tong-ji-6-1-dian-gu-ji/" title="第一节 点估计">第一节 点估计</a><time datetime="2024-05-15T17:12:31.000Z" title="发表于 2024-05-16 01:12:31">2024-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/16/jing-ji-fa-ji-chu-2-chen/" title="税法概述及货物和劳务税法律制度(下)"><img src="/../images/background35.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="税法概述及货物和劳务税法律制度(下)"/></a><div class="content"><a class="title" href="/2024/05/16/jing-ji-fa-ji-chu-2-chen/" title="税法概述及货物和劳务税法律制度(下)">税法概述及货物和劳务税法律制度(下)</a><time datetime="2024-05-15T17:05:53.000Z" title="发表于 2024-05-16 01:05:53">2024-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/15/human-lei/" title="Human类"><img src="/../images/suanfa.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Human类"/></a><div class="content"><a class="title" href="/2024/05/15/human-lei/" title="Human类">Human类</a><time datetime="2024-05-14T18:31:58.000Z" title="发表于 2024-05-15 02:31:58">2024-05-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 小楼一夜听春雨 & Rico</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+&amp; \text { 目标: } P\{X&gt;100\} \geqslant 0.95 \quad
+P\{X&gt;100\}=1-P\{X \leqslant 100\}=1-P\left(\frac{X-0.99 n}{\sqrt{0.99
+\times 0.01 \times n}} \leqslant \frac{100-0.99 n}{\sqrt{0.99 \times
+0.01 \times n}}\right) \\
+&amp; \Rightarrow \Phi\left(\frac{100-0.99 n}{\sqrt{0.99 \times 0.01
+\times n}}\right) \leqslant 0.05 \quad \text { 而 } \Phi(1.645)=0.95 \\
+&amp; \Rightarrow \frac{100-0.99 n}{\sqrt{0.99 \times 0.01 \times n}}
+\leq 1.655 \quad n \geqslant 103.19 \quad \text { 所以104个产品. }
+\end{aligned}
+\]</span></p>
+<hr>
+<h2 id="t83">t83</h2>
+<blockquote>
+<p>有一批建筑房屋用的木柱, 其中 <span class="math inline">\(80
+\%\)</span> 的长度不小于 <span class="math inline">\(3
+\mathrm{~m}\)</span>, 现从这批木柱中随机地取出 100 根，问其中至少有 30
+根短于 <span class="math inline">\(3 \mathrm{~m}\)</span>
+的概率是多少?</p>
+</blockquote>
+<h3 id="解析-12">解析</h3>
+<p>设 <span class="math inline">\(X\)</span> 为 100 根木柱中长度不小于
+<span class="math inline">\(3 \mathrm{~m}\)</span> 的根数, 则 <span class="math inline">\(X \sim b(100,0.8)\)</span>.
+利用棣莫弗一拉普拉斯中心极限定理, 所求概率为 <span class="math display">\[
+\begin{aligned}
+P(X \leqslant 70) &amp; =P(X&lt;70.5) \approx \Phi\left(\frac{70.5-100
+\times 0.8}{\sqrt{100 \times 0.8 \times 0.2}}\right) \\
+&amp; =1-\Phi(2.375)=0.0088 .
+\end{aligned}
+\]</span></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://studyincau.github.io">小楼一夜听春雨 &amp; Rico</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://studyincau.github.io/2024/05/10/gai-lu-lun-5-2-gai-lu-lun-qi-mo-fu-xi-xi-ti-4/">https://studyincau.github.io/2024/05/10/gai-lu-lun-5-2-gai-lu-lun-qi-mo-fu-xi-xi-ti-4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://studyincau.github.io" target="_blank">StudyinCAU</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/../images/background38.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/05/13/tu-you-hua-xian-xing-gui-hua-xian-xing-gui-hua-de-biao-zhun-xing-shi-ji-ji-ben-gai-nian/" title="线性规划的标准形式及基本概念"><img class="cover" src="/../images/background39.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">线性规划的标准形式及基本概念</div></div></a></div><div class="next-post pull-right"><a href="/2024/05/06/gai-lu-lun-5-2-gai-lu-lun-qi-mo-fu-xi-xi-ti-2/" title="概率论习题(2)"><img class="cover" src="/../images/background38.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">概率论习题(2)</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小楼一夜听春雨 &amp; Rico</div><div class="author-info__description">Study</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">115</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">205</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">52</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/StudyinCAU"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/StudyinCAU" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:3187248635@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是一个分享学习笔记(资料)的网站，欢迎一起学习、交流。如果你有好的文章也想分享，可以发邮箱(邮箱在公告上方~)[若出现渲染问题或加载过慢，推荐用谷歌或Edge浏览器打开]</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#t70"><span class="toc-text">t70</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t71"><span class="toc-text">t71</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-1"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t72"><span class="toc-text">t72</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-2"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t73"><span class="toc-text">t73</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%94%E6%A1%88"><span class="toc-text">答案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t74"><span class="toc-text">t74</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-3"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t75"><span class="toc-text">t75</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-4"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t76"><span class="toc-text">t76</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-5"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t77"><span class="toc-text">t77</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-6"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t78"><span class="toc-text">t78</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-7"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t79"><span class="toc-text">t79</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-8"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t80"><span class="toc-text">t80</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-9"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t81"><span class="toc-text">t81</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-10"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t82"><span class="toc-text">t82</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-11"><span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t83"><span class="toc-text">t83</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-12"><span class="toc-text">解析</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/05/18/shu-li-tong-ji-6-4-bei-xie-si-gu-ji/" title="第四节 贝叶斯估计"><img src="/../images/background46.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第四节 贝叶斯估计"/></a><div class="content"><a class="title" href="/2024/05/18/shu-li-tong-ji-6-4-bei-xie-si-gu-ji/" title="第四节 贝叶斯估计">第四节 贝叶斯估计</a><time datetime="2024-05-17T16:15:37.000Z" title="发表于 2024-05-18 00:15:37">2024-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/18/jing-ji-fa-ji-chu-4-1-shui-shou-zheng-guan-fa-lu-zhi-du-chen-wei/" title="税收征收管理法概述"><img src="/../images/background43.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="税收征收管理法概述"/></a><div class="content"><a class="title" href="/2024/05/18/jing-ji-fa-ji-chu-4-1-shui-shou-zheng-guan-fa-lu-zhi-du-chen-wei/" title="税收征收管理法概述">税收征收管理法概述</a><time datetime="2024-05-17T16:10:23.000Z" title="发表于 2024-05-18 00:10:23">2024-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/18/jing-ji-fa-ji-chu-3-4-qi-ta-shui-shou-fa-lu-zhi-du-chen-wei/" title="其他税收法律制度"><img src="/../images/background26.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="其他税收法律制度"/></a><div class="content"><a class="title" href="/2024/05/18/jing-ji-fa-ji-chu-3-4-qi-ta-shui-shou-fa-lu-zhi-du-chen-wei/" title="其他税收法律制度">其他税收法律制度</a><time datetime="2024-05-17T16:09:44.000Z" title="发表于 2024-05-18 00:09:44">2024-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/18/jing-ji-fa-ji-chu-3-3-xing-wei-lei-shui-shou-fa-lu-zhi-du-chen-wei/" title="行为类税收法律制度"><img src="/../images/background26.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="行为类税收法律制度"/></a><div class="content"><a class="title" href="/2024/05/18/jing-ji-fa-ji-chu-3-3-xing-wei-lei-shui-shou-fa-lu-zhi-du-chen-wei/" title="行为类税收法律制度">行为类税收法律制度</a><time datetime="2024-05-17T16:09:25.000Z" title="发表于 2024-05-18 00:09:25">2024-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/18/jing-ji-fa-ji-chu-3-2-che-chuan-lei-shui-shou-fa-lu-zhi-du-chen-wei/" title="车船类税收法律制度"><img src="/../images/background26.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="车船类税收法律制度"/></a><div class="content"><a class="title" href="/2024/05/18/jing-ji-fa-ji-chu-3-2-che-chuan-lei-shui-shou-fa-lu-zhi-du-chen-wei/" title="车船类税收法律制度">车船类税收法律制度</a><time datetime="2024-05-17T16:08:55.000Z" title="发表于 2024-05-18 00:08:55">2024-05-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 小楼一夜听春雨 & Rico</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
