@@ -22,8 +22,6 @@
       
         <tags>
             
-            <tag> 贝叶斯公式 </tag>
-            
             <tag> 总体信息 </tag>
             
             <tag> 样本信息 </tag>
@@ -33,6 +31,8 @@
             <tag> 先验分布 </tag>
             
             <tag> 后验分布 </tag>
+            
+            <tag> 贝叶斯公式 </tag>
             
             <tag> 贝叶斯估计 </tag>
             
@@ -419,7 +419,7 @@
           
           <category> 数据结构与算法 </category>
           
-          <category> c++/c </category>
+          <category> c/c++ </category>
           
           <category> 杂项 </category>
           
@@ -739,6 +739,8 @@
       
       <categories>
           
+          <category> 人工智能 </category>
+          
           <category> 机器学习 </category>
           
           <category> 机器学习方法 </category>
@@ -767,6 +769,8 @@
       
       
       <categories>
+          
+          <category> 人工智能 </category>
           
           <category> 机器学习 </category>
           
@@ -834,6 +838,8 @@
       
       <categories>
           
+          <category> 人工智能 </category>
+          
           <category> 机器学习 </category>
           
           <category> 机器学习方法 </category>
@@ -862,6 +868,8 @@
       
       
       <categories>
+          
+          <category> 人工智能 </category>
           
           <category> 机器学习 </category>
           
@@ -1123,6 +1131,8 @@
       
       <categories>
           
+          <category> 人工智能 </category>
+          
           <category> 深度学习 </category>
           
           <category> 目标检测 </category>
@@ -1239,7 +1249,7 @@
           
           <category> 数据结构与算法 </category>
           
-          <category> c++/c </category>
+          <category> c/c++ </category>
           
           <category> 杂项 </category>
           
@@ -1262,7 +1272,7 @@
           
           <category> 数据结构与算法 </category>
           
-          <category> c++/c </category>
+          <category> c/c++ </category>
           
           <category> 贪心算法 </category>
           
@@ -1477,7 +1487,7 @@
           
           <category> 数据结构与算法 </category>
           
-          <category> c++/c </category>
+          <category> c/c++ </category>
           
           <category> 杂项 </category>
           
@@ -1564,7 +1574,7 @@
           
           <category> 数据结构与算法 </category>
           
-          <category> c++/c </category>
+          <category> c/c++ </category>
           
           <category> BST </category>
           
@@ -1593,7 +1603,7 @@
           
           <category> 数据结构与算法 </category>
           
-          <category> c++/c </category>
+          <category> c/c++ </category>
           
           <category> 杂项 </category>
           
@@ -1616,7 +1626,7 @@
           
           <category> 数据结构与算法 </category>
           
-          <category> c++/c </category>
+          <category> c/c++ </category>
           
           <category> Tire树 </category>
           
@@ -1645,7 +1655,7 @@
           
           <category> 数据结构与算法 </category>
           
-          <category> c++/c </category>
+          <category> c/c++ </category>
           
           <category> KMP </category>
           
@@ -1744,9 +1754,9 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
-          <category> c++ </category>
+          <category> c/c++ </category>
           
           <category> 基础算法 </category>
           
@@ -1932,7 +1942,7 @@
           
           <category> 数据结构与算法 </category>
           
-          <category> c++/c </category>
+          <category> c/c++ </category>
           
           <category> 杂项 </category>
           
@@ -1986,9 +1996,9 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
-          <category> c++ </category>
+          <category> c/c++ </category>
           
           <category> 动态规划 </category>
           
@@ -2015,9 +2025,9 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
-          <category> c++ </category>
+          <category> c/c++ </category>
           
           <category> 基础算法 </category>
           
@@ -2263,7 +2273,9 @@
           
           <category> 数据结构与算法 </category>
           
-          <category> c++/c </category>
+          <category> c/c++ </category>
+          
+          <category> 杂项 </category>
           
       </categories>
       
@@ -2326,6 +2338,8 @@
       
         <tags>
             
+            <tag> 贝叶斯公式 </tag>
+            
             <tag> 条件概率 </tag>
             
             <tag> 乘法公式 </tag>
@@ -2337,8 +2351,6 @@
             <tag> 摸彩模型 </tag>
             
             <tag> 赌徒破产模型 </tag>
-            
-            <tag> 贝叶斯公式 </tag>
             
         </tags>
       
@@ -2483,38 +2495,9 @@
             
             <tag> Java </tag>
             
-            <tag> 算法 </tag>
-            
             <tag> 数据结构 </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第三节 三重积分</title>
-      <link href="/2024/03/25/duo-yuan-wei-ji-fen-10-3-san-chong-ji-fen/"/>
-      <url>/2024/03/25/duo-yuan-wei-ji-fen-10-3-san-chong-ji-fen/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/i3ucW1sjrjhc">下载PDF点这里</a></p><figure><img src="../../../../images/多元微积分10-3三重积分/123.jpg" alt="123.jpg"><figcaption aria-hidden="true">123.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/124.jpg" alt="124.jpg"><figcaption aria-hidden="true">124.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/125.jpg" alt="125.jpg"><figcaption aria-hidden="true">125.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/126.jpg" alt="126.jpg"><figcaption aria-hidden="true">126.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/127.jpg" alt="127.jpg"><figcaption aria-hidden="true">127.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/128.jpg" alt="128.jpg"><figcaption aria-hidden="true">128.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/129.jpg" alt="129.jpg"><figcaption aria-hidden="true">129.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/130.jpg" alt="130.jpg"><figcaption aria-hidden="true">130.jpg</figcaption></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 高等数学 </category>
-          
-          <category> 多元微积分 </category>
-          
-          <category> 第十章 重积分 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 三重积分 </tag>
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -2552,6 +2535,35 @@
     
     
     <entry>
+      <title>第三节 三重积分</title>
+      <link href="/2024/03/25/duo-yuan-wei-ji-fen-10-3-san-chong-ji-fen/"/>
+      <url>/2024/03/25/duo-yuan-wei-ji-fen-10-3-san-chong-ji-fen/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/i3ucW1sjrjhc">下载PDF点这里</a></p><figure><img src="../../../../images/多元微积分10-3三重积分/123.jpg" alt="123.jpg"><figcaption aria-hidden="true">123.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/124.jpg" alt="124.jpg"><figcaption aria-hidden="true">124.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/125.jpg" alt="125.jpg"><figcaption aria-hidden="true">125.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/126.jpg" alt="126.jpg"><figcaption aria-hidden="true">126.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/127.jpg" alt="127.jpg"><figcaption aria-hidden="true">127.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/128.jpg" alt="128.jpg"><figcaption aria-hidden="true">128.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/129.jpg" alt="129.jpg"><figcaption aria-hidden="true">129.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分10-3三重积分/130.jpg" alt="130.jpg"><figcaption aria-hidden="true">130.jpg</figcaption></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高等数学 </category>
+          
+          <category> 多元微积分 </category>
+          
+          <category> 第十章 重积分 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 三重积分 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MIT Deep Learning Bootcamp_ Phillip Isola</title>
       <link href="/2024/03/24/mit-deep-learning-bootcamp-phillip-isola/"/>
       <url>/2024/03/24/mit-deep-learning-bootcamp-phillip-isola/</url>
@@ -2560,6 +2572,8 @@
       
       
       <categories>
+          
+          <category> 人工智能 </category>
           
           <category> 深度学习 </category>
           
@@ -2610,6 +2624,35 @@
     
     
     <entry>
+      <title>第四节 空间直线及其方程</title>
+      <link href="/2024/03/24/duo-yuan-wei-ji-fen-8-4-kong-jian-zhi-xian-ji-qi-fang-cheng/"/>
+      <url>/2024/03/24/duo-yuan-wei-ji-fen-8-4-kong-jian-zhi-xian-ji-qi-fang-cheng/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/ii9JG1sikwxi">下载PDF点这里</a></p><figure><img src="../../../../images/多元微积分8-4空间直线及其方程/17.jpg" alt="17.jpg"><figcaption aria-hidden="true">17.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-4空间直线及其方程/18.jpg" alt="18.jpg"><figcaption aria-hidden="true">18.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-4空间直线及其方程/19.jpg" alt="19.jpg"><figcaption aria-hidden="true">19.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-4空间直线及其方程/20.jpg" alt="20.jpg"><figcaption aria-hidden="true">20.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-4空间直线及其方程/21.jpg" alt="21.jpg"><figcaption aria-hidden="true">21.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-4空间直线及其方程/22.jpg" alt="22.jpg"><figcaption aria-hidden="true">22.jpg</figcaption></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高等数学 </category>
+          
+          <category> 多元微积分 </category>
+          
+          <category> 第八章 向量代数与空间解析几何 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 空间直线 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第五节 曲面及其方程</title>
       <link href="/2024/03/24/duo-yuan-wei-ji-fen-8-5-qu-mian-ji-qi-fang-cheng/"/>
       <url>/2024/03/24/duo-yuan-wei-ji-fen-8-5-qu-mian-ji-qi-fang-cheng/</url>
@@ -2639,11 +2682,11 @@
     
     
     <entry>
-      <title>第四节 空间直线及其方程</title>
-      <link href="/2024/03/24/duo-yuan-wei-ji-fen-8-4-kong-jian-zhi-xian-ji-qi-fang-cheng/"/>
-      <url>/2024/03/24/duo-yuan-wei-ji-fen-8-4-kong-jian-zhi-xian-ji-qi-fang-cheng/</url>
+      <title>第三节 平面及其方程</title>
+      <link href="/2024/03/24/duo-yuan-wei-ji-fen-8-3-ping-mian-ji-qi-fang-cheng/"/>
+      <url>/2024/03/24/duo-yuan-wei-ji-fen-8-3-ping-mian-ji-qi-fang-cheng/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/ii9JG1sikwxi">下载PDF点这里</a></p><figure><img src="../../../../images/多元微积分8-4空间直线及其方程/17.jpg" alt="17.jpg"><figcaption aria-hidden="true">17.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-4空间直线及其方程/18.jpg" alt="18.jpg"><figcaption aria-hidden="true">18.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-4空间直线及其方程/19.jpg" alt="19.jpg"><figcaption aria-hidden="true">19.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-4空间直线及其方程/20.jpg" alt="20.jpg"><figcaption aria-hidden="true">20.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-4空间直线及其方程/21.jpg" alt="21.jpg"><figcaption aria-hidden="true">21.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-4空间直线及其方程/22.jpg" alt="22.jpg"><figcaption aria-hidden="true">22.jpg</figcaption></figure>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/iTTwt1siju6d">下载PDF点这里</a></p><figure><img src="../../../../images/多元微积分8-3平面及其方程/13.jpg" alt="13.jpg"><figcaption aria-hidden="true">13.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-3平面及其方程/14.jpg" alt="14.jpg"><figcaption aria-hidden="true">14.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-3平面及其方程/15.jpg" alt="15.jpg"><figcaption aria-hidden="true">15.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-3平面及其方程/16.jpg" alt="16.jpg"><figcaption aria-hidden="true">16.jpg</figcaption></figure>]]></content>
       
       
       <categories>
@@ -2659,7 +2702,7 @@
       
         <tags>
             
-            <tag> 空间直线 </tag>
+            <tag> 平面方程 </tag>
             
         </tags>
       
@@ -2693,35 +2736,6 @@
             <tag> 向量积 </tag>
             
             <tag> 混合积 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第三节 平面及其方程</title>
-      <link href="/2024/03/24/duo-yuan-wei-ji-fen-8-3-ping-mian-ji-qi-fang-cheng/"/>
-      <url>/2024/03/24/duo-yuan-wei-ji-fen-8-3-ping-mian-ji-qi-fang-cheng/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/iTTwt1siju6d">下载PDF点这里</a></p><figure><img src="../../../../images/多元微积分8-3平面及其方程/13.jpg" alt="13.jpg"><figcaption aria-hidden="true">13.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-3平面及其方程/14.jpg" alt="14.jpg"><figcaption aria-hidden="true">14.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-3平面及其方程/15.jpg" alt="15.jpg"><figcaption aria-hidden="true">15.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分8-3平面及其方程/16.jpg" alt="16.jpg"><figcaption aria-hidden="true">16.jpg</figcaption></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 高等数学 </category>
-          
-          <category> 多元微积分 </category>
-          
-          <category> 第八章 向量代数与空间解析几何 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 平面方程 </tag>
             
         </tags>
       
@@ -2817,6 +2831,35 @@
     
     
     <entry>
+      <title>第四节 多元复合函数的求导法则</title>
+      <link href="/2024/03/24/duo-yuan-wei-ji-fen-duo-yuan-fu-he-han-shu-de-qiu-dao-fa-ze/"/>
+      <url>/2024/03/24/duo-yuan-wei-ji-fen-duo-yuan-fu-he-han-shu-de-qiu-dao-fa-ze/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/i5lYU1si86if">下载PDF点这里</a></p><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/57.jpg" alt="57.jpg"><figcaption aria-hidden="true">57.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/58.jpg" alt="58.jpg"><figcaption aria-hidden="true">58.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/59.jpg" alt="59.jpg"><figcaption aria-hidden="true">59.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/60.jpg" alt="60.jpg"><figcaption aria-hidden="true">60.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/61.jpg" alt="61.jpg"><figcaption aria-hidden="true">61.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/62.jpg" alt="62.jpg"><figcaption aria-hidden="true">62.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/63.jpg" alt="63.jpg"><figcaption aria-hidden="true">63.jpg</figcaption></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 高等数学 </category>
+          
+          <category> 多元微积分 </category>
+          
+          <category> 第九章 多元函数微分法及其应用 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 复合函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第八节 多元函数的极值及其求法</title>
       <link href="/2024/03/24/duo-yuan-wei-ji-fen-duo-yuan-han-shu-de-ji-zhi-ji-qi-qiu-fa/"/>
       <url>/2024/03/24/duo-yuan-wei-ji-fen-duo-yuan-han-shu-de-ji-zhi-ji-qi-qiu-fa/</url>
@@ -2840,35 +2883,6 @@
             <tag> 多元函数的极值 </tag>
             
             <tag> 拉格朗日乘数法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第四节 多元复合函数的求导法则</title>
-      <link href="/2024/03/24/duo-yuan-wei-ji-fen-duo-yuan-fu-he-han-shu-de-qiu-dao-fa-ze/"/>
-      <url>/2024/03/24/duo-yuan-wei-ji-fen-duo-yuan-fu-he-han-shu-de-qiu-dao-fa-ze/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://wwb.lanzouj.com/i5lYU1si86if">下载PDF点这里</a></p><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/57.jpg" alt="57.jpg"><figcaption aria-hidden="true">57.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/58.jpg" alt="58.jpg"><figcaption aria-hidden="true">58.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/59.jpg" alt="59.jpg"><figcaption aria-hidden="true">59.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/60.jpg" alt="60.jpg"><figcaption aria-hidden="true">60.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/61.jpg" alt="61.jpg"><figcaption aria-hidden="true">61.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/62.jpg" alt="62.jpg"><figcaption aria-hidden="true">62.jpg</figcaption></figure><figure><img src="../../../../images/多元微积分多元复合函数的求导法则/63.jpg" alt="63.jpg"><figcaption aria-hidden="true">63.jpg</figcaption></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 高等数学 </category>
-          
-          <category> 多元微积分 </category>
-          
-          <category> 第九章 多元函数微分法及其应用 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 复合函数 </tag>
             
         </tags>
       
@@ -3081,35 +3095,6 @@
     
     
     <entry>
-      <title>带黑色帽子的人数</title>
-      <link href="/2024/03/19/dai-hei-se-mao-zi-de-ren-shu/"/>
-      <url>/2024/03/19/dai-hei-se-mao-zi-de-ren-shu/</url>
-      
-        <content type="html"><![CDATA[<h1 id="戴黑色帽子的人数">戴黑色帽子的人数</h1><h2 id="题目">题目：</h2><p>有一群人去参加聚会，每个人头上被分得一顶帽子。帽子有白色也有黑色，但一定会有人分到黑色帽子。每个人都无法看到自己的帽子，但可以看到别人的。以熄灯为时机，每次熄灯，如果有人觉得自己是黑色帽子，就拍手。第一次熄灯没有人拍手，第二次也没有，直到第5次才有人拍手。问：戴黑色帽子的有几个人？</p><h2 id="解答">解答：</h2><p><strong>假设只有一个人带了黑帽子</strong>：</p><p>第1次关灯的时候会有两种情况：带白帽子的人会看到1顶黑帽子；这种情况下，由于每个人不知道自己帽子的颜色，所以所有带白色帽子的人都可以得到结论：黑帽子不是1顶就是2顶。带黑帽子的人会看到所有人都是白帽子。这时候，带黑帽子的人就知道，他戴的肯定是黑色的。因为，黑帽子至少有1顶，而自己看到全是白色帽子，所以只能他带的是黑色的，从而在第一次关灯的时候就可以报出帽子颜色为1。排除。</p><p><strong>假设有两个人带了黑帽子</strong>：</p><p>在第1次关灯时：带白帽子的人会看到2顶黑帽子；这种情况下，由于每个人不知道自己帽子的颜色，所以所有带白色帽子的人都可以得到结论：黑帽子不是2顶就是3顶。带黑帽子的人会看到其他人中只要一顶黑帽子，其余所有人都是白帽子。所以他得到结论：黑帽子不是1顶就是2顶。但是由于他不知道自己的帽子颜色，所以也无法报数。然后第一次关灯后，没人报数。这时候，带黑帽子的人就知道肯定有2顶黑帽子，除了可以看到的那1顶，自己的也是，否则第一次关灯的时候就会报数了。因此，第二次关灯的时候，就会进行报数。</p><p><strong>假设有三个人带了黑帽子</strong>：</p><p>第1次关灯时：带白帽子的人会看到3顶黑帽子；这种情况下，由于每个人不知道自己帽子的颜色，所以所有带白色帽子的人都可以得到结论：黑帽子不是3顶就是4顶。带黑帽子的人会看到其他人中只有2顶黑帽子，其余所有人都是白帽子。所以他得到结论：黑帽子不是2顶就是3顶。但是由于他不知道自己的帽子颜色，所以也无法报数。按照上边的逻辑。所有人都知道第一次关灯是不会有任何人报数的。第二次关灯后，没人报数。这时候，带黑帽子的人就知道肯定有3顶黑帽子，除了可以看到的那2顶，自己的也是，否则第二次关灯的时候就会报数了。因此，第三次关灯的时候，就会进行报数。</p><p><strong>归纳：假设有<span class="math inline">\(N\)</span>个人带了黑帽子</strong></p><p>第一次关灯时：带白帽子的人会看到<span class="math inline">\(N\)</span>顶黑帽子；这种情况下，由于每个人不知道自己帽子的颜色，所以所有带白色帽子的人都可以得到结论：黑帽子不是<span class="math inline">\(N\)</span>顶就是<span class="math inline">\((N+1)\)</span>顶。带黑帽子的人会看到其他人中只有<span class="math inline">\((N-1)\)</span>顶黑帽子，其余所有人都是白帽子。所以他得到结论：黑帽子不是<span class="math inline">\((N-1)\)</span>顶就是<span class="math inline">\(N\)</span>顶。但是由于他不知道自己的帽子颜色，所以也无法报数。同上，所有人都知道第一次关灯是不会有任何人报数的。第二次关灯后，也没人报数。一直到第<span class="math inline">\((N-1)\)</span>次关灯，这时候，带黑帽子的人就知道肯定有<span class="math inline">\(N\)</span>顶黑帽子，除了可以看到的那<span class="math inline">\((N-1)\)</span>顶，自己的也是，否则第<span class="math inline">\((N-1)\)</span>次关灯的时候就会报数了。因此，第<span class="math inline">\(N\)</span>次关灯的时候，就会进行报数。</p><h2 id="答案">答案</h2><p>​ 戴黑色帽子的有5个人。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-          <category> 逻辑推理题目 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 算法 </tag>
-            
-            <tag> 逻辑推理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>深度学习基础知识</title>
       <link href="/2024/03/18/shen-du-xue-xi-ji-chu-zhi-shi/"/>
       <url>/2024/03/18/shen-du-xue-xi-ji-chu-zhi-shi/</url>
@@ -3121,6 +3106,8 @@
         <tags>
             
             <tag> 深度学习 </tag>
+            
+            <tag> 人工智能 </tag>
             
             <tag> 损失函数 </tag>
             
@@ -3142,9 +3129,11 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
-          <category> c++ </category>
+          <category> c/c++ </category>
+          
+          <category> BFS </category>
           
       </categories>
       
@@ -3169,7 +3158,7 @@
       
       <categories>
           
-          <category> 算法 </category>
+          <category> 数据结构与算法 </category>
           
           <category> Java </category>
           
@@ -3352,6 +3341,8 @@
       
       
       <categories>
+          
+          <category> 人工智能 </category>
           
           <category> 深度学习 </category>
           
