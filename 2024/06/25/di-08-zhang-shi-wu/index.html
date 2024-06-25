@@ -1,0 +1,886 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>第8章 事务 | StudyinCAU</title><meta name="author" content="小楼一夜听春雨 &amp; Rico"><meta name="copyright" content="小楼一夜听春雨 &amp; Rico"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="事务概述  事务是一个最小的工作单元。在数据库当中，事务表示一件完整的事儿。 一个业务的完成可能需要多条DML语句共同配合才能完成，例如转账业务，需要执行两条DML语句，先更新张三账户的余额，再更新李四账户的余额，为了保证转账业务不出现问题，就必须保证要么同时成功，要么同时失败，怎么保证同时成功或者同时失败呢？就需要使用事务机制。 也就是说用了事务机制之后，在同一个事务当中，多条DML语句会同时成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第8章 事务">
+<meta property="og:url" content="https://studyincau.github.io/2024/06/25/di-08-zhang-shi-wu/index.html">
+<meta property="og:site_name" content="StudyinCAU">
+<meta property="og:description" content="事务概述  事务是一个最小的工作单元。在数据库当中，事务表示一件完整的事儿。 一个业务的完成可能需要多条DML语句共同配合才能完成，例如转账业务，需要执行两条DML语句，先更新张三账户的余额，再更新李四账户的余额，为了保证转账业务不出现问题，就必须保证要么同时成功，要么同时失败，怎么保证同时成功或者同时失败呢？就需要使用事务机制。 也就是说用了事务机制之后，在同一个事务当中，多条DML语句会同时成">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://studyincau.github.io/images/background5.jpg">
+<meta property="article:published_time" content="2024-06-25T05:21:12.000Z">
+<meta property="article:modified_time" content="2024-06-25T05:21:13.320Z">
+<meta property="article:author" content="小楼一夜听春雨 &amp; Rico">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://studyincau.github.io/images/background5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://studyincau.github.io/2024/06/25/di-08-zhang-shi-wu/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '第8章 事务',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-25 13:21:13'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">124</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">207</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/../images/background5.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="StudyinCAU"><span class="site-name">StudyinCAU</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">第8章 事务</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-25T05:21:12.000Z" title="发表于 2024-06-25 13:21:12">2024-06-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-25T05:21:13.320Z" title="更新于 2024-06-25 13:21:13">2024-06-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-%E4%B8%B4%E6%97%B6%E8%B5%84%E6%96%99/">数据库(临时资料)</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="第8章 事务"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="事务概述">事务概述</h1>
+<ol type="1">
+<li>事务是一个最小的工作单元。在数据库当中，事务表示一件完整的事儿。</li>
+<li>一个业务的完成可能需要多条DML语句共同配合才能完成，例如转账业务，需要执行两条DML语句，先更新张三账户的余额，再更新李四账户的余额，为了保证转账业务不出现问题，就必须保证要么同时成功，要么同时失败，怎么保证同时成功或者同时失败呢？就需要使用事务机制。</li>
+<li>也就是说用了事务机制之后，在同一个事务当中，多条DML语句会同时成功，或者同时失败，不会出现一部分成功，一部分失败的现象。</li>
+<li>事务只针对DML语句有效：因为只有这三个语句是改变表中数据的。
+<ol type="1">
+<li>insert</li>
+<li>delete</li>
+<li>update # 事务四大特性：ACID</li>
+</ol></li>
+<li>原子性（Atomicity）：是指事务包含的所有操作要么全部成功，要么同时失败。</li>
+<li>一致性（Consistency）：是指事务开始前，和事务完成后，数据应该是一致的。例如张三和李四的钱加起来是5000，中间不管进行过多少次的转账操作(update)，总量5000是不会变的。这就是事务的一致性。</li>
+<li>隔离性（Isolation）：隔离性是当多个⽤户并发访问数据库时，⽐如操作同⼀张表时，数据库为每⼀个⽤户开启的事务，不能被其他事务的操作所⼲扰，多个并发事务之间要相互隔离。</li>
+<li>持久性（Durability）：持久性是指⼀个事务⼀旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。
+# 演示MySQL事务 在dos命令窗口中开启MySQL事务：start transaction;
+或者：begin; 回滚事务：rollback; 提交事务：commit;
+只要执行以上的rollback或者commit，事务都会结束。
+MySQL默认情况下采用的事务机制是：自动提交。所谓自动提交就是只要执行一条DML语句则提交一次。
+# 事务隔离级别 <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1679213953232-4c17a795-8b1f-45d2-907b-c5c16aff672d.png#averageHue=%23e6e3e1&amp;clientId=u5f51673a-a60a-4&amp;from=paste&amp;height=203&amp;id=ue588be16&amp;originHeight=203&amp;originWidth=788&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=16611&amp;status=done&amp;style=shadow&amp;taskId=uca6fc90a-5745-4c38-aa5b-62e77ac8997&amp;title=&amp;width=788" alt="image.png"> <strong>隔离级别从低到高排序：读未提交 &lt; 读提交
+&lt; 可重复读 &lt; 串行化</strong>
+<strong>不同隔离级别会存在不同的现象，现象按照严重性从高到低排序：脏读
+&gt; 不可重复读 &gt; 幻读</strong> ## 查看与设置隔离级别
+mysql默认的隔离级别：可重复读（REPEATABLE READ）。</li>
+</ol>
+<ul>
+<li>查看当前会话的隔离级别：select @<span class="citation" data-cites="transaction_isolation">@transaction_isolation</span>;</li>
+<li>查看全局的隔离级别：select @<span class="citation" data-cites="gobal.transaction_isolation">@gobal.transaction_isolation</span>;</li>
+</ul>
+<p>设置事务隔离级别：</p>
+<ul>
+<li>会话级：set session transaction isolation level read committed;</li>
+<li>全局级：set global transaction isolation level read committed; ##
+不同现象 ### 脏读
+指的是一个事务读取了另一个事务尚未提交的数据，即读取了另一个事务中的脏数据（Dirty
+Data）。在此情况下，如果另一个事务回滚了或者修改了这些数据，那么读取这些脏数据的事务所处理的数据就是不准确的。
+### 不可重复读
+指在一个事务内，多次读取同一个数据行，得到的结果可能是不一样的。这是由于其他事务对数据行做出了修改操作，导致数据的不一致性。
+### 幻读
+指在事务执行过程中，前后两次相同的查询条件得到的结果集不一致，可能会变多或变少。
+## 隔离级别 ### 读未提交（READ UNCOMMITTED）
+A事务与B事务，A事务可以读取到B事务未提交的数据。这是最低的隔离级别。几乎两个事务之间没有隔离。这种隔离级别是一种理论层面的，在实际的数据库产品中，没有从这个级别起步的。
+当事务隔离级别是读未提交时，三种现象都存在：脏读，不可重复读，幻读。
+我们可以开启两个DOS命令窗口，模拟两个事务，演示一下这种隔离级别。三种现象中最严重的是脏读，我们只需要演示脏读问题即可，因为存在脏读的话，就一定存在不可重复读和幻读问题。</li>
+</ul>
+<p>将全局事务隔离级别设置为：READ UNCOMMITTED </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">global</span> transaction isolation level read uncommitted;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>开启两个DOS命令窗口来模拟两个事务：A事务与B事务。</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>A事务</strong></th>
+<th><strong>B事务</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mysql&gt; use powernode</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; use powernode</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; start transaction;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; start transaction;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709003498399-02e4239e-9064-4437-b331-8358459f8fd5.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=191&amp;id=u3b49db14&amp;originHeight=191&amp;originWidth=291&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4424&amp;status=done&amp;style=shadow&amp;taskId=ub68d2077-9c02-449a-9055-5854c835313&amp;title=&amp;width=291" alt="image.png"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>mysql&gt; insert into a values(4);</td>
+</tr>
+<tr class="even">
+<td>mysql&gt; select * from a;</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709003545498-a496e1be-74fd-4e63-9ef0-d6e21b88a7cd.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=217&amp;id=uebb288b9&amp;originHeight=217&amp;originWidth=289&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4600&amp;status=done&amp;style=shadow&amp;taskId=ubb205019-9e90-432c-ab0e-6eb163886d5&amp;title=&amp;width=289" alt="image.png"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>通过以上测试，可以看到，A事务读取到了B事务还没有提交的数据。这种现象就是脏读。
+### 读提交（READ COMMITTED）
+A事务与B事务，A事务可以读取到B事务提交之后的数据。Oracle数据库默认的就是这种隔离级别。</p>
+<p>将数据库的全局事务隔离级别设置为读提交：READ COMMITTED
+</p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">global</span> transaction isolation level read committed;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>演示：</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>A事务</strong></th>
+<th><strong>B事务</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mysql&gt; use powernode</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; use powernode</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; start transaction;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; start transaction;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709003985270-00489f1c-e135-4bd6-aa08-84cdddf6f007.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=191&amp;id=u5d9d9ed4&amp;originHeight=191&amp;originWidth=289&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4388&amp;status=done&amp;style=shadow&amp;taskId=ub714d0fd-c9f2-48d8-9130-c4b0827471a&amp;title=&amp;width=289" alt="image.png"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>mysql&gt; insert into a values(4);</td>
+</tr>
+<tr class="even">
+<td>mysql&gt; select * from a;</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709003985270-00489f1c-e135-4bd6-aa08-84cdddf6f007.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=191&amp;id=yl5zF&amp;originHeight=191&amp;originWidth=289&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4388&amp;status=done&amp;style=shadow&amp;taskId=ub714d0fd-c9f2-48d8-9130-c4b0827471a&amp;title=&amp;width=289" alt="image.png"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; commit;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709004165277-dac7bc73-55ba-4034-bd48-b975689ffb41.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=214&amp;id=ucc8e1eca&amp;originHeight=214&amp;originWidth=298&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4626&amp;status=done&amp;style=shadow&amp;taskId=u2cac7a44-ba45-4bd7-86c2-2d280c9de57&amp;title=&amp;width=298" alt="image.png"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>通过以上测试看出，A事务只能读取到B事务提交之后的数据。这种隔离级别解决了脏读问题，但肯定是存在不可重复读和幻读问题。因为只要事务B进行了增删改操作之后并提交了，事务A读取到的数据肯定是不同的。即：不可重复读和幻读都存在。
+### 可重复读（REPEATABLE READ） 这个隔离级别是MySQL数据库默认的。
+A事务和B事务，A事务开启后，读取了某一条记录，然后B事务对这条记录进行修改并提交，A事务读取到的还是修改前的数据。这种隔离级别称为可重复读。</p>
+<p>将数据库全局隔离级别修改为可重复读： </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">global</span> transaction isolation level repeatable read;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>演示：</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>A事务</strong></th>
+<th><strong>B事务</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mysql&gt; use powernode</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; use powernode</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; start transaction;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; start transaction;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select empno,ename,sal from emp where empno=7369;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709005877270-b84cdf55-866b-4b3b-b575-46552dfb84c0.png#averageHue=%23151312&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=109&amp;id=u9a905011&amp;originHeight=109&amp;originWidth=344&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=5276&amp;status=done&amp;style=shadow&amp;taskId=u85710df6-3409-4242-a3d5-92ea27f7fc2&amp;title=&amp;width=344" alt="image.png"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>mysql&gt; update emp set ename='SMITH',sal=8000 where
+empno=7369;</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; commit;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select empno,ename,sal from emp where empno=7369;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709005948358-4f23bd69-d6ed-4963-a349-ba35ecc61dc0.png#averageHue=%23151311&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=145&amp;id=ub810f157&amp;originHeight=145&amp;originWidth=336&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=7381&amp;status=done&amp;style=shadow&amp;taskId=ud25e00ad-83dc-4fa2-9858-de459ea77f8&amp;title=&amp;width=336" alt="image.png"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>通过以上测试得知：当事务隔离级别设置为可重复读时，避免了不可重复读问题。</p>
+<p>那么在MySQL当中，当事务隔离级别设置为可重复读时，能够避免幻读问题吗？测试一下：</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>事务A</strong></th>
+<th><strong>事务B</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mysql&gt; use powernode</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; use powernode</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; start transaction;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; start transaction;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709006316610-12c48e73-e894-49dc-8dfd-32f8d13ec991.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=218&amp;id=ud9dadda5&amp;originHeight=218&amp;originWidth=298&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4645&amp;status=done&amp;style=shadow&amp;taskId=ua4e22c07-45ef-467a-9a47-c66b5a21472&amp;title=&amp;width=298" alt="image.png"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>mysql&gt; insert into a values(5);</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; commit;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709006362804-0579079b-e054-4299-b1ab-6c16a68875f0.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=218&amp;id=u4c4264a7&amp;originHeight=218&amp;originWidth=297&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4643&amp;status=done&amp;style=shadow&amp;taskId=ua8b9a51a-306e-4b30-afdf-c88138fa2a7&amp;title=&amp;width=297" alt="image.png"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>通过以上测试得知：<strong>当事务隔离级别设置为可重复读时，也避免了幻读问题。是完全避免了幻读问题吗？并不是。</strong>请看以下测试：</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>事务A</strong></th>
+<th><strong>事务B</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mysql&gt; use powernode</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; use powernode</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; start transaction;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; start transaction;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709006612649-1614f4b7-446f-487d-9c1b-000a7e5589d3.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=241&amp;id=ud98016d5&amp;originHeight=241&amp;originWidth=288&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4986&amp;status=done&amp;style=shadow&amp;taskId=u400d7356-cb23-442b-bf41-3a6c7851f3a&amp;title=&amp;width=288" alt="image.png"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>mysql&gt; insert into a values(6);</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; commit;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a <strong>for update;</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709006674069-b52a691f-2cc1-4721-bf23-0451f4bb7535.png#averageHue=%230e0d0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=269&amp;id=uaeabeaf9&amp;originHeight=269&amp;originWidth=295&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=5453&amp;status=done&amp;style=shadow&amp;taskId=u127a2aaf-fd6d-421c-be74-3f50b8fa988&amp;title=&amp;width=295" alt="image.png"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>通过以上测试得知：<strong>当事务隔离级别设置为可重复读，MySQL会尽最大努力避免幻读问题，但这种隔离级别无法完全避免幻读问题。</strong>
+### 串行化（SERIALIZABLE）
+这种隔离级别最高，避免了所有的问题，缺点是效率低，因为这种隔离级别会导致事务排队处理，不支持并发。</p>
+<p>设置数据库全局隔离级别为串行化： </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">global</span> transaction isolation level serializable;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>演示：</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>事务A</strong></th>
+<th><strong>事务B</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mysql&gt; use powernode</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; use powernode</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; start transaction;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; start transaction;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709013080885-bf7ad024-3bdd-4497-997b-1bdc2c81a7da.png#averageHue=%230e0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=262&amp;id=u98eae3de&amp;originHeight=262&amp;originWidth=292&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=5406&amp;status=done&amp;style=shadow&amp;taskId=u7fd54c94-2d24-4710-a2f2-4eb6a0f50ad&amp;title=&amp;width=292" alt="image.png"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; insert into a values(7);</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; select * from a;</td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709013571200-5bfdf9a5-8238-4601-92b7-5eacbd2de16f.png#averageHue=%230e0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=122&amp;id=ubd8c88a4&amp;originHeight=122&amp;originWidth=284&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=2887&amp;status=done&amp;style=shadow&amp;taskId=u18918bf7-edf5-48f1-95c0-21c1e7ae7e7&amp;title=&amp;width=284" alt="image.png"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>mysql&gt; commit;</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709013621752-5b81823b-362d-4cdc-8b49-f941eebd827f.png#averageHue=%230e0d0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=288&amp;id=ufcf1f12d&amp;originHeight=288&amp;originWidth=297&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=5866&amp;status=done&amp;style=shadow&amp;taskId=u385c19ee-7e7d-43de-8d5d-e9cee03e4e4&amp;title=&amp;width=297" alt="image.png"></td>
+</tr>
+</tbody>
+</table>
+<p>通过以上测试得知：当事务隔离级别设置为串行化时，事务只能排队执行，不支持并发。</p>
+<h2 id="可重复读的幻读问题">可重复读的幻读问题</h2>
+<p>在上面讲解过程中我提到，MySQL默认的隔离级别可重复读，在很大程度上避免了幻读问题（并不能完全解决），那么它是如何解决幻读问题的呢，解决方案包括两种：</p>
+<ul>
+<li><p>针对<strong>快照读</strong>（普通 select 语句），是<strong>通过
+MVCC
+方式解决了幻读</strong>，因为可重复读隔离级别下，事务执行过程中看到的数据，一直跟这个事务启动时看到的数据是一致的，即使中途有其他事务插入了一条数据，是查询不出来这条数据的，所以就很好的避免了幻读问题。</p></li>
+<li><p>针对<strong>当前读</strong>（select ... for update
+等语句），是<strong>通过 next-key
+lock（记录锁+间隙锁）方式解决了幻读</strong>，因为当执行 select ... for
+update 语句的时候，会加上 next-key lock，如果有其他事务在 next-key lock
+锁范围内插入了一条记录，那么这个插入语句就会被阻塞，无法成功插入，所以就很好的避免了幻读问题。
+### 快照读是如何解决幻读的
+什么是快照读？普通的select语句都是采用的快照读。顾名思义：在整个事务的处理过程中，执行相同的一个select语句时，每次都是读取的快照。（快照指的是固定的某个时刻的数据，就像现实世界中的拍照一样，把那个美好的时刻留下来）。也就是说，当事务隔离级别是可重复读，并且执行的select语句是一个普通的select语句时，都会采用快照读的方式读取数据，底层实现原理是：</p></li>
+<li><p>底层由
+MVCC（多版本并发控制）实现，实现的方式是开始事务后，在执行第一个查询语句后，会创建一个
+Read View，后续的查询语句利用这个 Read View，通过这个 Read View 就可以在
+undo log
+版本链找到事务开始时的数据，所以事务过程中每次查询的数据都是一样的，即使中途有其他事务插入了新纪录，是查询不出来这条数据的，所以就很好的避免了幻读问题。</p></li>
+</ul>
+<p>演示：</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>事务A</strong></th>
+<th><strong>事务B</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mysql&gt; use powernode</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; use powernode</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; start transaction;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; start transaction;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a; //快照读</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709006316610-12c48e73-e894-49dc-8dfd-32f8d13ec991.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=218&amp;id=mdmNA&amp;originHeight=218&amp;originWidth=298&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4645&amp;status=done&amp;style=shadow&amp;taskId=ua4e22c07-45ef-467a-9a47-c66b5a21472&amp;title=&amp;width=298" alt="image.png"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>mysql&gt; insert into a values(5);</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; commit;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a; //快照读</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709006362804-0579079b-e054-4299-b1ab-6c16a68875f0.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=218&amp;id=sxE0q&amp;originHeight=218&amp;originWidth=297&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4643&amp;status=done&amp;style=shadow&amp;taskId=ua8b9a51a-306e-4b30-afdf-c88138fa2a7&amp;title=&amp;width=297" alt="image.png"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="当前读是如何解决幻读的">当前读是如何解决幻读的</h3>
+<p>当前读，顾名思义：每一次都读取最新的数据。当前读包括：update、delete、insert、select...for
+update。这个很好理解，因为增删改的时候都要基于最新的数据进行增删改。
+而select...for
+update原理是：对查询范围内的数据进行加锁，不允许其它事务对这个范围内的数据进行增删改。也就是说这个select语句范围内的数据是不允许并发的，只能排队执行，从而避免幻读问题。
+select...for update加的锁叫做：next-key lock。我们可以称其为：间隙锁 +
+记录锁。间隙锁用来保证在锁定的范围内不允许insert操作。记录锁用来保证在锁定的范围内不允许delete和update操作。</p>
+<p>假如有这样的数据： <img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709020549539-138b4715-5526-45df-8db2-65d05b393ba1.png#averageHue=%23fbfafa&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=100&amp;id=u99c5080d&amp;originHeight=100&amp;originWidth=137&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=1043&amp;status=done&amp;style=shadow&amp;taskId=u5dc4d53d-1b0b-4c0d-9c33-a1e5e7f2afb&amp;title=&amp;width=137" alt="image.png"> SQL语句是这样写的： </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> a <span class="keyword">where</span> id <span class="keyword">between</span> <span class="number">2</span> <span class="keyword">and</span> <span class="number">4</span> <span class="keyword">for</span> <span class="keyword">update</span>;</span><br></pre></td></tr></tbody></table></figure>
+那么id在[2-4]区间的所有记录行被锁定，不能插入3是通过间隙锁来搞定的。不能修改或删除2和4是通过记录锁来搞定的。<p></p>
+<p>演示：</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>事务A</strong></th>
+<th><strong>事务B</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mysql&gt; use powernode</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; use powernode</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; start transaction;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; start transaction;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a where id between 2 and 4 for update; //
+当前读</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709020966550-4d8580bc-d1f4-48c9-b7e3-26be1acf1bd2.png#averageHue=%23100f0e&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=82&amp;id=u8e7603b6&amp;originHeight=82&amp;originWidth=395&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=3402&amp;status=done&amp;style=shadow&amp;taskId=u2b45bd7b-d1f9-4e07-8579-11c81f9f062&amp;title=&amp;width=395" alt="image.png"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="出现幻读的两种情况">出现幻读的两种情况</h3>
+<p>在同一个事务处理过程中，如果前后两次都采用快照读，或者都采用当前读，则不会出现幻读问题。如果第一次使用快照读，后面使用了当前读，则会出现幻读问题。
+#### 第一种产生幻读的场景
+A事务与B事务。在A事务中第一次查询使用快照读，B事务插入数据。然后在A事务中第二次查询使用当前读。则会产生幻读现象。
+演示：</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>事务A</strong></th>
+<th><strong>事务B</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mysql&gt; use powernode</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; use powernode</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; start transaction;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; start transaction;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709021313528-7b3b88fd-836a-4223-8b93-ef671edf6f2b.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=187&amp;id=u7e8f9872&amp;originHeight=187&amp;originWidth=301&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4297&amp;status=done&amp;style=shadow&amp;taskId=u49199bba-6760-4fad-9615-dc3c6eaf1ca&amp;title=&amp;width=301" alt="image.png"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>mysql&gt; insert into a values(5);</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; commit;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a for update; // 产生了幻读</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709021386345-1b47e39d-98e6-42de-bf33-1652ed601c21.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=213&amp;id=uaadf86ec&amp;originHeight=213&amp;originWidth=303&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4605&amp;status=done&amp;style=shadow&amp;taskId=u18140f69-1a56-44c7-9d4f-83517e41e56&amp;title=&amp;width=303" alt="image.png"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="第二种产生幻读的场景">第二种产生幻读的场景</h4>
+<p>事务A与事务B，在事务A中第一次查询使用快照读，在事务B中插入一条数据，然后在事务A中更新事务B插入的那条记录，最后在事务A中再次使用快照读。则会发生幻读现象。</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>事务A</strong></th>
+<th><strong>事务B</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mysql&gt; use powernode</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; use powernode</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; start transaction;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; start transaction;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; select * from a;</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709021721456-7e0dd695-29c8-4e2f-a88e-4a1fa2d1df90.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=214&amp;id=ufc5ef576&amp;originHeight=214&amp;originWidth=292&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4581&amp;status=done&amp;style=shadow&amp;taskId=u6f2cda2c-b92a-43bf-8471-dd0a074293e&amp;title=&amp;width=292" alt="image.png"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>mysql&gt; insert into a values(6);</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>mysql&gt; commit;</td>
+</tr>
+<tr class="odd">
+<td>mysql&gt; update a set id=100 where id=6;
+//主要是因为这个SQL语句的执行触发了当前读</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>mysql&gt; select * from a; // 产生了幻读</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1709021824472-00989fbd-471a-4f5f-a44a-9781652cd3b3.png#averageHue=%230f0e0d&amp;clientId=u0fbbe02e-04ac-4&amp;from=paste&amp;height=243&amp;id=u11717d5c&amp;originHeight=243&amp;originWidth=293&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=5106&amp;status=done&amp;style=shadow&amp;taskId=u336e9c35-982b-4abd-8342-88cea428ea0&amp;title=&amp;width=293" alt="image.png"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="总结可重复读的幻读问题">总结可重复读的幻读问题</h3>
+<p>MySQL的可重复读隔离级别（默认隔离级），根据不同的查询方式，分别提出了避免幻读的方案：</p>
+<ul>
+<li>针对快照读（普通 select 语句），是通过 MVCC 方式解决了幻读。</li>
+<li>针对当前读（select ... for update 等语句），是通过 next-key
+lock（记录锁+间隙锁）方式解决了幻读。</li>
+</ul>
+<p>我举例了两个发生幻读场景的例子。</p>
+<ul>
+<li>第一个例子：对于快照读， MVCC 并不能完全避免幻读现象。因为当事务 A
+更新了一条事务 B 插入的记录，那么事务 A
+前后两次查询的记录条目就不一样了，所以就发生幻读。</li>
+<li>第二个例子：对于当前读，如果事务开启后，并没有执行当前读，而是先快照读，然后这期间如果其他事务插入了一条记录，那么事务后续使用当前读进行查询的时候，就会发现两次查询的记录条目就不一样了，所以就发生幻读。</li>
+</ul>
+<p>所以，MySQL
+可重复读隔离级别并没有彻底解决幻读，只是很大程度上避免了幻读现象的发生。
+要避免这类特殊场景下发生幻读的现象的话，就是尽量在开启事务之后，马上执行
+select ... for update 这类当前读的语句，因为它会对记录加 next-key
+lock，从而避免其他事务插入一条新记录。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://studyincau.github.io">小楼一夜听春雨 &amp; Rico</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://studyincau.github.io/2024/06/25/di-08-zhang-shi-wu/">https://studyincau.github.io/2024/06/25/di-08-zhang-shi-wu/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://studyincau.github.io" target="_blank">StudyinCAU</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/../images/background5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/06/25/di-09-zhang-dba-ming-ling/" title="第9章 DBA命令"><img class="cover" src="/../images/background5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">第9章 DBA命令</div></div></a></div><div class="next-post pull-right"><a href="/2024/06/25/di-07-zhang-shi-tu/" title="第7章 视图"><img class="cover" src="/../images/background5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">第7章 视图</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小楼一夜听春雨 &amp; Rico</div><div class="author-info__description">Study</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">124</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">207</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/StudyinCAU"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/StudyinCAU" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:3187248635@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是一个分享学习笔记(资料)的网站，欢迎一起学习、交流。如果你有好的文章也想分享，可以发邮箱(邮箱在公告上方~)[若出现渲染问题或加载过慢，推荐用谷歌或Edge浏览器打开]</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E6%A6%82%E8%BF%B0"><span class="toc-text">事务概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB%E7%9A%84%E5%B9%BB%E8%AF%BB%E9%97%AE%E9%A2%98"><span class="toc-text">可重复读的幻读问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%93%E5%89%8D%E8%AF%BB%E6%98%AF%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%B9%BB%E8%AF%BB%E7%9A%84"><span class="toc-text">当前读是如何解决幻读的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BA%E7%8E%B0%E5%B9%BB%E8%AF%BB%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%83%85%E5%86%B5"><span class="toc-text">出现幻读的两种情况</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E4%BA%A7%E7%94%9F%E5%B9%BB%E8%AF%BB%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="toc-text">第二种产生幻读的场景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB%E7%9A%84%E5%B9%BB%E8%AF%BB%E9%97%AE%E9%A2%98"><span class="toc-text">总结可重复读的幻读问题</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-09-zhang-dba-ming-ling/" title="第9章 DBA命令"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第9章 DBA命令"/></a><div class="content"><a class="title" href="/2024/06/25/di-09-zhang-dba-ming-ling/" title="第9章 DBA命令">第9章 DBA命令</a><time datetime="2024-06-25T05:21:18.000Z" title="发表于 2024-06-25 13:21:18">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-08-zhang-shi-wu/" title="第8章 事务"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第8章 事务"/></a><div class="content"><a class="title" href="/2024/06/25/di-08-zhang-shi-wu/" title="第8章 事务">第8章 事务</a><time datetime="2024-06-25T05:21:12.000Z" title="发表于 2024-06-25 13:21:12">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-07-zhang-shi-tu/" title="第7章 视图"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第7章 视图"/></a><div class="content"><a class="title" href="/2024/06/25/di-07-zhang-shi-tu/" title="第7章 视图">第7章 视图</a><time datetime="2024-06-25T05:20:26.000Z" title="发表于 2024-06-25 13:20:26">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-06-zhang-san-fan-shi/" title="第6章 三范式"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第6章 三范式"/></a><div class="content"><a class="title" href="/2024/06/25/di-06-zhang-san-fan-shi/" title="第6章 三范式">第6章 三范式</a><time datetime="2024-06-25T05:19:58.000Z" title="发表于 2024-06-25 13:19:58">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-05-zhang-biao-xiang-guan/" title="第5章 表相关"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第5章 表相关"/></a><div class="content"><a class="title" href="/2024/06/25/di-05-zhang-biao-xiang-guan/" title="第5章 表相关">第5章 表相关</a><time datetime="2024-06-25T05:19:30.000Z" title="发表于 2024-06-25 13:19:30">2024-06-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 小楼一夜听春雨 & Rico</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'xFi1vMHzzqw1qFKQbyK4WtAo-gzGzoHsz',
+      appKey: 'hGyKCk4AFAr9aPSCHioyb0hH',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><link rel="stylesheet" href="/css/title.css"><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

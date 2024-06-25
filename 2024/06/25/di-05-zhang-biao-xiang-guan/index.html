@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>第5章 表相关 | StudyinCAU</title><meta name="author" content="小楼一夜听春雨 &amp; Rico"><meta name="copyright" content="小楼一夜听春雨 &amp; Rico"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="创建表 语法格式： create table 表名(  字段名1 数据类型,  字段名2 数据类型,  字段名3 数据类型,  ......); 例如：创建学生表 create table t_student(  no int,  name varchar,  gender char(1) default &#39;男&#39;);  # 插入数据 语法格式： insert into 表名(字段名1, 字段名2,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第5章 表相关">
+<meta property="og:url" content="https://studyincau.github.io/2024/06/25/di-05-zhang-biao-xiang-guan/index.html">
+<meta property="og:site_name" content="StudyinCAU">
+<meta property="og:description" content="创建表 语法格式： create table 表名(  字段名1 数据类型,  字段名2 数据类型,  字段名3 数据类型,  ......); 例如：创建学生表 create table t_student(  no int,  name varchar,  gender char(1) default &#39;男&#39;);  # 插入数据 语法格式： insert into 表名(字段名1, 字段名2,">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://studyincau.github.io/images/background5.jpg">
+<meta property="article:published_time" content="2024-06-25T05:19:30.000Z">
+<meta property="article:modified_time" content="2024-06-25T05:19:31.818Z">
+<meta property="article:author" content="小楼一夜听春雨 &amp; Rico">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://studyincau.github.io/images/background5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://studyincau.github.io/2024/06/25/di-05-zhang-biao-xiang-guan/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '第5章 表相关',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-25 13:19:31'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">124</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">207</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/../images/background5.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="StudyinCAU"><span class="site-name">StudyinCAU</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">第5章 表相关</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-25T05:19:30.000Z" title="发表于 2024-06-25 13:19:30">2024-06-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-25T05:19:31.818Z" title="更新于 2024-06-25 13:19:31">2024-06-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-%E4%B8%B4%E6%97%B6%E8%B5%84%E6%96%99/">数据库(临时资料)</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="第5章 表相关"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="创建表">创建表</h1>
+<p>语法格式： </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line">  字段名<span class="number">1</span> 数据类型,</span><br><span class="line">  字段名<span class="number">2</span> 数据类型,</span><br><span class="line">  字段名<span class="number">3</span> 数据类型,</span><br><span class="line">  ......</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure> 例如：创建学生表 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_student(</span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span>,</span><br><span class="line">  name <span class="type">varchar</span>,</span><br><span class="line">  gender <span class="type">char</span>(<span class="number">1</span>) <span class="keyword">default</span> <span class="string">'男'</span></span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure> <img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg?x-oss-process=image%2Fresize%2Cw_1177%2Climit_0%2Finterlace%2C1#averageHue=%23f9f8f8&amp;from=url&amp;id=uIPnk&amp;originHeight=66&amp;originWidth=1177&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+# 插入数据 语法格式： <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名(字段名<span class="number">1</span>, 字段名<span class="number">2</span>, 字段名<span class="number">3</span>,......) <span class="keyword">values</span> (值<span class="number">1</span>,值<span class="number">2</span>,值<span class="number">3</span>,......);</span><br></pre></td></tr></tbody></table></figure>
+字段名和值要一一对应。类型要一一对应，数量要一一对应。
+字段名也可以省略，如果字段名省略就表示把所有字段名都写上去了，并且顺序和建表时的顺序相同。
+# 删除表 语法格式： <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> 表名;</span><br></pre></td></tr></tbody></table></figure> 或者 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> if <span class="keyword">exists</span> 表名;</span><br></pre></td></tr></tbody></table></figure>
+判断是否存在这个表，如果存在则删除。避免不存在时的报错。<p></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg?x-oss-process=image%2Fresize%2Cw_1177%2Climit_0%2Finterlace%2C1%2Finterlace%2C1#averageHue=%23f9f8f8&amp;from=url&amp;id=xR0mm&amp;originHeight=66&amp;originWidth=1177&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+# MySQL数据类型
+数据类型（data_type）是指系统中所允许的数据的类型。数据库中的每个列都应该有适当的数据类型，用于限制或允许该列中存储的数据。例如，列中存储的为数字，则相应的数据类型应该为数值类型。
+如果使用错误的数据类型可能会严重影响应用程序的功能和性能，所以在设计表时，应该特别重视数据列所用的数据类型。更改包含数据的列不是一件小事，这样做可能会导致数据丢失。因此，在创建表时必须为每个列设置正确的数据类型和长度。
+MySQL
+的数据类型可以分为整数类型、浮点数类型、定点数类型、日期和时间类型、字符串类型、二进制类型等。
+## 整数类型 tinyint：1个字节（微小整数） smallint：2个字节（小整数）
+mediumint：3个字节（中等大小的整数）
+<strong>int（integer）：4个字节（普通大小整数）</strong>
+<strong>bigint：8个字节（大整数）</strong> ## 浮点数类型
+float：4个字节，单精度（最多5位小数）
+<strong>double：8个字节，双精度（最多16位小数）</strong> ## 定点数类型
+decimal：定点数类型。底层实际上采用字符串的形式存储数字。
+语法：decimal(m, d) 例如：decimal(3, 2)
+表示3个有效数字，2个小数。（有效数字最多65个，小数位最多30个） ##
+日期和时间类型 year：1个字节，只存储年，格式YYYY
+time：3个字节，只存储时间，格式HH:MM:SS / HHMMSS
+date：3个字节，只存储年月日，格式：YYYY-MM-DD
+datetime：8个字节，存储年月日+时分秒，格式：YYYY-MM-DD
+HH:MM:SS（从公元1000年~公元9999年）
+timestamp：4个字节，存储年月日+时分秒，格式：YYYY-MM-DD
+HH:MM:SS（从公元1980年~公元2040年）或者格式为
+YYYYMMDDHHMMSS（采用这种格式不需要使用单引号，当然你使用单引号也可以）</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg?x-oss-process=image%2Fresize%2Cw_1177%2Climit_0%2Finterlace%2C1%2Finterlace%2C1#averageHue=%23f9f8f8&amp;from=url&amp;id=njQk0&amp;originHeight=66&amp;originWidth=1177&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 字符串类型 ### char <strong>char(m)：</strong>m长度是0~255个字符。
+固定长度字符串，在定义时指定字符串列长。当保存时，在右侧填充空格以达到指定的长度。m表示列的长度，范围是
+0～255 个字符。 例如，CHAR(4)
+定义了一个固定长度的字符串列，包含的字符个数最大为
+4。当插入的字符长度大于4，则报错（除非超过4个长度之后都是空格字符，则空格字符会自动被删除用来保证插入的成功）。
+### varchar <strong>varchar(m)：</strong>m长度是0~16383个字符
+长度可变的字符串。varchar
+的最大实际长度由最长的行的大小和使用的字符集确定，而实际占用的空间为字符串的实际长度加
+1。 例如，varchar(50) 定义了一个最大长度为 50
+的字符串，如果插入的字符串只有 10 个字符，则实际存储的字符串为 10
+个字符和一个字符串结束字符。varchar在值保存和检索时尾部的空格仍保留。
+<img src="https://cdn.nlark.com/yuque/0/2024/png/21376908/1708657200592-04aa2bf9-dbd8-4965-8631-c504c601e0cc.png#averageHue=%23f2f1f0&amp;clientId=u339da12f-44c3-4&amp;from=paste&amp;height=258&amp;id=u4ff86686&amp;originHeight=258&amp;originWidth=536&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=11368&amp;status=done&amp;style=shadow&amp;taskId=u9f251c01-9b8a-41c7-b854-ff77d4d548f&amp;title=&amp;width=536" alt="1708647300729-2181603b-e620-4be8-bab6-1b9c029989d8.png"></p>
+<h3 id="text">text</h3>
+<p><strong>text类型：</strong></p>
+<ul>
+<li><p>tinytext 表示长度为 255字符的 TEXT 列。</p></li>
+<li><p>text 表示长度为 65535字符的 TEXT 列。</p></li>
+<li><p>mediumtext 表示长度为 16777215字符的 TEXT 列。</p></li>
+<li><p>longtext 表示长度为 4294967295 或 4GB 字符的 TEXT 列。 ### enum
+<strong>enum类型：</strong></p></li>
+<li><p>语法：&lt;字段名&gt; enum('值1','值2',...)<!--字段名--></p></li>
+<li><p>该字段插入值时，只能是指定的枚举值。 ### set
+<strong>set类型：</strong></p></li>
+<li><p>语法：&lt;字段名&gt; set('值1','值2','值3',...)
+注意：值不可重复。<!--字段名--></p></li>
+<li><p>该字段插入值时，只能是指定的值。</p></li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg?x-oss-process=image%2Fresize%2Cw_1177%2Climit_0%2Finterlace%2C1%2Finterlace%2C1#averageHue=%23f9f8f8&amp;from=url&amp;id=ggIvm&amp;originHeight=66&amp;originWidth=1177&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 二进制类型
+BLOB类型：二进制大对象，可以存储图片、声音、视频等文件。</p>
+<ul>
+<li><p>blob：小的，最大长度65535个字节</p></li>
+<li><p>mediumblob：中等的，最大长度16777215个字节</p></li>
+<li><p>longblob：大的，最大长度4GB的字节 # 增删改表结构DDL ##
+创建一个学生表 </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_student(</span><br><span class="line">  <span class="keyword">no</span> <span class="type">bigint</span>,</span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  age <span class="type">int</span> comment <span class="string">'年龄'</span></span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure> ## 查看建表语句 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> 表名;</span><br></pre></td></tr></tbody></table></figure> ## 修改表名
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 rename 新表名;</span><br></pre></td></tr></tbody></table></figure> ## 新增字段 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> 字段名 数据类型;</span><br></pre></td></tr></tbody></table></figure> ## 修改字段名 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 change 旧字段名 新字段名 数据类型;</span><br></pre></td></tr></tbody></table></figure> ##
+修改字段数据类型 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 modify <span class="keyword">column</span> 字段名 数据类型;</span><br></pre></td></tr></tbody></table></figure> ## 删除字段 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> 字段名;</span><br></pre></td></tr></tbody></table></figure> <img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg?x-oss-process=image%2Fresize%2Cw_1177%2Climit_0%2Finterlace%2C1%2Finterlace%2C1#averageHue=%23f9f8f8&amp;from=url&amp;id=ifcIe&amp;originHeight=66&amp;originWidth=1177&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+# DML语句
+当我们对表中的数据进行增删改的时候，称它为DML语句。（数据操纵语言），主要包括：insert、delete、update
+## insert 增 语法格式： <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名(字段名<span class="number">1</span>,字段名<span class="number">2</span>,字段名<span class="number">3</span>,...) <span class="keyword">values</span>(值<span class="number">1</span>,值<span class="number">2</span>,值<span class="number">3</span>,...);</span><br></pre></td></tr></tbody></table></figure>
+表名后面的小括号当中的字段名如果省略掉，表示自动将所有字段都列出来了，并且字段的顺序和建表时的顺序一致。
+一般为了可读性强，建议把字段名写上。 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 <span class="keyword">values</span>(值<span class="number">1</span>,值<span class="number">2</span>,值<span class="number">3</span>,...);</span><br></pre></td></tr></tbody></table></figure>
+一次可以插入多条记录： <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> t_stu(<span class="keyword">no</span>,name,age) <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">'jack'</span>,<span class="number">20</span>),(<span class="number">2</span>,<span class="string">'lucy'</span>,<span class="number">30</span>);</span><br></pre></td></tr></tbody></table></figure> <img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg?x-oss-process=image%2Fresize%2Cw_1177%2Climit_0%2Finterlace%2C1%2Finterlace%2C1#averageHue=%23f9f8f8&amp;from=url&amp;id=eIewo&amp;originHeight=66&amp;originWidth=1177&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## delete 删 语法格式： <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"># 将所有记录全部删除</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> 表名;</span><br><span class="line"></span><br><span class="line"># 删除符合条件的记录</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> 表名 <span class="keyword">where</span> 条件;</span><br></pre></td></tr></tbody></table></figure>
+以上的删除属于DML的方式删除，这种删除的数据是可以通过事务回滚的方式重新恢复的，但是删除的效率较低。（这种删除是支持事务的。）
+另外还有一种删除表中数据的方式，但是这种方式不支持事务，不可以回滚，删了之后数据是永远也找不回来了。这种删除叫做：表被截断。
+注意：这个语句删除效率非常高，巨大的表，瞬间干掉所有数据。但不可恢复。
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> 表名;</span><br></pre></td></tr></tbody></table></figure> <img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg?x-oss-process=image%2Fresize%2Cw_1177%2Climit_0%2Finterlace%2C1%2Finterlace%2C1#averageHue=%23f9f8f8&amp;from=url&amp;id=REa8p&amp;originHeight=66&amp;originWidth=1177&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## update 改 语法格式： <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">update</span> 表名 <span class="keyword">set</span> 字段名<span class="number">1</span><span class="operator">=</span>值<span class="number">1</span>, 字段名<span class="number">2</span><span class="operator">=</span>值<span class="number">2</span>, 字段名<span class="number">3</span><span class="operator">=</span>值<span class="number">3</span> <span class="keyword">where</span> 条件;</span><br></pre></td></tr></tbody></table></figure>
+如果没有更新条件的话，所有记录全部更新。 # 约束constraint
+创建表时，可以给表的字段添加约束，可以保证数据的完整性、有效性。比如大家上网注册用户时常见的：用户名不能为空。对不起，用户名已存在。等提示信息。
+约束通常包括：<p></p></li>
+<li><p>非空约束：not null</p></li>
+<li><p>检查约束：check</p></li>
+<li><p>唯一性约束：unique</p></li>
+<li><p>主键约束：primary key</p></li>
+<li><p>外键约束：foreign key ## 非空约束 语法格式： </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_stu(</span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span>,</span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">  age <span class="type">int</span></span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+name字段不能为空。插入数据时如果没有给name指定值，则报错。 <img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg?x-oss-process=image%2Fresize%2Cw_1177%2Climit_0%2Finterlace%2C1%2Finterlace%2C1#averageHue=%23f9f8f8&amp;from=url&amp;id=kZTeG&amp;originHeight=66&amp;originWidth=1177&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 检查约束 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_stu(</span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span>,</span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  age <span class="type">int</span>,</span><br><span class="line">  <span class="keyword">check</span>(age <span class="operator">&gt;</span> <span class="number">18</span>)</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure> ## 唯一性约束 语法格式： <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_stu(</span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span>,</span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  email <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">unique</span></span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+email字段设置为唯一性，唯一性的字段值是可以为NULL的。但不能重复。以上在字段后面添加的约束，叫做列级约束。
+当然，添加约束还有另一种方式：表级约束： <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_stu(</span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span>,</span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  email <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  <span class="keyword">unique</span>(email)</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+使用表级约束可以为多个字段添加联合唯一。 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_stu(</span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span>,</span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  email <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  <span class="keyword">unique</span>(name,email)</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+创建约束时也可以给约束起名字，将来可以通过约束的名字来删除约束：
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_stu(</span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span>,</span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  email <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  <span class="keyword">constraint</span> t_stu_name_email_unique <span class="keyword">unique</span>(name,email)</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+所有的约束都存储在一个系统表当中：table_constraints。这个系统表在这个数据库当中：information_schema
+<img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg?x-oss-process=image%2Fresize%2Cw_1177%2Climit_0%2Finterlace%2C1%2Finterlace%2C1#averageHue=%23f9f8f8&amp;from=url&amp;id=R6TF8&amp;originHeight=66&amp;originWidth=1177&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 主键约束<p></p></li>
+</ul>
+<ol type="1">
+<li><p>主键：primary key，简称PK</p></li>
+<li><p>主键约束的字段不能为NULL，并且不能重复。</p></li>
+<li><p>任何一张表都应该有主键，没有主键的表可以视为无效表。</p></li>
+<li><p>主键值是这行记录的身份证号，是唯一标识。在数据库表中即使两条数据一模一样，但由于主键值不同，我们也会认为是两条完全的不同的数据。</p></li>
+<li><p>主键分类：</p>
+<ol type="1">
+<li>根据字段数量分类：
+<ol type="1">
+<li>单一主键（1个字段作为主键）==&gt;建议的</li>
+<li>复合主键（2个或2个以上的字段作为主键）</li>
+</ol></li>
+<li>根据业务分类：
+<ol type="1">
+<li>自然主键（主键和任何业务都无关，只是一个单纯的自然数据）===&gt;建议的</li>
+<li>业务主键（主键和业务挂钩，例如：银行卡账号作为主键）</li>
+</ol></li>
+</ol></li>
+<li><p>单一主键（建议使用这种方式） </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_student(</span><br><span class="line">  id <span class="type">bigint</span> <span class="keyword">primary</span> key,</span><br><span class="line">  sno <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">unique</span>,</span><br><span class="line">  sname <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="keyword">null</span></span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure><p></p></li>
+<li><p>复合主键（很少用，了解） </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_user(</span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span>,</span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">  age <span class="type">int</span>,</span><br><span class="line">  <span class="keyword">primary</span> key(<span class="keyword">no</span>,name)</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure><p></p></li>
+<li><p>主键自增：既然主键值是一个自然的数字，mysql为主键值提供了一种自增机制，不需要我们程序员维护，mysql自动维护该字段
+</p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_vip(</span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span> <span class="keyword">primary</span> key auto_increment,</span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>)</span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure> <img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg?x-oss-process=image%2Fresize%2Cw_1177%2Climit_0%2Finterlace%2C1%2Finterlace%2C1#averageHue=%23f9f8f8&amp;from=url&amp;id=By8fb&amp;originHeight=66&amp;originWidth=1177&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 外键约束<p></p></li>
+<li><p>有这样一个需求：要求设计表，能够存储学生以及学校信息。</p>
+<ol type="1">
+<li>第一种方案：一张表</li>
+</ol></li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1679198700192-73c1c697-39a5-483e-b267-730fb808082d.png#averageHue=%23f2f58e&amp;clientId=uf7a0608d-b7a1-4&amp;from=paste&amp;height=263&amp;id=u385df011&amp;originHeight=263&amp;originWidth=881&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=11603&amp;status=done&amp;style=shadow&amp;taskId=u6a97350e-9ae3-4c6d-b1ec-963559ebf2e&amp;title=&amp;width=881" alt="image.png"> 这种方式会导致数据冗余，浪费空间。</p>
+<ol start="2" type="1">
+<li>第二种方案：两张表：一张存储学生，一张存储学校</li>
+</ol>
+<p>t_school 表 <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1679198814824-520944e2-5b83-49ba-97e7-b8830286127a.png#averageHue=%23c9d481&amp;clientId=uf7a0608d-b7a1-4&amp;from=paste&amp;height=85&amp;id=ud1ad0346&amp;originHeight=85&amp;originWidth=471&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=2397&amp;status=done&amp;style=shadow&amp;taskId=u76cd09e9-9753-41f7-81d7-729db7c551a&amp;title=&amp;width=471" alt="image.png"> t_student 表 <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1679198856678-a80be906-abc8-4bf7-ac5e-e6a59b11c48a.png#averageHue=%23f3f77a&amp;clientId=uf7a0608d-b7a1-4&amp;from=paste&amp;height=264&amp;id=ufa1ef2a6&amp;originHeight=264&amp;originWidth=532&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4445&amp;status=done&amp;style=shadow&amp;taskId=u30eaa682-24a0-4b6f-a1c5-3eed3bc24cc&amp;title=&amp;width=532" alt="image.png">
+如果采用以上两张表存储数据，对于学生表来说，sno这个字段的值是不能随便填的，这个sno是学校编号，必须要求这个字段中的值来自学校表的sno。
+为了达到要求，此时就必须要给t_student表的sno字段添加外键约束了。</p>
+<ol start="2" type="1">
+<li><p>外键约束：foreign key，简称FK。</p></li>
+<li><p>添加了外键约束的字段中的数据必须来自其他字段，不能随便填。</p></li>
+<li><p>假设给a字段添加了外键约束，要求a字段中的数据必须来自b字段，b字段不一定是主键，但至少要有唯一性。</p></li>
+<li><p>外键约束可以给单个字段添加，叫做单一外键。也可以给多个字段联合添加，叫做复合外键。复合外键很少用。</p></li>
+<li><p>a表如果引用b表中的数据，可以把b表叫做父表，把a表叫做子表。</p>
+<ol type="1">
+<li>创建表时，先创建父表，再创建子表。</li>
+<li>插入数据时，先插入父表，在插入子表。</li>
+<li>删除数据时，先删除子表，再删除父表。</li>
+<li>删除表时，先删除子表，再删除父表。</li>
+</ol></li>
+<li><p>如何添加外键： </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_school( </span><br><span class="line">  sno <span class="type">int</span> <span class="keyword">primary</span> key, </span><br><span class="line">  sname <span class="type">varchar</span>(<span class="number">255</span>) </span><br><span class="line">); </span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_student( </span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span> <span class="keyword">primary</span> key, </span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>), </span><br><span class="line">  age <span class="type">int</span>, </span><br><span class="line">  sno <span class="type">int</span>, </span><br><span class="line">  <span class="keyword">constraint</span> t_school_sno_fk <span class="keyword">foreign</span> key(sno) <span class="keyword">references</span> t_school(sno) </span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure> <img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg?x-oss-process=image%2Fresize%2Cw_1177%2Climit_0%2Finterlace%2C1%2Finterlace%2C1#averageHue=%23f9f8f8&amp;from=url&amp;id=k2Kfd&amp;originHeight=66&amp;originWidth=1177&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title="><p></p></li>
+<li><p>级联删除</p></li>
+</ol>
+<p>创建子表时，外键可以添加：on delete
+cascade，这样在删除父表数据时，子表会级联删除。谨慎使用。 </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_student( </span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span> <span class="keyword">primary</span> key, </span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>), </span><br><span class="line">  age <span class="type">int</span>, </span><br><span class="line">  sno <span class="type">int</span>, </span><br><span class="line">  <span class="keyword">constraint</span> t_school_sno_fk <span class="keyword">foreign</span> key(sno) <span class="keyword">references</span> t_school(sno) <span class="keyword">on</span> <span class="keyword">delete</span> cascade </span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line">###删除约束</span><br><span class="line">alert <span class="keyword">table</span> t_student <span class="keyword">drop</span> <span class="keyword">foreign</span> key t_student_sno_fk;</span><br><span class="line">###添加约束</span><br><span class="line">alert <span class="keyword">table</span> t_student <span class="keyword">add</span> <span class="keyword">constraint</span> t_student_sno_fk <span class="keyword">foreign</span> key(sno) <span class="keyword">references</span> t_school(sno) <span class="keyword">on</span> <span class="keyword">delete</span> cascade;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ol start="9" type="1">
+<li><p>级联更新 </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_student( </span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span> <span class="keyword">primary</span> key, </span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>), </span><br><span class="line">  age <span class="type">int</span>, </span><br><span class="line">  sno <span class="type">int</span>, </span><br><span class="line">  <span class="keyword">constraint</span> t_school_sno_fk <span class="keyword">foreign</span> key(sno) <span class="keyword">references</span> t_school(sno) <span class="keyword">on</span> <span class="keyword">update</span> cascade </span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure><p></p></li>
+<li><p>级联置空 </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_student( </span><br><span class="line">  <span class="keyword">no</span> <span class="type">int</span> <span class="keyword">primary</span> key, </span><br><span class="line">  name <span class="type">varchar</span>(<span class="number">255</span>), </span><br><span class="line">  age <span class="type">int</span>, </span><br><span class="line">  sno <span class="type">int</span>, </span><br><span class="line">  <span class="keyword">constraint</span> t_school_sno_fk <span class="keyword">foreign</span> key(sno) <span class="keyword">references</span> t_school(sno) <span class="keyword">on</span> <span class="keyword">delete</span> <span class="keyword">set</span> <span class="keyword">null</span> </span><br><span class="line">);</span><br></pre></td></tr></tbody></table></figure> <img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg?x-oss-process=image%2Fresize%2Cw_1177%2Climit_0%2Finterlace%2C1%2Finterlace%2C1#averageHue=%23f9f8f8&amp;from=url&amp;id=QbGOA&amp;originHeight=66&amp;originWidth=1177&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title="><p></p></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://studyincau.github.io">小楼一夜听春雨 &amp; Rico</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://studyincau.github.io/2024/06/25/di-05-zhang-biao-xiang-guan/">https://studyincau.github.io/2024/06/25/di-05-zhang-biao-xiang-guan/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://studyincau.github.io" target="_blank">StudyinCAU</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/../images/background5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/06/25/di-06-zhang-san-fan-shi/" title="第6章 三范式"><img class="cover" src="/../images/background5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">第6章 三范式</div></div></a></div><div class="next-post pull-right"><a href="/2024/06/25/di-04-zhang-cha-xun-dql-zhuan-ti/" title="第4章 查询DQL"><img class="cover" src="/../images/background5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">第4章 查询DQL</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小楼一夜听春雨 &amp; Rico</div><div class="author-info__description">Study</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">124</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">207</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/StudyinCAU"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/StudyinCAU" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:3187248635@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是一个分享学习笔记(资料)的网站，欢迎一起学习、交流。如果你有好的文章也想分享，可以发邮箱(邮箱在公告上方~)[若出现渲染问题或加载过慢，推荐用谷歌或Edge浏览器打开]</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-text">创建表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#text"><span class="toc-text">text</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-09-zhang-dba-ming-ling/" title="第9章 DBA命令"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第9章 DBA命令"/></a><div class="content"><a class="title" href="/2024/06/25/di-09-zhang-dba-ming-ling/" title="第9章 DBA命令">第9章 DBA命令</a><time datetime="2024-06-25T05:21:18.000Z" title="发表于 2024-06-25 13:21:18">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-08-zhang-shi-wu/" title="第8章 事务"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第8章 事务"/></a><div class="content"><a class="title" href="/2024/06/25/di-08-zhang-shi-wu/" title="第8章 事务">第8章 事务</a><time datetime="2024-06-25T05:21:12.000Z" title="发表于 2024-06-25 13:21:12">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-07-zhang-shi-tu/" title="第7章 视图"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第7章 视图"/></a><div class="content"><a class="title" href="/2024/06/25/di-07-zhang-shi-tu/" title="第7章 视图">第7章 视图</a><time datetime="2024-06-25T05:20:26.000Z" title="发表于 2024-06-25 13:20:26">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-06-zhang-san-fan-shi/" title="第6章 三范式"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第6章 三范式"/></a><div class="content"><a class="title" href="/2024/06/25/di-06-zhang-san-fan-shi/" title="第6章 三范式">第6章 三范式</a><time datetime="2024-06-25T05:19:58.000Z" title="发表于 2024-06-25 13:19:58">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-05-zhang-biao-xiang-guan/" title="第5章 表相关"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第5章 表相关"/></a><div class="content"><a class="title" href="/2024/06/25/di-05-zhang-biao-xiang-guan/" title="第5章 表相关">第5章 表相关</a><time datetime="2024-06-25T05:19:30.000Z" title="发表于 2024-06-25 13:19:30">2024-06-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 小楼一夜听春雨 & Rico</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'xFi1vMHzzqw1qFKQbyK4WtAo-gzGzoHsz',
+      appKey: 'hGyKCk4AFAr9aPSCHioyb0hH',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><link rel="stylesheet" href="/css/title.css"><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
