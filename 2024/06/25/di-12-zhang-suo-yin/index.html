@@ -1,0 +1,539 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>第12章 索引 | StudyinCAU</title><meta name="author" content="小楼一夜听春雨 &amp; Rico"><meta name="copyright" content="小楼一夜听春雨 &amp; Rico"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="什么是索引 索引是一种能够提高检索（查询）效率的提前排好序的数据结构。例如：书的目录就是一种索引机制。索引是解决SQL慢查询的一种方式。  # 索引的创建和删除 ## 主键会自动添加索引 主键字段会自动添加索引，不需要程序员干涉，主键字段上的索引被称为主键索引 ## unique约束的字段自动添加索引 unique约束的字段也会自动添加索引，不需要程序员干涉，这种字段上添加的索引称为唯一索引 ##">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第12章 索引">
+<meta property="og:url" content="https://studyincau.github.io/2024/06/25/di-12-zhang-suo-yin/index.html">
+<meta property="og:site_name" content="StudyinCAU">
+<meta property="og:description" content="什么是索引 索引是一种能够提高检索（查询）效率的提前排好序的数据结构。例如：书的目录就是一种索引机制。索引是解决SQL慢查询的一种方式。  # 索引的创建和删除 ## 主键会自动添加索引 主键字段会自动添加索引，不需要程序员干涉，主键字段上的索引被称为主键索引 ## unique约束的字段自动添加索引 unique约束的字段也会自动添加索引，不需要程序员干涉，这种字段上添加的索引称为唯一索引 ##">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://studyincau.github.io/images/background5.jpg">
+<meta property="article:published_time" content="2024-06-25T05:36:08.000Z">
+<meta property="article:modified_time" content="2024-06-25T05:36:09.284Z">
+<meta property="article:author" content="小楼一夜听春雨 &amp; Rico">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://studyincau.github.io/images/background5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://studyincau.github.io/2024/06/25/di-12-zhang-suo-yin/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '第12章 索引',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-25 13:36:09'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">127</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">207</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/../images/background5.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="StudyinCAU"><span class="site-name">StudyinCAU</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">第12章 索引</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-25T05:36:08.000Z" title="发表于 2024-06-25 13:36:08">2024-06-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-25T05:36:09.284Z" title="更新于 2024-06-25 13:36:09">2024-06-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-%E4%B8%B4%E6%97%B6%E8%B5%84%E6%96%99/">数据库(临时资料)</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="第12章 索引"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="什么是索引">什么是索引</h1>
+<p>索引是一种能够提高检索（查询）效率的提前排好序的数据结构。例如：书的目录就是一种索引机制。索引是解决SQL慢查询的一种方式。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=M5q7i&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+# 索引的创建和删除 ## 主键会自动添加索引
+主键字段会自动添加索引，不需要程序员干涉，主键字段上的索引被称为<code>主键索引</code>
+## unique约束的字段自动添加索引
+unique约束的字段也会自动添加索引，不需要程序员干涉，这种字段上添加的索引称为<code>唯一索引</code>
+## 给指定的字段添加索引 建表时添加索引： </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> emp (</span><br><span class="line">    ...</span><br><span class="line">    name <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">    ...</span><br><span class="line">    INDEX idx_name (name)</span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+如果表已经创建好了，后期给字段添加索引 <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> emp <span class="keyword">ADD</span> INDEX idx_name (name);</span><br></pre></td></tr></tbody></table></figure>
+也可以这样添加索引： <figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> index idx_name <span class="keyword">on</span> emp(name);</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=OFevc&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 删除指定字段上的索引 </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> emp <span class="keyword">DROP</span> INDEX idx_name;</span><br></pre></td></tr></tbody></table></figure> ## 查看某张表上添加了哪些索引
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> index <span class="keyword">from</span> 表名;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=w26mL&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+# 索引的分类 不同的<code>存储引擎</code>有不同的索引类型和实现：</p>
+<ul>
+<li>按照数据结构分类：
+<ul>
+<li>B+树 索引（mysql的InnoDB存储引擎采用的就是这种索引）采用 B+树
+的数据结构</li>
+<li>Hash 索引（仅 <code>memory</code> 存储引擎支持）：采用 哈希表
+的数据结构</li>
+</ul></li>
+<li>按照物理存储分类：
+<ul>
+<li>聚集索引：索引和表中数据在一起，数据存储的时候就是按照索引顺序存储的。一张表只能有一个聚集索引。</li>
+<li>非聚集索引：索引和表中数据是分开的，索引是独立于表空间的，一张表可以有多个非聚集索引。</li>
+</ul></li>
+<li>按照字段特性分类：
+<ul>
+<li>主键索引（primary key）</li>
+<li>唯一索引（unique）</li>
+<li>普通索引（index）</li>
+<li>全文索引（fulltext：仅 <code>InnoDB和MyISAM</code>
+存储引擎支持）</li>
+</ul></li>
+<li>按照字段个数分类：
+<ul>
+<li>单列索引、联合索引（也叫复合索引、组合索引）</li>
+</ul></li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=sRH8v&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+# MySQL索引采用了B+树数据结构 常见的树相关的数据结构包括：</p>
+<ul>
+<li>二叉树</li>
+<li>红黑树</li>
+<li>B树</li>
+<li>B+树</li>
+</ul>
+<p>区别：树的高度不同。树的高度越低，性能越高。这是因为每一个节点都是一次I/O
+## 二叉树 有这样一张表 <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692335600473-ad5b7cde-e554-47ab-b42f-58168c989893.png#averageHue=%23f2f1ed&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=441&amp;id=u5cc24e34&amp;originHeight=441&amp;originWidth=339&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=3982&amp;status=done&amp;style=shadow&amp;taskId=u77e1a6e5-6e8f-4634-93e0-83a562d38d4&amp;title=&amp;width=339" alt="image.png">
+如果不给id字段添加索引，默认进行全表扫描，假设查询id=10的数据，那至少要进行10次磁盘IO。效率低。可以给id字段添加索引，假设该索引使用了二叉树这种数据结构，这个二叉树是这样的（<strong>推荐一个数据结构可视化网站Data
+Structure Visualizations，是旧金山大学（USFCA）的一个网站</strong>）：<a target="_blank" rel="noopener" href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">https://www.cs.usfca.edu/~galles/visualization/Algorithms.html</a></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692336231981-96990a24-7475-48a4-ba48-decb2ec2c187.png#averageHue=%23ffffff&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=332&amp;id=uac007731&amp;originHeight=332&amp;originWidth=344&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=16469&amp;status=done&amp;style=shadow&amp;taskId=ubbc87a88-ba88-4fb3-b41a-8b64f2254d2&amp;title=&amp;width=344" alt="image.png">
+如果这个时候要找id=10的数据，需要的IO次数是？4次。效率显著提升了。
+但是MySQL并没有直接使用这种普通的二叉树，这种普通二叉树在<code>数据极端</code>的情况下，效率较低。比如下面的数据：
+<img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692336431647-e5bb092a-7858-478b-add5-d4c5fa15deb0.png#averageHue=%23f2f1ee&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=441&amp;id=u3b726904&amp;originHeight=441&amp;originWidth=339&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=3789&amp;status=done&amp;style=shadow&amp;taskId=ua2ac59c3-fe8c-4a82-b75a-f816e66b541&amp;title=&amp;width=339" alt="image.png">
+如果给id字段添加索引，并且该索引底层使用了普通二叉树，这棵树会是这样的：
+<img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692336585274-554cb4fd-3d32-4785-89c9-e23bce8739ac.png#averageHue=%23ffffff&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=480&amp;id=u6374ad1c&amp;originHeight=480&amp;originWidth=304&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=19184&amp;status=done&amp;style=shadow&amp;taskId=u400302da-6c48-46d2-b8ae-d72f2654b84&amp;title=&amp;width=304" alt="image.png">
+你虽然使用了二叉树，但这更像一个链表。查找效率等同于链表查询O(n)【<strong>查找算法的时间复杂度是线性的</strong>】。查找效率极低。
+因此对于MySQL来说，它并没有选择这种数据结构作为索引。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=sEgbs&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 红黑树（自平衡二叉树）
+通过自旋平衡规则进行旋转，子节点会自动分叉为2个分支，从而减少树的高度，当数据有序插入时比二叉树数据检索性能更好。
+例如有以下数据 <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692336431647-e5bb092a-7858-478b-add5-d4c5fa15deb0.png#averageHue=%23f2f1ee&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=441&amp;id=T4nMk&amp;originHeight=441&amp;originWidth=339&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=3789&amp;status=done&amp;style=shadow&amp;taskId=ua2ac59c3-fe8c-4a82-b75a-f816e66b541&amp;title=&amp;width=339" alt="image.png">
+给id字段添加索引，并且该索引使用了<code>红黑树</code>数据结构，那么会是这样：
+<img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692337568497-9cec3d01-cb4b-4b9f-85a5-763315fc1953.png#averageHue=%23f7f5f5&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=301&amp;id=ub8076d75&amp;originHeight=301&amp;originWidth=572&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=16097&amp;status=done&amp;style=shadow&amp;taskId=u6a5b156c-5849-4f84-8637-8ceb1493fa3&amp;title=&amp;width=572" alt="image.png">
+如果查找id=10的数据，磁盘IO次数为：5次。效率比普通二叉树要高一些。</p>
+<p>但是如果数据量庞大，例如500万条数据，也会导致树的高度很高，磁盘IO次数仍然很多，查询效率也会比较低。</p>
+<p>因此MySQL并没有使用红黑树这种数据结构作为索引。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=YnDdz&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## B Trees（B树） B Trees首先是一个<code>自平衡</code>的。 B
+Trees每个节点下的子节点数量 &gt; 2。 B
+Trees每个节点中也不是存储单个数据，可以存储多个数据。 B
+Trees又称为<code>平衡多路查找树</code>。</p>
+<p>B
+Trees分支的数量不是2，是大于2，具体是多少个分支，由<code>阶</code>决定。例如：</p>
+<ul>
+<li>3阶的B
+Trees，一个节点下最多有3个子节点，每个节点中最多有2个数据。</li>
+<li>4阶的B
+Trees，一个节点下最多有4个子节点，每个节点中最多有3个数据。</li>
+<li>5阶（5, 4）</li>
+<li>6阶（6, 5）</li>
+<li>....</li>
+<li>16阶（16, 15）【MySQL采用了16阶】</li>
+</ul>
+<p>采用B Trees，你会发现相同的数据量，<strong>B Tree
+树的高度更低</strong>。磁盘IO次数更少。 3阶的B Trees： <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692341860428-41d05ad9-1a6a-46ca-b3ae-0a411999152b.png#averageHue=%23e1b333&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=369&amp;id=ufaaa8101&amp;originHeight=369&amp;originWidth=777&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=22246&amp;status=done&amp;style=shadow&amp;taskId=u48c7b5a4-1c35-4aa0-bf37-0ce70bc7900&amp;title=&amp;width=777" alt="image.png"> <strong>假设id字段添加了索引，并且采用了B
+Trees数据结构，查找id=10的数据，只需要3次磁盘IO。</strong> 4阶的B
+Trees： <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692341965676-a9d34529-7b4d-45e3-baf3-4714a65bd0e4.png#averageHue=%23dab647&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=365&amp;id=u0b3b3d12&amp;originHeight=365&amp;originWidth=714&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=21314&amp;status=done&amp;style=shadow&amp;taskId=ue7257cf7-b625-45e1-8c39-b375bcb124d&amp;title=&amp;width=714" alt="image.png"></p>
+<p>更加详细的存储是这样的，请看下图： <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692346278862-ee20dcee-9b4e-4678-a777-9e782601958a.png#averageHue=%23f2f1ed&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=401&amp;id=u93e4ec03&amp;originHeight=401&amp;originWidth=339&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=3456&amp;status=done&amp;style=shadow&amp;taskId=ude17afd1-355c-4635-a3c5-bad9b042a86&amp;title=&amp;width=339" alt="image.png"> <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692344122602-a45b07fe-c85a-42c2-9a20-008b2ad5002c.png#averageHue=%23060604&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=574&amp;id=u72a034da&amp;originHeight=574&amp;originWidth=976&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=47609&amp;status=done&amp;style=shadow&amp;taskId=udfbf426f-5485-495e-ab7e-f84b3af809f&amp;title=&amp;width=976" alt="未命名文件.png"> 在B
+Trees中，每个节点不仅存储了<code>索引值</code>，还存储该索引值对应的<code>数据行</code>。
+并且每个节点中的p1 p2 p3是指向下一个节点的指针。</p>
+<p>B
+Trees数据结构存在的缺点是：不适合做区间查找，对于区间查找效率较低。假设要查id在[3~7]之间的，需要查找的是3,4,5,6,7。那么查这每个索引值都需要从头节点开始。
+因此MySQL使用了B+ Trees解决了这个问题。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=FqRiA&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## B+ Trees（B+ 树） B+ Trees 相较于 B Trees改进了哪些？</p>
+<ul>
+<li>B+树将数据都存储在叶子节点中。并且叶子节点之间使用链表连接，这样很适合范围查询。</li>
+<li>B+树的非叶子节点上只有索引值，没有数据，所以非叶子节点可以存储更多的索引值，这样让B+树更矮更胖，提高检索效率。</li>
+</ul>
+<figure>
+<img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692347138609-6544b852-3198-4920-ab3c-95a41e80802a.png#averageHue=%23dbb746&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=387&amp;id=u8399423e&amp;originHeight=387&amp;originWidth=715&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=20505&amp;status=done&amp;style=shadow&amp;taskId=u68bcb07a-b13f-43e9-b4ca-299d948207d&amp;title=&amp;width=715" alt="image.png">
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<p>假设有这样一张表： <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692346967611-4a60f469-aa1d-4244-90e3-129d7ea36fb4.png#averageHue=%23f2f1ec&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=321&amp;id=u3498f1b7&amp;originHeight=321&amp;originWidth=339&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=2712&amp;status=done&amp;style=shadow&amp;taskId=u7a6b4b7c-8f23-4baf-a93b-1c7b0c922d4&amp;title=&amp;width=339" alt="image.png"> B+ Trees方式存储的话如下图所示： <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692349477753-ce686f45-052c-4935-9212-5edf0f73149f.png#averageHue=%23060604&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=605&amp;id=u5c2e3e09&amp;originHeight=605&amp;originWidth=1189&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=53656&amp;status=done&amp;style=shadow&amp;taskId=ubbc8ad77-4829-41f1-b628-6d554d4e9ca&amp;title=&amp;width=1189" alt="未命名文件 (1).png"></p>
+<p><strong>经典面试题：</strong>mysql为什么选择B+树作为索引的数据结构，而不是B树？</p>
+<ol type="1">
+<li>非叶子节点上可以存储更多的键值，阶数可以更大，更矮更胖，磁盘IO次数少，数据查询效率高。</li>
+<li>所有数据都是有序存储在叶子节点上，让范围查找，分组查找效率更高。</li>
+<li>数据页之间、数据记录之间采用链表链接，让升序降序更加方便操作。</li>
+</ol>
+<p><strong>经典面试题：</strong>如果一张表没有主键索引，那还会创建B+树吗？
+当一张表没有主键索引时，默认会使用一个隐藏的内置的聚集索引（clustered
+index）。这个聚集索引是基于表的物理存储顺序构建的，通常是使用B+树来实现的。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=rRVJS&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+# 其他索引及相关调优 ## Hash索引 支持Hash索引的存储引擎有：</p>
+<ul>
+<li>InnoDB（不支持手动创建Hash索引，系统会自动维护一个<code>自适应的Hash索引</code>）
+<ul>
+<li>对于InnoDB来说，即使手动指定了某字段采用Hash索引，最终<code>show index from 表名</code>的时候，还是<code>BTREE</code>。</li>
+</ul></li>
+<li>Memory（支持Hash索引）</li>
+</ul>
+<p>Hash索引底层的数据结构就是哈希表。一个数组，数组中每个元素是链表。和java中HashMap一样。哈希表中每个元素都是key
+value结构。key存储<code>索引值</code>，value存储<code>行指针</code>。</p>
+<p>原理如下： <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692401422670-6fb725df-8901-480c-9838-021bd25cc726.png#averageHue=%23dfe5ea&amp;clientId=u333d438f-7a08-4&amp;from=paste&amp;height=163&amp;id=u6c1061c9&amp;originHeight=163&amp;originWidth=343&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=2027&amp;status=done&amp;style=shadow&amp;taskId=uffe4a02c-c002-4dea-84e4-4db3b72d4df&amp;title=&amp;width=343" alt="image.png"> 如果name字段上添加了Hash索引idx_name</p>
+<p>Hash索引长这个样子： <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692401394351-b98f716f-7f04-4e57-823b-68fefc98b8d2.png#averageHue=%23f6f5f5&amp;clientId=u333d438f-7a08-4&amp;from=paste&amp;height=425&amp;id=u4a59ca3c&amp;originHeight=425&amp;originWidth=855&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=14698&amp;status=done&amp;style=shadow&amp;taskId=uf7b3196f-9d55-44e8-8dc7-2cdea15acd8&amp;title=&amp;width=855" alt="无标题.png"></p>
+<p>检索原理：假设
+name='孙行者'。通过哈希算法将'孙行者'转换为数组下标，通过下标找链表，在链表上遍历找到孙行者的行指针。</p>
+<p>注意：不同的字符串，经过哈希算法得到的数组下标可能相同，这叫做哈希碰撞/哈希冲突。【不过，好的哈希算法应该具有很低的碰撞概率。常用的哈希算法如MD5、SHA-1、SHA-256等都被设计为尽可能减少碰撞的发生。】</p>
+<p>Hash索引优缺点：</p>
+<ul>
+<li>优点：只能用在等值比较中，效率很高。例如：name='孙悟空'</li>
+<li>缺点：不支持排序，不支持范围查找。</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=o4FjP&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 聚集索引和非聚集索引
+按照数据的物理存储方式不同，可以将索引分为聚集索引（聚簇索引）和非聚集索引（非聚簇索引）。</p>
+<p>存储引擎是InnoDB的，主键上的索引属于聚集索引。
+存储引擎是MyISAM的，任意字段上的索引都是非聚集索引。</p>
+<p>InnoDB的物理存储方式：当创建一张表t_user，并使用InnoDB存储引擎时，会在硬盘上生成这样一个文件：</p>
+<ul>
+<li>t_user.ibd （InnoDB data表索引 + 数据）</li>
+<li>t_user.frm （存储表结构信息）</li>
+</ul>
+<p>MyISAM的物理存储方式：当创建一张表t_user，并使用MyISAM存储引擎时，会在硬盘上生成这样一个文件：</p>
+<ul>
+<li>t_user.MYD （表数据）</li>
+<li>t_user.MYI （表索引）</li>
+<li>t_user.frm （表结构）</li>
+</ul>
+<p><strong>注意：从MySQL8.0开始，不再生成frm文件了，引入了数据字典，用数据字典来统一存储表结构信息，例如：</strong></p>
+<ul>
+<li><strong>information_schema.TABLES
+（表包含了数据库中所有表的信息，例如表名、数据库名、引擎类型等）</strong></li>
+<li><strong>information_schema.COLUMNS（表包含了数据库中所有表的列信息，例如列名、数据类型、默认值等）</strong></li>
+</ul>
+<p>聚集索引的原理图：（B+树，叶子节点上存储了索引值 + 数据） <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692349477753-ce686f45-052c-4935-9212-5edf0f73149f.png#averageHue=%23060604&amp;clientId=ua5acc0fc-19f8-4&amp;from=paste&amp;height=605&amp;id=JUQl2&amp;originHeight=605&amp;originWidth=1189&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=53656&amp;status=done&amp;style=shadow&amp;taskId=ubbc8ad77-4829-41f1-b628-6d554d4e9ca&amp;title=&amp;width=1189" alt="未命名文件 (1).png"></p>
+<p>非聚集索引的原理图：（B+树，叶子节点上存储了索引值 + 行指针） <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692414826853-a7b1c060-26c2-43c0-ba55-6ac983e67fdb.png#averageHue=%23fafafa&amp;clientId=u333d438f-7a08-4&amp;from=paste&amp;height=1046&amp;id=udf365233&amp;originHeight=1046&amp;originWidth=1918&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=52927&amp;status=done&amp;style=shadow&amp;taskId=u5823f2f1-08db-4fc0-be56-fd8859e9d33&amp;title=&amp;width=1918" alt="未命名文件 (1).png"></p>
+<p>聚集索引的优点和缺点：</p>
+<ol type="1">
+<li>优点：聚集索引将数据存储在索引树的叶子节点上。可以减少一次查询，因为查询索引树的同时可以获取数据。</li>
+<li>缺点：对数据进行修改或删除时需要更新索引树，会增加系统的开销。</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=aD8lt&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 二级索引 二级索引也属于非聚集索引。也有人把二级索引称为辅助索引。
+有表t_user，id是主键。age是非主键。在age字段上添加的索引称为二级索引。（所有非主键索引都是二级索引）</p>
+<figure>
+<img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692416482381-7ff192ad-a4ce-4292-b5c6-045f57768b72.png#averageHue=%23eaeaea&amp;clientId=u333d438f-7a08-4&amp;from=paste&amp;height=209&amp;id=uef214edb&amp;originHeight=209&amp;originWidth=343&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=2566&amp;status=done&amp;style=shadow&amp;taskId=u43c578a0-3cf4-40fd-966c-61be3441db0&amp;title=&amp;width=343" alt="image.png">
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+<p>二级索引的数据结构： <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692417008406-ebae09f8-dea7-4b6a-ab56-100e31611421.png#averageHue=%23fbfafa&amp;clientId=u333d438f-7a08-4&amp;from=paste&amp;height=289&amp;id=u7b39f705&amp;originHeight=289&amp;originWidth=582&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12930&amp;status=done&amp;style=shadow&amp;taskId=ub45e4a96-b6ea-44da-ad92-0e85bd0d663&amp;title=&amp;width=582" alt="无标题.png"></p>
+<p>二级索引的查询原理： 假设查询语句为： </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> t_user <span class="keyword">where</span> age <span class="operator">=</span> <span class="number">30</span>;</span><br></pre></td></tr></tbody></table></figure> <img src="https://cdn.nlark.com/yuque/0/2023/png/21376908/1692417425624-818e9980-dbe6-4470-a4b2-9c91b33ca2b6.png#averageHue=%23fcfcfc&amp;clientId=u333d438f-7a08-4&amp;from=paste&amp;height=312&amp;id=ud7db5feb&amp;originHeight=312&amp;originWidth=1045&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=20570&amp;status=done&amp;style=shadow&amp;taskId=ud87cd638-0631-45e1-8db2-692fa8231ae&amp;title=&amp;width=1045" alt="无标题.png"><p></p>
+<p>为什么会“回表”？因为使用了<code>select *</code>
+避免“回表【回到原数据表】”是提高SQL执行效率的手段。例如：select id from
+t_user where age = 30; 这样的SQL语句是不需要回表的。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=DxRj4&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 覆盖索引 覆盖索引（Covering
+Index），顾名思义，是指某个查询语句可以通过索引的覆盖来完成，而不需要回表查询真实数据。其中的覆盖指的是在执行查询语句时，查询需要的所有列都可以从索引中提取到，而不需要再去查询实际数据行获取查询所需数据。
+当使用覆盖索引时，MySQL可以直接通过索引，也就是索引上的数据来获取所需的结果，而不必再去查找表中的数据。这样可以显著提高查询性能。</p>
+<p>假设有一个用户表（user）包含以下列：id, username, email, age。</p>
+<p>常见的查询是根据用户名查询用户的邮箱。如果为了提高这个查询的性能，可以创建一个覆盖索引，包含（username,
+email）这两列。</p>
+<p>创建覆盖索引的SQL语句可以如下：</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> INDEX idx_user_username_email <span class="keyword">ON</span> <span class="keyword">user</span> (username, email);</span><br></pre></td></tr></tbody></table></figure>
+<p>当执行以下查询时：</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> email <span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">WHERE</span> username <span class="operator">=</span> <span class="string">'lucy'</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p>MySQL可以直接使用覆盖索引（idx_user_username_email）来获取查询结果，而不必再去查找用户表中的数据。这样可以减少磁盘I/O并提高查询效率。而如果没有覆盖索引，MySQL会先使用索引（username）来找到匹配的行，然后再回表查询获取邮箱，这个过程会增加更多的磁盘I/O和查询时间。</p>
+<p>值得注意的是，覆盖索引的创建需要考虑查询的字段选择。如果查询需要的字段较多，可能需要创建包含更多列的覆盖索引，以满足完全覆盖查询的需要。</p>
+<p>覆盖索引具有以下优点：</p>
+<ol type="1">
+<li>提高查询性能：覆盖索引能够满足查询的所有需求，同时不需要访问表中的实际数据行，从而可以提高查询性能。这是因为DBMS可以直接使用索引来执行查询，而不需要从磁盘读取实际的数据行。</li>
+<li>减少磁盘和内存访问次数：当使用覆盖索引时，DBMS不需要访问实际的数据行。这样可以减少磁盘和内存访问次数，从而提高查询性能。</li>
+<li>减少网络传输：由于在覆盖索引中可以存储所有查询所需的列，因此可以减少数据的网络传输次数，从而提高查询的性能。</li>
+<li>可以降低系统开销：在高压力的数据库系统中，使用覆盖索引可以减少系统开销，从而提高系统的可靠性和可维护性。</li>
+</ol>
+<p>覆盖索引的缺点包括：</p>
+<ol type="1">
+<li>需要更多的内存：覆盖索引需要存储查询所需的所有列，因此需要更多的内存来存储索引。在大型数据库系统中，这可能会成为一项挑战。</li>
+<li>会使索引变得庞大：当索引中包含了许多列时，它们可能会使索引变得非常庞大，从而影响查询性能，并且可能会占用大量的磁盘空间。</li>
+<li>只有在查询中包含了索引列时才能使用：只有当查询中包含了所有的索引列时才能使用覆盖索引。如果查询中包含了其他列，DBMS仍然需要访问实际的数据行，并且无法使用覆盖索引提高查询性能。</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=soH4o&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 索引下推 索引下推（Index Condition Pushdown）是一种 MySQL
+中的优化方法，它可以将查询中的过滤条件下推到索引层级中处理，从而减少回表次数，优化查询性能。</p>
+<p>具体来说，在使用索引下推时，MySQL
+会在索引的叶节点层级执行查询的过滤条件，过滤掉无用的索引记录，仅返回符合条件的记录的主键，这样就可以避免查询时回表读取表格的数据行，从而缩短了整个查询过程的时间。</p>
+<p>假设有以下表结构：</p>
+<p>表名：users</p>
+<table>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>name</th>
+<th>age</th>
+<th>city</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>John</td>
+<td>25</td>
+<td>New York</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Alice</td>
+<td>30</td>
+<td>London</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Bob</td>
+<td>40</td>
+<td>Paris</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Olivia</td>
+<td>35</td>
+<td>Berlin</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Michael</td>
+<td>28</td>
+<td>Sydney</td>
+</tr>
+</tbody>
+</table>
+<p>现在我们创建了一个多列索引：（索引下推通常是基于多列索引的。）</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">ALTER TABLE users ADD INDEX idx_name_city_age (name, city, age);</span><br></pre></td></tr></tbody></table></figure>
+<p>假设我们要查询年龄大于30岁，并且所在城市是"London"的用户，假设只给age字段添加了索引，它就不会使用索引下推。传统的查询优化器会将所有满足年龄大于30岁的记录读入内存，然后再根据城市进行筛选。</p>
+<p>使用索引下推优化后，在索引范围扫描的过程中，优化器会判断只有在城市列为"London"的情况下，才会将满足年龄大于30岁的记录加载到内存中。这样就可以避免不必要的IO和数据传输，提高查询性能。</p>
+<p>具体的查询语句可以是：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">SELECT * FROM users WHERE age &gt; 30 AND city = 'London';</span><br></pre></td></tr></tbody></table></figure>
+<p>在执行这个查询时，优化器会使用索引下推技术，先根据索引范围扫描找到所有满足条件的记录，然后再回到原数据表中获取完整的行数据，最终返回结果。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=ORNnL&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 单列索引（单一索引）
+单列索引是指对数据库表中的某一列或属性进行索引创建，对该列进行快速查找和排序操作。单列索引可以加快查询速度，提高数据库的性能。</p>
+<p>举个例子，假设我们有一个学生表（student），其中有以下几个列：学生编号（student_id）、姓名（name）、年龄（age）和性别（gender）。</p>
+<p>如果我们针对学生表的学生编号（student_id）列创建了单列索引，那么可以快速地根据学生编号进行查询或排序操作。例如，我们可以使用以下SQL语句查询学生编号为123456的学生信息：</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> student_id <span class="operator">=</span> <span class="number">123456</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p>由于我们对学生编号列建立了单列索引，所以数据库可以直接通过索引快速定位到具有学生编号123456的那一行记录，从而加快查询速度。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=MDT5X&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+## 复合索引（组合索引） 复合索引（Compound
+Index）也称为多列索引（Multi-Column
+Index），是指对数据库表中多个列进行索引创建。</p>
+<p>与单列索引不同，复合索引可以包含多个列。这样可以将多个列的值组合起来作为索引的键，以提高多列条件查询的效率。</p>
+<p>举个例子，假设我们有一个订单表（Order），其中包含以下几个列：订单编号（OrderID）、客户编号（CustomerID）、订单日期（OrderDate）和订单金额（OrderAmount）。</p>
+<p>如果我们为订单表的客户编号和订单日期这两列创建复合索引（CustomerID,
+OrderDate），那么可以在查询时同时根据客户编号和订单日期来快速定位到匹配的记录。</p>
+<p>例如，我们可以使用以下SQL语句查询客户编号为123456且订单日期为2021-01-01的订单信息：</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="keyword">Order</span> <span class="keyword">WHERE</span> CustomerID <span class="operator">=</span> <span class="number">123456</span> <span class="keyword">AND</span> OrderDate <span class="operator">=</span> <span class="string">'2021-01-01'</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p>由于我们为客户编号和订单日期创建了复合索引，数据库可以使用这个索引来快速定位到符合条件的记录，从而加快查询速度。复合索引的使用能够提高多列条件查询的效率，但需要注意的是，复合索引的创建和维护可能会增加索引的存储空间和对于写操作的影响。</p>
+<p><strong>相对于单列索引，复合索引有以下几个优势：</strong></p>
+<ol type="1">
+<li>减少索引的数量：复合索引可以包含多个列，因此可以减少索引的数量，减少索引的存储空间和维护成本。</li>
+<li>提高查询性能：当查询条件中涉及到复合索引的多个列时，数据库可以使用复合索引进行快速定位和过滤，从而提高查询性能。</li>
+<li>覆盖查询：如果复合索引包含了所有查询需要的列，那么数据库可以直接使用索引中的数据，而不需要再进行表的读取，从而提高查询性能。</li>
+<li>排序和分组：由于复合索引包含多个列，因此可以用于排序和分组操作，从而提高排序和分组的性能。
+# 索引的优缺点
+索引是数据库中一种重要的数据结构，用于加速数据的检索和查询操作。它的优点和缺点如下：</li>
+</ol>
+<p>优点：</p>
+<ol type="1">
+<li>提高查询性能：通过创建索引，可以大大减少数据库查询的数据量，从而提升查询的速度。</li>
+<li>加速排序：当查询需要按照某个字段进行排序时，索引可以加速排序的过程，提高排序的效率。</li>
+<li>减少磁盘IO：索引可以减少磁盘IO的次数，这对于磁盘读写速度较低的场景，尤其重要。</li>
+</ol>
+<p>缺点：</p>
+<ol type="1">
+<li>占据额外的存储空间：索引需要占据额外的存储空间，特别是在大型数据库系统中，索引可能占据较大的空间。</li>
+<li>增删改操作的性能损耗：每次对数据表进行插入、更新、删除等操作时，需要更新索引，会导致操作的性能降低。</li>
+<li>资源消耗较大：索引需要占用内存和CPU资源，特别是在大规模并发访问的情况下，可能对系统的性能产生影响。</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&amp;from=url&amp;id=DzfcG&amp;originHeight=78&amp;originWidth=1400&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=shadow&amp;title=">
+# 何时用索引 在以下情况下建议使用索引：</p>
+<ol type="1">
+<li>频繁执行查询操作的字段：如果这些字段经常被查询，使用索引可以提高查询的性能，减少查询的时间。</li>
+<li>大表：当表的数据量较大时，使用索引可以快速定位到所需的数据，提高查询效率。</li>
+<li>需要排序或者分组的字段：在对字段进行排序或者分组操作时，索引可以减少排序或者分组的时间。</li>
+<li>外键关联的字段：在进行表之间的关联查询时，使用索引可以加快关联查询的速度。</li>
+</ol>
+<p>在以下情况下不建议使用索引：</p>
+<ol type="1">
+<li>频繁执行更新操作的表：如果表经常被更新数据，使用索引可能会降低更新操作的性能，因为每次更新都需要维护索引。</li>
+<li>小表：对于数据量较小的表，使用索引可能并不会带来明显的性能提升，反而会占用额外的存储空间。</li>
+<li>对于唯一性很差的字段，一般不建议添加索引。当一个字段的唯一性很差时，查询操作基本上需要扫描整个表的大部分数据。如果为这样的字段创建索引，索引的大小可能会比数据本身还大，导致索引的存储空间占用过高，同时也会导致查询操作的性能下降。</li>
+</ol>
+<p>总之，索引需要根据具体情况进行使用和权衡，需要考虑到表的大小、查询频率、更新频率以及业务需求等因素。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://studyincau.github.io">小楼一夜听春雨 &amp; Rico</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://studyincau.github.io/2024/06/25/di-12-zhang-suo-yin/">https://studyincau.github.io/2024/06/25/di-12-zhang-suo-yin/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://studyincau.github.io" target="_blank">StudyinCAU</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/../images/background5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/06/25/di-10-zhang-cun-chu-guo-cheng/" title="第10章 存储过程"><img class="cover" src="/../images/background5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">第10章 存储过程</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小楼一夜听春雨 &amp; Rico</div><div class="author-info__description">Study</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">127</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">207</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">53</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/StudyinCAU"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/StudyinCAU" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:3187248635@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是一个分享学习笔记(资料)的网站，欢迎一起学习、交流。如果你有好的文章也想分享，可以发邮箱(邮箱在公告上方~)[若出现渲染问题或加载过慢，推荐用谷歌或Edge浏览器打开]</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%B4%A2%E5%BC%95"><span class="toc-text">什么是索引</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-12-zhang-suo-yin/" title="第12章 索引"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第12章 索引"/></a><div class="content"><a class="title" href="/2024/06/25/di-12-zhang-suo-yin/" title="第12章 索引">第12章 索引</a><time datetime="2024-06-25T05:36:08.000Z" title="发表于 2024-06-25 13:36:08">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-10-zhang-cun-chu-guo-cheng/" title="第10章 存储过程"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第10章 存储过程"/></a><div class="content"><a class="title" href="/2024/06/25/di-10-zhang-cun-chu-guo-cheng/" title="第10章 存储过程">第10章 存储过程</a><time datetime="2024-06-25T05:35:12.000Z" title="发表于 2024-06-25 13:35:12">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-11-zhang-cun-chu-yin-qing/" title="第11章 存储引擎"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第11章 存储引擎"/></a><div class="content"><a class="title" href="/2024/06/25/di-11-zhang-cun-chu-yin-qing/" title="第11章 存储引擎">第11章 存储引擎</a><time datetime="2024-06-25T05:35:12.000Z" title="发表于 2024-06-25 13:35:12">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-09-zhang-dba-ming-ling/" title="第9章 DBA命令"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第9章 DBA命令"/></a><div class="content"><a class="title" href="/2024/06/25/di-09-zhang-dba-ming-ling/" title="第9章 DBA命令">第9章 DBA命令</a><time datetime="2024-06-25T05:21:18.000Z" title="发表于 2024-06-25 13:21:18">2024-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/25/di-08-zhang-shi-wu/" title="第8章 事务"><img src="/../images/background5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第8章 事务"/></a><div class="content"><a class="title" href="/2024/06/25/di-08-zhang-shi-wu/" title="第8章 事务">第8章 事务</a><time datetime="2024-06-25T05:21:12.000Z" title="发表于 2024-06-25 13:21:12">2024-06-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 小楼一夜听春雨 & Rico</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'xFi1vMHzzqw1qFKQbyK4WtAo-gzGzoHsz',
+      appKey: 'hGyKCk4AFAr9aPSCHioyb0hH',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><link rel="stylesheet" href="/css/title.css"><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
