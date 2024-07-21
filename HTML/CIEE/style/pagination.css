@@ -1,0 +1,30 @@
+#turn_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* 可根据需要调整 */
+}
+
+.pageinfo {
+    margin-right: 10px;
+}
+
+.pagination button {
+    color: #007bff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination button.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,968 @@
+﻿.center {
+	width:1180px;
+	margin:0 auto;
+}
+
+#header {
+	width: 100%;
+	max-width: 1680px;
+	height: 125px; /* 调整头部高度以适应新的logo大小 */
+	margin: 0 auto;
+	background: linear-gradient(to bottom, rgb(62, 110, 163), rgb(90, 140, 200)); /* 添加纵向渐变背景 */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+	border-bottom: 5px solid #3e6ea3; /* 添加底部边框 */
+}
+
+#header .top_line {
+	width: 100%;
+	height: 10px;
+}
+
+#header .logo {
+	width: 500px;
+	height: 115px;
+	float: left;
+	margin-top: 0px; /* 取消顶部外边距以使logo居中 */
+}
+
+#header .nav {
+	width: 770px;
+	height: 115px; /* 调整导航栏高度以适应新的logo高度 */
+	float: right;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+#header .nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+#header .nav ul li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 20px;
+}
+
+#header .nav ul li.cur {
+	background: linear-gradient(to bottom, #4a90e2, #357ab8); /* 当前页面的渐变背景 */
+	border-radius: 5px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+	padding: 8px 15px; /* 设置上下和左右边距 */
+	display: inline-flex;
+}
+
+#header .nav ul li.cur a {
+	padding: 0; /* 链接内容与填充框之间的距离 */
+	line-height: normal; /* 设置行高，确保文字上下居中 */
+	display: inline-block; /* 使链接填充整个列表项 */
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+#header .nav ul li a {
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 18px;
+	padding: 0 20px;
+	transition: background-color 0.3s, color 0.3s; /* 添加过渡效果 */
+}
+
+#header .nav ul li a:hover {
+	background-color: #2a5a8f; /* 悬停时背景颜色 */
+	border-radius: 5px; /* 悬停时添加圆角 */
+	color: #ffcc00; /* 悬停时文字颜色 */
+}
+
+#header .nav ul li:last-child a {
+	border-right: none;
+}
+
+
+
+
+#banner {
+	width: 100%;
+	max-width: 1680px;
+	height: 550px; /* 调整轮播图容器的高度 */
+	margin: 0 auto;
+	position: relative;
+	z-index: 1000;
+	overflow: hidden;
+}
+
+#banner ul {
+	width: 100%;
+	height: 500px; /* 调整包含轮播图项目的无序列表的高度 */
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#banner ul li {
+	width: 100%;
+	height: 500px; /* 调整每个轮播图项目的高度 */
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1001;
+}
+
+#banner ul li img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* 确保图片覆盖整个容器 */
+}
+
+#banner .icon {
+	width:100%;
+	height:50px;
+	background:#f3f6f9;
+}
+#banner .icon dl {
+	height:18px;
+	margin:0 auto;
+}
+#banner .icon dl dd {
+	width:18px;
+	height:18px;
+	float:left;
+	margin:15px 5px;
+	background:url(../images/banner_ico.jpg) no-repeat center;
+	cursor:pointer;
+}
+#banner .icon dl dd.cur {
+	background:url(../images/banner_ico_cur.jpg) no-repeat center;
+}
+
+body {
+	background: linear-gradient(to bottom, rgb(240,229,223), rgb(249,243,243)) !important; /* 确保渐变背景 */
+	margin: 0; /* 移除默认的页面边距 */
+	padding: 0; /* 移除默认的页面内边距 */
+	box-sizing: border-box; /* 确保内边距和边框包含在元素的总宽度和高度内 */
+}
+
+#content {
+	width: 100%;
+	max-width: 1680px;
+	margin: 0 auto;
+	border-top: 5px solid #e0e0e0;
+	/*background: linear-gradient(to bottom, rgb(240,229,223), rgb(249,243,243)) !important; !* 确保渐变背景 *!*/
+	padding: 48px 0; /* 确保有内边距 */
+	box-sizing: border-box; /* 确保box-sizing包含内边距和边框 */
+}
+
+
+
+.section-title {
+	font-size: 32px; /* 放大字体 */
+	font-weight: bold;
+	color: white; /* 字体颜色为白色 */
+	background-color: rgb(68, 92, 147); /* 背景颜色 */
+	padding: 10px 20px; /* 内边距 */
+	border-radius: 10px; /* 圆角 */
+	display: inline-block; /* 使背景颜色只包裹标题 */
+	margin: 0 auto 20px; /* 水平居中，并增加下方外边距 */
+	text-align: center; /* 居中对齐 */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+}
+
+.menu-titles {
+	display: flex;
+	justify-content: center; /* 使4个小标题在一行并居中 */
+	margin-bottom: 2px; /* 增加下方外边距 */
+}
+
+.center {
+	width: 1180px;
+	margin: 0 auto;
+}
+
+#content .index_cate {
+	width: 100%;
+	padding-top: 20px;
+	border-bottom: 5px solid #3e6ea3;
+	text-align: center; /* 居中对齐 */
+	margin-bottom: 40px; /* 增加底部外边距 */
+}
+
+
+
+#content .index_cate .menu_title {
+	height: 40px;
+	margin: 0 10px;
+	padding: 0 20px; /* 增加左右内边距 */
+	line-height: 40px;
+	color: #333;
+	font-size: 20px;
+	background-color: #e2e2e2;
+	cursor: pointer;
+	border-radius: 20px; /* 圆角 */
+	transition: background-color 0.3s, color 0.3s; /* 添加过渡效果 */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+}
+
+#content .index_cate .menu_title:hover {
+	background-color: #d0d0d0; /* 悬停时背景颜色变化 */
+}
+
+#content .index_cate .menu_title.cur {
+	color: #fff;
+	background-color: #3e6ea3;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 当前选中项增加阴影效果 */
+}
+
+#content .index_cate .cur {
+	color: #fff;
+	background-color: #3e6ea3;
+}
+#content .index_cate .last {
+	margin-right:0px;
+}
+#content .index_list {
+	width:100%;
+	height:466px;
+	padding:38px 0px 40px;
+}
+#content .index_list .menu_list {
+	width:1180px;
+	height:420px;
+	margin:0 auto;
+	display:none;
+}
+#content .index_list .menu_list .list {
+	width:280px;
+	height:420px;
+	float:left;
+	margin-right:15px;
+	border-bottom:5px solid #e0e0e0;
+	background:#fff;
+}
+#content .index_list .menu_list .list .img {
+	width:280px;
+	height:305px;
+	padding-top:40px;
+	text-align:center;
+}
+#content .index_list .menu_list .list .name {
+	width:280px;
+	height:36px;
+	line-height:36px;
+	text-align:center;
+	margin-top: -100px; /* 负值上边距，向上移动 */
+	margin-bottom: 25px; /* 增加下边距 */
+	white-space: nowrap; /* 防止换行 */
+}
+#content .index_list .menu_list .list .name a {
+	color:#333333;
+	text-decoration:none;
+	font-size:20px;
+}
+#content .index_list .menu_list .list .brief {
+	/*width: 260px; !* 调整为与列表项宽度一致 *!*/
+	height: auto; /* 自动调整高度以适应内容 */
+	line-height: 22px; /* 设置行高 */
+	color: #999999; /* 文本颜色 */
+	text-align: center; /* 居中对齐 */
+	margin: 10px 0; /* 增加上下外边距 */
+	padding: 5 5px; /* 增加左右内边距，确保居中对齐 */
+}
+
+#content .index_list .menu_list .list .more {
+	position: absolute;
+	bottom: 20px; /* 调整底部边距以确保位置一致 */
+	width: 280px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+#content .index_list .menu_list .list .more a {
+	color: #3e6ea3;
+	text-decoration:none;
+}
+#content .index_list .menu_list .last {
+	margin-right:0px;
+}
+#content .index_chosen {
+	width:100%;
+	padding:28px 0px 39px;
+	background:#f5f5f5;
+}
+#content .index_chosen .chosen_title {
+	width:100%;
+	height:60px;
+	line-height:60px;
+	color:#333333;
+	font-size:36px;
+	text-align:center;
+}
+#content .index_chosen .wrap {
+	width:100%;
+	height:580px;
+	position:relative;
+	z-index:1000;
+}
+
+#content .index_chosen .wrap .index_nav {
+	width: 280px;
+	height: 280px;
+	background: #3e6ea3; /* 深蓝色背景 */
+	position: absolute;
+	float: left;
+	top: 0;
+	z-index: 1001;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+	border-radius: 10px; /* 添加圆角 */
+}
+
+#content .index_chosen .wrap .index_nav .t {
+	width: 232px;
+	height: 50px;
+	margin: 0 auto;
+	padding-top: 14px;
+	line-height: 50px;
+	color: #f5f5f5;
+	text-align: center;
+	font-size: 20px;
+	border-bottom: 1px solid #9cc1fa; /* 深蓝色边框 */
+}
+
+#content .index_chosen .wrap .index_nav .nav_list {
+	width: 90px; /* 调整为与父容器一致 */
+	height: 20px; /* 增加高度 */
+	margin: 5px auto;
+	display: flex;
+	align-items: center;
+	padding: 5px 10px; /* 增加内边距 */
+	background-color: #2a5080; /* 浅蓝色背景 */
+	border-radius: 5px; /* 添加圆角 */
+	transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* 添加过渡效果 */
+}
+
+#content .index_chosen .wrap .index_nav .nav_list img {
+	width: 20px; /* 图片宽度 */
+	height: 20px; /* 图片高度 */
+	margin-right: 10px; /* 图片和链接之间的间距 */
+}
+
+#content .index_chosen .wrap .index_nav .nav_list a {
+	color: #f5f5f5;
+	text-decoration: none;
+	display: inline-block; /* 使链接填充整个列表项 */
+	padding: 5px 0; /* 调整内边距 */
+}
+
+#content .index_chosen .wrap .index_nav .nav_list:hover {
+	transform: translateY(-5px); /* 悬停时向上浮动 */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 悬停时添加阴影 */
+	background-color: #1a5ba3; /* 悬停时背景颜色 */
+}
+
+
+
+#content .index_chosen .wrap .index_news {
+	width: 280px;
+	height: 310px;
+	background: #FAE6D9;
+	position: absolute;
+	top: 300px;
+	z-index: 1001;
+	border-radius: 10px; /* 添加圆角 */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+	padding: 20px; /* 增加内边距 */
+	box-sizing: border-box;
+}
+
+#content .index_chosen .wrap .index_news .t {
+	width: 232px;
+	height: 50px;
+	padding-top: 1px;
+	line-height: 50px;
+	color: #000;
+	text-align: center;
+	font-size: 20px;
+	border-bottom: 1px solid #b4dc9c;
+	margin-bottom: 20px; /* 添加底部外边距 */
+}
+
+#content .index_chosen .wrap .index_news .news_list {
+	width: 100%;
+	margin: 10px 0; /* 增加上下外边距 */
+	line-height: 15px; /* 调整行高 */
+	transition: transform 0.3s, box-shadow 0.3s; /* 添加过渡效果 */
+	border-radius: 5px; /* 添加圆角 */
+	padding: 10px 5px; /* 增加内边距，确保填充颜色在框内 */
+	background-color: rgba(255, 165, 0, 0.2); /* 初始背景颜色 */
+	position: relative; /* 添加相对定位 */
+}
+
+#content .index_chosen .wrap .index_news .news_list::before {
+	content: '';
+	position: absolute;
+	left: 0px; /* 左边框位置 */
+	right: 0px; /* 右边框位置 */
+	top: 0;
+	bottom: 0;
+	border-left: 2px solid rgba(255, 165, 0, 0.8); /* 左边框颜色和宽度 */
+	border-right: 2px solid rgba(255, 165, 0, 0.8); /* 右边框颜色和宽度 */
+	border-radius: 5px; /* 添加圆角 */
+	pointer-events: none; /* 使边框不影响点击事件 */
+	transition: transform 0.3s, box-shadow 0.3s; /* 添加过渡效果 */
+}
+
+#content .index_chosen .wrap .index_news .news_list:hover {
+	transform: translateY(-5px); /* 向上浮动 */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+	background-color: rgba(255, 165, 0, 0.4); /* 悬停时背景颜色加深 */
+}
+
+#content .index_chosen .wrap .index_news .news_list a {
+	color: #000;
+	text-decoration: none;
+	transition: color 0.3s; /* 添加颜色过渡效果 */
+	display: block; /* 使链接填充整个列表项 */
+}
+
+#content .index_chosen .wrap .index_news .news_list a:hover {
+	color: #007bff; /* 悬停时链接颜色 */
+}
+
+
+
+
+#content .index_chosen .wrap .index_ad {
+	width:880px;
+	height:280px;
+	float: right;
+}
+#content .index_chosen .wrap .index_ad .adlist {
+	width:280px;
+	height:275px;
+	float: left;
+	overflow: hidden;
+	margin-right: 10px;
+	border-bottom: 5px solid #e0e0e0;
+	margin-top:10px;
+}
+#content .index_chosen .wrap .weibo {
+	width:280px;
+	height:568px;
+	border-top:5px solid #e32529;
+	background:#fff;
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	z-index:1001;
+}
+#content .index_chosen .wrap .weibo .weibo_title {
+	width:280px;
+	height:42px;
+	line-height:42px;
+	color:#333333;
+	font-size:20px;
+	text-indent:15px;
+	border-bottom:1px solid #e7e7e7;
+}
+#content .index_chosen .wrap .weibo .weibo_cont {
+	width:280px;
+	height:526px;
+	overflow:hidden;
+}
+#content .cate {
+	width:100%;
+	height:55px;
+	padding-top:30px;
+	padding-bottom:7px;
+	border-bottom:1px solid #dadada;
+	/*background:#f5f5f5;*/
+}
+#content .cate .cate_a {
+	padding:9px 10px;
+	color:#666666;
+	text-decoration:none;
+}
+#content .cate .cur {
+	color:#ffffff;
+	background: #f6ad3c;
+}
+
+#content .cate .center .cate_list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 10px 0;
+	background-color: #d59e44; /* 背景颜色 */
+	border-radius: 10px; /* 圆角 */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
+
+#content .cate .center .cate_list .cate_a {
+	display: inline-block;
+	margin: 10px;
+	padding: 10px 20px;
+	color: #fff; /* 字体颜色 */
+	background-color: #f6ad3c; /* 按钮背景颜色 */
+	text-decoration: none;
+	font-size: 18px; /* 字体大小 */
+	border-radius: 5px; /* 按钮圆角 */
+	transition: background-color 0.3s, transform 0.3s; /* 添加过渡效果 */
+}
+
+#content .cate .center .cate_list .cate_a:hover {
+	background-color: #f6c13c; /* 悬停背景颜色 */
+	transform: translateY(-3px); /* 悬停时上移 */
+}
+
+#content .cate .center .cate_list .cur {
+	background-color: #f6c13c; /* 当前选中项背景颜色 */
+	font-weight: bold; /* 当前选中项加粗 */
+}
+
+
+#content .detail_wrap {
+	width:100%;
+	margin:0 auto;
+	padding:48px 0px;
+	line-height:24px;
+	/*background:#f5f5f5;*/
+}
+
+
+
+#content .detail_wrap .sub_cate_list {
+	width:100%;
+	height:24px;
+	line-height:24px;
+}
+#content .detail_wrap .sub_cate_list .sub_a {
+	padding:9px 10px;
+	color:#666666;
+	text-decoration:none;
+}
+#content .detail_wrap .sub_cate_list .sub_cur {
+	color:#ffffff;
+	background:#69b839;
+}
+
+#content .detail_wrap .list {
+	width: 47%; /* 每个 list 的宽度调整为 47% 以便每行两个 */
+	height: 495px; /* 高度 */
+	margin-right: 6%; /* 右边距为6% */
+	margin-bottom: 39px;
+	border: 1px solid #ddd; /* 添加边框 */
+	border-radius: 10px; /* 添加圆角 */
+	background: #f9f9f9; /* 背景色改为浅灰色 */
+	display: flex; /* 使用 flex 布局 */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+	box-sizing: border-box;
+	float: left; /* 确保浮动属性应用 */
+	transition: transform 0.3s; /* 添加悬停效果的过渡 */
+}
+
+#content .detail_wrap .list:hover {
+	transform: translateY(-10px); /* 悬停时向上移动 */
+}
+
+#content .detail_wrap .list:nth-child(2n) {
+	margin-right: 0; /* 每行第二个元素右边距为0 */
+}
+
+#content .detail_wrap .list .left-column {
+	width: 50%; /* 左列宽度调整为 50% */
+	padding: 10px; /* 增加内边距 */
+	background: #efe9dd; /* 左列背景为白色 */
+	border-right: 1px solid #ddd; /* 左列右边加边框 */
+	box-sizing: border-box;
+}
+
+#content .detail_wrap .right-column {
+	width: 50%; /* 右列宽度调整为 50% */
+	padding: 20px; /* 增加内边距 */
+	box-sizing: border-box;
+	background: #ffecc1; /* 背景颜色 */
+	border-left: 1px solid #ddd; /* 左边加边框 */
+	border-radius: 0 10px 10px 0; /* 右上和右下圆角 */
+	display: flex;
+	flex-direction: column;
+}
+
+#content .detail_wrap .list .info div {
+	margin-bottom: 6px; /* 增加每个信息块之间的间距 */
+	padding: 5px 0; /* 增加上下内边距 */
+	border-bottom: 1px solid #eee; /* 增加下边框 */
+}
+
+#content .detail_wrap .list .img {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px; /* 图片与信息之间的间距 */
+	border-radius: 10px; /* 图片圆角 */
+	overflow: hidden;
+}
+
+#content .detail_wrap .list .info {
+	text-align: left; /* 信息左对齐 */
+}
+
+#content .detail_wrap .list .name {
+	font-size: 20px;
+	color: #333333;
+	margin-bottom: 10px;
+	font-weight: bold; /* 加粗字体 */
+	text-align:center;
+	white-space: nowrap; /* 防止换行 */
+}
+
+
+
+
+#content .detail_wrap .list .brief,
+#content .detail_wrap .list .serial,
+#content .detail_wrap .list .date,
+#content .detail_wrap .list .size,
+#content .detail_wrap .list .year,
+#content .detail_wrap .list .location {
+	color: #666666;
+	margin-bottom: 5px;
+}
+
+#content .detail_wrap .right-column .description {
+	color: #333; /* 调整文字颜色 */
+	text-align: left; /* 文字居中对齐 */
+	font-size: 18px; /* 调整字体大小 */
+	line-height: 1.8; /* 调整行高 */
+	padding-top: 10px;
+}
+
+#content .detail_wrap .right-column .description-title {
+	font-size: 22px; /* 标题字体大小 */
+	font-weight: bold; /* 标题加粗 */
+	color: #f6c13c; /* 标题颜色 */
+	margin-bottom: 10px; /* 标题与内容间距 */
+	text-align: center; /* 标题居中 */
+	padding: 5px 2px; /* 调整内边距，左右减少 */
+	border: 2px solid #ffe8ab; /* 添加边框 */
+	display: inline; /* 使背景颜色只包裹标题 */
+	border-radius: 5px; /* 添加圆角 */
+	background-color: #ffe8ab; /* 背景颜色 */
+	white-space: nowrap; /* 防止文字换行 */
+}
+
+
+
+
+
+
+
+#content .detail_wrap .list .more {
+	width:280px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+}
+#content .detail_wrap .list .more a {
+	color:#69b839;
+	text-decoration:none;
+}
+#content .detail_wrap .last {
+	margin-right:0px;
+}
+#content .detail_wrap .left_img {
+	width:624px;
+	float:left;
+}
+#content .detail_wrap .left_img .bimg {
+	width:460px;
+	height:460px;
+	margin:0 auto;
+}
+.content .detail_wrap .left_img .bimg {
+	width:460px;
+	height:460px;
+	margin:0 auto;
+}
+#content .detail_wrap .left_img .noshow {
+	display:none;
+}
+.content .detail_wrap .left_img .noshow {
+	display:none;
+}
+#content .detail_wrap .left_img .simg_list {
+	width:624px;
+	height:100px;
+	margin:0 auto;
+}
+#content .detail_wrap .left_img .simg_list .icon {
+	width:17px;
+	height:27px;
+	float:left;
+	margin:40px 8px 0px;
+	cursor:pointer;
+}
+#content .detail_wrap .left_img .simg_list ul {
+	width:546px;
+	height:100px;
+	float:left;
+}
+#content .detail_wrap .left_img .simg_list ul li {
+	width:100px;
+	height:100px;
+	float:left;
+	margin-right:10px;
+	cursor:pointer;
+}
+#content .detail_wrap .left_img .simg_list ul li.last {
+	margin-right:0px;
+}
+#content .detail_wrap .right_info {
+	width:480px;
+	float:left;
+	padding-left:40px;
+}
+#content .detail_wrap .right_info .name {
+	width:480px;
+	height:60px;
+	line-height:60px;
+	color:#333333;
+	font-size:30px;
+}
+#content .detail_wrap .right_info .brief {
+	width:480px;
+	line-height:24px;
+	color:#666666;
+}
+#content .detail_wrap .right_info .color {
+	width:480px;
+	margin-top:50px;
+}
+#content .detail_wrap .right_info .color .color_block {
+	display:block;
+	width:36px;
+	height:36px;
+	float:left;
+	margin-right:10px;
+	border:1px solid #dbdbdb;
+	position:relative;
+	z-index:1000;
+}
+#content .detail_wrap .right_info .color .color_block .select {
+	width:18px;
+	height:18px;
+	background:url(../images/select.png) no-repeat center;
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	z-index:1001;
+	display:none;
+}
+#content .detail_wrap .right_info .color .cur {
+	border:1px solid #69b839;
+}
+#content .detail_wrap .detail {
+	width:100%;
+	margin:0 auto;
+	background:#ffffff;
+}
+#content .detail_wrap .detail .menu {
+	width:100%;
+	height:44px;
+	padding-top:26px;
+	line-height:44px;
+	border-bottom:1px solid #efefef;
+}
+#content .detail_wrap .detail .menu .menu_title {
+	width:114px;
+	height:44px;
+	float:left;
+	margin-right:10px;
+	line-height:44px;
+	color:#666666;
+	font-size:14px;
+	text-align:center;
+	cursor:pointer;
+}
+#content .detail_wrap .detail .menu .cur {
+	color:#fff;
+	background:#69b839;
+}
+#content .detail_wrap .detail .menu_content {
+	width:1000px;
+	padding:15px 0px;
+	line-height:24px;
+	display:none;
+}
+#content .detail_wrap .right_title {
+	width:100%;
+	height:50px;
+	line-height:50px;
+	color:#000000;
+	text-align:center;
+	font-size:26px;
+	text-indent:30px;
+}
+#content .detail_wrap .right_content {
+	width:100%;
+	line-height:24px;
+}
+#content .noPaddingBottom {
+	padding-bottom:0px;
+}
+#content .path {
+	width:100%;
+	height:32px;
+	padding-top:30px;
+	padding-bottom:7px;
+	border-bottom:1px solid #dadada;
+	background:#f5f5f5;
+}
+#content .path .p {
+	color:#666666;
+}
+#content .path .p a {
+	color:#666;
+}
+#website_left {
+	width:220px;
+	float:left;
+}
+#website_left .left_title {
+	width:220px;
+	height:44px;
+	line-height:44px;
+	color:#ffffff;
+	font-size:18px;
+	text-indent:16px;
+	background:#69b839;
+}
+#website_left .left_nav_wrap {
+	width:220px;
+	background:#fff;
+}
+#website_left .left_nav_wrap .left_nav {
+	width:220px;
+	height:40px;
+	line-height:40px;
+	color:#787878;
+	text-indent:16px;
+	border-bottom:1px solid #f5f5f5;
+}
+#website_left .left_nav_wrap .left_nav a {
+	color:#333333;
+	font-size:14px;
+	text-decoration:none;
+}
+#website_right {
+	width:920px;
+	float:left;
+	margin-left:40px;
+	background:#fff;
+}
+#website_right .right_title {
+	width:920px;
+	height:96px;
+	line-height:96px;
+	color:#000000;
+	font-size:26px;
+	text-indent:30px;
+}
+#website_right .right_content {
+	width:860px;
+	padding:30px;
+	line-height:24px;
+}
+#footer {
+	width:100%;
+	max-width:1680px;
+	height:60px;
+	margin:0 auto;
+	border-top:5px solid #000000;
+	background:#333333;
+}
+#footer .copyright {
+	width:100%;
+	height:60px;
+	line-height:60px;
+	color:#999999;
+	text-indent:7px;
+	text-align:center;
+}
+#web .detail .center {
+	padding:0 25px;
+}
+#web .detail .top {
+	text-align: center;
+	border-bottom: 1px dotted #c7c7c7;
+	padding:0 0 10px;
+}
+#web .detail .top .title {
+	margin:30px 0 25px;
+	font-size: 20px;
+}
+#web .detail .top .div {
+	height: 22px;
+	overflow: hidden;
+}
+#web .detail .top .div span {
+	margin:0 8px;
+	color: #999;
+}
+#web .detail .top .div .share {
+	display: inline;
+	height: 22px;
+	line-height: 22px;
+	border:1px solid #e1e8e1;
+	border-radius: 2px;
+	background: #f0f1f3;
+	content:none !important;
+}
+#web .detail .top .div .share a {
+	float: none;
+}
+#web .detail .con {
+	width:800px;
+	line-height: 24px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#web .title_row {
+	text-align: center;
+	height: 111px;
+	border-bottom: 1px solid #dbdbdb;
+}
+#web .title_row .span {
+	display: inline-block;
+	padding:0 0 18px;
+	margin:60px 0 0;
+}
+#web .title_row .span a {
+	padding:10px 20px;
+	font-size: 18px;
+	display: inline-block;
+}
+#web .title_row .on {
+	position: relative;
+	z-index: 1;
+	background: url(../images/arrow2.jpg) no-repeat center bottom;
+}
+#web .title_row .on a {
+	color: #fff;
+	background:#4da0d5;
+	border-radius: 2px;
+}
+#web .title_row .on .arrow {
+	display: inline-block;
+	background: url(../images/arrow1.png) no-repeat center center;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	height: 8px;
+	bottom:10px;
+	left:0;
+}

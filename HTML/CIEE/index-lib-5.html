@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>数字博物馆</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link type="text/css" rel="stylesheet" href="style/global.css">
+  <link type="text/css" rel="stylesheet" href="style/lib.css">
+  <link type="text/css" rel="stylesheet" href="style/style.css">
+  <link type="text/css" rel="stylesheet" href="style/pagination.css">
+  <script type="text/javascript" src="js/iepngfix_tilebg-1.js"></script>
+  <script type="text/javascript" src="js/jq_min.js"></script>
+  <script type="text/javascript" src="js/website_js.js"></script>
+  <script type="text/javascript" src="js/set_name.js"></script>
+  <script type="text/javascript" src="js/devices.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      currentCategory = "生物物理类"; // 设置默认类别为生物物理类
+      document.querySelector('.cate_a[data-category="生物物理类"]').classList.add('cur'); // 高亮生物物理类按钮
+      renderDeviceLists(currentPage); // 渲染设备列表
+    });
+  </script>
+
+</head>
+<body>
+<header id="header">
+  <div class="top_line"></div>
+  <div class="right">
+    <div class="logo">
+      <a href="index.htm">
+        <img src="images/logo.png" width="500" height="100" alt="Logo">
+      </a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">首页</a></li>
+        <li class="cur"><a href="index-lib.html">数字博物馆</a></li>
+        <li><a href="https://ciee.cau.edu.cn/col/col50389/index.html?uid=86254&pageNum=2">新闻中心</a></li>
+        <li><a href="index-msg.html">留言中心</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main id="content">
+    <section class="cate">
+      <div class="center">
+        <div class="cate_list">
+          <a class="cate_a" href="#" data-category="全部">全部</a>
+          <a class="cate_a" href="#" data-category="电气类">电气类</a>
+          <a class="cate_a" href="#" data-category="测量类">测量类</a>
+          <a class="cate_a" href="#" data-category="电子类">电子类</a>
+          <a class="cate_a" href="#" data-category="通信类">通信类</a>
+          <a class="cate_a" href="#" data-category="生物物理类">生物物理类</a>
+          <a class="cate_a" href="#" data-category="其他类">其他类</a>
+        </div>
+      </div>
+    </section>
+    <section class="detail_wrap">
+      <div class="center">
+        <!-- 动态生成的设备列表将插入在这里 -->
+      </div>
+    </section>
+  </main>
+
+  <main>
+    <div class="clear"></div>
+    <div class="blank6"></div>
+    <div id="turn_page">
+      <span class="pageinfo"></span>
+      <div class="pagination"></div>
+    </div>
+
+
+    <div class="blank6"></div>
+  </main>
+
+  <footer id="footer">
+    <div class="copyright">
+      Copyright &copy; 2024 中国农业大学信电学院<a href="javascript:void(0);" onclick="confirmAction('Weidong Tang')">Power by Weidong Tang</a>
+    </div>
+  </footer>
+
+</body>
+</html>
