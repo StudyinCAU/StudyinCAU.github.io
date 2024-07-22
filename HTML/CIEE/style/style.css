@@ -596,7 +596,7 @@ body {
 #content .detail_wrap .list .info div {
 	margin-bottom: 6px; /* 增加每个信息块之间的间距 */
 	padding: 5px 0; /* 增加上下内边距 */
-	border-bottom: 1px solid #eee; /* 增加下边框 */
+	border-bottom: 1px solid #dab272; /* 增加下边框 */
 }
 
 #content .detail_wrap .list .img {
@@ -644,7 +644,7 @@ body {
 #content .detail_wrap .right-column .description-title {
 	font-size: 22px; /* 标题字体大小 */
 	font-weight: bold; /* 标题加粗 */
-	color: #f6c13c; /* 标题颜色 */
+	color: #b16e00; /* 标题颜色 */
 	margin-bottom: 10px; /* 标题与内容间距 */
 	text-align: center; /* 标题居中 */
 	padding: 5px 2px; /* 调整内边距，左右减少 */

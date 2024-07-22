@@ -16,6 +16,7 @@
 
 #lib_feedback_form .rows {
 	margin: 10px 0;
+	height: auto;
 	clear: both;
 	display: flex; /* 使用Flex布局 */
 	align-items: center; /* 垂直居中对齐 */
@@ -23,7 +24,7 @@
 
 #lib_feedback_form .rows label {
 	width: 15%;
-	height: 22px;
+	height: auto;
 	line-height: 22px;
 	text-align: right;
 	color: #555;
@@ -32,12 +33,14 @@
 
 #lib_feedback_form .rows span {
 	width: 75%;
+	height: auto;
 	padding-left: 2px;
 }
 
 #lib_feedback_form .rows span .form_input,
 #lib_feedback_form .rows span .form_area {
 	width: 100%; /* 将宽度设置为100%，以便更好地适应容器 */
+	height: auto;
 	padding: 8px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
@@ -45,7 +48,7 @@
 }
 
 #lib_feedback_form .rows span .form_area {
-	height: 120px;
+	height: auto;
 }
 .fc_red {
 	color: red;
@@ -78,6 +81,7 @@
 	transition: background-color 0.3s;
 	display: inline-block; /* 确保按钮在行内显示，不会被遮盖 */
 	margin-top: 10px; /* 确保按钮与上方内容有一定间距 */
+	height: auto;
 }
 
 .form_gory_button:hover {
